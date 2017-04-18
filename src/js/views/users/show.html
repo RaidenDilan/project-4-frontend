@@ -1,0 +1,18 @@
+<section>
+  <h1>User Profile</h1>
+  <!-- {{ usersShow.user }} -->
+  <hr>
+  <div>
+    <h3>Username: {{ usersShow.user.username }}</h3>
+    <img ng-src="{{ usersShow.user.image }}">
+    <p>Profile Image: {{ usersShow.user.image }}</p>
+    <p>First Name: {{usersShow.user.email}}</p>
+    <p>First Name: {{usersShow.user.first_name}}</p>
+    <p>Last Name:  {{usersShow.user.last_name}}</p>
+    <p>Bio: {{ usersShow.user.bio }}</p>
+    <p>Preferred Airport: {{ usersShow.user.airport }}</p>
+    <hr>
+    <button ui-sref="usersEdit({ id: usersShow.user.id })">Edit</button>
+    <button ng-click="usersShow.delete()">Delete</button>
+  </div>
+</section>

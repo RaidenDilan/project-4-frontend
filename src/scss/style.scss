@@ -1,1 +1,33 @@
-// Import all of your scss files here
+// @import 'reset';
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+header {
+  nav {
+    ul {
+      list-style: none;
+      li {
+        // text-align: center;
+        // float: left;
+        a {
+          // margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+section {
+  text-align: center;
+}
+
+img {
+  max-width: 30%;
+}
+
+textarea {
+  width: 300px;
+  height: 100px;
+}

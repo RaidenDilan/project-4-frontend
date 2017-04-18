@@ -1,0 +1,9 @@
+<h1>Holidays Index</h1>
+<div>
+  <div ng-repeat="holiday in holidaysIndex.all">
+    <a ui-sref="holidaysShow({ id: holiday.id })"><h2>{{ holiday.location }}</h2></a>
+    <img ng-src="{{ holiday.cover_photo }}">
+    <p>Created By: {{ holiday.user.full_name }}</p>
+    <hr>
+  </div>
+</div>

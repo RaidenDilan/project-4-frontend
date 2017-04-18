@@ -1,0 +1,55 @@
+<h1>Register</h1>
+<hr>
+<div>
+  <div>
+    <form ng-submit="login.register()">
+
+      <div>
+        <label for="username">Username</label><br>
+        <input type="text" ng-model="login.user.username">
+      </div>
+
+      <div>
+        <label for="first_name">Firstname</label><br>
+        <input type="text" name="first_name" id="first_name" ng-model="login.user.first_name">
+      </div>
+
+      <div>
+        <label for="last_name">Lastname</label><br>
+        <input type="text" name="last_name" id="last_name" ng-model="login.user.last_name">
+      </div>
+
+      <div>
+        <label for="email">Email</label><br>
+        <input type="text" name="email" id="email" ng-model="login.user.email">
+      </div>
+
+      <div>
+        <label for="password">Password</label><br>
+        <input type="password" name="password" id="password" ng-model="login.user.password">
+      </div>
+
+      <div>
+        <label for="passwordConfirmation">Password Confirmation</label><br>
+        <input type="password" name="passwordConfirmation" id="passwordConfirmation" ng-model="login.user.password_confirmation">
+      </div>
+
+      <div>
+        <label for="airport">Home Airport</label><br>
+        <input type="text" name="airport" id="airport" ng-model="login.user.airport">
+      </div>
+
+      <div>
+        <label for="bio">Bio</label><br>
+        <textarea type="text" name="bio" id="bio" ng-model="login.user.bio"></textarea>
+      </div>
+
+      <div>
+        <label for="base64">Profile Image</label><br>
+        <input type="file" base64 name="base64" id="base64" ng-model="login.user.base64">
+      </div>
+
+      <button>Register</button>
+    </form>
+  </div>
+</div>
