@@ -8,7 +8,7 @@ function Skyscanner($http, API_URL) {
 
   function getFlights(destination) {
     return $http
-      .get(`${API_URL}/api/flights`, { params: { destination } })
+      .get(`${API_URL}/flights`, { params: { destination } })
       .then((response) => {
         console.log(response);
         response.data.Quotes.forEach((quote) => {

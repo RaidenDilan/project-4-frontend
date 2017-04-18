@@ -1,1 +1,17 @@
 <h1>Budget</h1>
+<h2>Flights to {{ holidaysShow.holiday.location }}</h2>
+  <ul>
+    <li ng-repeat="flight in budgetShow.flights">
+      <div>
+        <div>
+          <h3>Date: {{ flight.OutboundLeg.DepartureDate | date:'dd-MM-yyyy' }}</h3>
+        </div>
+        <div>
+          <h3>Min Price: £{{ flight.MinPrice }}</h3>
+        </div>
+        <div>
+          <h3>Airline: {{ flight.CarrierName }}</h3>
+        </div>
+      </div>
+    </li>
+  </ul>

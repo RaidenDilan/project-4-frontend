@@ -60,11 +60,11 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     controller: 'UsersEditCtrl as usersEdit'
   })
 //----------------------------------BUDGET------------------------------------//
-  // .state('budget', {
-  //   url: '/holidays/:id/budget',
-  //   templateUrl: 'js/views/budget/budget.html',
-  //   controller: 'BudgetShowCtrl as budgetShow'
-  // })
+  .state('budgetShow', {
+    url: '/holidays/:id/budget',
+    templateUrl: 'js/views/budget/budget.html',
+    controller: 'BudgetShowCtrl as budgetShow'
+  })
 //-----------------------------LOGIN & REGISTER-------------------------------//
   .state('login', {
     url: '/login',

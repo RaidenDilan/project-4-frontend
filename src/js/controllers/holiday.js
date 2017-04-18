@@ -34,15 +34,30 @@ function HolidaysShowCtrl(Holiday, $stateParams, $state) {
   const vm = this;
 
   vm.holiday = Holiday.get($stateParams);
+  // getBudget(); ////////////////////
 
   function holidaysDelete() {
     vm.holiday
       .$remove()
       .then(() => $state.go('holidaysIndex'));
   }
-
   vm.delete = holidaysDelete;
 
+  // function getBudget() {
+  //   Holiday.get($stateParams).$promise.then((holiday) => {
+  //     vm.holiday = holiday;
+  //     getFlights();
+  //   });
+  //
+  //   vm.flights = [];
+  //
+  //   function getFlights() {
+  //     skyscanner.getFlights(vm.holiday.nearest_airport)
+  //       .then((quotes) => {
+  //         vm.flights = quotes;
+  //       });
+  //   }
+  // }
 }
 
 HolidaysEditCtrl.$inject = ['Holiday', '$stateParams', '$state'];
