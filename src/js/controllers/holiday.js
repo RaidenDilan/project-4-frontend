@@ -16,7 +16,6 @@ HolidaysNewCtrl.$inject = ['User', 'Holiday', '$state'];
 function HolidaysNewCtrl(User, Holiday, $state) {
   const vm = this;
 
-  // vm.user = User.get($stateParams);
   vm.holiday = {};
 
   function holidaysCreate() {
@@ -34,7 +33,7 @@ function HolidaysShowCtrl(Holiday, $stateParams, $state) {
   const vm = this;
 
   vm.holiday = Holiday.get($stateParams);
-  // getBudget(); ////////////////////
+  console.log('Holiday Show', $stateParams);
 
   function holidaysDelete() {
     vm.holiday
@@ -42,22 +41,6 @@ function HolidaysShowCtrl(Holiday, $stateParams, $state) {
       .then(() => $state.go('holidaysIndex'));
   }
   vm.delete = holidaysDelete;
-
-  // function getBudget() {
-  //   Holiday.get($stateParams).$promise.then((holiday) => {
-  //     vm.holiday = holiday;
-  //     getFlights();
-  //   });
-  //
-  //   vm.flights = [];
-  //
-  //   function getFlights() {
-  //     skyscanner.getFlights(vm.holiday.nearest_airport)
-  //       .then((quotes) => {
-  //         vm.flights = quotes;
-  //       });
-  //   }
-  // }
 }
 
 HolidaysEditCtrl.$inject = ['Holiday', '$stateParams', '$state'];
@@ -65,6 +48,7 @@ function HolidaysEditCtrl(Holiday, $stateParams, $state) {
   const vm = this;
 
   vm.holiday = Holiday.get($stateParams);
+  console.log('Holiday Edit', $stateParams);
 
   function holidaysUpdate() {
     Holiday

@@ -1,289 +1,291 @@
-<section>
-  <h1>Holiday New</h1>
+<div class="newHolidaySection">
+  <div class="createHolidayForm">
+    <h1>Holiday New</h1>
 
-  <form ng-submit="holidaysNew.create()">
-    <div>
-      <label for="text">Cover Photo</label><br>
-      <input type="text" name="cover_photo" id="cover_photo" ng-model="holidaysNew.holiday.cover_photo">
-    </div>
+    <form ng-submit="holidaysNew.create()">
+      <div>
+        <label for="text">Cover Photo</label><br>
+        <input type="text" name="cover_photo" id="cover_photo" ng-model="holidaysNew.holiday.cover_photo">
+      </div>
 
-    <div>
-      <label for="location">Location</label><br>
-      <input type="text" name="location" id="location" ng-model="holidaysNew.holiday.location">
-    </div>
+      <div>
+        <label for="location">Location</label><br>
+        <input type="text" name="location" id="location" ng-model="holidaysNew.holiday.location">
+      </div>
 
-    <div>
-      <label for="attractions">Attractions</label><br>
-      <input type="text" name="attractions" id="attractions" ng-model="holidaysNew.holiday.attractions">
-    </div>
+      <div>
+        <label for="attractions">Attractions</label><br>
+        <input type="text" name="attractions" id="attractions" ng-model="holidaysNew.holiday.attractions">
+      </div>
 
-    <div>
-      <label for="when_to_go">When to Go?</label><br>
-      <input type="text" name="when_to_go" id="when_to_go" ng-model="holidaysNew.holiday.when_to_go">
-    </div>
+      <div>
+        <label for="when_to_go">When to Go?</label><br>
+        <input type="text" name="when_to_go" id="when_to_go" ng-model="holidaysNew.holiday.when_to_go">
+      </div>
 
-    <div>
-      <label for="description">Description</label><br>
-      <textarea type="text" name="description" id="description" ng-model="holidaysNew.holiday.description"></textarea>
-    </div>
+      <div>
+        <label for="description">Description</label><br>
+        <textarea type="text" name="description" id="description" ng-model="holidaysNew.holiday.description"></textarea>
+      </div>
 
-    <div>
-      <label for="nearest_airport">Nearest Airport</label><br>
-      <select ng-model="holidaysNew.holiday.nearest_airport" name="nearest_airport">
-        <option disabled selected value="">Select Nearest Airport</option>
+      <div>
+        <label for="nearest_airport">Nearest Airport</label><br>
+        <select ng-model="holidaysNew.holiday.nearest_airport" name="nearest_airport">
+          <option disabled selected value="">Select Nearest Airport</option>
 
-        <option disabled value="-"></option>
-        <option disabled value="-- Africa --">Africa</option>
-        <option disabled value="-"></option>
-        <option value="JNB">Johannesburg (JNB)</option>
-        <option value="ADD">Addis Ababa (ADD)</option>
-        <option value="CPT">Cape Town (CPT)</option>
-        <option value="RAK">Marrakech Menara (RAK)</option>
-        <option value="CAI">Cairo (CAI)</option>
-        <option value="LAD">Luanda (LAD)</option>
-        <option value="LOS">Lagos (LOS)</option>
-        <option value="ACC">Accra (ACC)</option>
-        <option value="ABV">Abuja (ABV)</option>
-        <option value="HRG">Hurghada (HRG)</option>
-        <option value="ALG">Algiers (ALG)</option>
-        <option value="RUN">Saint-Denis (RUN)</option>
-        <option value="CAS">Casablanca (CAS)</option>
-        <option value="MRU">Mauritius (MRU)</option>
-        <option value="NBO">Nairobi (NBO)</option>
-        <option value="NBO">Nairobi (NBO)</option>
-        <option value="TUN">Tunis Carthage (TUN)</option>
-        <option value="RBA">Rabat (RBA)</option>
-        <option value="ALY">Alexandria (ALY)</option>
-        <option value="TIP">Tripoli (TIP)</option>
+          <option disabled value="-"></option>
+          <option disabled value="-- Africa --">Africa</option>
+          <option disabled value="-"></option>
+          <option value="JNB">Johannesburg (JNB)</option>
+          <option value="ADD">Addis Ababa (ADD)</option>
+          <option value="CPT">Cape Town (CPT)</option>
+          <option value="RAK">Marrakech Menara (RAK)</option>
+          <option value="CAI">Cairo (CAI)</option>
+          <option value="LAD">Luanda (LAD)</option>
+          <option value="LOS">Lagos (LOS)</option>
+          <option value="ACC">Accra (ACC)</option>
+          <option value="ABV">Abuja (ABV)</option>
+          <option value="HRG">Hurghada (HRG)</option>
+          <option value="ALG">Algiers (ALG)</option>
+          <option value="RUN">Saint-Denis (RUN)</option>
+          <option value="CAS">Casablanca (CAS)</option>
+          <option value="MRU">Mauritius (MRU)</option>
+          <option value="NBO">Nairobi (NBO)</option>
+          <option value="NBO">Nairobi (NBO)</option>
+          <option value="TUN">Tunis Carthage (TUN)</option>
+          <option value="RBA">Rabat (RBA)</option>
+          <option value="ALY">Alexandria (ALY)</option>
+          <option value="TIP">Tripoli (TIP)</option>
 
-        <option disabled value="-"></option>
-        <option disabled value="-- Asia --">Asia</option>
-        <option disabled value="-"></option>
-        <option value="BJS">Beijing (BJS)</option>
-        <option value="BLR">Bengaluru (BLR)</option>
-        <option value="SHA">Shanghai (SHA)</option>
-        <option value="OSA">Osaka (OSA)</option>
-        <option value="TYO">Tokyo (TYO)</option>
-        <option value="SPK">Sapporo (SPK)</option>
-        <option value="CAN">Guangzhou (CAN)</option>
-        <option value="FUK">Fukuoka (FUK)</option>
-        <option value="CTU">Chengdu (CTU)</option>
-        <option value="HYD">Hyderabad (HYD)</option>
-        <option value="DEL">New Delhi (DEL)</option>
-        <option value="OKA">Okinawa Naha (OKA)</option>
-        <option value="CKG">Chongqing (CKG)</option>
-        <option value="MAA">Chennai (MAA)</option>
-        <option value="BOM">Mumbai (BOM)</option>
-        <option value="SEL">Seoul (SEL)</option>
+          <option disabled value="-"></option>
+          <option disabled value="-- Asia --">Asia</option>
+          <option disabled value="-"></option>
+          <option value="BJS">Beijing (BJS)</option>
+          <option value="BLR">Bengaluru (BLR)</option>
+          <option value="SHA">Shanghai (SHA)</option>
+          <option value="OSA">Osaka (OSA)</option>
+          <option value="TYO">Tokyo (TYO)</option>
+          <option value="SPK">Sapporo (SPK)</option>
+          <option value="CAN">Guangzhou (CAN)</option>
+          <option value="FUK">Fukuoka (FUK)</option>
+          <option value="CTU">Chengdu (CTU)</option>
+          <option value="HYD">Hyderabad (HYD)</option>
+          <option value="DEL">New Delhi (DEL)</option>
+          <option value="OKA">Okinawa Naha (OKA)</option>
+          <option value="CKG">Chongqing (CKG)</option>
+          <option value="MAA">Chennai (MAA)</option>
+          <option value="BOM">Mumbai (BOM)</option>
+          <option value="SEL">Seoul (SEL)</option>
 
-        <option disabled value="-"></option>
-        <option disabled value="-- Cental America and the Carribean --">Cental America and the Carribean</option>
-        <option disabled value="-"></option>
-        <option value="SJU">San Juan (SJU)</option>
-        <option value="SLU">Castries (SLU)</option>
-        <option value="SJO">San Jose (SJO)</option>
-        <option value="VRA">Varadero (VRA)</option>
-        <option value="MBJ">Montego Bay (MBJ)</option>
-        <option value="TAB">Tobago (TAB)</option>
-        <option value="PUJ">Punta Cana (PUJ)</option>
-        <option value="ANU">Saint John's (ANU)</option>
-        <option value="NAS">Nassau International (NAS)</option>
-        <option value="SKB">Basseterre (SKB)</option>
-        <option value="HAV">Havana (HAV)</option>
-        <option value="CCC">Cayo Coco (CCC)</option>
-        <option value="KIN">Kingston (KIN)</option>
-        <option value="HOG">Holguin (HOG)</option>
-        <option value="BGI">Bridgetown (BGI)</option>
+          <option disabled value="-"></option>
+          <option disabled value="-- Cental America and the Carribean --">Cental America and the Carribean</option>
+          <option disabled value="-"></option>
+          <option value="SJU">San Juan (SJU)</option>
+          <option value="SLU">Castries (SLU)</option>
+          <option value="SJO">San Jose (SJO)</option>
+          <option value="VRA">Varadero (VRA)</option>
+          <option value="MBJ">Montego Bay (MBJ)</option>
+          <option value="TAB">Tobago (TAB)</option>
+          <option value="PUJ">Punta Cana (PUJ)</option>
+          <option value="ANU">Saint John's (ANU)</option>
+          <option value="NAS">Nassau International (NAS)</option>
+          <option value="SKB">Basseterre (SKB)</option>
+          <option value="HAV">Havana (HAV)</option>
+          <option value="CCC">Cayo Coco (CCC)</option>
+          <option value="KIN">Kingston (KIN)</option>
+          <option value="HOG">Holguin (HOG)</option>
+          <option value="BGI">Bridgetown (BGI)</option>
 
-        <option disabled value="-"></option>
-        <option disabled value="--- UK ---">UK</option>
-        <option disabled value="-"></option>
-        <option value="LHR">London Heathrow (LHR)</option>
-        <option value="LGW">London Gatwick LGW</option>
-        <option value="STN">London Stansted (STN)</option>
-        <option value="SEN">London Southend (SEN)</option>
-        <option value="LCY">London City Airport (LCY)</option>
+          <option disabled value="-"></option>
+          <option disabled value="--- UK ---">UK</option>
+          <option disabled value="-"></option>
+          <option value="LHR">London Heathrow (LHR)</option>
+          <option value="LGW">London Gatwick LGW</option>
+          <option value="STN">London Stansted (STN)</option>
+          <option value="SEN">London Southend (SEN)</option>
+          <option value="LCY">London City Airport (LCY)</option>
 
-        <option disabled value="-"></option>
-        <option disabled value="------ Europe ------">Europe</option>
-        <option disabled value="-"></option>
-        <option value="MOW">Moscow (MOW)</option>
-        <option value="CPH">Copenhagen</option>
-        <option value="AMS">Amsterdam (AMS)</option>
-        <option value="CTA">Catania Fontanarossa (CTA)</option>
-        <option value="PAR">Paris (PAR)</option>
-        <option value="DUS">Dusseldorf (DUS)</option>
-        <option value="DUB">Dublin (DUB)</option>
-        <option value="LPA">Gran Canaria Las Palmas (LPA)</option>
-        <option value="MAD">Madrid (MAD)</option>
-        <option value="TLS">Toulouse (TLS)</option>
-        <option value="OSL">Oslo (OSL)</option>
-        <option value="NCE">Nice (NCE)</option>
-        <option value="ROM">Rome (ROM)</option>
-        <option value="BGO">Bergen (BGO)</option>
-        <option value="FRA">Frankfurt (FRA)</option>
-        <option value="BRU">Brussels (BRU)</option>
-        <option value="BCN">Barcelona (BCN)</option>
-        <option value="TRD">Trondheim (TRD)</option>
-        <option value="LED">St Petersburg Pulkovo (LED)</option>
-        <option value="HEL">Helsinki Vantaa (HEL)</option>
-        <option value="MUC">Munich (MUC)</option>
-        <option value="CGN">Cologne (CGN)</option>
-        <option value="ZRH">Zurich (ZRH)</option>
-        <option value="PMO">Palermo (PMO)</option>
-        <option value="MIL">Milan (MIL)</option>
-        <option value="STR">Stuttgart (STR)</option>
-        <option value="BER">Berlin (BER)</option>
-        <option value="LIS">Lisbon (LIS)</option>
-        <option value="STO">Stockholm (STO)</option>
-        <option value="MRS">Marseille (MRS)</option>
-        <option value="TCI">Tenerife (TCI)</option>
-        <option value="LYS">Lyon (LYS)</option>
-        <option value="GVA">Geneva (GVA)</option>
-        <option value="BOD">Bordeaux (BOD)</option>
-        <option value="ACE">Lanzarote (ACE)</option>
-        <option value="VIE">Vienna (VIE)</option>
-        <option value="KRR">Krasnodar (KRR)</option>
-        <option value="AGP">Malaga (AGP)</option>
-        <option value="SVG">Stavanger (SVG)</option>
-        <option value="PMI">Palma - Majorca (PMI)</option>
-        <option value="NAP">Naples (NAP)</option>
-        <option value="ALC">Alicante (ALC)</option>
-        <option value="SKG">Thessaloniki (SKG)</option>
-        <option value="HAM">Hamburg (HAM)</option>
-        <option value="TOS">Tromso (HTOSAM)</option>
+          <option disabled value="-"></option>
+          <option disabled value="------ Europe ------">Europe</option>
+          <option disabled value="-"></option>
+          <option value="MOW">Moscow (MOW)</option>
+          <option value="CPH">Copenhagen</option>
+          <option value="AMS">Amsterdam (AMS)</option>
+          <option value="CTA">Catania Fontanarossa (CTA)</option>
+          <option value="PAR">Paris (PAR)</option>
+          <option value="DUS">Dusseldorf (DUS)</option>
+          <option value="DUB">Dublin (DUB)</option>
+          <option value="LPA">Gran Canaria Las Palmas (LPA)</option>
+          <option value="MAD">Madrid (MAD)</option>
+          <option value="TLS">Toulouse (TLS)</option>
+          <option value="OSL">Oslo (OSL)</option>
+          <option value="NCE">Nice (NCE)</option>
+          <option value="ROM">Rome (ROM)</option>
+          <option value="BGO">Bergen (BGO)</option>
+          <option value="FRA">Frankfurt (FRA)</option>
+          <option value="BRU">Brussels (BRU)</option>
+          <option value="BCN">Barcelona (BCN)</option>
+          <option value="TRD">Trondheim (TRD)</option>
+          <option value="LED">St Petersburg Pulkovo (LED)</option>
+          <option value="HEL">Helsinki Vantaa (HEL)</option>
+          <option value="MUC">Munich (MUC)</option>
+          <option value="CGN">Cologne (CGN)</option>
+          <option value="ZRH">Zurich (ZRH)</option>
+          <option value="PMO">Palermo (PMO)</option>
+          <option value="MIL">Milan (MIL)</option>
+          <option value="STR">Stuttgart (STR)</option>
+          <option value="BER">Berlin (BER)</option>
+          <option value="LIS">Lisbon (LIS)</option>
+          <option value="STO">Stockholm (STO)</option>
+          <option value="MRS">Marseille (MRS)</option>
+          <option value="TCI">Tenerife (TCI)</option>
+          <option value="LYS">Lyon (LYS)</option>
+          <option value="GVA">Geneva (GVA)</option>
+          <option value="BOD">Bordeaux (BOD)</option>
+          <option value="ACE">Lanzarote (ACE)</option>
+          <option value="VIE">Vienna (VIE)</option>
+          <option value="KRR">Krasnodar (KRR)</option>
+          <option value="AGP">Malaga (AGP)</option>
+          <option value="SVG">Stavanger (SVG)</option>
+          <option value="PMI">Palma - Majorca (PMI)</option>
+          <option value="NAP">Naples (NAP)</option>
+          <option value="ALC">Alicante (ALC)</option>
+          <option value="SKG">Thessaloniki (SKG)</option>
+          <option value="HAM">Hamburg (HAM)</option>
+          <option value="TOS">Tromso (HTOSAM)</option>
 
-        <option disabled value="-"></option>
-        <option disabled value="-- Middle East --">Middle East</option>
-        <option disabled value="-"></option>
-        <option value="IST">Istanbul (IST)</option>
-        <option value="TLV">Tel Aviv (TLV)</option>
-        <option value="DXB">Dubai (DXB)</option>
-        <option value="MCT">Muscat (MCT)</option>
-        <option value="RUH">Riyadh (RUH)</option>
-        <option value="KWI">Kuwait (KWI)</option>
-        <option value="JED">Jeddah (JED)</option>
-        <option value="BAH">Bahrain (BAH)</option>
-        <option value="THR">Tehran (THR)</option>
-        <option value="AMM">Amman (AMM)</option>
-        <option value="ADB">Izmir (ADB)</option>
-        <option value="BEY">Beirut (BEY)</option>
-        <option value="AYT">Antalya (AYT)</option>
-        <option value="BJV">Bodrum (BJV)</option>
-        <option value="DOH">Hamad International (DOH)</option>
-        <option value="DOH">Baghdad International (BGW)</option>
-        <option value="AUH">Abu Dhabi International (AUH)</option>
+          <option disabled value="-"></option>
+          <option disabled value="-- Middle East --">Middle East</option>
+          <option disabled value="-"></option>
+          <option value="IST">Istanbul (IST)</option>
+          <option value="TLV">Tel Aviv (TLV)</option>
+          <option value="DXB">Dubai (DXB)</option>
+          <option value="MCT">Muscat (MCT)</option>
+          <option value="RUH">Riyadh (RUH)</option>
+          <option value="KWI">Kuwait (KWI)</option>
+          <option value="JED">Jeddah (JED)</option>
+          <option value="BAH">Bahrain (BAH)</option>
+          <option value="THR">Tehran (THR)</option>
+          <option value="AMM">Amman (AMM)</option>
+          <option value="ADB">Izmir (ADB)</option>
+          <option value="BEY">Beirut (BEY)</option>
+          <option value="AYT">Antalya (AYT)</option>
+          <option value="BJV">Bodrum (BJV)</option>
+          <option value="DOH">Hamad International (DOH)</option>
+          <option value="DOH">Baghdad International (BGW)</option>
+          <option value="AUH">Abu Dhabi International (AUH)</option>
 
-        <option disabled value="-"></option>
-        <option disabled value="-- North America --">North America</option>
-        <option disabled value="-"></option>
-        <option value="NYC">New York (NYC)</option>
-        <option value="SAN">San Diego (SAN)</option>
-        <option value="WAS">Washington (WAS)</option>
-        <option value="DTT">Detroit (DTT)</option>
-        <option value="CHI">Chicago (CHI)</option>
-        <option value="PHL">Philadelphia (PHL)</option>
-        <option value="ATL">Atlanta Hartsfield-Jackson (ATL)</option>
-        <option value="PDX">Portland (PDX)</option>
-        <option value="LAX">Los Angeles International (LAX)</option>
-        <option value="TPA">Tampa International (TPA)</option>
-        <option value="DFW">Dallas (DFW)</option>
-        <option value="SLC">Salt Lake City (SLC)</option>
-        <option value="MIA">Miami (MIA)</option>
-        <option value="MEX">Mexico City Juarez International (MEX)</option>
-        <option value="DEN">Denver International (DEN)</option>
-        <option value="YTO">Toronto (YTO)</option>
-        <option value="SFO">San Francisco International (SFO)</option>
-        <option value="RDU">Raleigh / Durham (RDU)</option>
-        <option value="PHX">Phoenix (PHX)</option>
-        <option value="SJC">San Jose International (SJC)</option>
-        <option value="LAS">Las Vegas Mccarran (LAS)</option>
-        <option value="MSY">New Orleans Louis Armstrong (MSY)</option>
-        <option value="SEA">Seattle (SEA)</option>
-        <option value="OAK">Oakland Metropolitan Oak (OAK)</option>
-        <option value="HOU">Houston (HOU)</option>
-        <option value="AUS">Austin-Bergstrom (AUS)</option>
-        <option value="CLT">Charlotte Douglas (CLT)</option>
-        <option value="CUN">Cancun (CUN)</option>
-        <option value="ORL">Orlando (ORL)</option>
-        <option value="YVR">Vancouver (YVR)</option>
-        <option value="BOS">Boston Logan International (BOS)</option>
-        <option value="YYC">Calgary (YYC)</option>
-        <option value="MSP">Minneapolis St Paul (MSP)</option>
+          <option disabled value="-"></option>
+          <option disabled value="-- North America --">North America</option>
+          <option disabled value="-"></option>
+          <option value="NYC">New York (NYC)</option>
+          <option value="SAN">San Diego (SAN)</option>
+          <option value="WAS">Washington (WAS)</option>
+          <option value="DTT">Detroit (DTT)</option>
+          <option value="CHI">Chicago (CHI)</option>
+          <option value="PHL">Philadelphia (PHL)</option>
+          <option value="ATL">Atlanta Hartsfield-Jackson (ATL)</option>
+          <option value="PDX">Portland (PDX)</option>
+          <option value="LAX">Los Angeles International (LAX)</option>
+          <option value="TPA">Tampa International (TPA)</option>
+          <option value="DFW">Dallas (DFW)</option>
+          <option value="SLC">Salt Lake City (SLC)</option>
+          <option value="MIA">Miami (MIA)</option>
+          <option value="MEX">Mexico City Juarez International (MEX)</option>
+          <option value="DEN">Denver International (DEN)</option>
+          <option value="YTO">Toronto (YTO)</option>
+          <option value="SFO">San Francisco International (SFO)</option>
+          <option value="RDU">Raleigh / Durham (RDU)</option>
+          <option value="PHX">Phoenix (PHX)</option>
+          <option value="SJC">San Jose International (SJC)</option>
+          <option value="LAS">Las Vegas Mccarran (LAS)</option>
+          <option value="MSY">New Orleans Louis Armstrong (MSY)</option>
+          <option value="SEA">Seattle (SEA)</option>
+          <option value="OAK">Oakland Metropolitan Oak (OAK)</option>
+          <option value="HOU">Houston (HOU)</option>
+          <option value="AUS">Austin-Bergstrom (AUS)</option>
+          <option value="CLT">Charlotte Douglas (CLT)</option>
+          <option value="CUN">Cancun (CUN)</option>
+          <option value="ORL">Orlando (ORL)</option>
+          <option value="YVR">Vancouver (YVR)</option>
+          <option value="BOS">Boston Logan International (BOS)</option>
+          <option value="YYC">Calgary (YYC)</option>
+          <option value="MSP">Minneapolis St Paul (MSP)</option>
 
-        <option disabled value="-"></option>
-        <option disabled value="-- Oceania --">Oceania</option>
-        <option disabled value="-"></option>
-        <option value="SYD">Sydney Kingsford Smith (SYD)</option>
-        <option value="NSN">Nelson (NSN)</option>
-        <option value="MEL">Melbourne (MEL)</option>
-        <option value="NAN">Nadi (NAN)</option>
-        <option value="BNE">Brisbane (BNE)</option>
-        <option value="DUD">Dunedin (DUD)</option>
-        <option value="AKL">Auckland (AKL)</option>
-        <option value="PPT">Papeete (PPT)</option>
-        <option value="ADL">Adelaide (ADL)</option>
-        <option value="NPE">Napier-Hastings (NPE)</option>
-        <option value="OOL">Gold Coast (OOL)</option>
-        <option value="PMR">Palmerston North (PMR)</option>
-        <option value="WLG">Wellington (WLG)</option>
-        <option value="NPL">New Plymouth (NPL)</option>
-        <option value="CNS">Cairns (CNS)</option>
-        <option value="BHE">Blenheim (BHE)</option>
-        <option value="CHC">Christchurch (CHC)</option>
-        <option value="TRG">Tauranga (TRG)</option>
-        <option value="ZQN">Queenstown (ZQN)</option>
-        <option value="HLZ">Hamilton (HLZ)</option>
+          <option disabled value="-"></option>
+          <option disabled value="-- Oceania --">Oceania</option>
+          <option disabled value="-"></option>
+          <option value="SYD">Sydney Kingsford Smith (SYD)</option>
+          <option value="NSN">Nelson (NSN)</option>
+          <option value="MEL">Melbourne (MEL)</option>
+          <option value="NAN">Nadi (NAN)</option>
+          <option value="BNE">Brisbane (BNE)</option>
+          <option value="DUD">Dunedin (DUD)</option>
+          <option value="AKL">Auckland (AKL)</option>
+          <option value="PPT">Papeete (PPT)</option>
+          <option value="ADL">Adelaide (ADL)</option>
+          <option value="NPE">Napier-Hastings (NPE)</option>
+          <option value="OOL">Gold Coast (OOL)</option>
+          <option value="PMR">Palmerston North (PMR)</option>
+          <option value="WLG">Wellington (WLG)</option>
+          <option value="NPL">New Plymouth (NPL)</option>
+          <option value="CNS">Cairns (CNS)</option>
+          <option value="BHE">Blenheim (BHE)</option>
+          <option value="CHC">Christchurch (CHC)</option>
+          <option value="TRG">Tauranga (TRG)</option>
+          <option value="ZQN">Queenstown (ZQN)</option>
+          <option value="HLZ">Hamilton (HLZ)</option>
 
-        <option disabled value="-"></option>
-        <option disabled value="-- South America --">South America</option>
-        <option disabled value="-"></option>
-        <option value="SAO">Sao Paulo (SAO)</option>
-        <option value="BUE">Buenos Aires (BUE)</option>
-        <option value="RIO">Rio De Janeiro (RIO)</option>
-        <option value="LIM">Lima (LIM)</option>
-        <option value="BOG">Bogota (BOG)</option>
-        <option value="SCL">Santiago Arturo Merino Benitez (SCL)</option>
+          <option disabled value="-"></option>
+          <option disabled value="-- South America --">South America</option>
+          <option disabled value="-"></option>
+          <option value="SAO">Sao Paulo (SAO)</option>
+          <option value="BUE">Buenos Aires (BUE)</option>
+          <option value="RIO">Rio De Janeiro (RIO)</option>
+          <option value="LIM">Lima (LIM)</option>
+          <option value="BOG">Bogota (BOG)</option>
+          <option value="SCL">Santiago Arturo Merino Benitez (SCL)</option>
 
-        <option disabled value="-"></option>
-        <option disabled value="-- South East Asia --">South East Asia</option>
-        <option disabled value="-"></option>
-        <option value="JKT">Jakarta (JKT)</option>
-        <option value="HKG">Hong Kong International (HKG)</option>
-        <option value="BKK">Bangkok (BKK)</option>
-        <option value="DPS">Bali (DPS)</option>
-        <option value="KUL">Kuala Lumpur (KUL)</option>
-        <option value="SIN">Singapore Changi (SIN)</option>
-        <option value="MNL">Manila Ninoy Aquino (MNL)</option>
-        <option value="TPE">Taipei (TPE)</option>
-        <option value="SGN">Ho Chi Minh City (SGN)</option>
-        <option value="CEB">Mactan-Cebu International (CEB)</option>
-        <option value="SUB">Surabaya (SUB)</option>
-        <option value="MFM">Surabaya (MFM)</option>
-        <option value="HAN">Surabaya (HAN)</option>
-      </select>
-    </div>
+          <option disabled value="-"></option>
+          <option disabled value="-- South East Asia --">South East Asia</option>
+          <option disabled value="-"></option>
+          <option value="JKT">Jakarta (JKT)</option>
+          <option value="HKG">Hong Kong International (HKG)</option>
+          <option value="BKK">Bangkok (BKK)</option>
+          <option value="DPS">Bali (DPS)</option>
+          <option value="KUL">Kuala Lumpur (KUL)</option>
+          <option value="SIN">Singapore Changi (SIN)</option>
+          <option value="MNL">Manila Ninoy Aquino (MNL)</option>
+          <option value="TPE">Taipei (TPE)</option>
+          <option value="SGN">Ho Chi Minh City (SGN)</option>
+          <option value="CEB">Mactan-Cebu International (CEB)</option>
+          <option value="SUB">Surabaya (SUB)</option>
+          <option value="MFM">Surabaya (MFM)</option>
+          <option value="HAN">Surabaya (HAN)</option>
+        </select>
+      </div>
 
-    <div>
-      <label for="image_one">Image One</label><br>
-      <input type="text" name="image" id="image1" ng-model="holidaysNew.holiday.image_one">
-    </div>
+      <div>
+        <label for="image_one">Image One</label><br>
+        <input type="text" name="image" id="image1" ng-model="holidaysNew.holiday.image_one">
+      </div>
 
-    <div>
-      <label for="image_two">Image Two</label><br>
-      <input type="text" name="image" id="image2" ng-model="holidaysNew.holiday.image_two">
-    </div>
+      <div>
+        <label for="image_two">Image Two</label><br>
+        <input type="text" name="image" id="image2" ng-model="holidaysNew.holiday.image_two">
+      </div>
 
-    <div>
-      <label for="image_three">Image Three</label><br>
-      <input type="text" name="image" id="image3" ng-model="holidaysNew.holiday.image_three">
-    </div>
+      <div>
+        <label for="image_three">Image Three</label><br>
+        <input type="text" name="image" id="image3" ng-model="holidaysNew.holiday.image_three">
+      </div>
 
-    <div>
-      <label for="image_four">Image Four</label><br>
-      <input type="text" name="image" id="image4" ng-model="holidaysNew.holiday.image_four">
-    </div>
-    <hr>
-    <button>Upload your Holiday</button>
-  </form>
-</section>
+      <div>
+        <label for="image_four">Image Four</label><br>
+        <input type="text" name="image" id="image4" ng-model="holidaysNew.holiday.image_four">
+      </div>
+
+      <button>Upload your Holiday</button>
+    </form>
+  </div>
+</div>

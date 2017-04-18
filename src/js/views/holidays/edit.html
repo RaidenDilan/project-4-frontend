@@ -1,6 +1,6 @@
 <section>
   <h1>Holiday Edit</h1>
-
+  
   <form ng-submit="holidaysEdit.update()">
     <div>
       <label for="text">Main Image</label><br>
@@ -261,6 +261,11 @@
           <option value="SUB">Surabaya (SUB)</option>
           <option value="MFM">Surabaya (MFM)</option>
           <option value="HAN">Surabaya (HAN)</option>
+
+          <option disabled value="-"></option>
+          <option disabled value="-- Indean Ocean --">Indean Ocean</option>
+          <option disabled value="-"></option>
+          <option value="HAQ">Hanimaadhoo International Airport (HAQ)</option>
       </select>
     </div>
 
@@ -283,7 +288,7 @@
       <label for="text">Image Four</label><br>
       <input type="text" name="image" id="image4" ng-model="holidaysEdit.holiday.image_four">
     </div>
-    <hr>
+    
     <button>Update your Holiday</button>
   </form>
 </section>

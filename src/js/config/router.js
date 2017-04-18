@@ -33,21 +33,26 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     controller: 'HolidaysEditCtrl as holidaysEdit'
   })
 //---------------------------------GROUP--------------------------------------//
-  // .state('groupsNew', {
-  //   url: '/groups/new',
-  //   templateUrl: 'js/views/groups/new.html',
-  //   controller: 'GroupsNewCtrl as groupsNew'
-  // })
-  // .state('groupsShow', {
-  //   url: '/groups/:id',
-  //   templateUrl: 'js/views/groups/show.html',
-  //   controller: 'GroupsShowCtrl as groupShow'
-  // })
-  // .state('groupsEdit', {
-  //   url: '/groups/:id/edit',
-  //   templateUrl: 'js/views/groups/edit.html',
-  //   controller: 'GroupsEditCtrl as groupsEdit'
-  // })
+  .state('groupsIndex', {
+    url: '/groups',
+    templateUrl: 'js/views/groups/index.html',
+    controller: 'GroupsIndexCtrl as groupsIndex'
+  })
+  .state('groupsNew', {
+    url: '/groups/new',
+    templateUrl: 'js/views/groups/new.html',
+    controller: 'GroupsNewCtrl as groupsNew'
+  })
+  .state('groupsShow', {
+    url: '/groups/:id',
+    templateUrl: 'js/views/groups/show.html',
+    controller: 'GroupsShowCtrl as groupsShow'
+  })
+  .state('groupsEdit', {
+    url: '/groups/:id/edit',
+    templateUrl: 'js/views/groups/edit.html',
+    controller: 'GroupsEditCtrl as groupsEdit'
+  })
 //----------------------------------USERS-------------------------------------//
   .state('usersShow', {
     url: '/users/:id',
@@ -58,6 +63,12 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     url: '/users/:id/edit',
     templateUrl: 'js/views/users/edit.html',
     controller: 'UsersEditCtrl as usersEdit'
+  })
+//-----------------------------USER'S GROUPS----------------------------------//
+  .state('usersGroupsIndex', {
+    url: '/users/:id/groups',
+    templateUrl: 'js/views/users/groups/index.html',
+    controller: 'UsersGroupsIndexCtrl as usersGroupsIndex'
   })
 //----------------------------------BUDGET------------------------------------//
   .state('budgetShow', {

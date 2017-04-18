@@ -1,7 +1,8 @@
 angular
   .module('holiday')
   .controller('UsersShowCtrl', UsersShowCtrl)
-  .controller('UsersEditCtrl', UsersEditCtrl);
+  .controller('UsersEditCtrl', UsersEditCtrl)
+  .controller('UsersGroupsIndexCtrl', UsersGroupsIndexCtrl);
 
 UsersShowCtrl.$inject = ['User', '$stateParams', '$state', '$auth'];
 function UsersShowCtrl(User, $stateParams, $state, $auth) {
@@ -30,4 +31,12 @@ function UsersEditCtrl(User, $stateParams, $state) {
       .then(() => $state.go('usersShow', $stateParams));
   }
   vm.update = usersUpdate;
+}
+
+UsersGroupsIndexCtrl.$inject = ['User', '$stateParams', '$state', '$auth'];
+function UsersGroupsIndexCtrl(User, $stateParams, $state, $auth) {
+  const vm = this;
+
+  vm.groups = User.get({ id: $auth.getPayload().id });
+
 }

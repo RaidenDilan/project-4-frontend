@@ -1,1 +1,12 @@
-<h1>Group New</h1>
+<div>
+  <h1>Create a new Group</h1>
+
+  <form ng-submit="groupsNew.create()">
+    <div>
+      <label for="name">Group Name</label><br>
+      <input type="name" name="name" id="name" ng-model="groupsNew.group.name">
+    </div>
+
+    <button>Create Group</button>
+  </form>
+</div>

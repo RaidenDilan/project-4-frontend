@@ -1,3 +1,7 @@
 <h1>Group Show</h1>
 
-{{ groupsShow.group }}
+<p><strong>Group Name: </strong>{{ groupsShow.group.name }}</p>
+<p>{{ groupsShow.group.user }}</p>
+
+<button ng-if="main.authenticated()" ui-sref="groupsEdit({ id: groupsShow.group.id })">Edit</button>
+<button ng-if="main.authenticated()" ng-click="groupsShow.delete()">Delete</button>

@@ -17,6 +17,7 @@ function MainCtrl($rootScope, $state, $auth) {
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
     if($auth.getPayload()) vm.currentUser = $auth.getPayload();
+    console.log('Current User', vm.currentUser);
   });
 
   const protectedStates = ['holidaysNew', 'holidaysEdit']; // ANY PAGES YOU DON'T WANT ANYONE TO HAVE ACCESS, PROTECT IT. IT WILL REDIRECT THE CLIENT TO THE LOGIN PAGE AND DISPPLAY A MESSAGE 'You must be logged in'.
@@ -32,7 +33,7 @@ function MainCtrl($rootScope, $state, $auth) {
 
   function logout() {
     $auth.logout();
-    $state.go('home');
+    $state.go('login');
   }
 
   vm.logout = logout;

@@ -1,24 +1,31 @@
 <section>
   <h1>Holiday Show</h1>
   <!-- {{ holidaysShow.holiday }} -->
-  <hr>
+  
   <img ng-src="{{ holidaysShow.holiday.cover_photo }}" alt="{{ holidaysShow.holiday.location }}">
-  <hr>
+  
   <h2>Location: {{ holidaysShow.holiday.location }}</h2>
   <p>Nearest Airport: {{ holidaysShow.holiday.nearest_airport }}</p>
   <p>Attractions: {{ holidaysShow.holiday.attractions }}</p>
   <p>Description: {{ holidaysShow.holiday.description }}</p>
   <p>When to Go?: {{ holidaysShow.holiday.when_to_go }}</p>
-  <hr>
+  
   <img ng-src="{{ holidaysShow.holiday.image_one }}" alt="{{ holidaysShow.holiday.location }}">
   <img ng-src="{{ holidaysShow.holiday.image_two }}" alt="{{ holidaysShow.holiday.location }}">
   <img ng-src="{{ holidaysShow.holiday.image_three }}" alt="{{ holidaysShow.holiday.location }}">
   <img ng-src="{{ holidaysShow.holiday.image_four }}" alt="{{ holidaysShow.holiday.location }}">
   <p>Created By: {{ holidaysShow.holiday.user.full_name }}</p>
-  <hr>
-  <button ui-sref="holidaysEdit({ id: holidaysShow.holiday.id })">Edit</button>
   
-  <button ng-click="holidaysShow.delete()">Delete</button>
+  <button ng-if="main.authenticated()" ui-sref="holidaysEdit({ id: holidaysShow.holiday.id })">Edit</button>
+
+  <button ng-if="main.authenticated()" ng-click="holidaysShow.delete()">Delete</button>
 
   <button ui-sref="budgetShow({ id: holidaysShow.holiday.id })">Flight & Budget</button>
 </section>
+
+<div class="map">
+  <h3>Location</h3>
+  <ng-map center="[{{ holiday.location }}, {{ holiday.location }}]" zoom="13" scrollwheel="false">
+    <marker position="[{{ holiday.location }}, {{ holiday.location }}]" animation="DROP"></marker>
+  </ng-map>
+</div>
