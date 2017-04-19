@@ -12,20 +12,30 @@ function HolidaysIndexCtrl(Holiday) {
   vm.all = Holiday.query();
 }
 
-HolidaysNewCtrl.$inject = ['User', 'Holiday', '$state'];
-function HolidaysNewCtrl(User, Holiday, $state) {
+HolidaysNewCtrl.$inject = ['Group', 'User', 'Holiday', '$state', '$stateParams'];
+function HolidaysNewCtrl(Group, User, Holiday, $state, $stateParams) {
   const vm = this;
 
   vm.holiday = {};
 
+  vm.group = Group.query($stateParams);
+  // vm.group = Group.get($stateParams);
+  // console.log('1 Group', vm.group.id);
+  console.log('2 Group', vm.group);
+  // console.log('3 Group', vm.group.ids);
+  // console.log('4 Group', vm.group.id);
+  console.log('Current Group', vm.group.id);
+  console.log('Groups', vm.group);
+  console.log('Group id', $stateParams);
+
   function holidaysCreate() {
     Holiday
-      .save({ holiday: vm.holiday })
+      .save({ holiday: vm.holiday, group: vm.group })
       .$promise
-      .then(() => $state.go('holidaysIndex'));
+      .then((holiday) => $state.go('holidaysShow', { id: holiday.id }));
   }
-
   vm.create = holidaysCreate;
+  console.log('Current Group', vm.group);
 }
 
 HolidaysShowCtrl.$inject = ['Holiday', '$stateParams', '$state'];
@@ -56,6 +66,5 @@ function HolidaysEditCtrl(Holiday, $stateParams, $state) {
       .$promise
       .then(() => $state.go('holidaysShow', $stateParams));
   }
-
   vm.update = holidaysUpdate;
 }

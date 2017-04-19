@@ -24,6 +24,7 @@ function UsersEditCtrl(User, $stateParams, $state) {
   const vm = this;
 
   vm.user = User.get($stateParams);
+  console.log($stateParams);
 
   function usersUpdate() {
     vm.user

@@ -1,12 +1,20 @@
 <section>
-  <h1>Group Edit</h1>
-  
   <form ng-submit="groupsEdit.update()">
     <div>
       <label for="name">Group Name</label><br>
       <input type="name" name="name" id="name" ng-model="groupsEdit.group.name">
     </div>
-    
+
+    <div class="attendees">
+      {{ groupsNew.group }}
+      <label for="name">Attendees</label>
+
+      <label ng-repeat="user in groupsEdit.users">
+        <input type="checkbox" name="attendees" checklist-model="groupsEdit.group.attendee_ids" checklist-value="user.id" >
+        {{ user.username }}
+      </label>
+    </div>
+
     <button>Update your Group</button>
   </form>
 </section>

@@ -1,6 +1,4 @@
 <section>
-  <h1>Edit Profile</h1>
-  
   <img ng-src="{{ usersEdit.user.image }}">
   <div>
     <form ng-submit="usersEdit.update()">
@@ -277,10 +275,10 @@
       </div>
 
       <div>
-        <label for="text">Profile Image</label>
-        <input type="text" name="text" id="text" ng-model="usersEdit.user.image">
+        <label for="base64">Profile Image</label>
+        <input type="file" base64 name="base64" id="base64" ng-model="usersEdit.user.base64">
       </div>
-      
+
       <button class="button">Update</button>
     </form>
   </div>

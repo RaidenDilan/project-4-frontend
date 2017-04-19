@@ -17,8 +17,7 @@ function GroupsNewCtrl(Group, User, Holiday, $state) {
   const vm = this;
 
   vm.group = {};
-  vm.user = {};
-  vm.allUsers = User.query();
+  vm.users = User.query();
 
   function groupsCreate() {
     Group
@@ -26,34 +25,65 @@ function GroupsNewCtrl(Group, User, Holiday, $state) {
       .$promise
       .then((group) => $state.go('groupsShow', { id: group.id }));
   }
-
   vm.create = groupsCreate;
 }
 
-GroupsShowCtrl.$inject = ['User', 'Group', 'Holiday', '$stateParams', '$state'];
-function GroupsShowCtrl(User, Group, Holiday, $stateParams, $state) {
+GroupsShowCtrl.$inject = ['User', 'Group', 'Holiday', '$stateParams', '$state', '$auth'];
+function GroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth) {
   const vm = this;
+  if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
 
-  // vm.user = {};
+  vm.holiday = {};
+  vm.holiday = Holiday.query();
 
-  // vm.holiday = Holiday.get($stateParams);
+  Group.get($stateParams, (data) => {
+    vm.group = data;
+    console.log(vm.group);
+  });
 
-  vm.group = Group.get($stateParams); // --------------- SHIIIIIIIIT!!!🖕🏻
+  vm.group = Group.get($stateParams);
   console.log('Group', $stateParams);
 
   function groupsDelete() {
     vm.group
       .$remove()
-      .then(() => $state.go('groupsIndex'));
+      .then(() => $state.go('usersGroupsIndex'));
   }
   vm.delete = groupsDelete;
+
+  function groupsUpdate() {
+    Group
+      .update({id: vm.group.id, group: vm.group });
+  }
+
+  function toggleAttending() {
+    const index = vm.group.attendee_ids.indexOf(vm.currentUser.id);
+    if(index > -1) {
+      vm.group.attendee_ids.splice(index, 1);
+      vm.group.attendees.splice(index, 1);
+    } else {
+      vm.group.attendee_ids.push(vm.currentUser.id);
+      vm.group.attendees.push(vm.currentUser);
+    }
+    groupsUpdate();
+  }
+
+  vm.toggleAttending = toggleAttending;
+
+  function isAttending() {
+    return $auth.getPayload() && vm.group.$resolved && vm.group.attendee_ids.includes(vm.currentUser.id);
+  }
+
+  vm.isAttending = isAttending;
 }
 
-GroupsEditCtrl.$inject = ['Group', '$stateParams', '$state'];
-function GroupsEditCtrl(Group, $stateParams, $state) {
+GroupsEditCtrl.$inject = ['User', 'Group', '$stateParams', '$state'];
+function GroupsEditCtrl(User, Group, $stateParams, $state) {
   const vm = this;
 
   vm.group = Group.get($stateParams);
+  console.log($stateParams);
+  vm.users = User.query();
 
   function groupsUpdate() {
     Group

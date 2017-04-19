@@ -24,13 +24,4 @@ function BudgetShowCtrl(Holiday, $stateParams, skyscanner, $state) {
         vm.flights = quotes;
       });
   }
-
-  // function createTrip() {
-  //   Holiday
-  //     .save({ holiday: vm.holiday })
-  //     .$promise
-  //     .then(() => $state.go('holidaysIndex'));
-  // }
-  //
-  // vm.create = createTrip;
 }

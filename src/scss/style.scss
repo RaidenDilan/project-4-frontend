@@ -80,17 +80,17 @@ p {
 button {
   margin: 10px;
     width: 50%;
-    background: #00DDFF;
-    border: 2px solid #00DDFF;
+    // background: #00DDFF;
+    // border: 2px solid #00DDFF;
     height: 40px;
     border-radius: 500px;
-    color: #fff;
+    // color: #fff;
     font-size: 14px;
     outline: 0;
     padding: 5px;
-    appearance: none;
-    box-sizing: initial;
-    transition: all .5s ease;
+    // appearance: none;
+    // box-sizing: initial;
+    // transition: all .5s ease;
 }
 
 .usersInfo img {
@@ -122,7 +122,7 @@ section {
 }
 
 img {
-  max-width: 100%;
+  max-width: 25%;
   border-style: none;
 }
 
@@ -166,12 +166,13 @@ main {
   padding: 20px;
   width: 80%;
   top: 50px;
+  text-align: center;
 }
 
 .newHolidaySection {
   top: 0;
     width: 100vw;
-    background-color: rgba(36,39,43,.7);
+    // background-color: rgba(36,39,43,.7);
     display: box;
     display: -webkit-flex;
     display: -moz-flex;
@@ -186,4 +187,35 @@ main {
 
 .groupsIndex {
   text-align: center;
+  margin-top: 60px;
+}
+
+.createGroupForm {
+  text-align: center;
+}
+
+.groupsShow {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.holidaysShow {
+  text-align: center;
+}
+
+.usersShow {
+  text-align: center;
+}
+
+div {
+  &.attendees {
+    padding-left: 10px;
+    label {
+      // margin-left: 10px;
+      position: relative;
+      display: block;
+      padding-top: 5px;
+      padding-left: 5px;
+    }
+  }
 }

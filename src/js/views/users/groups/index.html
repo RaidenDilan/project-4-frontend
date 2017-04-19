@@ -1,8 +1,8 @@
-<div class="groupsIndex">
-  <h1>Your Groups</h1>
-
-  <div ng-repeat="group in usersGroupsIndex.groups.groups_created">
-    <a ui-sref="groupsShow({ id: group.id })">{{ group.name }}</a>
+<section>
+  <div class="groupsIndex">
+    <h1>Your Groups</h1>
+    <div ng-repeat="group in usersGroupsIndex.groups.groups_created">
+      <a ui-sref="groupsShow({ id: group.id })">{{ group.name }}</a>
+    </div>
   </div>
-
-</div>
+</section>

@@ -1,9 +1,12 @@
-<ul>
-  <a ui-sref="holidaysNew"><img ng-src="/src/images/add.jpeg" type="image/jpeg" alt=""></a>
-  <li ng-repeat="holiday in holidaysIndex.all" class="imageGrid">
-    <a ui-sref="holidaysShow({ id: holiday.id })"><img ng-src="{{ holiday.cover_photo }}"></a>
-    <!-- <h2>{{ holiday.location }}</h2> -->
-    <!-- <p>Created By: {{ holiday.user.full_name }}</p> -->
-
-  </li>
-</ul>
+<section>
+  <div>
+    <ul>
+      <a ui-sref="holidaysNew">New Holiday</a>
+      <li ng-repeat="holiday in holidaysIndex.all" class="imageGrid">
+        <a ui-sref="holidaysShow({ id: holiday.id })"><img ng-src="{{ holiday.cover_photo }}"></a>
+        <!-- <h2>{{ holiday.location }}</h2> -->
+        <!-- <p>Created By: {{ holiday.user.full_name }}</p> -->
+      </li>
+    </ul>
+  </div>
+</section>
