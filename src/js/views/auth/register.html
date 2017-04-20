@@ -51,5 +51,7 @@
 
       <button>Register</button>
     </form>
+    <p>Already Registered?</p>
+    <button ng-if="!main.authenticate()" ui-sref="login">Login Here</button>
   </div>
 </div>

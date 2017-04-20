@@ -18,24 +18,19 @@ function HolidaysNewCtrl(Group, User, Holiday, $state, $stateParams) {
 
   vm.holiday = {};
 
-  vm.group = Group.query($stateParams);
-  // vm.group = Group.get($stateParams);
-  // console.log('1 Group', vm.group.id);
-  console.log('2 Group', vm.group);
-  // console.log('3 Group', vm.group.ids);
-  // console.log('4 Group', vm.group.id);
-  console.log('Current Group', vm.group.id);
-  console.log('Groups', vm.group);
-  console.log('Group id', $stateParams);
+  vm.group = Group.get($stateParams);
+  console.log('My Groups', vm.group);
+  console.log('Group ID', $stateParams);
+  // console.log('Group ID', $state.params);
 
   function holidaysCreate() {
+    vm.holiday.group_id = vm.group.id; // we are passing in the group id here when creating a new holiday
     Holiday
       .save({ holiday: vm.holiday, group: vm.group })
       .$promise
       .then((holiday) => $state.go('holidaysShow', { id: holiday.id }));
   }
   vm.create = holidaysCreate;
-  console.log('Current Group', vm.group);
 }
 
 HolidaysShowCtrl.$inject = ['Holiday', '$stateParams', '$state'];
@@ -43,7 +38,8 @@ function HolidaysShowCtrl(Holiday, $stateParams, $state) {
   const vm = this;
 
   vm.holiday = Holiday.get($stateParams);
-  console.log('Holiday Show', $stateParams);
+  console.log('Holiday Show ID', $stateParams);
+  console.log('Holiday Show', vm.holiday);
 
   function holidaysDelete() {
     vm.holiday
@@ -59,6 +55,12 @@ function HolidaysEditCtrl(Holiday, $stateParams, $state) {
 
   vm.holiday = Holiday.get($stateParams);
   console.log('Holiday Edit', $stateParams);
+
+  Holiday.get($stateParams).$promise.then((holiday) => {
+    vm.holiday = holiday;
+    vm.holiday.date = new Date(holiday.date);
+    console.log('vm.holiday.date', vm.holiday.date);
+  });
 
   function holidaysUpdate() {
     Holiday

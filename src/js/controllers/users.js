@@ -9,6 +9,7 @@ function UsersShowCtrl(User, $stateParams, $state, $auth) {
   const vm = this;
 
   vm.user = User.get({ id: $auth.getPayload().id });
+  // console.log('Logged in user',vm.user);
 
   function usersDelete() {
     $auth.logout();
@@ -24,7 +25,8 @@ function UsersEditCtrl(User, $stateParams, $state) {
   const vm = this;
 
   vm.user = User.get($stateParams);
-  console.log($stateParams);
+  // console.log($stateParams);
+  // console.log(vm.user);
 
   function usersUpdate() {
     vm.user

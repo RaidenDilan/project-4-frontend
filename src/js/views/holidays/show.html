@@ -7,6 +7,10 @@
 
     <h2>Location: {{ holidaysShow.holiday.location }}</h2>
     <p>Nearest Airport: {{ holidaysShow.holiday.nearest_airport }}</p>
+    <p>Departure Date: {{ holidaysShow.holiday.departureDate }}</p>
+    <p>Return Date: {{ holidaysShow.holiday.returnDate }}</p>
+    <p>Departure Airport: {{ holidaysShow.holiday.departureAirport }}</p>
+    <p>Arrival Airport: {{ holidaysShow.holiday.arrivalAirport }}</p>
     <p>Attractions: {{ holidaysShow.holiday.attractions }}</p>
     <p>Description: {{ holidaysShow.holiday.description }}</p>
     <p>When to Go?: {{ holidaysShow.holiday.when_to_go }}</p>
@@ -17,17 +21,22 @@
     <img ng-src="{{ holidaysShow.holiday.image_four }}" alt="{{ holidaysShow.holiday.location }}">
     <p>Created By: {{ holidaysShow.holiday.user.full_name }}</p>
 
-    <button ng-if="main.authenticated()" ui-sref="holidaysEdit({ id: holidaysShow.holiday.id })">Edit</button>
+    <!-- <button ng-if="main.authenticated()" ui-sref="holidaysEdit({ id: holidaysShow.holiday.id })">Edit</button> -->
+    <button ui-sref="holidaysEdit({ id: holidaysShow.holiday.id })">Edit</button>
 
-    <button ng-if="main.authenticated()" ng-click="holidaysShow.delete()">Delete</button>
+    <!-- <button ng-if="main.authenticated()" ng-click="holidaysShow.delete()">Delete</button> -->
+    <button ng-click="holidaysShow.delete()">Delete</button>
 
-    <button ui-sref="budgetShow({ id: holidaysShow.holiday.id })">Flight & Budget</button>
-  </section>
+    <button ui-sref="flightsShow({ id: holidaysShow.holiday.id })">Flight &amp; Budget</button>
 
-  <div class="map">
-    <h3>Location</h3>
-    <!-- <ng-map center="[{{ holiday.location }}, {{ holiday.location }}]" zoom="13" scrollwheel="false"> -->
-      <!-- <marker position="[{{ holiday.location }}, {{ holiday.location }}]" animation="DROP"></marker> -->
-    <!-- </ng-map> -->
   </div>
-</div>
+</section>
+<!-- <div class="map">
+  <h3>Location</h3>
+  <ng-map center="[{{ holiday.lat }}, {{ holiday.lng }}]" zoom="13" scrollwheel="false">
+    <marker position="[{{ holiday.lat }}, {{ holiday.lng }}]" animation="DROP"></marker>
+  </ng-map>
+  <ng-map center="[40.74, -74.18]" zoom="13" scrollwheel="false">
+    <marker position="[40.74, -74.18]" animation="DROP"></marker>
+  </ng-map>
+</div> -->

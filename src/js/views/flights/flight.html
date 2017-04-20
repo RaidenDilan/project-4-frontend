@@ -1,0 +1,95 @@
+<section>
+  <div>
+    <h1>Flights to {{ holidaysShow.holiday.location }}</h1>
+    <ul>
+      <li ng-repeat="flight in flightsShow.flights">
+        <div>
+
+          <div>
+            <h3>Date: {{ flight.OutboundLeg.DepartureDate | date:'dd-MM-yyyy' }}</h3>
+          </div>
+
+          <div>
+            <h3>Min Price: £{{ flight.MinPrice }}</h3>
+          </div>
+
+          <div>
+            <h3>Airline: {{ flight.CarrierName }}</h3>
+            <h3>Airport Code: {{ flight.IataCode }}</h3>
+          </div>
+
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div>
+    <!-- {{ flightsShow.getFlights }} -->
+    <!-- {{ flightsShow.holiday }} -->
+    <hr>
+    <!-- {{ flightsShow }} -->
+    <hr>
+    <form ng-submit="flightsShow.getFlights()">
+      {{ flightsShow.holiday }}
+
+      <p><strong>Recommended months are: </strong>{{ flightsShow.holiday.when_to_go }}</p>
+
+      <div>
+        <label for="departureDate">Departure Date</label>
+        <input ng-model="flightsShow.holiday.departureDate" type="text" name="departureDate">
+      </div>
+
+      <div>
+        <label for="returnDate">Return Date</label>
+        <input ng-model="flightsShow.holiday.returnDate" type="text" name="returnDate">
+      </div>
+
+      <div>
+        <label for="departureAirport">Departure Airport</label>
+        <input ng-model="flightsShow.holiday.departureAirport" type="text" name="departureAirport" disabled="true">
+      </div>
+
+      <div>
+        <label for="arrivalAirport">Arrival Airport</label>
+        <input ng-model="flightsShow.holiday.arrivalAirport" type="text" name="arrivalAirport" disabled="true">
+      </div>
+
+      <div ng-if="flightsShow.getFlights">
+        <button>Find Flights</button>
+      </div>
+    </form>
+  </div>
+
+  <hr>
+
+  <div>
+    <h2>Flight Cost</h2>
+    {{ flight.MinPrice }}
+    <input ng-if="!flightsShow.flights.MinPrice" ng-model="flightsShow.flight.MinPrice" type="text" name="MinPrice">
+
+    <h2>Accommodation Cost</h2>
+    <!-- <p>Based on the length of your trip, the estimated cost is {{ flightsShow.price }}</p> -->
+
+    <form ng-submit="flightsShow.createTrip()" class="ng-pristine ng-valid">
+      <div>
+        <input ng-model="flightsShow.accomodationCost" type="number" name="accommodationCost">
+      </div>
+
+      <h2>Spending Money</h2>
+      <!-- <p>Based on the length of your trip, the estimated cost is {{ flightsShow.price }}</p> -->
+      <div>
+        <input ng-model="flightsShow.expenses" type="number" name="expenses">
+      </div>
+
+      <button>Save Holiday</button>
+    </form>
+  </div>
+</section>
+
+<!-- <div>
+<h3>Recent crime</h3>
+<canvas id="doughnut" class="chart chart-doughnut" chart-data="groupsPropsShow.crimes.pieCrimeData" chart-labels="groupsPropsShow.labels" chart-legend="false">
+</canvas>
+</div> -->

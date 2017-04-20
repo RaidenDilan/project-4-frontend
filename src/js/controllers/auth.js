@@ -8,7 +8,7 @@ function LoginCtrl($auth, $state) {
 
   function authenticate(provider) {
     $auth.authenticate(provider)
-      .then(user => console.log(user));
+      .then(user => console.log('USER', user));
   }
 
   vm.authenticate = authenticate;

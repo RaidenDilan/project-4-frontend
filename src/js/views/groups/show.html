@@ -9,13 +9,18 @@
 
     <button ui-sref="groupsEdit({ id: groupsShow.group.id })">Edit</button>
     <button ng-click="groupsShow.delete()">Delete</button>
-    <!-- <button ng-if="main.authenticated()" ui-sref="groupsEdit({ id: groupsShow.group.id })">Edit</button> -->
+    <button ui-sref="holidaysNew({ id: groupsShow.group.id })">New Holiday</button>
+    <!-- <button ng-if="main.authenticated()" ui-sref="groupsEdit({ id: groupsShow.group.id }">Edit</button> -->
     <!-- <button ng-if="main.authenticated()" ng-click="groupsShow.delete()">Delete</button> -->
   </div>
 
   <div class="groupsShow">
+    <h1>Holidays</h1>
+    {{ holidays }}
+    {{ holiday }}
+    {{ holidaysShow.holidays }}
     <ul>
-      <li ng-repeat="holiday in holidaysIndex.all" class="imageGrid">
+      <li ng-repeat="holiday in holidaysIndex" class="imageGrid">
         <a ui-sref="holidaysShow({ id: holiday.id })"><img ng-src="{{ holiday.cover_photo }}"></a>
       </li>
     </ul>
@@ -28,13 +33,11 @@
     <h1>Attending</h1>
     <ul>
       <li ng-repeat="attendee in groupsShow.group.attendees">
-        <p><a ui-sref="usersShow({ id: user.id })">{{ attendee.username }}</a></p>
+        <p><a ui-sref="usersShow({ id: attendee.id })">{{ attendee.username }}</a></p>
       </li>
     </ul>
   </div>
   <!-- {{ groupsShow.group }} -->
-
-    <a ui-sref="holidaysNew">New Holiday</a>
   <ul>
     {{ holidays }}
     <li ng-repeat="holiday in holidaysIndex.all" class="imageGrid">

@@ -1,16 +1,16 @@
 angular
   .module('holiday')
-  .controller('GroupsIndexCtrl', GroupsIndexCtrl)
+  // .controller('GroupsIndexCtrl', GroupsIndexCtrl)
   .controller('GroupsNewCtrl', GroupsNewCtrl)
   .controller('GroupsShowCtrl', GroupsShowCtrl)
   .controller('GroupsEditCtrl', GroupsEditCtrl);
 
-GroupsIndexCtrl.$inject = ['Group'];
-function GroupsIndexCtrl(Group) {
-  const vm = this;
-
-  vm.all = Group.query();
-}
+// GroupsIndexCtrl.$inject = ['Group'];
+// function GroupsIndexCtrl(Group) {
+//   const vm = this;
+//
+//   vm.all = Group.query();
+// }
 
 GroupsNewCtrl.$inject = ['Group', 'User', 'Holiday', '$state'];
 function GroupsNewCtrl(Group, User, Holiday, $state) {
@@ -34,15 +34,18 @@ function GroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth) {
   if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
 
   vm.holiday = {};
-  vm.holiday = Holiday.query();
+  // vm.holiday = Holiday.query($stateParams);
+  vm.holiday = Holiday.get($stateParams);
+  console.log('Group Holidays',vm.holiday);
+  // console.log('Group Holidays',$stateParams);
 
   Group.get($stateParams, (data) => {
     vm.group = data;
-    console.log(vm.group);
+    console.log('This Group you are in', vm.group);
   });
 
   vm.group = Group.get($stateParams);
-  console.log('Group', $stateParams);
+  console.log('This Group ID', $stateParams);
 
   function groupsDelete() {
     vm.group
@@ -82,7 +85,7 @@ function GroupsEditCtrl(User, Group, $stateParams, $state) {
   const vm = this;
 
   vm.group = Group.get($stateParams);
-  console.log($stateParams);
+  console.log('This group here', $stateParams);
   vm.users = User.query();
 
   function groupsUpdate() {
