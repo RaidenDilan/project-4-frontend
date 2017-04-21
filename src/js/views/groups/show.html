@@ -1,47 +1,33 @@
-<section>
-  <div class="groupsShow">
-
-    <p><strong>Group Name: </strong>{{ groupsShow.group.name }}</p>
-    <p>{{ groupsShow.group.user }}</p>
-
-    <button ng-click="groupsShow.toggleAttending()" ng-if="main.isAuthenticated() && !groupsShow.isAttending()">Attend</button>
-    <button ng-click="groupsShow.toggleAttending()" ng-if="main.isAuthenticated() && groupsShow.isAttending()">Leave</button>
-
-    <button ui-sref="groupsEdit({ id: groupsShow.group.id })">Edit</button>
-    <button ng-click="groupsShow.delete()">Delete</button>
-    <button ui-sref="holidaysNew({ id: groupsShow.group.id })">New Holiday</button>
-    <!-- <button ng-if="main.authenticated()" ui-sref="groupsEdit({ id: groupsShow.group.id }">Edit</button> -->
-    <!-- <button ng-if="main.authenticated()" ng-click="groupsShow.delete()">Delete</button> -->
-  </div>
-
-  <div class="groupsShow">
-    <h1>Holidays</h1>
-    {{ holidays }}
-    {{ holiday }}
-    {{ holidaysShow.holidays }}
-    <ul>
-      <li ng-repeat="holiday in holidaysIndex" class="imageGrid">
-        <a ui-sref="holidaysShow({ id: holiday.id })"><img ng-src="{{ holiday.cover_photo }}"></a>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <div>
-    <!-- {{ groups }} -->
-    <h1>Attending</h1>
-    <ul>
-      <li ng-repeat="attendee in groupsShow.group.attendees">
-        <p><a ui-sref="usersShow({ id: attendee.id })">{{ attendee.username }}</a></p>
-      </li>
-    </ul>
-  </div>
-  <!-- {{ groupsShow.group }} -->
+<div>
+  <h1>Users</h1>
   <ul>
-    {{ holidays }}
-    <li ng-repeat="holiday in holidaysIndex.all" class="imageGrid">
+    <li ng-repeat="attendee in groupsShow.group.attendees">
+      <p><a ui-sref="usersShow({ id: attendee.id })"><img ng-src="{{ attendee.image_src }}" class="profile"></a></p>
+    </li>
+  </ul>
+</div>
+
+<hr>
+
+<div>
+  <p><strong>Group Name: </strong>{{ groupsShow.group.name }}</p>
+  <p>{{ groupsShow.group.user }}</p>
+
+  <button ng-click="groupsShow.toggleAttending()" ng-if="main.isAuthenticated() && !groupsShow.isAttending()">Attend</button>
+  <button ng-click="groupsShow.toggleAttending()" ng-if="main.isAuthenticated() && groupsShow.isAttending()">Leave</button>
+  <button ng-if="main.isAuthenticated()" ui-sref="groupsEdit({ id: groupsShow.group.id })">Edit</button>
+  <button ng-if="main.isAuthenticated()" ng-click="groupsShow.delete()">Delete</button>
+  <button ui-sref="holidaysNew({ id: groupsShow.group.id })">New Holiday</button>
+</div>
+
+<hr>
+
+<div>
+  <h1>Holidays</h1>
+  <ul>
+    <li ng-repeat="holiday in groupsShow.group.holidays">
+      <br>
       <a ui-sref="holidaysShow({ id: holiday.id })"><img ng-src="{{ holiday.cover_photo }}"></a>
     </li>
   </ul>
-</section>
+</div>

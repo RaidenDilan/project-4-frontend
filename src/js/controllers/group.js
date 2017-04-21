@@ -19,6 +19,10 @@ function GroupsNewCtrl(Group, User, Holiday, $state) {
   vm.group = {};
   vm.users = User.query();
 
+  // vm.holiday = Holiday.query($stateParams);
+  // console.log('GROUPS NEW', vm.holiday);
+  // console.log($stateParams);
+
   function groupsCreate() {
     Group
       .save({ group: vm.group })
@@ -26,6 +30,7 @@ function GroupsNewCtrl(Group, User, Holiday, $state) {
       .then((group) => $state.go('groupsShow', { id: group.id }));
   }
   vm.create = groupsCreate;
+
 }
 
 GroupsShowCtrl.$inject = ['User', 'Group', 'Holiday', '$stateParams', '$state', '$auth'];
@@ -33,19 +38,20 @@ function GroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth) {
   const vm = this;
   if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
 
-  vm.holiday = {};
+  // vm.holiday = {};
+
   // vm.holiday = Holiday.query($stateParams);
-  vm.holiday = Holiday.get($stateParams);
-  console.log('Group Holidays',vm.holiday);
+  // vm.holiday = Holiday.query();
+  // console.log('Group Controller',vm.holiday);
   // console.log('Group Holidays',$stateParams);
 
   Group.get($stateParams, (data) => {
     vm.group = data;
-    console.log('This Group you are in', vm.group);
+    console.log('My Group', vm.group);
   });
 
   vm.group = Group.get($stateParams);
-  console.log('This Group ID', $stateParams);
+  // console.log('This Group ID', $stateParams);
 
   function groupsDelete() {
     vm.group
@@ -85,7 +91,7 @@ function GroupsEditCtrl(User, Group, $stateParams, $state) {
   const vm = this;
 
   vm.group = Group.get($stateParams);
-  console.log('This group here', $stateParams);
+  // console.log('This group here', $stateParams);
   vm.users = User.query();
 
   function groupsUpdate() {

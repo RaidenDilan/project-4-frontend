@@ -19,9 +19,6 @@ function HolidaysNewCtrl(Group, User, Holiday, $state, $stateParams) {
   vm.holiday = {};
 
   vm.group = Group.get($stateParams);
-  console.log('My Groups', vm.group);
-  console.log('Group ID', $stateParams);
-  // console.log('Group ID', $state.params);
 
   function holidaysCreate() {
     vm.holiday.group_id = vm.group.id; // we are passing in the group id here when creating a new holiday
@@ -38,8 +35,6 @@ function HolidaysShowCtrl(Holiday, $stateParams, $state) {
   const vm = this;
 
   vm.holiday = Holiday.get($stateParams);
-  console.log('Holiday Show ID', $stateParams);
-  console.log('Holiday Show', vm.holiday);
 
   function holidaysDelete() {
     vm.holiday
@@ -54,12 +49,11 @@ function HolidaysEditCtrl(Holiday, $stateParams, $state) {
   const vm = this;
 
   vm.holiday = Holiday.get($stateParams);
-  console.log('Holiday Edit', $stateParams);
 
   Holiday.get($stateParams).$promise.then((holiday) => {
     vm.holiday = holiday;
     vm.holiday.date = new Date(holiday.date);
-    console.log('vm.holiday.date', vm.holiday.date);
+    console.log('HOLIDAY DATE CONTROLLER', vm.holiday.date);
   });
 
   function holidaysUpdate() {

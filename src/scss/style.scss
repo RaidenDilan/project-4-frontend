@@ -140,6 +140,10 @@ main {
   margin-top: 60px;
 }
 
+input {
+  margin-top: 10px;
+}
+
 .hero-image {
   height: 100vh;
   position: relative;
@@ -149,7 +153,7 @@ main {
 }
 
 .imagesGrid {
-  float: left;
+    float: left;
     display: block;
     margin-right: 2.35765%;
     width: 31.76157%;
@@ -238,4 +242,10 @@ div {
   height: 300px;
   width: 300px;
   display: inline-block;
+}
+
+.profile {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
 }

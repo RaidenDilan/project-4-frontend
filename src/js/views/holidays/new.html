@@ -1,10 +1,7 @@
 <section>
   <div class="newHolidaySection">
     <div class="createHolidayForm">
-      <h1>Holiday New</h1>
-      <hr>
-      {{ holidaysNew.holiday }}
-      <hr>
+      <!-- {{ holidaysNew.holiday }} -->
 
       <form ng-submit="holidaysNew.create()">
         <div>
@@ -24,7 +21,7 @@
 
         <div>
           <label for="departureDate">Departure Date</label><br>
-          <input type="text" name="departureDate" id="departureDate" ng-model="holidaysNew.holiday.departureDate">
+          <input type="date" name="departureDate" id="departureDate" ng-model="holidaysNew.holiday.departureDate">
         </div>
 
         <div>
@@ -34,7 +31,7 @@
 
         <div>
           <label for="departureAirport">Departure Airport</label><br>
-          <input type="date" name="departureAirport" id="departureAirport" ng-model="holidaysNew.holiday.departureAirport">
+          <input type="text" name="departureAirport" id="departureAirport" ng-model="holidaysNew.holiday.departureAirport">
         </div>
 
         <div>
