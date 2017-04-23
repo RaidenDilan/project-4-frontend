@@ -12,48 +12,37 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     templateUrl: 'js/views/home.html'
   })
 //---------------------------------HOLIDAY------------------------------------//
-  .state('holidaysIndex', {
-    url: '/holidays',
-    templateUrl: 'js/views/holidays/index.html',
-    controller: 'HolidaysIndexCtrl as holidaysIndex'
-  })
+  // .state('holidaysIndex', {
+  //   url: '/groups/:id/holidays',
+  //   templateUrl: 'js/views/holidays/index.html',
+  //   controller: 'HolidaysIndexCtrl as holidaysIndex'
+  // })
   .state('holidaysNew', {
-    // url: '/holidays/new',
     url: '/groups/:id/holidays/new',
     templateUrl: 'js/views/holidays/new.html',
     controller: 'HolidaysNewCtrl as holidaysNew'
   })
   .state('holidaysShow', {
-    url: '/holidays/:id',
+    url: '/groups/:id/holidays/:holiday_id',
     templateUrl: 'js/views/holidays/show.html',
     controller: 'HolidaysShowCtrl as holidaysShow'
   })
   .state('holidaysEdit', {
-    url: '/holidays/:id/edit',
+    url: '/groups/:id/holidays/:hoilday_id/edit',
     templateUrl: 'js/views/holidays/edit.html',
     controller: 'HolidaysEditCtrl as holidaysEdit'
   })
 //---------------------------------GROUP--------------------------------------//
-  // .state('groupsIndex', {
-  //   url: '/groups',
-  //   templateUrl: 'js/views/groups/index.html',
-  //   controller: 'GroupsIndexCtrl as groupsIndex'
-  // })
-  .state('groupsNew', {
-    url: '/groups/new',
-    templateUrl: 'js/views/groups/new.html',
-    controller: 'GroupsNewCtrl as groupsNew'
-  })
-  .state('groupsShow', {
-    url: '/groups/:id',
-    templateUrl: 'js/views/groups/show.html',
-    controller: 'GroupsShowCtrl as groupsShow'
-  })
-  .state('groupsEdit', {
-    url: '/groups/:id/edit',
-    templateUrl: 'js/views/groups/edit.html',
-    controller: 'GroupsEditCtrl as groupsEdit'
-  })
+.state('groupsNew', {
+  url: '/groups/new',
+  templateUrl: 'js/views/groups/new.html',
+  controller: 'GroupsNewCtrl as groupsNew'
+})
+.state('groupsEdit', {
+  url: '/groups/:id/edit',
+  templateUrl: 'js/views/groups/edit.html',
+  controller: 'GroupsEditCtrl as groupsEdit'
+})
 //----------------------------------USERS-------------------------------------//
   .state('usersShow', {
     url: '/users/:id',
@@ -67,9 +56,14 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   })
 //-----------------------------USER'S GROUPS----------------------------------//
   .state('usersGroupsIndex', {
-    url: '/users/:id/groups',
+    url: '/groups',
     templateUrl: 'js/views/users/groups/index.html',
     controller: 'UsersGroupsIndexCtrl as usersGroupsIndex'
+  })
+  .state('usersGroupsShow', {
+    url: '/groups/:id',
+    templateUrl: '/js/views/groups/show.html',
+    controller: 'UsersGroupsShowCtrl as usersGroupsShow'
   })
 //----------------------------------BUDGET------------------------------------//
   .state('flightsShow', {

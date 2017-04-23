@@ -10,7 +10,7 @@ function LoginCtrl($auth, $state) {
     $auth.authenticate(provider)
       .then(user => console.log('USER', user));
   }
-
+  
   vm.authenticate = authenticate;
 
   function register() {

@@ -1,10 +1,9 @@
 <section>
-  <img ng-src="{{ usersEdit.user.image }}">
-  <div class="center">
+  <!-- {{ usersEdit }} -->
+  <div class="center usersShow">
+    <img ng-src="{{ usersEdit.user.image_src }}">
     <form ng-submit="usersEdit.update()">
-      <hr>
       <!-- {{ usersEdit.user }} -->
-      <hr>
       <div>
         <label for="username">Username</label>
         <input type="text" name="username" id="username" ng-model="usersEdit.user.username">
@@ -34,7 +33,7 @@
         <label for="passwordConfirmation">Password Confirmation</label>
         <input type="password" name="passwordConfirmation" id="password_confirmation" ng-model="usersEdit.user.password_confirmation">
       </div>
-
+      <hr>
       <div>
         <label for="bio">Bio</label><br>
         <textarea type="text" name="bio" ng-model="usersEdit.user.bio"></textarea>

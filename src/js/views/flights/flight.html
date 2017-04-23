@@ -1,13 +1,21 @@
 <section>
   <div class="center">
     <h2>Flights to: {{ flightsShow.holiday.location }}</h2>
+    <br>
     <ul>
       <li ng-repeat="flight in flightsShow.flights">
         <div>
-          <p>Date: {{ flight.OutboundLeg.DepartureDate | date:'dd-MM-yyyy' }}</p>
+          <hr>
+          <h2>Total Price: £{{ flight.MinPrice }}</h2>
+          <br>
+          <h2>Outbound Flight</h2>
+          <p>Airline: {{ flight.OutboundCarrierName }}</p>
+          <p>Departure Date: {{ flight.QuoteDateTime | date:'dd-MM-yyyy HH:mm:ss' }}</p>
+          <br>
+          <h2>Inbound Flight</h2>
+          <p>Airline: {{ flight.InboundCarrierName }}</p>
+          <p>Return Date: {{ flight.InboundLeg.DepartureDate | date:'dd-MM-yyyy HH:mm:ss' }}</p>
           <p>Min Price: £{{ flight.MinPrice }}</p>
-          <p>Airline: {{ flight.CarrierName }}</p>
-          <p>Airport Code: {{ flight.IataCode }}</p>
         </div>
       </li>
     </ul>
@@ -16,7 +24,6 @@
 <hr>
 <section>
   <div class="center">
-
     <h1>Flight Info</h1>
     <form ng-submit="flightsShow.searchFlights()">
 
@@ -24,12 +31,12 @@
 
       <div>
         <label for="departureDate">Departure Date</label>
-        <input ng-model="flightsShow.holiday.departureDate" type="text" name="departureDate">
+        <input ng-model="flightsShow.holiday.departureDate" type="date" name="departureDate">
       </div>
 
       <div>
         <label for="returnDate">Return Date</label>
-        <input ng-model="flightsShow.holiday.returnDate" type="text" name="returnDate">
+        <input ng-model="flightsShow.holiday.returnDate" type="date" name="returnDate">
       </div>
 
       <div>
@@ -45,35 +52,32 @@
       <button>Find Flights</button>
     </form>
   </div>
-
-  <hr>
-
-  {{ flightsShow.flight.MinPrice }}
-  <div class="center">
-    <h2>Flight Cost</h2>
-    <!-- <p>Based on the length of your trip, the estimated cost is {{ flightsShow.flight.MinPrice }}</p> -->
-
-    <div>
-      <label>Flight Price</label>
-      <input ng-model="flightsShow.flight.MinPrice" type="number" name="MinPrice">
-    </div>
-
-    <form ng-submit="flightsShow.create()">
-      <div>
-        <label>Accommodation Cost</label>
-        <input ng-model="flightsShow.accomodationCost" type="number" name="accommodationCost">
-      </div>
-
-      <!-- <p>Based on the length of your trip, the estimated cost is {{ flightsShow.price }}</p> -->
-      <div>
-        <label>Spending Money</label>
-        <input ng-model="flightsShow.expenses" type="number" name="expenses">
-      </div>
-
-      <button>Save Holiday</button>
-    </form>
-  </div>
 </section>
+<!-- {{ flightsShow.flight.MinPrice }}
+<div class="center">
+<h2>Flight Cost</h2>
+<p>Based on the length of your trip, the estimated cost is {{ flightsShow.flight.MinPrice }}</p>
+
+<div>
+<label>Flight Price</label>
+<input ng-model="flightsShow.flight.MinPrice" type="number" name="MinPrice">
+</div>
+
+<form ng-submit="flightsShow.create()">
+<div>
+<label>Accommodation Cost</label>
+<input ng-model="flightsShow.accomodationCost" type="number" name="accommodationCost">
+</div>
+
+<p>Based on the length of your trip, the estimated cost is {{ flightsShow.price }}</p>
+<div>
+<label>Spending Money</label>
+<input ng-model="flightsShow.expenses" type="number" name="expenses">
+</div>
+
+<button>Save Holiday</button>
+</form>
+</div> -->
 
 <!-- <div>
 <h3>Recent crime</h3>

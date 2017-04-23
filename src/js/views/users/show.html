@@ -8,8 +8,8 @@
     <p><strong>Bio: </strong>{{ usersShow.user.bio }}</p>
     <p><strong>Preferred Airport: </strong>{{ usersShow.user.airport }}</p>
 
-    <button ui-sref="usersEdit({ id: usersShow.user.id })">Edit</button>
-    <button ng-click="usersShow.delete()">Delete</button>
-    <button ng-click="main.logout()" href="#">Logout</button>
+    <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="usersEdit({ id: usersShow.user.id })">Edit</button>
+    <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ng-click="usersShow.delete()">Delete</button>
+    <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ng-click="main.logout()" href="#">Logout</button>
   </div>
 </section>

@@ -21,22 +21,28 @@
     <img ng-src="{{ holidaysShow.holiday.image_four }}" alt="{{ holidaysShow.holiday.location }}">
     <p>Created By: {{ holidaysShow.holiday.user.full_name }}</p>
 
-    <!-- <button ng-if="main.authenticated()" ui-sref="holidaysEdit({ id: holidaysShow.holiday.id })">Edit</button> -->
     <button ui-sref="holidaysEdit({ id: holidaysShow.holiday.id })">Edit</button>
-
-    <!-- <button ng-if="main.authenticated()" ng-click="holidaysShow.delete()">Delete</button> -->
     <button ng-click="holidaysShow.delete()">Delete</button>
-
-    <button ui-sref="flightsShow({ id: holidaysShow.holiday.id })">Flights &amp; Budget</button>
+    <button ui-sref="flightsShow({ id: holidaysShow.holiday.id })">Get Flights</button>
 
   </div>
 </section>
-<!-- <div class="map">
-  <h3>Location</h3>
-  <ng-map center="[{{ holiday.lat }}, {{ holiday.lng }}]" zoom="13" scrollwheel="false">
-    <marker position="[{{ holiday.lat }}, {{ holiday.lng }}]" animation="DROP"></marker>
-  </ng-map>
-  <ng-map center="[40.74, -74.18]" zoom="13" scrollwheel="false">
-    <marker position="[40.74, -74.18]" animation="DROP"></marker>
-  </ng-map>
-</div> -->
+
+<section>
+    <div>
+      <h2>Comments</h2>
+      <ul>
+        <li ng-repeat="comment in holidaysShow.holiday.comments">{{ comment.body }} - <strong>{{ comment.user.username }}</strong><button ng-click="holidaysShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id">Delete</button></li>
+      </ul>
+    </div>
+
+    <div ng-if="main.isAuthenticated()">
+      <h2>Add Comment</h2>
+      <form ng-submit="holidaysShow.addComment()">
+        <textarea type="text" name="body" ng-model="holidaysShow.comment.body"></textarea><br>
+        <button>Create</button>
+      </form>
+    </div>
+</section>
+
+<div id="map"></div>

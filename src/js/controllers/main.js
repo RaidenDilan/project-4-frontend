@@ -2,8 +2,8 @@ angular
   .module('holiday')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$rootScope', '$state', '$auth'];
-function MainCtrl($rootScope, $state, $auth) {
+MainCtrl.$inject = ['$rootScope', '$state', '$auth', 'User'];
+function MainCtrl($rootScope, $state, $auth, User) {
   const vm = this;
   vm.isAuthenticated = $auth.isAuthenticated;
 
@@ -16,11 +16,10 @@ function MainCtrl($rootScope, $state, $auth) {
   $rootScope.$on('$stateChangeSuccess', () => {
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
-    if($auth.getPayload()) vm.currentUserId = $auth.getPayload();
-    // console.log('Current User ID', vm.currentUser);
+    if($auth.getPayload() && !vm.currentUser) vm.currentUser = User.get($auth.getPayload());
   });
 
-  const protectedStates = ['holidaysNew', 'holidaysEdit']; // ANY PAGES YOU DON'T WANT ANYONE TO HAVE ACCESS, PROTECT IT. IT WILL REDIRECT THE CLIENT TO THE LOGIN PAGE AND DISPPLAY A MESSAGE 'You must be logged in'.
+  const protectedStates = ['holidaysNew', 'holidaysEdit', 'groupsNew', 'usersGroupsEdit']; // ANY PAGES YOU DON'T WANT ANYONE TO HAVE ACCESS, PROTECT IT. IT WILL REDIRECT THE CLIENT TO THE LOGIN PAGE AND DISPPLAY A MESSAGE 'You must be logged in'.
 
   $rootScope.$on('$stateChangeStart', (e, toState) => {
     if((!$auth.isAuthenticated() && protectedStates.includes(toState.name))) {
