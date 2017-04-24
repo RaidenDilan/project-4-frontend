@@ -1,33 +1,38 @@
-<div class="center">
-  <h1>Users</h1>
-  <ul>
-    <li ng-repeat="attendee in usersGroupsShow.group.attendees">
-      <p><a ui-sref="usersShow({ id: attendee.id })"><img ng-src="{{ attendee.image_src }}" class="profile"></a></p>
-    </li>
-  </ul>
-</div>
+<section>
+  <div class="center">
+    <h1>Users</h1>
+    <ul>
+      <li ng-repeat="attendee in usersGroupsShow.group.attendees">
+        <p><a ui-sref="usersShow({ id: attendee.id })"><img ng-src="{{ attendee.image_src }}" class="profile"></a></p>
+      </li>
+    </ul>
+  </div>
+</section>
 
 <hr>
 
-<div class="center">
-  <p><strong>Group Name: </strong>{{ usersGroupsShow.group.name }}</p>
-  <p>{{ usersGroupsShow.group.user }}</p>
-
-  <button ng-click="usersGroupsShow.toggleAttending()" ng-if="main.isAuthenticated() && !usersGroupsShow.isAttending()">Attend</button>
-  <button ng-click="usersGroupsShow.toggleAttending()" ng-if="main.isAuthenticated() && usersGroupsShow.isAttending()">Leave</button>
-  <button ng-if="main.isAuthenticated()" ui-sref="groupsEdit({ id: usersGroupsShow.group.id })">Edit</button>
-  <button ng-if="main.isAuthenticated()" ng-click="usersGroupsShow.delete()">Delete</button>
-  <button ui-sref="holidaysNew({ id: usersGroupsShow.group.id })">New Holiday</button>
-</div>
+<section>
+  <div class="center">
+    <p><strong>Group Name: </strong>{{ usersGroupsShow.group.name }}</p>
+    <p>{{ usersGroupsShow.group.user }}</p>
+    <button ng-click="usersGroupsShow.toggleAttending()" ng-if="main.isAuthenticated() && !usersGroupsShow.isAttending()">Attend</button>
+    <button ng-click="usersGroupsShow.toggleAttending()" ng-if="main.isAuthenticated() && usersGroupsShow.isAttending()">Leave</button>
+    <button ng-if="main.isAuthenticated()" ui-sref="groupsEdit({ id: usersGroupsShow.group.id })">Edit</button>
+    <button ng-if="main.isAuthenticated()" ng-click="usersGroupsShow.delete()">Delete</button>
+    <button ui-sref="holidaysNew({ id: usersGroupsShow.group.id })">New Holiday</button>
+  </div>
+</section>
 
 <hr>
 
-<div class="center">
-  <h1>Holidays</h1>
-  <ul>
-    <li ng-repeat="holiday in usersGroupsShow.group.holidays">
-      <br>
-      <a ui-sref="holidaysShow({ id: holiday.id })"><img ng-src="{{ holiday.cover_photo }}"></a>
-    </li>
-  </ul>
-</div>
+<section>
+  <div class="center">
+    <h1>Holidays</h1>
+    <ul>
+      <li ng-repeat="holiday in usersGroupsShow.group.holidays">
+        <br>
+        <a ui-sref="holidaysShow({ id: holiday.id })"><img ng-src="{{ holiday.cover_photo }}"></a>
+      </li>
+    </ul>
+  </div>
+</section>

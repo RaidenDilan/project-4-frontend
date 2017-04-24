@@ -18,8 +18,6 @@ function UsersIndexCtrl(User, $auth, $stateParams) {
   vm.user = User.get($stateParams);
 
   function checkUser() {
-    console.log('vm.user.id', vm.user.id);
-    console.log('currentUser.id', currentUser.id);
     if (vm.user.id === currentUser.id) {
       return true;
     } else {
@@ -33,7 +31,8 @@ UsersShowCtrl.$inject = ['User', '$stateParams', '$state', '$auth'];
 function UsersShowCtrl(User, $stateParams, $state, $auth) {
   const vm = this;
 
-  vm.user = User.get($stateParams);
+  vm.user = User.get({ id: $auth.getPayload().id});
+  // console.log({ id: $auth.getPayload().id});
 
   function usersDelete() {
     $auth.logout();
@@ -50,7 +49,6 @@ function UsersEditCtrl(User, $stateParams, $state) {
   const vm = this;
 
   vm.user = User.get($stateParams);
-  // console.log(vm.user);
 
   function usersUpdate() {
     vm.user
@@ -72,14 +70,12 @@ function UsersGroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth) 
   const vm = this;
 
   if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
-  // console.log(vm.currentUser);
 
   Group.get($stateParams, (data) => {
     vm.group = data;
   });
 
   vm.group = Group.get($stateParams);
-  console.log(vm.group);
 
   function groupsDelete() {
     vm.group
@@ -110,6 +106,5 @@ function UsersGroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth) 
   function isAttending() {
     return $auth.getPayload() && vm.group.$resolved && vm.group.attendee_ids.includes(vm.currentUser.id);
   }
-
   vm.isAttending = isAttending;
 }

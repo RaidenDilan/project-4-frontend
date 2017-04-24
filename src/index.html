@@ -7,6 +7,7 @@
     <title>Angular Stack Setup</title>
     <link rel="icon" href="/images/pnc.png" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5uFR8sHqcDYKASWyXmpLZM17kfstkqVE"></script>
     <!-- inject:js -->
     <!-- endinject -->
@@ -17,21 +18,20 @@
     <header>
       <nav>
         <ul>
-          <!-- <li ng-if="main.isAuthenticated()" class="left"><a ui-sref="holidaysIndex({ id: main.currentUser.id })">Holidays</a></li> -->
           <li ng-if="main.isAuthenticated()" class="left"><a ui-sref="usersGroupsIndex({ id: main.currentUser.id })">My Groups</a></li>
-          <!-- <li><a ui-sref="home">Home</a></li> -->
           <li ng-if="main.isAuthenticated()"><a ui-sref="groupsNew">New Group</a></li>
           <li ng-if="!main.isAuthenticated()"><a ui-sref="login">Login</a></li>
           <li ng-if="!main.isAuthenticated()"><a ui-sref="register">Register</a></li>
-          <li ng-if="main.isAuthenticated()" class="right"><a ui-sref="usersShow({ id: main.currentUser.id })">My Profile</a></li>
-          <!-- <img ng-src="{{ main.currentUser.image_src }}" class="profileImage"> -->
+          <li ng-if="main.isAuthenticated()" class="right"><a ui-sref="usersShow({ id: main.currentUser.id })"><img ng-src="{{ main.currentUser.image_src }}" class="profileImage"></a></li>
         </ul>
       </nav>
     </header>
-    <div ng-if="main.message">
-      <div>{{main.message}}</div>
+    <div class="message" ng-if="main.message">
+      <div>{{ main.message }}</div>
     </div>
-    <main ui-view class="site-content"></main>
-    <footer>WEBSITE NAME COMING SOON!</footer>
+    <main ui-view class="site-content">
+    </main>
+    <!-- <div class="background"></div> -->
+    <footer>HOLIDAYDREAM!</footer>
   </body>
 </html>

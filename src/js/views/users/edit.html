@@ -1,55 +1,40 @@
 <section>
-  <!-- {{ usersEdit }} -->
-  <div class="center usersShow">
-    <img ng-src="{{ usersEdit.user.image_src }}">
-    <form ng-submit="usersEdit.update()">
-      <!-- {{ usersEdit.user }} -->
+  <div class="usersShow">
+    <div class="userEditInfo">
+      <img ng-src="{{ usersEdit.user.image_src }}">
+    </div>
+
+    <form ng-submit="usersEdit.update()" class="profilePhoto">
       <div>
-        <label for="username">Username</label>
         <input type="text" name="username" id="username" ng-model="usersEdit.user.username">
       </div>
-
       <div>
-        <label for="firstname">First Name</label>
         <input type="text" name="firstname" id="firstname" ng-model="usersEdit.user.first_name">
       </div>
-
       <div>
-        <label for="lastname">last name</label>
         <input type="text" name="surname" id="lastname" ng-model="usersEdit.user.last_name">
       </div>
-
       <div>
-        <label for="email">Email</label>
         <input type="email" name="email" id="email" ng-model="usersEdit.user.email">
       </div>
-
       <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" ng-model="usersEdit.user.password">
+        <input type="password" name="password" id="password" ng-model="usersEdit.user.password" placeholder="Password">
       </div>
-
       <div>
-        <label for="passwordConfirmation">Password Confirmation</label>
-        <input type="password" name="passwordConfirmation" id="password_confirmation" ng-model="usersEdit.user.password_confirmation">
+        <input type="password" name="passwordConfirmation" id="password_confirmation" ng-model="usersEdit.user.password_confirmation"placeholder="Password Confirmation">
       </div>
-      <hr>
       <div>
-        <label for="bio">Bio</label><br>
-        <textarea type="text" name="bio" ng-model="usersEdit.user.bio"></textarea>
-      </div>
-
-      <div>
-        <label for="airport">Home Airport</label><br>
         <input type="text" name="airport" id="airport" ng-model="usersEdit.user.airport" >
       </div>
-
       <div>
-        <label for="base64">Profile Image</label>
+        <textarea type="text" name="bio" ng-model="usersEdit.user.bio"></textarea>
+      </div>
+      <div>
         <input type="file" base64 name="base64" id="base64" ng-model="usersEdit.user.base64">
       </div>
-
-      <button class="button">Update</button>
+      <div class="usersEditButton">
+        <button class="button">Update</button>
+      </div>
     </form>
   </div>
 </section>

@@ -1,7 +1,6 @@
 <section>
   <div class="holidaysShow">
     <h1>Holiday Show</h1>
-    <!-- {{ holidaysShow.holiday }} -->
 
     <img ng-src="{{ holidaysShow.holiday.cover_photo }}" alt="{{ holidaysShow.holiday.location }}">
 
@@ -24,7 +23,6 @@
     <button ui-sref="holidaysEdit({ id: holidaysShow.holiday.id })">Edit</button>
     <button ng-click="holidaysShow.delete()">Delete</button>
     <button ui-sref="flightsShow({ id: holidaysShow.holiday.id })">Get Flights</button>
-
   </div>
 </section>
 
@@ -45,4 +43,4 @@
     </div>
 </section>
 
-<div id="map"></div>
+<!-- <div id="map"></div> -->

@@ -19,7 +19,7 @@ function MainCtrl($rootScope, $state, $auth, User) {
     if($auth.getPayload() && !vm.currentUser) vm.currentUser = User.get($auth.getPayload());
   });
 
-  const protectedStates = ['holidaysNew', 'holidaysEdit', 'groupsNew', 'usersGroupsEdit']; // ANY PAGES YOU DON'T WANT ANYONE TO HAVE ACCESS, PROTECT IT. IT WILL REDIRECT THE CLIENT TO THE LOGIN PAGE AND DISPPLAY A MESSAGE 'You must be logged in'.
+  const protectedStates = ['holidaysNew', 'holidaysEdit', 'groupsNew', 'groupsEdit', 'usersGroupsShow'];
 
   $rootScope.$on('$stateChangeStart', (e, toState) => {
     if((!$auth.isAuthenticated() && protectedStates.includes(toState.name))) {

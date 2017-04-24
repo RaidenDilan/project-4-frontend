@@ -10,7 +10,6 @@ function LoginCtrl($auth, $state) {
     $auth.authenticate(provider)
       .then(user => console.log('USER', user));
   }
-  
   vm.authenticate = authenticate;
 
   function register() {
@@ -18,7 +17,6 @@ function LoginCtrl($auth, $state) {
       // .then(user => console.log(user));
       .then(() => $state.go('login'));
   }
-
   vm.register = register;
 
   function login() {
@@ -26,6 +24,5 @@ function LoginCtrl($auth, $state) {
       // .then(user => console.log(user));
       .then(() => $state.go('usersShow'));
   }
-
   vm.login = login;
 }

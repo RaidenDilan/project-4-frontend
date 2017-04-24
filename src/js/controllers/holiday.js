@@ -1,16 +1,8 @@
 angular
   .module('holiday')
-  // .controller('HolidaysIndexCtrl', HolidaysIndexCtrl)
   .controller('HolidaysNewCtrl', HolidaysNewCtrl)
   .controller('HolidaysShowCtrl', HolidaysShowCtrl)
   .controller('HolidaysEditCtrl', HolidaysEditCtrl);
-
-// HolidaysIndexCtrl.$inject = ['Holiday'];
-// function HolidaysIndexCtrl(Holiday) {
-//   const vm = this;
-//
-//   vm.all = Holiday.query();
-// }
 
 HolidaysNewCtrl.$inject = ['Group', 'User', 'Holiday', '$state', '$stateParams'];
 function HolidaysNewCtrl(Group, User, Holiday, $state, $stateParams) {
@@ -31,6 +23,16 @@ function HolidaysNewCtrl(Group, User, Holiday, $state, $stateParams) {
 HolidaysShowCtrl.$inject = ['Holiday', '$stateParams', '$state', 'Comment'];
 function HolidaysShowCtrl(Holiday, $stateParams, $state, Comment) {
   const vm = this;
+
+  vm.holiday = Holiday.get($stateParams);
+
+  function holidaysDelete() {
+    vm.holiday
+      .$remove()
+      .then(() => $state.go('holidaysIndex'));
+  }
+
+  vm.delete = holidaysDelete;
 
   function addComment() {
     vm.comment.holiday_id = vm.holiday.id; // attaching the comment to the group id.
@@ -57,15 +59,6 @@ function HolidaysShowCtrl(Holiday, $stateParams, $state, Comment) {
   }
 
   vm.deleteComment = deleteComment;
-
-  vm.holiday = Holiday.get($stateParams);
-
-  function holidaysDelete() {
-    vm.holiday
-      .$remove()
-      .then(() => $state.go('holidaysIndex'));
-  }
-  vm.delete = holidaysDelete;
 }
 
 HolidaysEditCtrl.$inject = ['Holiday', '$stateParams', '$state'];
@@ -73,10 +66,10 @@ function HolidaysEditCtrl(Holiday, $stateParams, $state) {
   const vm = this;
 
   Holiday.get($stateParams).$promise.then((holiday) => {
+    console.log($stateParams);
     holiday.departureDate = new Date(holiday.departureDate); // run this logic first before vm.holiday runs underneath this line.
     holiday.returnDate = new Date(holiday.returnDate); // run this logic first before vm.holiday runs underneath this line.
     vm.holiday = holiday;
-    // console.log('HOLIDAY DATE CONTROLLER', vm.holiday);
   });
 
   function holidaysUpdate() {
@@ -86,5 +79,4 @@ function HolidaysEditCtrl(Holiday, $stateParams, $state) {
       .then(() => $state.go('holidaysShow', $stateParams));
   }
   vm.update = holidaysUpdate;
-
 }

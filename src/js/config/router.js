@@ -12,23 +12,18 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     templateUrl: 'js/views/home.html'
   })
 //---------------------------------HOLIDAY------------------------------------//
-  // .state('holidaysIndex', {
-  //   url: '/groups/:id/holidays',
-  //   templateUrl: 'js/views/holidays/index.html',
-  //   controller: 'HolidaysIndexCtrl as holidaysIndex'
-  // })
   .state('holidaysNew', {
     url: '/groups/:id/holidays/new',
     templateUrl: 'js/views/holidays/new.html',
     controller: 'HolidaysNewCtrl as holidaysNew'
   })
   .state('holidaysShow', {
-    url: '/groups/:id/holidays/:holiday_id',
+    url: '/holidays/:id',
     templateUrl: 'js/views/holidays/show.html',
     controller: 'HolidaysShowCtrl as holidaysShow'
   })
   .state('holidaysEdit', {
-    url: '/groups/:id/holidays/:hoilday_id/edit',
+    url: '/holidays/:id/edit',
     templateUrl: 'js/views/holidays/edit.html',
     controller: 'HolidaysEditCtrl as holidaysEdit'
   })
