@@ -1,45 +1,170 @@
 @import 'reset';
+// @import 'bootstrap/bootstrap';
 
+em {
+  color: yellow;
+}
+
+h4 {
+  font-size: 35px;
+}
+//----------------------------------------------------------------------------//
 * {
   box-sizing: inherit;
 }
-
+//----------------------------------------------------------------------------//
 body {
   font-family: 'Raleway', sans-serif;
+  // font-family: 'Karla', sans-serif;
+}
+//----------------------------------------------------------------------------//
+body {
+  &.login {
+    main {
+      background-image: url('../images/2.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+  }
+  &.register {
+    main {
+      background-image: url('../images/2.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+  }
+  &.usersShow {
+    main {
+      background-image: url('../images/1.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+  }
+  &.usersEdit {
+    main {
+      background-image: url('../images/2.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+  }
+  &.groupsNew {
+    main {
+      background-image: url('../images/12.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+  }
+  &.groupsEdit {
+    main {
+      background-image: url('../images/4.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+  }
+  &.usersGroupsIndex {
+    main {
+      background-image: url('../images/5.jpg');
+      background-position: center;
+      background-size: cover;
+      // position: fixed;
+    }
+  }
+  &.usersGroupsShow {
+    main {
+      background-image: url('../images/5.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+  }
+  &.holidaysEdit {
+    main {
+      background-image: url('../images/13.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+  }
+  &.holidaysShow {
+    main {
+      background-image: url('../images/2.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+  }
+  &.holidaysNew {
+    main {
+      background-image: url('../images/9.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+  }
+  &.flightsShow {
+    main {
+      background-image: url('../images/11.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}
+//----------------------------------------------------------------------------//
+p {
+  line-height: 30px;
 }
 
-main {
-  // margin-top: 60px;
+.background-styles {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+//----------------------------------------------------------------------------//
+.div-styles {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+span {
+  color: yellow;
 }
 
-img {
-  max-width: 25%;
-  border-style: none;
+.heart {
+  color: red;
 }
+//----------------------------------------------------------------------------//
 
-.map {
-  width: 900px;
+.immage {
+  width: 300px;
   height: 300px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-
 header {
   nav {
-    background-color: rgba(0, 0, 0, 1);
+    @extend .div-styles;
     height: 60px;
     width: 100%;
     z-index: 1;
     position: fixed;
     top: 0;
-    opacity: 0.2;
-    // transition: opacity 0.6s ease;
+    opacity: 1;
     ul {
       margin: 0;
       padding: 0;
-      text-align: center;
+      position: relative;
+      // text-align: center;
       li {
+          &.newgroup {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+          }
         display: inline-block;
-        margin: 0 10px;
-        line-height: 60px;
+        margin: 5px 10px;
+        line-height: 50px;
         &.right {
           float: right;
         }
@@ -48,85 +173,75 @@ header {
         }
         a {
           color: #fff;
+          font-weight: 600;
+          position: relative;
           text-decoration: none;
           text-transform: uppercase;
-          letter-spacing: 4px;
-          font-weight: 200px;
-          &:hover {
-            text-decoration: none;
-            outline-width: 0;
-            color: black;
-          }
+          letter-spacing: 3px;
           &:after {
+            content: "";
+            height: 1px;
+            width: 100%;
+            background-color: white;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
             text-decoration: none;
-            outline-width: 0;
+          }
+          &:active {
+            text-decoration: none;
           }
           &:focus {
             text-decoration: none;
-            outline-width: 0;
+            color: white;
+          }
+          &:hover {
+            margin-top: 10px;
+            text-decoration: none;
+            color: white;
+            &:after {
+              text-decoration: none;
+              opacity: 1;
+            }
           }
         }
       }
     }
   }
 }
+//----------------------------------------------------------------------------//
+
+.section {
+  margin-top: 20px;
+}
 
 section {
-  text-align: center;
-  margin-top: 130px;
+  margin-top: 100px;
   div {
-    &.userEditInfo {
-    }
-    &.userInfo {
-      background-color: rgba(251,251,251,1);
-      max-width: 50%;
-      margin: 0 auto;
-      p {
-        font-family: 'Poppins', sans-serif;
-        padding-bottom: 5px;
-      }
-      img {
-        margin-bottom: 50px;
-        width: 130px;
-        height: 130px;
-      }
-      h1 {
-        font-size: 30px;
-        font-weight: bold;
-      }
-    }
-    &.usersShow {
-      background-color: rgba(251,251,251,1);
-      max-width: 50%;
-      margin: 0 auto;
-      input {
-        max-width: 535px;
-      }
-      textarea {
-        min-width: 550px;
-        max-width: 550px;
-        height: 120px;
-        // max-width: 120px;
-        border: none;
-        outline: none;
-      }
-    }
-    img {
-        margin-top: 30px;
-        margin-bottom: 20px;
-      &.profilePhoto {
-        height: 80%;
-      }
-    }
+    position: relative;
     h1 {
       font-size: 50px;
+      color: white;
       text-transform: uppercase;
-      padding-bottom: 30px;
-      padding-top: 35px;
+      padding-top: 20px;
+      padding-bottom: 10px;
     }
     div {
-      &.profileButton {
-        margin-top: 30px;
+      position: relative;
+      a {
+        &:hover {
+          text-decoration: line-through;
+          color: red;
+        }
+        h1 {
+          padding: 5px;
+          margin: 5px;
+          font-size: 20px;
+          text-decoration: none;
+          color: white;
+        }
       }
     }
     form {
@@ -137,50 +252,468 @@ section {
         font-size: 15px;
       }
       input {
+        text-align: center;
         display: block;
         margin: 0 auto;
-        padding: 10px 10px;
+        padding: 5px 5px;
         background-color: white;
-        width: 630px;
+        width: 90%;
         border: 0;
+        border-radius: 5px;
         margin-top: 12px;
         margin-bottom: 12px;
         outline: none;
         &#base64 {
           border: none;
-          // text-align: center;
           outline: none;
           cursor: pointer;
-          width: 35%;
-          margin-top: 10px;
+          width: 30%;
+          margin: 0 auto;
           background: none;
         }
       }
-      textarea {
-        // max-width: 80%;
-        min-width: 640px;
-        max-width: 640px;
-        height: 120px;
-        // max-width: 120px;
-        border: none;
-        outline: none;
-      }
     }
-    &.1 {
+    p {
       margin-top: 30px;
       font-weight: bold;
+      color: white;
       font-size: 20px;
       text-transform: uppercase;
     }
   }
 }
-
-.usersShow img {
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
+//----------------------------------------------------------------------------//
+.usersGroupsIndexPage {
+  @extend .div-styles;
+  text-align: center;
+  max-width: 40%;
+  margin: 0 auto;
+  padding-bottom: 20px;
 }
+//----------------------------------------------------------------------------//
+.profileButton {
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+//----------------------------------------------------------------------------//
+.flightsInformationSection {
+  @extend .div-styles;
+  text-align: center;
+  max-width: 70%;
+  margin: 0 auto;
+  h1 {
+    font-size: 35px;
+  }
+}
+//----------------------------------------------------------------------------//
+.searchFlightSection {
+  @extend .div-styles;
+  text-align: center;
+  max-width: 70%;
+  margin: 0 auto;
+  label {
+    color: white;
+    padding: 0;
+  }
+  p {
+    text-transform: none;
+    padding-bottom: 20px;
+  }
+  h1 {
+    font-size: 35px;
+  }
+  .searchFlightsButton {
+    padding-bottom: 20px;
+    padding-top: 5px;
+  }
+}
+//----------------------------------------------------------------------------//
+.holidaysShowPage {
+  @extend .div-styles;
+  text-align: center;
+  max-width: 70%;
+  margin: 0 auto;
+  p {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    text-transform: none;
+  }
+  h1 {
+    font-size: 30px;
+    padding: 10px 0;
+  }
+  .holidayButtons {
+    padding: 30px 0;
+  }
+  .userProfile {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+  }
+  .coverImage {
+    padding-bottom: 50px;
+    padding-top: 50px;
+  }
+  p {
+    &.description {
+      font-size: 11px;
+      letter-spacing: 2px;
+      padding-bottom: 15px;
+    }
+  }
+  .descriptionHeader {
+    padding-top: 20px;
+  }
+  .details {
+    padding: 20px 0;
+  }
+  .reviews {
+    padding: 20px 0;
+  }
+}
+.link {
+  display: grid;
+}
+//----------------------------------------------------------------------------//
+.holidayComments {
+  @extend .div-styles;
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
+  h1 {
+    font-size: 30px;
+  }
+}
+.deleteComment {
+  width: 10%;
+}
+//----------------------------------------------------------------------------//
+.holidayAddComment {
+  margin: 0 auto;
+  textarea {
+    max-width: 60%;
+  }
+  h2 {
+    font-size: 25px;
+    color: white;
+    padding: 10px 0;
+  }
+  button {
+      max-width: 61%;
+      margin-bottom: 20px;
+  }
+}
+div {
+  ul {
+    li {
+      color: white;
+      strong {
+        color: yellow;
+      }
+    }
+  }
+}
+//----------------------------------------------------------------------------//
+.attendees {
+  border: 1px dotted black;
+  padding: 20px;
+  max-width: 85%;
+  margin: 20px auto;
+  h1 {
+    font-weight: bold;
+    padding: 0;
+    font-size: 25px;
+  }
+  label {
+    padding: 0;
+    margin: 0;
+    &:hover {
+      text-decoration: red line-through;
+    }
+    input {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+//----------------------------------------------------------------------------//
+.registerForm {
+  @extend .div-styles;
+  max-width: 55%;
+  margin: 0 auto;
+  text-align: center;
+  h1 {
+    font-size: 30px;
+  }
+  button {
+    max-width: 84%;
+  }
 
+  div {
+    input {
+      max-width: 84%;
+    }
+  }
+  textarea {
+    max-width: 82%;
+  }
+  div {
+    &.loginButton {
+      padding-bottom: 20px;
+    }
+  }
+}
+//----------------------------------------------------------------------------//
+.userInfo {
+  text-align: center;
+  @extend .div-styles;
+  max-width: 40%;
+  margin: 0 auto;
+  p {
+    font-family: 'Poppins', sans-serif;
+    padding-bottom: 5px;
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    text-transform: none;
+  }
+  .profilePhoto {
+    height: 95px;
+    width: 20%;
+    border-radius: 100%;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
+//----------------------------------------------------------------------------//
+.createGroupForm {
+  @extend .div-styles;
+  max-width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  h1 {
+    font-size: 30px;
+  }
+  label {
+    display: block;
+    color: white;
+  }
+}
+//----------------------------------------------------------------------------//
+.groupsEditForm {
+  @extend .div-styles;
+  max-width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  h1 {
+    font-size: 30px;
+  }
+  label {
+    display: block;
+    color: white;
+  }
+  .groupsEditFormButton {
+    padding-bottom: 20px;
+  }
+}
+//----------------------------------------------------------------------------//
+.groupUsers {
+  @extend .div-styles;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 50%;
+  padding-bottom: 20px;
+  h1 {
+    font-size: 30px;
+  }
+  ul {
+    li {
+      p {
+        margin-top: 0;
+        a {
+          img {
+            margin-left: 10px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+//----------------------------------------------------------------------------//
+.groupButtons {
+  @extend .div-styles;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 50%;
+  h1 {
+    font-size: 25px;
+  }
+}
+//----------------------------------------------------------------------------//
+.groupHolidays {
+  @extend .div-styles;
+  text-align: center;
+  max-width: 50%;
+  margin: 0 auto;
+  h1 {
+    font-size: 25px;
+  }
+  ul {
+    li {
+      a {
+        img {
+          // height: 100px;
+          // width: 50%;
+        }
+      }
+    }
+  }
+}
+//----------------------------------------------------------------------------//
+.newHolidayForm {
+  @extend .div-styles;
+  text-align: center;
+  padding: 20px;
+  max-width: 50%;
+  margin: 0 auto;
+  h1 {
+    font-size: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  label {
+    color: white;
+    padding: 0;
+    // padding-top: 6px;
+  }
+  input {
+    padding: 5px;
+  }
+  textarea {
+    width: 87%;
+    max-width: 87%;
+    height: 100px;
+  }
+  button {
+    width: 95%;
+    margin-top: 15px;
+  }
+  .departure {
+    padding-top: 25px;
+  }
+  .return {
+    padding-top: 11px;
+  }
+  .fourImages {
+    padding-top: 26px;
+    input {
+      margin-top: 15px;
+    }
+    // padding-bottom: 40px;
+    // padding-top: 40px;
+  }
+}
+//----------------------------------------------------------------------------//
+.groupHolidayEdit {
+  @extend .div-styles;
+  text-align: center;
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 0 20px;
+  h1 {
+    font-size: 35px;
+  }
+  label {
+    color: white;
+  }
+  input {
+    max-width: 100%;
+  }
+  textarea {
+    max-width: 88%;
+  }
+}
+//----------------------------------------------------------------------------//
+.usersShowPage {
+  text-align: center;
+  @extend .div-styles;
+  margin: 0 auto;
+  input {
+    width: 85%;
+  }
+  button {
+    width: 85%;
+    // margin: 0;
+  }
+  // img {
+    // margin-top: 15px;
+    // width: 90px;
+    // height: 90px;
+    // border-radius: 100%;
+  // }
+  div {
+    textarea {
+      width: 85%;
+    }
+    &.usersEditButton {
+      padding-bottom: 20px;
+    }
+  }
+}
+//----------------------------------------------------------------------------//
+.usersEditProfile {
+  text-align: center;
+  @extend .div-styles;
+  margin: 0 auto;
+  max-width: 40%;
+  input {
+    width: 85%;
+    padding: 5px 5px;
+  }
+  #base64 {
+    width: 40%;
+    padding: 10px 0;
+  }
+  button {
+    width: 85%;
+  }
+  img {
+    margin-top: 15px;
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+  }
+  div {
+    textarea {
+      width: 83%;
+    }
+    &.usersEditButton {
+      padding-bottom: 20px;
+    }
+  }
+}
+//----------------------------------------------------------------------------//
+.createGroupButton {
+  margin-bottom: 30px;
+}
+//----------------------------------------------------------------------------//
+textarea {
+  // min-width: 535px;
+  width: 86%;
+  // max-width: 90%;
+  // height: 120px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+}
+//----------------------------------------------------------------------------//
 div {
   button {
     margin: 5px;
@@ -188,11 +721,11 @@ div {
     background: #01A3BC;
     border: 2px solid #01A3BC;
     height: 20px;
-    border-radius: 500px;
+    border-radius: 10px;
     color: #fff;
     font-size: 14px;
     outline: 0;
-    padding: 5px;
+    padding: 3px;
     appearance: none;
     box-sizing: initial;
     transition: all .5s ease;
@@ -205,39 +738,20 @@ div {
     font-size: 15px;
   }
 }
-
+//----------------------------------------------------------------------------//
 footer {
   text-align: center;
-  background-color: rgba(0, 0, 0,1);
-  // padding: 10px;
+  // @extend .div-styles;
   width: 100%;
-  background-color: #B3B3B3;
+  background-color: rgba(4, 4, 4,0.15);
   color: #fff;
-  padding: 15px;
-  margin-top: 30px;
+  padding: 15px 0;
+
+  // position: fixed;
+  // bottom: 0;
   p {
-    margin: 0;
     letter-spacing: 4px;
   }
-}
-
-.createButton {
-  margin-bottom: 40px;
-}
-
-.loginForm {
-  background-color: rgba(251,251,251,1);
-  // margin-left: 0 auto;
-  max-width: 55%;
-  margin: 0 auto;
-}
-
-.registerForm {
-  background-color: rgba(251,251,251,1);
-  // margin-left: 0 auto;
-  max-width: 55%;
-  margin: 0 auto;
-
 }
 
 .site {
@@ -249,123 +763,51 @@ footer {
 .site-content {
   flex: 1;
 }
-
-p {
-  line-height: 30px;
-}
-
-.hero-image {
-  height: 100vh;
-  position: relative;
-  margin-top: -60px;
-  background-size: cover;
-  background-position: center;
-}
-
-.imagesGrid {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%;
-    position: relative;
-    margin-bottom: 20px;
-    background-size: cover;
-    background-position: center;
-    // &:nth-child(3n) {
-    //   margin-right: 0;
-    // }
-}
-.createHolidayForm {
-  background-color: rgba(251,251,251,.32);
-  padding: 20px;
-  width: 80%;
-  top: 50px;
-  text-align: center;
-}
-
-.newHolidaySection {
-  top: 0;
-    width: 100vw;
-    // background-color: rgba(36,39,43,.7);
-    display: box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    box-pack: center;
-    justify-content: center;
-    box-align: center;
-    align-items: center;
-    -ms-flex-align: center;
-}
-
-.groupsIndex {
-  text-align: center;
-  margin-top: 60px;
-}
-
-.createGroupForm {
-  text-align: center;
-}
-
-.groupsShow {
-  text-align: center;
-  margin-top: 60px;
-}
-
-.holidaysShow {
-  text-align: center;
-}
-
-.usersShow {
-  text-align: center;
-}
-
-div {
-  &.attendees {
-    padding-left: 10px;
-    label {
-      // margin-left: 10px;
-      position: relative;
-      display: block;
-      padding-top: 5px;
-      padding-left: 5px;
-    }
+//----------------------------------------------------------------------------//
+.rightColumn {
+  float: right;
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  label {
+    // padding: 0;
+  }
+  input {
+    // padding: 3px;
   }
 }
 
-.center {
-  text-align: center;
-}
-
-.leftcol {
+.leftColumn {
   float: left;
-  display: block;
+  width: 50%;
+}
+//----------------------------------------------------------------------------//
+.createButton {
+  margin-bottom: 40px;
 }
 
-.rightcol {
+.createdBy {
   float: right;
-  display: block;
 }
-
-// .google-map {
-//   height: 300px;
-//   width: 300px;
-//   display: inline-block;
-// }
-
+//----------------------------------------------------------------------------//
+.loginForm {
+  @extend .div-styles;
+  max-width: 55%;
+  margin: 0 auto;
+  text-align: center;
+  button {
+    width: 83%;
+  }
+  input {
+    max-width: 83%;
+  }
+}
+//----------------------------------------------------------------------------//
 .profile {
   width: 60px;
   height: 60px;
   border-radius: 100%;
 }
-
-// #map {
-//   margin-left: 15px;
-//   height: 300px;
-//   width: 900px;
-//   background-color: lightgrey;
-// }
 
 .message {
   background-color: lighten(black, 20%);
@@ -374,28 +816,55 @@ div {
   margin-bottom: 20px;
 }
 
-.background {
-  background-image: url('../images/7.jpg');
-  position: absolute;
-  // width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto;
-  // height: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  // width: 630px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  // zoom: 83%;
+.profileImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  opacity: 1;
 }
 
-.profileImage {
-  width: 100px;
-  height: 50%;
-  border-radius: 100%;
-  // margin: 0;
-  opacity: 1;
+.buttons {
+  padding-bottom: 20px;
+}
+
+#departureDate {
+  padding: 3px;
+}
+
+#returnDate {
+  padding: 3px;
+}
+
+.flightsBoard {
+  font-family: 'Space Mono', monospace;
+  background-color: rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  padding: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  h3 {
+    color: yellow;
+    font-size: 14px;
+  }
+  p {
+    color: white;
+    background-color: rgba(26, 24, 24, 0.50);
+    padding: 0 4px;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    &:hover, &:focus {
+      color: white;
+    }
+  }
+}
+
+.holidayImage {
+  width: 10%;
 }

@@ -22,7 +22,7 @@ function LoginCtrl($auth, $state) {
   function login() {
     $auth.login(vm.credentials)
       // .then(user => console.log(user));
-      .then(() => $state.go('usersShow'));
+      .then(() => $state.go('usersGroupsIndex'));
   }
   vm.login = login;
 }

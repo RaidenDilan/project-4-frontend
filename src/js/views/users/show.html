@@ -1,15 +1,14 @@
 <section>
   <div class="userInfo">
     <h1>{{ usersShow.user.full_name }}</h1>
-    <div class="profilePhoto">
-      <img ng-src="{{ usersShow.user.image_src }}">
+    <div>
+      <img ng-src="{{ usersShow.user.image_src }}" class="profilePhoto">
     </div>
     <p><strong>Email: </strong>{{usersShow.user.email}}</p>
     <p><strong>First Name: </strong>{{usersShow.user.first_name}}</p>
     <p><strong>Last Name: </strong>{{usersShow.user.last_name}}</p>
     <p><strong>Bio: </strong>{{ usersShow.user.bio }}</p>
     <p><strong>Preferred Airport: </strong>{{ usersShow.user.airport }}</p>
-
     <div class="profileButton">
       <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="usersEdit({ id: usersShow.user.id })">Edit</button>
       <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ng-click="usersShow.delete()">Delete</button>

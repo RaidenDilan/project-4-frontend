@@ -1,70 +1,66 @@
 <section>
   <div class="newHolidaySection">
-    <div class="createHolidayForm">
+    <div class="newHolidayForm">
       <form ng-submit="holidaysNew.create()">
-        <div>
-          <label for="cover_photo">Cover Photo</label><br>
-          <input type="text" name="cover_photo" id="cover_photo" ng-model="holidaysNew.holiday.cover_photo">
+        <h1>New Adventure</h1>
+        <div class="leftColumn">
+          <div>
+            <input type="text" name="cover_photo" id="cover_photo" ng-model="holidaysNew.holiday.cover_photo" placeholder="Main Image">
+          </div>
+
+          <div>
+            <input type="text" name="location" id="location" ng-model="holidaysNew.holiday.location" placeholder="Location">
+          </div>
+
+          <div>
+            <input type="text" name="attractions" id="attractions" ng-model="holidaysNew.holiday.attractions" placeholder="Attractions">
+          </div>
+
+          <div>
+            <input type="text" name="departureAirport" id="departureAirport" ng-model="holidaysNew.holiday.departureAirport" placeholder="Departure Airport">
+          </div>
+
+          <div>
+            <input type="text" name="arrivalAirport" id="arrivalAirport" ng-model="holidaysNew.holiday.arrivalAirport" placeholder="Arrival Airport">
+          </div>
+
+          <div>
+            <input type="text" name="when_to_go" id="when_to_go" ng-model="holidaysNew.holiday.when_to_go" placeholder="Best time to go">
+          </div>
+
+          <div>
+            <textarea type="text" name="description" id="description" ng-model="holidaysNew.holiday.description" placeholder="Description"></textarea>
+          </div>
         </div>
 
-        <div>
-          <label for="location">Location</label><br>
-          <input type="text" name="location" id="location" ng-model="holidaysNew.holiday.location">
-        </div>
+        <div class="rightColumn">
+          <div class="departure">
+            <label for="departureDate">Departure Date</label>
+            <input type="date" name="departureDate" id="departureDate" ng-model="holidaysNew.holiday.departureDate">
+          </div>
 
-        <div>
-          <label for="attractions">Attractions</label><br>
-          <input type="text" name="attractions" id="attractions" ng-model="holidaysNew.holiday.attractions">
-        </div>
+          <div class="return">
+            <label for="returnDate">Return Date</label>
+            <input type="date" name="returnDate" id="returnDate" ng-model="holidaysNew.holiday.returnDate">
+          </div>
 
-        <div>
-          <label for="departureDate">Departure Date</label><br>
-          <input type="date" name="departureDate" id="departureDate" ng-model="holidaysNew.holiday.departureDate">
-        </div>
+          <div class="fourImages">
+            <div>
+              <input type="text" name="image" id="image1" ng-model="holidaysNew.holiday.image_one" placeholder="Image One">
+            </div>
 
-        <div>
-          <label for="returnDate">Return Date</label><br>
-          <input type="date" name="returnDate" id="returnDate" ng-model="holidaysNew.holiday.returnDate">
-        </div>
+            <div>
+              <input type="text" name="image" id="image2" ng-model="holidaysNew.holiday.image_two" placeholder="Image Two">
+            </div>
 
-        <div>
-          <label for="departureAirport">Departure Airport</label><br>
-          <input type="text" name="departureAirport" id="departureAirport" ng-model="holidaysNew.holiday.departureAirport">
-        </div>
+            <div>
+              <input type="text" name="image" id="image3" ng-model="holidaysNew.holiday.image_three" placeholder="Image Three">
+            </div>
 
-        <div>
-          <label for="arrivalAirport">Arrival Airport</label><br>
-          <input type="text" name="arrivalAirport" id="arrivalAirport" ng-model="holidaysNew.holiday.arrivalAirport">
-        </div>
-
-        <div>
-          <label for="when_to_go">When to Go?</label><br>
-          <input type="text" name="when_to_go" id="when_to_go" ng-model="holidaysNew.holiday.when_to_go">
-        </div>
-
-        <div>
-          <label for="description">Description</label><br>
-          <textarea type="text" name="description" id="description" ng-model="holidaysNew.holiday.description"></textarea>
-        </div>
-
-        <div>
-          <label for="image_one">Image One</label><br>
-          <input type="text" name="image" id="image1" ng-model="holidaysNew.holiday.image_one">
-        </div>
-
-        <div>
-          <label for="image_two">Image Two</label><br>
-          <input type="text" name="image" id="image2" ng-model="holidaysNew.holiday.image_two">
-        </div>
-
-        <div>
-          <label for="image_three">Image Three</label><br>
-          <input type="text" name="image" id="image3" ng-model="holidaysNew.holiday.image_three">
-        </div>
-
-        <div>
-          <label for="image_four">Image Four</label><br>
-          <input type="text" name="image" id="image4" ng-model="holidaysNew.holiday.image_four">
+            <div>
+              <input type="text" name="image" id="image4" ng-model="holidaysNew.holiday.image_four" placeholder="Image Four">
+            </div>
+          </div>
         </div>
 
         <button>Upload your Holiday</button>

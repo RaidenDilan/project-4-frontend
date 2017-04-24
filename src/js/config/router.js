@@ -7,10 +7,10 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
   $stateProvider
-  .state('home', {
-    url: '/home',
-    templateUrl: 'js/views/home.html'
-  })
+  // .state('home', {
+  //   url: '/home',
+  //   templateUrl: 'js/views/home.html'
+  // })
 //---------------------------------HOLIDAY------------------------------------//
   .state('holidaysNew', {
     url: '/groups/:id/holidays/new',
@@ -78,5 +78,5 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     controller: 'LoginCtrl as login'
   });
 
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/');
 }

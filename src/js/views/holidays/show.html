@@ -1,46 +1,94 @@
 <section>
-  <div class="holidaysShow">
-    <h1>Holiday Show</h1>
-
-    <img ng-src="{{ holidaysShow.holiday.cover_photo }}" alt="{{ holidaysShow.holiday.location }}">
-
-    <h2>Location: {{ holidaysShow.holiday.location }}</h2>
-    <p>Nearest Airport: {{ holidaysShow.holiday.nearest_airport }}</p>
-    <p>Departure Date: {{ holidaysShow.holiday.departureDate }}</p>
-    <p>Return Date: {{ holidaysShow.holiday.returnDate }}</p>
-    <p>Departure Airport: {{ holidaysShow.holiday.departureAirport }}</p>
-    <p>Arrival Airport: {{ holidaysShow.holiday.arrivalAirport }}</p>
-    <p>Attractions: {{ holidaysShow.holiday.attractions }}</p>
-    <p>Description: {{ holidaysShow.holiday.description }}</p>
-    <p>When to Go?: {{ holidaysShow.holiday.when_to_go }}</p>
-
-    <img ng-src="{{ holidaysShow.holiday.image_one }}" alt="{{ holidaysShow.holiday.location }}">
-    <img ng-src="{{ holidaysShow.holiday.image_two }}" alt="{{ holidaysShow.holiday.location }}">
-    <img ng-src="{{ holidaysShow.holiday.image_three }}" alt="{{ holidaysShow.holiday.location }}">
-    <img ng-src="{{ holidaysShow.holiday.image_four }}" alt="{{ holidaysShow.holiday.location }}">
-    <p>Created By: {{ holidaysShow.holiday.user.full_name }}</p>
-
-    <button ui-sref="holidaysEdit({ id: holidaysShow.holiday.id })">Edit</button>
-    <button ng-click="holidaysShow.delete()">Delete</button>
-    <button ui-sref="flightsShow({ id: holidaysShow.holiday.id })">Get Flights</button>
+  <div class="holidaysShowPage">
+    <h1>{{ holidaysShow.holiday.location }}</h1>
   </div>
 </section>
 
-<section>
+<section class="section">
+  <div class="holidaysShowPage">
     <div>
-      <h2>Comments</h2>
+      <img ng-src="{{ holidaysShow.holiday.cover_photo }}" alt="{{ holidaysShow.holiday.location }}" class="coverImage">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="holidaysShowPage">
+    <div class="holidayButtons">
+      <button ui-sref="holidaysEdit({ id: holidaysShow.holiday.id })">Edit</button>
+      <button ng-click="holidaysShow.delete()">Delete</button>
+      <button ui-sref="flightsShow({ id: holidaysShow.holiday.id })">Get Flights</button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="holidaysShowPage">
+    <p class="link">Discovered By:
+      <a ui-sref="usersShow{{ holidaysShow.holiday.user.id }}">
+        <img ng-src="{{ holidaysShow.holiday.user.image_src }}" class="userProfile">
+      </a>
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="holidaysShowPage">
+    <h1 class="descriptionHeader">Description</h1>
+    <p class="description">{{ holidaysShow.holiday.description }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="holidaysShowPage">
+    <div class="details">
+      <h1>Details</h1>
+      <p><span>Departure Date: </span>{{ holidaysShow.holiday.departureDate }}</p>
+      <p><span>Return Date: </span>{{ holidaysShow.holiday.returnDate }}</p>
+      <p><span>Departure Airport: </span>{{ holidaysShow.holiday.departureAirport }}</p>
+      <p><span>Arrival Airport: </span>{{ holidaysShow.holiday.arrivalAirport }}</p>
+      <p><span>Attractions: </span>{{ holidaysShow.holiday.attractions }}</p>
+      <p><span>When to Go?: </span>{{ holidaysShow.holiday.when_to_go }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="holidaysShowPage">
+    <div>
+      <!-- <div>
+        <div style="background-image:url('{{ holidaysShow.holiday.image_one }}')" class="immage"></div>
+        <div style="background-image:url('{{ holidaysShow.holiday.image_two }}')" class="immage"></div>
+        <div style="background-image:url('{{ holidaysShow.holiday.image_three }}')" class="immage"></div>
+        <div style="background-image:url('{{ holidaysShow.holiday.image_four }}')" class="immage"></div>
+      </div> -->
+      <img ng-src="{{ holidaysShow.holiday.image_one }}" alt="{{ holidaysShow.holiday.location }}">
+      <img ng-src="{{ holidaysShow.holiday.image_two }}" alt="{{ holidaysShow.holiday.location }}">
+      <img ng-src="{{ holidaysShow.holiday.image_three }}" alt="{{ holidaysShow.holiday.location }}">
+      <img ng-src="{{ holidaysShow.holiday.image_four }}" alt="{{ holidaysShow.holiday.location }}">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="holidaysShowPage">
+    <div class="reviews">
+      <h1>Reviews</h1>
       <ul>
-        <li ng-repeat="comment in holidaysShow.holiday.comments">{{ comment.body }} - <strong>{{ comment.user.username }}</strong><button ng-click="holidaysShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id">Delete</button></li>
+        <li ng-repeat="comment in holidaysShow.holiday.comments">{{ comment.body }} - <strong>{{ comment.user.username }}</strong><button ng-click="holidaysShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id" class="deleteComment">Delete</button></li>
       </ul>
     </div>
 
-    <div ng-if="main.isAuthenticated()">
-      <h2>Add Comment</h2>
-      <form ng-submit="holidaysShow.addComment()">
-        <textarea type="text" name="body" ng-model="holidaysShow.comment.body"></textarea><br>
-        <button>Create</button>
-      </form>
+    <div class="holidayAddComment">
+      <div ng-if="main.isAuthenticated()">
+        <h2>Add Comment</h2>
+        <form ng-submit="holidaysShow.addComment()">
+          <textarea type="text" name="body" ng-model="holidaysShow.comment.body" placeholder="Review"></textarea><br>
+          <div class="createCommentButton">
+            <button>Post</button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </section>
-
-<!-- <div id="map"></div> -->
