@@ -19,6 +19,7 @@
     <div>
       <ul>
         <li ng-repeat="attendee in usersGroupsShow.group.attendees">
+          {{ attendee.id }}
           <p><a ui-sref="usersShow({ id: attendee.id })"><img ng-src="{{ attendee.image_src }}" class="profile"></a></p>
         </li>
       </ul>

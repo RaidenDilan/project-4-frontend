@@ -29,7 +29,7 @@ function HolidaysShowCtrl(Holiday, $stateParams, $state, Comment) {
   function holidaysDelete() {
     vm.holiday
       .$remove()
-      .then(() => $state.go('holidaysIndex'));
+      .then(() => $state.go('usersGroupsIndex'));
   }
 
   vm.delete = holidaysDelete;

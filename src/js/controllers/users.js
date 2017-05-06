@@ -58,8 +58,8 @@ function UsersEditCtrl(User, $stateParams, $state) {
   vm.update = usersUpdate;
 }
 
-UsersGroupsIndexCtrl.$inject = ['User', '$stateParams', '$state', '$auth'];
-function UsersGroupsIndexCtrl(User, $stateParams, $state, $auth) {
+UsersGroupsIndexCtrl.$inject = ['User', 'Group', '$stateParams', '$state', '$auth'];
+function UsersGroupsIndexCtrl(User, Group, $stateParams, $state, $auth) {
   const vm = this;
 
   vm.groups = User.get({ id: $auth.getPayload().id });
@@ -70,6 +70,8 @@ function UsersGroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth) 
   const vm = this;
 
   if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
+  // console.log(vm.currentUser);
+  // console.log({ id: $auth.getPayload().id });
 
   Group.get($stateParams, (data) => {
     vm.group = data;

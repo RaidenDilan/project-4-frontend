@@ -7,10 +7,10 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
   $stateProvider
-  // .state('home', {
-  //   url: '/home',
-  //   templateUrl: 'js/views/home.html'
-  // })
+  .state('home', {
+    url: '/',
+    templateUrl: 'js/views/index.html'
+  })
 //---------------------------------HOLIDAY------------------------------------//
   .state('holidaysNew', {
     url: '/groups/:id/holidays/new',
