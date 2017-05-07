@@ -1,10 +1,10 @@
-<section>
-  <div class="searchFlightSection">
+<section class="searchFlightsSection">
+  <div class="searchFlightsPage">
     <h1>Search Flights</h1>
     <form ng-submit="flightsShow.searchFlights()">
 
       <div>
-        <p><strong>Recommended months are </strong>{{ flightsShow.holiday.when_to_go }}</p>
+        <p><strong>Recommended months are: </strong><br>{{ flightsShow.holiday.when_to_go }}</p>
       </div>
 
       <div>
@@ -34,8 +34,8 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="flightsInformationSection">
+<section class="betweenSections">
+  <div class="searchFlightsPage ">
         <div class="flightsBoard">
           <h1>Flights to {{ flightsShow.holiday.location }}</h1>
           <br>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Palm Trees</title>
-    <!-- <link rel="icon" href="/images/pnc.png" type="image/png"> -->
+    <!-- <link rel="icon" href="/images/.png" type="image/png"> -->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5uFR8sHqcDYKASWyXmpLZM17kfstkqVE"></script>
@@ -22,7 +22,7 @@
           <li ng-if="main.isAuthenticated()" class="newgroup"><a ui-sref="groupsNew">New Group</a></li>
           <li ng-if="!main.isAuthenticated()" class="left"><a ui-sref="login">Login</a></li>
           <li ng-if="!main.isAuthenticated()" class="right"><a ui-sref="register">Register</a></li>
-          <li ng-if="main.isAuthenticated()" class="right"><a ui-sref="usersShow({ id: main.currentUser.id })"><img ng-src="{{ main.currentUser.image_src }}" class="profileImage"></a></li>
+          <li ng-if="main.isAuthenticated()" class="right"><a ui-sref="usersShow({ id: main.currentUser.id })"><img ng-src="{{ main.currentUser.image_src }}" class="avatar"></a></li>
         </ul>
       </nav>
     </header>

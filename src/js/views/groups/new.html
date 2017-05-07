@@ -1,5 +1,5 @@
-<section>
-  <div class="createGroupForm">
+<section class="groupsNewSection">
+  <div class="newGroupForm">
     <h1>New group</h1>
     <form ng-submit="groupsNew.create()">
       <div>
@@ -7,15 +7,14 @@
       </div>
 
       <div class="attendees">
-        <h1>Users</h1>
-        <label ng-repeat="user in groupsNew.users">
-          <input type="checkbox" name="attendees" checklist-model="groupsNew.group.attendee_ids" checklist-value="user.id">
-          <!-- {{ user.full_name }} -->
+        <h3>Users</h3>
+        <label ng-repeat="user in groupsNew.users" class="attendeesNames" id="attendeeName">
+          <input type="checkbox" id="attendees" name="attendees" checklist-model="groupsNew.group.attendee_ids" checklist-value="user.id">
           {{ user.username }}
         </label>
       </div>
 
-      <button>Create Group</button>
+      <button class="newGroupButton">Create Group</button>
     </form>
   </div>
 </section>

@@ -1,0 +1,48 @@
+.newGroupForm {
+  background-color: rgba(0, 0, 0, 0.30);
+  margin: 0 300px;
+  border-radius: 25px;
+}
+
+.attendees {
+  border: 2px dotted white;
+  border-radius: 5px;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  label {
+    padding: 0;
+    margin: 0;
+    color: white;
+    display: block;
+    &:hover {
+      // text-decoration: red line-through;
+    }
+    &:last-child {
+      margin-bottom: 15px;
+    }
+    &:checked {
+      // text-decoration: red line-through;
+    }
+  }
+}
+
+.newGroupButton {
+  margin-bottom: 20px;
+}
+
+input[type="checkbox"] {
+  // display: none;
+  padding: 0;
+  margin: 0;
+}
+
+// .attendeesNames:checked {
+//   text-decoration: red line-through;
+// }
+
+
+input[type="radio"] {
+  padding: 0;
+  margin: 0;
+}

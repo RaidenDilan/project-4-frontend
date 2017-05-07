@@ -1,0 +1,141 @@
+* {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  &.home {
+    main {
+      background-image: url('../images/home.jpg');
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      zoom: none;
+    }
+  }
+  &.login {
+    main {
+      background-image: url('../images/2.jpg');
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      zoom: none;
+    }
+  }
+  &.register {
+    main {
+      background-image: url('../images/2.jpg');
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      zoom: none;
+    }
+  }
+  &.usersShow {
+    main {
+      background-image: url('../images/1.jpg');
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      zoom: none;
+    }
+  }
+  &.usersEdit {
+    main {
+      background-image: url('../images/7.jpg');
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      zoom: none;
+    }
+  }
+  &.groupsNew {
+    main {
+      background-image: url('../images/12.jpg');
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      zoom: none;
+    }
+  }
+  &.groupsEdit {
+    main {
+      background-image: url('../images/4.jpg');
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      zoom: none;
+    }
+  }
+  &.usersGroupsIndex {
+    main {
+      background-image: url('../images/5.jpg');
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      zoom: none;
+      // position: fixed;
+    }
+  }
+  &.usersGroupsShow {
+    main {
+      background-image: url('../images/12.jpg');
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      zoom: none;
+    }
+  }
+  &.holidaysEdit {
+    main {
+      background-image: url('../images/13.jpg');
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      zoom: none;
+    }
+  }
+  &.holidaysShow {
+    main {
+      background-image: url('../images/2.jpg');
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      zoom: none;
+    }
+  }
+  &.holidaysNew {
+    main {
+      background-image: url('../images/10.jpg');
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      zoom: none;
+    }
+  }
+  &.flightsShow {
+    main {
+      background-image: url('../images/11.jpg');
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      zoom: none;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.usersShowPage {
+  background-color: rgba(0, 0, 0, 0.30);
+  margin: 0 300px;
+  border-radius: 25px;
+  button {
+    &:last-child {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.profileImage {
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: white;
+  strong {
+    // text-transform: uppercase;
+    color: rgb(255, 252, 0);
+  }
+}

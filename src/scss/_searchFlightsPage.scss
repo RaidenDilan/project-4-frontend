@@ -1,0 +1,39 @@
+.searchFlightsPage {
+  background-color: rgba(0, 0, 0, 0.30);
+  margin: 0 200px;
+  border-radius: 25px;
+  button {
+    margin-bottom: 25px;
+  }
+}
+
+.flightsBoard {
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  padding: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+  h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  h3 {
+    color: yellow;
+    font-size: 14px;
+  }
+  p {
+    color: white;
+    background-color: rgba(26, 24, 24, 0.50);
+    padding: 0 4px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    &:hover, &:focus {
+      color: white;
+    }
+  }
+}

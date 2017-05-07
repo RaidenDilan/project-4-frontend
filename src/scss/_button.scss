@@ -1,0 +1,22 @@
+button {
+  margin: 5px;
+  width: 90%;
+  background: #01A3BC;
+  border: 2px solid #01A3BC;
+  height: 20px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  outline: 0;
+  padding: 3px;
+  appearance: none;
+  box-sizing: initial;
+  transition: all .5s ease;
+  &:hover {
+    background: 0 0;
+    color: #01A3BC;
+  }
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 15px;
+}

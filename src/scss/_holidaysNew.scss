@@ -1,0 +1,43 @@
+.newHolidayForm {
+  background-color: rgba(0, 0, 0, 0.30);
+  margin: 0 300px;
+  border-radius: 25px;
+  button {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+
+.leftColumn {
+  float: left;
+  width: 50%;
+}
+
+.rightColumn {
+  float: left;
+  width: 50%;
+}
+
+label {
+  color: yellow;
+}
+
+#departureDate {
+  padding: 3px;
+}
+
+#returnDate {
+  padding: 3px;
+}
+
+.departure {
+  padding-top: 14px;
+}
+
+.return {
+  padding-top: 3px
+}
+
+.holidayImages {
+  padding-top: 13px;
+}

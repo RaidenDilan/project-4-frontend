@@ -1,5 +1,5 @@
 <div class="registerBackground"></div>
-<section>
+<section class="registerSection">
   <div class="registerForm">
     <h1>Start your Adventure Today</h1>
     <form ng-submit="login.register()">
@@ -45,9 +45,9 @@
       </div>
     </form>
 
-    <div class="loginButton">
+    <div>
       <p>Already Registered?</p>
-      <button ng-if="!main.authenticate()" ui-sref="login">Login Here</button>
+      <button ng-if="!main.authenticate()" ui-sref="login" class="loginHereButton">Login Here</button>
     </div>
   </div>
 </section>

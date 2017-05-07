@@ -1,5 +1,5 @@
 <div class="loginBackground"></div>
-<section>
+<section class="loginSection">
   <div class="loginForm">
     <h1>Log In</h1>
     <form ng-submit="login.login()">
@@ -20,9 +20,7 @@
     </div>
     <div>
       <p class="1">New to this website?</p>
-      <button ng-if="!main.isAuthenticated()" ui-sref="register" class="createButton">Create your account</button>
+      <button ng-if="!main.isAuthenticated()" ui-sref="register" class="createAccountButton">Create your account</button>
     </div>
   </div>
 </section>
-
-<!-- <div class="background"></div> -->
