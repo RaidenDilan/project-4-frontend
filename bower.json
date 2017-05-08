@@ -24,7 +24,8 @@
     "ngmap": "^1.18.4",
     "bootstrap-css-only": "^3.3.7",
     "angular-bootstrap": "^2.5.0",
-    "angular-animate": "^1.6.4"
+    "angular-animate": "^1.6.4",
+    "angular-messages": "^1.6.4"
   },
   "resolutions": {
     "angular": "^1.6.4"

@@ -31,13 +31,17 @@ UsersShowCtrl.$inject = ['User', '$stateParams', '$state', '$auth'];
 function UsersShowCtrl(User, $stateParams, $state, $auth) {
   const vm = this;
 
-  vm.user = User.get({ id: $auth.getPayload().id});
-  // console.log({ id: $auth.getPayload().id});
+  // if($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
+  // console.log(vm.currentUser);
+
+  // vm.user = User.get($stateParams);
+  vm.user = User.get({ id: $auth.getPayload().id });
+  // console.log({ id: $auth.getPayload().id });
 
   function usersDelete() {
     $auth.logout();
     vm.user
-      .$remove()
+      .$remove({ id: vm.currentUser })
       .then(() => $state.go('login'));
   }
   vm.delete = usersDelete;
