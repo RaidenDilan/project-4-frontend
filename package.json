@@ -4,7 +4,8 @@
   "description": "A example stack with gulp and angular",
   "engines": {
     "node": "7.4.x",
-    "npm": "4.0.x"
+    "npm": "4.0.x",
+    "bower": "1.8.x"
   },
   "main": "index.js",
   "scripts": {
