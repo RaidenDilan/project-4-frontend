@@ -31,12 +31,7 @@ UsersShowCtrl.$inject = ['User', '$stateParams', '$state', '$auth'];
 function UsersShowCtrl(User, $stateParams, $state, $auth) {
   const vm = this;
 
-  // if($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
-  // console.log(vm.currentUser);
-
-  // vm.user = User.get($stateParams);
   vm.user = User.get({ id: $auth.getPayload().id });
-  // console.log({ id: $auth.getPayload().id });
 
   function usersDelete() {
     $auth.logout();
@@ -46,7 +41,6 @@ function UsersShowCtrl(User, $stateParams, $state, $auth) {
   }
   vm.delete = usersDelete;
 }
-
 
 UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];
 function UsersEditCtrl(User, $stateParams, $state) {
@@ -76,8 +70,6 @@ function UsersGroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth) 
   const vm = this;
 
   if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
-  // console.log(vm.currentUser);
-  // console.log({ id: $auth.getPayload().id });
 
   Group.get($stateParams, (data) => {
     vm.group = data;
