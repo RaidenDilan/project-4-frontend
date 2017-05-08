@@ -51,9 +51,11 @@ function UsersEditCtrl(User, $stateParams, $state) {
   vm.user = User.get($stateParams);
 
   function usersUpdate() {
-    vm.user
+    if(vm.usersEditForm) {
+      vm.user
       .$update()
       .then(() => $state.go('usersShow', $stateParams));
+    }
   }
   vm.update = usersUpdate;
 }

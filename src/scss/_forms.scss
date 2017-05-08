@@ -24,7 +24,7 @@ div {
         border: none;
         outline: none;
         cursor: pointer;
-        width: 30%;
+        width: 35%;
         margin: 0 auto;
         background: none;
         color: white;
@@ -44,4 +44,16 @@ div {
       border: none;
     }
   }
+}
+
+.formValidation {
+  color: yellow;
+  padding: 0;
+  font-size: 13px;
+  margin: 0;
+  line-height: 15px;
+}
+
+.usersEditForm {
+  padding-top: 20px;
 }

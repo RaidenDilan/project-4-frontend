@@ -2,13 +2,23 @@
 <section class="loginSection">
   <div class="loginForm">
     <h1>Log In</h1>
-    <form ng-submit="login.login()">
+
+    <form name="login.loginForm" ng-submit="login.login()" novalidate>
+
       <div>
-        <input type="text" ng-model="login.credentials.email" placeholder="Email">
+        <input type="text" name="email" id="email" ng-model="login.credentials.email" placeholder="Email" required>
       </div>
+      <div class="ng-message-error" ng-messages="login.loginForm.email.$error" ng-show="(login.loginForm.$submitted || login.loginForm.email.$touched)">
+        <p ng-message="required" class="formValidation">Your email is required.</p>
+      </div>
+
       <div>
-        <input type="password" ng-model="login.credentials.password" placeholder="Password">
+        <input type="password" name="password" id="password" ng-model="login.credentials.password" placeholder="Password" required>
       </div>
+      <div class="ng-message-error" ng-messages="login.loginForm.password.$error" ng-show="(login.loginForm.$submitted || login.loginForm.password.$touched)">
+        <p ng-message="required" class="formValidation">Your password is required.</p>
+      </div>
+
       <div>
         <button>Login</button>
       </div>
@@ -16,11 +26,11 @@
 
     <div>
       <button ng-click="login.authenticate('github')">Login with Github</button>
-      <button ng-click="login.authenticate('facebook')">Login with Facebook</button>
+      <!-- <button ng-click="login.authenticate('facebook')">Login with Facebook</button> -->
     </div>
     <div>
-      <p class="1">New to this website?</p>
-      <button ng-if="!main.isAuthenticated()" ui-sref="register" class="createAccountButton">Create your account</button>
+      <p>New to this website?</p>
+      <button ng-if="!main.isAuthenticated()" ui-sref="register" class="createAccountButton">Create an account</button>
     </div>
   </div>
 </section>

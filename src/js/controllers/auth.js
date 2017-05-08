@@ -13,16 +13,20 @@ function LoginCtrl($auth, $state) {
   vm.authenticate = authenticate;
 
   function register() {
-    $auth.signup(vm.user)
+    if(vm.registerForm.$valid) {
+      $auth.signup(vm.user)
       // .then(user => console.log(user));
       .then(() => $state.go('login'));
+    }
   }
   vm.register = register;
 
   function login() {
-    $auth.login(vm.credentials)
+    if(vm.loginForm.$valid) {
+      $auth.login(vm.credentials)
       // .then(user => console.log(user));
       .then(() => $state.go('usersGroupsIndex'));
+    }
   }
   vm.login = login;
 }

@@ -2,42 +2,72 @@
 <section class="registerSection">
   <div class="registerForm">
     <h1>Start your Adventure Today</h1>
-    <form ng-submit="login.register()">
+
+    <form name="register.registerForm" ng-submit="login.register()" novalidate>
 
       <div>
-        <input type="text" ng-model="login.user.username" placeholder="Username">
+        <input type="text" name="username" id="username" ng-model="login.user.username" placeholder="Username" required>
+      </div>
+      <div class="ng-message-error" ng-messages="register.registerForm.username.$error" ng-show="(register.registerForm.$submitted || register.registerForm.username.$touched)">
+        <p ng-message="required" class="formValidation">Your username is required.</p>
       </div>
 
       <div>
-        <input type="text" name="first_name" id="first_name" ng-model="login.user.first_name" placeholder="First Name">
+        <input type="text" name="first_name" id="first_name" ng-model="login.user.first_name" placeholder="First Name" required>
+      </div>
+      <div class="ng-message-error" ng-messages="register.registerForm.first_name.$error" ng-show="(register.registerForm.$submitted || register.registerForm.first_name.$touched)">
+        <p ng-message="required" class="formValidation">Your first name is required.</p>
       </div>
 
       <div>
-        <input type="text" name="last_name" id="last_name" ng-model="login.user.last_name" placeholder="Last Name">
+        <input type="text" name="last_name" id="last_name" ng-model="login.user.last_name" placeholder="Last Name" required>
+      </div>
+      <div class="ng-message-error" ng-messages="register.registerForm.last_name.$error" ng-show="(register.registerForm.$submitted || register.registerForm.last_name.$touched)">
+        <p ng-message="required" class="formValidation">Your last name is required.</p>
       </div>
 
       <div>
-        <input type="text" name="email" id="email" ng-model="login.user.email" placeholder="Email">
+        <input type="text" name="email" id="email" ng-model="login.user.email" placeholder="Email" required>
+      </div>
+      <div class="ng-message-error" ng-messages="register.registerForm.email.$error" ng-show="(register.registerForm.$submitted || register.registerForm.email.$touched)">
+        <p ng-message="required" class="formValidation">Your email is required.</p>
+        <p ng-message="email" class="formValidation">A valid email is required.</p>
       </div>
 
       <div>
-        <input type="password" name="password" id="password" ng-model="login.user.password" placeholder="Password">
+        <input type="password" name="password" id="password" ng-model="login.user.password" placeholder="Password" required>
+      </div>
+      <div class="ng-message-error" ng-messages="register.registerForm.password.$error" ng-show="(register.registerForm.$submitted || register.registerForm.password.$touched)">
+        <p ng-message="required" class="formValidation">Your password is required.</p>
       </div>
 
       <div>
-        <input type="password" name="passwordConfirmation" id="passwordConfirmation" ng-model="login.user.password_confirmation" placeholder="Password Confirmation">
+        <input type="password" name="passwordConfirmation" id="passwordConfirmation" ng-model="login.user.password_confirmation" placeholder="Password Confirmation" required>
+      </div>
+      <div class="ng-message-error" ng-messages="register.registerForm.passwordConfirmation.$error" ng-show="(register.registerForm.$submitted || register.registerForm.passwordConfirmation.$touched)">
+        <p ng-message="required" class="formValidation">Your password confirmation is required.</p>
       </div>
 
       <div>
-        <input type="text" name="airport" id="airport" ng-model="login.user.airport" placeholder="Preferred Airport">
+        <input type="text" name="airport" id="airport" ng-model="login.user.airport" placeholder="Preferred Airport" required>
+      </div>
+      <div class="ng-message-error" ng-messages="register.registerForm.airport.$error" ng-show="(register.registerForm.$submitted || register.registerForm.airport.$touched)">
+        <p ng-message="required" class="formValidation">Your prefered airport is required.</p>
       </div>
 
       <div>
-        <textarea type="text" name="bio" id="bio" ng-model="login.user.bio" placeholder="Biography"></textarea>
+        <!-- <label for="bio">Biography</label> -->
+        <textarea type="text" name="bio" id="bio" placeholder="Biography" ng-model="login.user.bio" required></textarea>
+      </div>
+      <div class="ng-message-error" ng-messages="register.registerForm.bio.$error" ng-show="(register.registerForm.$submitted || register.registerForm.bio.$touched)">
+        <p ng-message="required" class="formValidation">Your biography required.</p>
       </div>
 
       <div>
-        <input type="file" base64 name="base64" id="base64" ng-model="login.user.base64">
+        <input type="file" base64 name="base64" id="base64" ng-model="login.user.base64" required>
+      </div>
+      <div class="ng-message-error" ng-messages="register.registerForm.base64.$error" ng-show="(register.registerForm.$submitted)">
+        <p ng-message="required" class="formValidation">An image is required.</p>
       </div>
 
       <div>

@@ -12,10 +12,12 @@ function GroupsNewCtrl(Group, User, $state, $auth) {
   vm.users = User.query();
 
   function groupsCreate() {
-    Group
+    if(vm.groupsNewForm.$valid) {
+      Group
       .save({ group: vm.group })
       .$promise
       .then((group) => $state.go('usersGroupsIndex', { id: group.id }));
+    }
   }
   vm.create = groupsCreate;
 }
@@ -28,10 +30,12 @@ function GroupsEditCtrl(User, Group, $stateParams, $state) {
   vm.users = User.query();
 
   function groupsUpdate() {
-    Group
+    if(vm.groupsEditForm.$valid) {
+      Group
       .update({ id: vm.group.id, group: vm.group })
       .$promise
       .then(() => $state.go('usersGroupsShow', $stateParams));
+    }
   }
   vm.update = groupsUpdate;
 }

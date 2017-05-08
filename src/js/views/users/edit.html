@@ -2,45 +2,73 @@
   <div class="usersEditPage">
 
     <div>
-      <img ng-src="{{ usersEdit.user.image_src }}" class="profileEditImage">
+      <!-- <img ng-src="{{ usersEdit.user.image_src }}" class="profileEditImage"> -->
     </div>
 
-    <form ng-submit="usersEdit.update()" class="profilePhoto">
+    <form name="usersEdit.usersEditForm" ng-submit="usersEdit.update()" class="profilePhoto usersEditForm" novalidate>
 
       <div>
-        <input type="text" name="username" id="username" ng-model="usersEdit.user.username" placeholder="Username">
+        <input type="text" name="username" id="username" ng-model="usersEdit.user.username" placeholder="Username" required>
+      </div>
+      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.username.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.username.$touched)">
+        <p ng-message="required" class="formValidation">Username is required</p>
       </div>
 
       <div>
-        <input type="text" name="firstname" id="firstname" ng-model="usersEdit.user.first_name" placeholder="Firstname">
+        <input type="text" name="first_name" id="first_name" ng-model="usersEdit.user.first_name" placeholder="Firstname" required>
+      </div>
+      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.first_name.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.first_name.$touched)">
+        <p ng-message="required" class="formValidation">First name is required</p>
       </div>
 
       <div>
-        <input type="text" name="surname" id="lastname" ng-model="usersEdit.user.last_name" placeholder="Lastname">
+        <input type="text" name="last_name" id="last_name" ng-model="usersEdit.user.last_name" placeholder="Lastname" required>
+      </div>
+      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.last_name.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.last_name.$touched)">
+        <p ng-message="required" class="formValidation">Last name is required</p>
       </div>
 
       <div>
-        <input type="email" name="email" id="email" ng-model="usersEdit.user.email" placeholder="Email">
+        <input type="email" name="email" id="email" ng-model="usersEdit.user.email" placeholder="Email" required>
+      </div>
+      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.email.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.email.$touched)">
+        <p ng-message="required" class="formValidation">Email is required</p>
+        <p ng-message="email" class="formValidation">A valid email is required</p>
       </div>
 
       <div>
-        <input type="password" name="password" id="password" ng-model="usersEdit.user.password" placeholder="Password">
+        <input type="password" name="password" id="password" ng-model="usersEdit.user.password" placeholder="Password" required>
+      </div>
+      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.password.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.password.$touched)">
+        <p ng-message="required" class="formValidation">Password is required</p>
       </div>
 
       <div>
-        <input type="password" name="passwordConfirmation" id="password_confirmation" ng-model="usersEdit.user.password_confirmation" placeholder="Password Confirmation">
+        <input type="password" name="passwordConfirmation" id="password_confirmation" ng-model="usersEdit.user.password_confirmation" placeholder="Password Confirmation" required>
+      </div>
+      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.password_confrimation.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.password_confrimation.$touched)">
+        <p ng-message="required" class="formValidation">Password Confirmation is required</p>
       </div>
 
       <div>
-        <input type="text" name="airport" id="airport" ng-model="usersEdit.user.airport" placeholder="Prefered Airport">
+        <input type="text" name="airport" id="airport" ng-model="usersEdit.user.airport" placeholder="Prefered Airport" required>
+      </div>
+      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.airport.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.airport.$touched)">
+        <p ng-message="required" class="formValidation">Prefered airport is required</p>
       </div>
 
       <div>
-        <textarea type="text" name="bio" ng-model="usersEdit.user.bio" placeholder="Biography"></textarea>
+        <textarea type="text" name="bio" id="bio" ng-model="usersEdit.user.bio" placeholder="Biography" required></textarea>
+      </div>
+      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.bio.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.bio.$touched)">
+        <p ng-message="required" class="formValidation">Biography is required</p>
       </div>
 
       <div>
-        <input type="file" base64 name="base64" id="base64" ng-model="usersEdit.user.base64">
+        <input type="file" base64 name="base64" id="base64" ng-model="usersEdit.user.base64" required>
+      </div>
+      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.base64.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.base64.$touched)">
+        <p ng-message="required" class="formValidation">Profile image is required</p>
       </div>
 
       <div class="usersEditButton">

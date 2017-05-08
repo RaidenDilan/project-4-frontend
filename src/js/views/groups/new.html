@@ -1,9 +1,12 @@
 <section class="groupsNewSection">
   <div class="newGroupForm">
     <h1>New group</h1>
-    <form ng-submit="groupsNew.create()">
+    <form name="groupsNew.groupsNewForm" ng-submit="groupsNew.create()" novalidate>
       <div>
-        <input type="name" name="name" id="name" ng-model="groupsNew.group.name" placeholder="Group Name">
+        <input type="name" name="name" id="name" ng-model="groupsNew.group.name" placeholder="Group Name" required>
+      </div>
+      <div class="ng-message-error" ng-messages="groupsNew.groupsNewForm.name.$error" ng-show="(groupsNew.groupsNewForm.$submitted || groupsNew.groupsNewForm.name.$touched)">
+        <p ng-message="required" class="formValidation">Your group name is required.</p>
       </div>
 
       <div class="attendees">

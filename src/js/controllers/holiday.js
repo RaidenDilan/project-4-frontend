@@ -11,11 +11,13 @@ function HolidaysNewCtrl(Group, User, Holiday, $state, $stateParams) {
   vm.holiday = {};
 
   function holidaysCreate() {
-    vm.holiday.group_id = $stateParams.id; // we are passing in the group id here when creating a new holiday
-    Holiday
+    if(vm.holidaysNewForm.$valid) {
+      vm.holiday.group_id = $stateParams.id; // we are passing in the group id here when creating a new holiday
+      Holiday
       .save({ holiday: vm.holiday })
       .$promise
       .then((holiday) => $state.go('holidaysShow', { id: holiday.id }));
+    }
   }
   vm.create = holidaysCreate;
 }
@@ -73,10 +75,12 @@ function HolidaysEditCtrl(Holiday, $stateParams, $state) {
   });
 
   function holidaysUpdate() {
-    Holiday
+    if(vm.holidaysEditForm.$valid) {
+      Holiday
       .update({ id: vm.holiday.id, holiday: vm.holiday })
       .$promise
       .then(() => $state.go('holidaysShow', $stateParams));
+    }
   }
   vm.update = holidaysUpdate;
 }

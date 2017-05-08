@@ -2,12 +2,16 @@
   "name": "angular-gulp-setup",
   "version": "1.0.0",
   "description": "A example stack with gulp and angular",
+  "engines": {
+    "node": "7.4.x",
+    "npm": "4.0.x"
+  },
   "main": "index.js",
   "scripts": {
     "postinstall": "bower install && gulp deploy",
     "start": "node index"
   },
-  "author": "Alex Chin <alex@alexchin.co.uk>",
+  "author": "Raiden Dilan <raiden18@me.com>",
   "license": "ISC",
   "gulp": {
     "srcDir": "src/",
