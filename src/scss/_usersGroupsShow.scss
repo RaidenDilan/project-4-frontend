@@ -104,10 +104,6 @@ h4#holidayName {
     padding-bottom: 10px;
     border-bottom: 2px solid $white;
   }
-  img {
-    border-radius: 10px;
-    border: 2px solid $white;
-  }
   #holidaysMultiImages {
     padding: 20px 30px 10px 30px;
   }
@@ -152,6 +148,7 @@ h4#holidayName {
   padding: 15%;
   margin: 20px auto;
   background-color: $white;
+  border: 3px solid $white;
 }
 
 .overlay {

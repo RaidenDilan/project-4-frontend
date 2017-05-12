@@ -1,0 +1,130 @@
+#attendeeShowBackground {
+  background-image: url('../images/1.jpg');
+  @extend .background-styles;
+  h1 {
+    padding: 30px;
+    top: 50%;
+    letter-spacing: 4px;
+    font-weight: lighter;
+    background-color: $background-color;
+    border-radius: 10px;
+    width: 80%;
+    margin: 10px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+    font-size: 2em;
+  }
+}
+
+#attendeeShowSection {
+  background-color: $brand-color;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  margin: 25px auto;
+}
+
+#attendeeShowImage {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+  width: 0%;
+  content: "";
+  display: block;
+  padding: 10%;
+  margin: auto;
+  margin-bottom: 2px;
+  margin-top: 10px;
+  border: 3px solid $white;
+}
+
+#attendeeShowHolidaySection {
+  margin: 25px auto;
+  width: 100%;
+  background-color: $brand-color;
+  padding: 0;
+  padding-top: 10px;
+  border-radius: 10px;
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+    color: $white;
+    padding-bottom: 10px;
+    border-bottom: 2px solid $white;
+  }
+  #attendeeShowHolidaysMultiImages {
+    padding: 20px 30px 10px 30px;
+  }
+}
+
+#attendeeShowHolidaysImage {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding: 50%;
+  margin: 20px auto;
+  background-color: $white;
+  border: 3px solid $white;
+}
+
+h4#attendeeShowHolidayName {
+  top: 50%;
+  text-transform: uppercase;
+  padding: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: $white;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 900;
+  text-align: center;
+}
+
+#attendeeShowGroupsAttending {
+  background-color: $brand-color;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  margin: 25px auto;
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+    color: $white;
+    padding-bottom: 10px;
+    border-bottom: 2px solid $white;
+  }
+}
+
+.attendeeShowHolidayImageOverlay {
+  top: 20px;
+  left: 15px;
+  right: 10px;
+  bottom: 20px;
+  position: absolute;
+  background-color: rgba(255,255,255,.5);
+  opacity: 0;
+  transition: all .3s ease-in-out;
+  border-radius: 10px;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+#attendeeShowGroupNames {
+  font-size: 20px;
+  color: $white;
+  padding: 10px;
+  text-transform: uppercase;
+  border: 2px solid $white;
+  border-radius: 10px;
+  margin: 10px;
+}

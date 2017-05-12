@@ -11,6 +11,12 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     url: '/',
     templateUrl: 'js/views/index.html'
   })
+//-------------------------------ADVENTURER-----------------------------------//
+.state('attendeeShow', {
+  url: '/attendee/:id',
+  templateUrl: '/js/views/attendees/attendee.html',
+  controller: 'AttendeeShowCtrl as attendeeShow'
+})
 //---------------------------------HOLIDAY------------------------------------//
   .state('holidaysNew', {
     url: '/groups/:id/holidays/new',

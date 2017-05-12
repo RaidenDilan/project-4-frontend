@@ -62,16 +62,18 @@ function UsersEditCtrl(User, $stateParams, $state) {
 UsersGroupsIndexCtrl.$inject = ['User', 'Group', '$stateParams', '$state', '$auth'];
 function UsersGroupsIndexCtrl(User, Group, $stateParams, $state, $auth) {
   const vm = this;
-
-  // vm.groups = Group.get({ id: $auth.getPayload().id });
-
+  
   vm.groups = User.get({ id: $auth.getPayload().id });
-  console.log('vm.groups', vm.groups);
 }
 
 UsersGroupsShowCtrl.$inject = ['User', 'Group', 'Holiday', '$stateParams', '$state', '$auth'];
 function UsersGroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth) {
   const vm = this;
+
+  // vm.user = User.get($state.params, (attendee)=> {
+  //   // find all the locations with user id
+  //   vm.groups = Group.query({ attendee: attendee.id });
+  // });
 
   if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
 
