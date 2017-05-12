@@ -64,6 +64,7 @@
       </div>
 
       <div class="choose button" id="cameraButton">Select a profile image
+        <label for="base64"></label>
         <input class="upload" type="file" base64 name="base64" id="base64" ng-model="login.user.base64" role="alert" required>
       </div>
       <div class="ng-message-error" ng-messages="login.registerForm.base64.$error" ng-show="(login.registerForm.$submitted)">

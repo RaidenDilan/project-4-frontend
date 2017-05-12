@@ -1,5 +1,5 @@
 #searchFlightsBackground {
-  background-image: url('../images/15.jpg');
+  background-image: url('../images/backgrounds/15.jpg');
   @extend .background-styles;
   h1 {
     padding: 30px;
@@ -21,7 +21,7 @@
 }
 #searchFlightsForm {
   text-transform: uppercase;
-  margin: 50px auto;
+  margin: 25px auto;
   background-color: rgba(0, 0, 0, 0.20);
   border-radius: 10px;
   padding: 40px 50px;
@@ -73,7 +73,8 @@ em {
   border-radius: 10px;
   letter-spacing: 2px;
   margin-bottom: 50px;
-  margin: 50px auto;
+  // margin: 50px auto;
+  margin: 25px auto 50px auto;
   width: 75%;
   h1 {
     color: $white;
@@ -109,7 +110,7 @@ em {
 
 #searchFlightsButton {
   &:before {
-    background-image: url('../images/skyscanner.png');
+    background-image: url('../images/logos/skyscanner.png');
     height: 32px;
   }
   &:hover {

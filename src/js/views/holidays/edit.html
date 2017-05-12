@@ -1,4 +1,4 @@
-<div id="holidaysEditBackground">
+<div id="holidaysEditBackground" style="background-image:url('{{ holidaysEdit.holiday.cover_photo }}')">
     <div id="holidayEditForm">
       <form name="holidaysEdit.holidaysEditForm" ng-submit="holidaysEdit.update()" novalidate>
 
@@ -103,7 +103,7 @@
           </div>
         </div>
 
-        <button>Update Holiday</button>
+        <button class="button" id="updateHolidayButton">Update Holiday</button>
       </form>
     </div>
 </div>

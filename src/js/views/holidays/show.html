@@ -24,10 +24,6 @@
         </div>
       </div>
     </div>
-  <!-- <div>
-    <p><span>Departure Date: </span>{{ holidaysShow.holiday.departureDate }}</p>
-    <p><span>Return Date: </span>{{ holidaysShow.holiday.returnDate }}</p>
-  </div> -->
 </section>
 
 <section id="holidaysShowButtonsSection">
@@ -79,13 +75,17 @@
         <h2>Add Comment</h2>
         <form ng-submit="holidaysShow.addComment()">
           <textarea type="text" name="body" ng-model="holidaysShow.comment.body" placeholder="Review"></textarea><br>
-
-          <!-- <div class="button_sliding_bg">Post -->
             <button id="postButton" class="button">Post</button>
-          <!-- </div> -->
-
         </form>
       </div>
     </div>
   </div>
 </section>
+
+<!-- <section id="holidaysShowGoogleMap">
+  <div class="google-map">
+    <ng-map center="city-name" zoom="13" scrollwheel="false">
+      <marker position="58.887110, 25.569944" animation="DROP"></marker>
+    </ng-map>
+  </div>
+</section> -->

@@ -1,5 +1,5 @@
 #groupsBackground {
-background-image: url('../images/12.jpg');
+background-image: url('../images/backgrounds/12.jpg');
 @extend .background-styles;
   h1 {
     padding: 30px;
@@ -90,7 +90,7 @@ h4#holidayName {
 }
 
 #usersGroupShowHolidays {
-  margin: 25px auto;
+  margin: 25px auto 50px auto;
   width: 100%;
   background-color: $brand-color;
   padding: 0;
@@ -168,7 +168,7 @@ h4#holidayName {
 
 #deleteGroup {
   &:before {
-    background-image: url('../images/delete.png');
+    background-image: url('../images/logos/delete.png');
     height: 32px;
   }
   &:hover {
@@ -178,7 +178,7 @@ h4#holidayName {
 
 #editGroup {
   &:before {
-    background-image: url('../images/edit.png');
+    background-image: url('../images/logos/edit.png');
     height: 32px;
   }
   &:hover {
@@ -188,7 +188,7 @@ h4#holidayName {
 
 #attendGroup {
   &:before {
-    background-image: url('../images/checked.png');
+    background-image: url('../images/logos/checked.png');
     height: 32px;
   }
   &:hover {
@@ -198,7 +198,7 @@ h4#holidayName {
 
 #leaveGroup {
   &:before {
-    background-image: url('../images/unchecked.png');
+    background-image: url('../images/logos/unchecked.png');
     height: 32px;
   }
   &:hover {

@@ -1,5 +1,5 @@
 #usersShowBackground {
-  background-image: url('../images/2.jpg');
+  background-image: url('../images/backgrounds/2.jpg');
   @extend .background-styles;
 }
 #usersShowSection {
@@ -51,7 +51,7 @@
 
 #editUser {
   &:before {
-    background-image: url('../images/edit.png');
+    background-image: url('../images/logos/edit.png');
     height: 32px;
   }
   &:hover {
@@ -60,7 +60,7 @@
 }
 #deleteUser {
   &:before {
-    background-image: url('../images/delete.png');
+    background-image: url('../images/logos/delete.png');
     height: 32px;
   }
   &:hover {
@@ -69,7 +69,7 @@
 }
 #logout {
   &:before {
-    background-image: url('../images/logout.png');
+    background-image: url('../images/logos/logout.png');
     height: 32px;
   }
   &:hover {

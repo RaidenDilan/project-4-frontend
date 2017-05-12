@@ -10,6 +10,9 @@ function GroupsNewCtrl(Group, User, $state, $auth) {
   vm.group = {};
   vm.user = User.get({ id: $auth.getPayload().id });
   vm.users = User.query();
+  // console.log('vm.users', vm.users);
+  // console.log(vm.group);
+  // console.log('vm.user', vm.user);
 
   function groupsCreate() {
     if(vm.groupsNewForm.$valid) {

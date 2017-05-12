@@ -1,5 +1,5 @@
 #holidaysNewBackground {
-  background-image: url('../images/5.jpg');
+  background-image: url('../images/backgrounds/5.jpg');
   @extend .background-styles;
 }
 
@@ -71,4 +71,14 @@ label {
 .return {
   text-align: center;
   padding-top: 33px
+}
+
+#newHolidayButton {
+  &:before {
+    background-image: url('../images/logos/add2.png');
+    height: 32px;
+  }
+  &:hover {
+    color: transparent;
+  }
 }

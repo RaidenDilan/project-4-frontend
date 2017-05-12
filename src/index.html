@@ -8,6 +8,7 @@
     <link rel="icon" href="/images/favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5uFR8sHqcDYKASWyXmpLZM17kfstkqVE"></script> -->
     <!-- inject:js -->
     <!-- endinject -->
     <!-- inject:css -->
@@ -19,20 +20,20 @@
         <ul>
           <li ng-if="main.isAuthenticated()" class="left">
             <a ui-sref="usersGroupsIndex({ id: main.currentUser.id })">
-              <div style="background-image:url('../images/group1.png')" id="showGroups"></div>
+              <div style="background-image:url('../images/logos/group1.png')" id="showGroups"></div>
             </a>
           </li>
           <li ng-if="main.isAuthenticated()" class="newgroup">
             <a ui-sref="groupsNew">
-              <div style="background-image:url('../images/addgroup.png')" id="newGroup"></div>
+              <div style="background-image:url('../images/logos/addgroup.png')" id="newGroup"></div>
             </a>
           </li>
           <li ng-if="!main.isAuthenticated()" class="left">
-            <a ui-sref="login"><div style="background-image:url('../images/login.png')" id="login"></div></a>
+            <a ui-sref="login"><div style="background-image:url('../images/logos/login.png')" id="login"></div></a>
           </li>
           <li ng-if="!main.isAuthenticated()" class="right">
             <a ui-sref="register">
-            <div style="background-image:url('../images/register.png')" id="register"></div>
+            <div style="background-image:url('../images/logos/register.png')" id="register"></div>
           </a>
           </li>
           <li ng-if="main.isAuthenticated()" class="right">
@@ -48,6 +49,6 @@
     </div>
     <main ui-view class="site-content">
     </main>
-    <!-- <footer>&copy; Palm Trees</footer> -->
+    <footer>&copy; Palm Trees</footer>
   </body>
 </html>

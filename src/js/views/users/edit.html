@@ -64,6 +64,7 @@
       </div>
 
       <div class="choose button" id="camera">Select an image
+        <label for="base64"></label>
         <input class="upload" type="file" base64 name="base64" id="base64" ng-model="usersEdit.user.base64" required>
       </div>
       <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.base64.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.base64.$touched)">

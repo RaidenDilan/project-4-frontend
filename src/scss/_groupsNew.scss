@@ -1,5 +1,5 @@
 #groupsNewBackground {
-  background-image: url('../images/10.jpg');
+  background-image: url('../images/backgrounds/10.jpg');
   @extend .background-styles;
 }
 
@@ -59,7 +59,7 @@
 
 #createGroupButton {
   &:before {
-    background-image: url('../images/addgroup.png');
+    background-image: url('../images/logos/addgroup.png');
     height: 35px;
   }
   &:hover {

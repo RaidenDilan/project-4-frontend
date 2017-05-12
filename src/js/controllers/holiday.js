@@ -61,6 +61,20 @@ function HolidaysShowCtrl(Holiday, $stateParams, $state, Comment) {
   }
 
   vm.deleteComment = deleteComment;
+
+  // Holiday.get($state.params, (holiday) => {
+  //   vm.holiday = holiday;
+  //   vm.center = {};
+  //
+  // // Google Map
+  //   MapService
+  //   .getCoords(vm.holiday.location)
+  //   .then(res => {
+  //     vm.center = res;
+  //   }, err => {
+  //     console.log(err);
+  //   });
+  // });
 }
 
 HolidaysEditCtrl.$inject = ['Holiday', '$stateParams', '$state'];
@@ -68,7 +82,6 @@ function HolidaysEditCtrl(Holiday, $stateParams, $state) {
   const vm = this;
 
   Holiday.get($stateParams).$promise.then((holiday) => {
-    console.log($stateParams);
     holiday.departureDate = new Date(holiday.departureDate); // run this logic first before vm.holiday runs underneath this line.
     holiday.returnDate = new Date(holiday.returnDate); // run this logic first before vm.holiday runs underneath this line.
     vm.holiday = holiday;

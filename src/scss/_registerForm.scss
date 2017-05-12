@@ -1,5 +1,5 @@
 #registerBackground {
-  background-image: url('../images/2.jpg');
+  background-image: url('../images/backgrounds/2.jpg');
   @extend .background-styles;
 }
 
@@ -30,7 +30,7 @@
 
 #registerButton {
   &:before {
-    background-image: url('../images/register.png');
+    background-image: url('../images/logos/register.png');
     height: 32px;
   }
   &:hover {
@@ -40,7 +40,7 @@
 
 #cameraButton {
   &:before {
-    background-image: url('../images/camera.png');
+    background-image: url('../images/logos/camera.png');
     height: 32px;
   }
   &:hover {
@@ -50,7 +50,7 @@
 
 #signInButton {
   &:before {
-    background-image: url('../images/login.png');
+    background-image: url('../images/logos/login.png');
     height: 32px;
   }
   &:hover {

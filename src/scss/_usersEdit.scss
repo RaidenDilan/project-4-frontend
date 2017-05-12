@@ -1,5 +1,5 @@
 #usersEditBackground {
-  background-image: url('../images/13.jpg');
+  background-image: url('../images/backgrounds/13.jpg');
   @extend .background-styles;
 }
 #usersEditSection {
@@ -36,7 +36,7 @@
 
 #updateUser {
   &:before {
-    background-image: url('../images/update.png');
+    background-image: url('../images/logos/update.png');
     height: 32px;
   }
   &:hover {
@@ -46,7 +46,7 @@
 
 #camera {
   &:before {
-    background-image: url('../images/camera.png');
+    background-image: url('../images/logos/camera.png');
     height: 32px;
   }
   &:hover {

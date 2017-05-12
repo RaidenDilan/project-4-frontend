@@ -1,5 +1,5 @@
 #loginBackground {
-  background-image: url('../images/2.jpg');
+  background-image: url('../images/backgrounds/2.jpg');
   @extend .background-styles;
 }
 
@@ -11,6 +11,7 @@
   background-color: rgba(255, 255, 255, 0.35);
   border-radius: 10px;
   padding: 40px 50px;
+  width: 50%;
   h1 {
     text-transform: uppercase;
     text-align: center;
@@ -22,7 +23,7 @@
 
 #gitHubButton {
   &:before {
-    background-image: url('../images/github4.png');
+    background-image: url('../images/logos/github4.png');
     height: 32px;
   }
   &:hover {
@@ -32,7 +33,7 @@
 
 #facebookButton {
   &:before {
-    background-image: url('../images/facebook4.png');
+    background-image: url('../images/logos/facebook4.png');
     height: 32px;
   }
   &:hover {
@@ -42,7 +43,7 @@
 
 #signUpButton {
   &:before {
-    background-image: url('../images/register.png');
+    background-image: url('../images/logos/register.png');
     height: 32px;
   }
   &:hover {
@@ -52,7 +53,7 @@
 
 #logInButton {
   &:before {
-    background-image: url('../images/login.png');
+    background-image: url('../images/logos/login.png');
     height: 32px;
   }
   &:hover {
