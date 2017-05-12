@@ -37,7 +37,42 @@
 }
 
 #userImage {
-  width: 100px;
-  margin: auto 42%;
-  margin-bottom: 20px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+  width: 0%;
+  content: "";
+  display: block;
+  padding: 10%;
+  margin: 0 auto 20px auto;
+  border: 3px solid $white;
+}
+
+#editUser {
+  &:before {
+    background-image: url('../images/edit.png');
+    height: 32px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}
+#deleteUser {
+  &:before {
+    background-image: url('../images/delete.png');
+    height: 32px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}
+#logout {
+  &:before {
+    background-image: url('../images/logout.png');
+    height: 32px;
+  }
+  &:hover {
+    color: transparent;
+  }
 }

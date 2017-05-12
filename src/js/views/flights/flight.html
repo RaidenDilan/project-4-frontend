@@ -30,15 +30,13 @@
     </div>
 
     <div>
-      <button>Find Flights</button>
+      <button id="searchFlightsButton" class="button">Find Flights</button>
     </div>
   </form>
 </div>
 
 <div id="flightsBoard">
-  <!-- <h1>Flights to {{ flightsShow.holiday.location }}</h1> -->
   <h1>Flights provided by </h1><a href="https://www.skyscanner.net" target="_blank"><img src="../images/skyscanner.png" alt="skyscanner.png" id="skyscanner"></a>
-  <!-- <img src="../images/skyscanner.png" alt="skyscanner.png" id="skyscanner"> -->
   <br>
   <ul>
     <li ng-repeat="flight in flightsShow.flights">

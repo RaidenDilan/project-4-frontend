@@ -1,12 +1,11 @@
-<div id="holidaysBackground">
-  <img ng-src="{{ holidaysShow.holiday.cover_photo }}" alt="{{ holidaysShow.holiday.location}}" class="holidaysBackground">
-    <h1>Welcome to {{ holidaysShow.holiday.location }}</h1>
+<div id="holidaysBackground" style="background-image:url('{{ holidaysShow.holiday.cover_photo }}')">
+  <h1>Welcome to {{ holidaysShow.holiday.location }}</h1>
 </div>
 
 <section id="holidaysShow">
   <div id="description">
     <div id="description1">
-      <p>{{ holidaysShow.holiday.description }}</p>
+      <p id="description2">{{ holidaysShow.holiday.description }}</p>
     </div>
   </div>
     <div id="info">
@@ -34,37 +33,36 @@
 <section id="holidaysShowButtonsSection">
   <div id="holidaysShowButtons">
     <div id="holidayButtons">
-      <button ui-sref="flightsShow({ id: holidaysShow.holiday.id })">Get Flights</button>
-      <button ui-sref="holidaysEdit({ id: holidaysShow.holiday.id })">Edit Holiday</button>
-      <button ng-click="holidaysShow.delete()">Delete</button>
+      <button ui-sref="flightsShow({ id: holidaysShow.holiday.id })" id="getFLights" class="button">Get Flights</button>
+      <button ui-sref="holidaysEdit({ id: holidaysShow.holiday.id })" id="editHoliday" class="button">Edit Holiday</button>
+      <button ng-click="holidaysShow.delete()" id="deleteHoliday" class="button">Delete</button>
     </div>
   </div>
 </section>
 
 <section class="by">
-  <div>
-    <a ui-sref="usersShow({ id: holidaysShow.holiday.user.id })">Discovered By: <span id="holidayBy">{{ holidaysShow.holiday.user.username }}</span>
-      <img ng-src="{{ holidaysShow.holiday.user.image_src }}" id="discoveredBy">
+  <div><span class="discoBy">Discovered By: </span><span id="holidayBy">{{ holidaysShow.holiday.user.username }}</span>
+    <a ui-sref="usersShow({ id: holidaysShow.holiday.user.id })">
+      <div style="background-image:url('{{ holidaysShow.holiday.user.image_src }}')" id="discoveredBy">
+      </div>
     </a>
   </div>
 </section>
 
 <section id="holidaysMultipleImages">
   <div class="row">
-    <div>
       <div class="col-lg-6">
-        <img ng-src="{{ holidaysShow.holiday.image_one }}" alt="{{ holidaysShow.holiday.location }}" class="holidaysMultipleImages">
+        <div style="background-image:url('{{ holidaysShow.holiday.image_one }}" class="holidaysMultipleImages"></div>
       </div>
       <div class="col-lg-6">
-        <img ng-src="{{ holidaysShow.holiday.image_two }}" alt="{{ holidaysShow.holiday.location }}" class="holidaysMultipleImages">
+        <div style="background-image:url('{{ holidaysShow.holiday.image_two }}" class="holidaysMultipleImages"></div>
       </div>
       <div class="col-lg-6">
-        <img ng-src="{{ holidaysShow.holiday.image_three }}" alt="{{ holidaysShow.holiday.location }}" class="holidaysMultipleImages">
+        <div style="background-image:url('{{ holidaysShow.holiday.image_three }}" class="holidaysMultipleImages"></div>
       </div>
       <div class="col-lg-6">
-        <img ng-src="{{ holidaysShow.holiday.image_four }}" alt="{{ holidaysShow.holiday.location }}" class="holidaysMultipleImages">
+        <div style="background-image:url('{{ holidaysShow.holiday.image_four }}" class="holidaysMultipleImages"></div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -73,7 +71,7 @@
     <div id="reviews">
       <h1>Reviews</h1>
       <ul>
-        <li ng-repeat="comment in holidaysShow.holiday.comments" class="comment">{{ comment.body }} ~ <strong>{{ comment.user.username }}</strong><button ng-click="holidaysShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id">Delete</button></li>
+        <li ng-repeat="comment in holidaysShow.holiday.comments" class="comment">{{ comment.body }} ~ <strong id="commentBy">{{ comment.user.username }}</strong><button ng-click="holidaysShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id" id="deleteComment" class="button">Delete</button></li>
       </ul>
     </div>
     <div id="AddComment">
@@ -81,9 +79,11 @@
         <h2>Add Comment</h2>
         <form ng-submit="holidaysShow.addComment()">
           <textarea type="text" name="body" ng-model="holidaysShow.comment.body" placeholder="Review"></textarea><br>
-          <div>
-            <button class="createPostButton">Post</button>
-          </div>
+
+          <!-- <div class="button_sliding_bg">Post -->
+            <button id="postButton" class="button">Post</button>
+          <!-- </div> -->
+
         </form>
       </div>
     </div>

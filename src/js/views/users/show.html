@@ -1,22 +1,18 @@
 <div id="usersShowBackground">
   <div id="usersShowSection">
     <h1>{{ usersShow.user.full_name }}</h1>
-
-    <div>
-      <img ng-src="{{ usersShow.user.image_src }}" id="userImage">
+    <div style="background-image:url('{{ usersShow.user.image_src }}')" id="userImage">
     </div>
-
     <div>
       <p><strong>Email: </strong>{{usersShow.user.email}}</p>
       <p><strong>Full Name: </strong>{{ usersShow.user.full_name }}</p>
       <p><strong>Bio: </strong>{{ usersShow.user.bio }}</p>
       <p><strong>Preferred Airport: </strong>{{ usersShow.user.airport }}</p>
     </div>
-
     <div class="usersShowButtons">
-      <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="usersEdit({ id: usersShow.user.id })">Edit</button>
-      <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ng-click="usersShow.delete()">Delete</button>
-      <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ng-click="main.logout()" href="#">Logout</button>
+      <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="usersEdit({ id: usersShow.user.id })" class="button" id="editUser">Edit</button>
+      <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ng-click="usersShow.delete()" class="button" id="deleteUser">Delete</button>
+      <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ng-click="main.logout()" href="#" class="button" id="logout">Logout</button>
     </div>
   </div>
 </div>

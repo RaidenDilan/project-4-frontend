@@ -19,3 +19,43 @@
     font-weight: bold;
   }
 }
+
+#gitHubButton {
+  &:before {
+    background-image: url('../images/github4.png');
+    height: 32px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}
+
+#facebookButton {
+  &:before {
+    background-image: url('../images/facebook4.png');
+    height: 32px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}
+
+#signUpButton {
+  &:before {
+    background-image: url('../images/register.png');
+    height: 32px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}
+
+#logInButton {
+  &:before {
+    background-image: url('../images/login.png');
+    height: 32px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}

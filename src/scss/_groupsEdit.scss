@@ -63,3 +63,13 @@
     margin: 0 auto;
   }
 }
+
+#updateGroupButton {
+  &:before {
+    background-image: url('../images/update.png');
+    height: 32px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}

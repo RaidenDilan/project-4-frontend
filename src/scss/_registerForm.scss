@@ -27,3 +27,33 @@
     padding-bottom: 0;
   }
 }
+
+#registerButton {
+  &:before {
+    background-image: url('../images/register.png');
+    height: 32px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}
+
+#cameraButton {
+  &:before {
+    background-image: url('../images/camera.png');
+    height: 32px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}
+
+#signInButton {
+  &:before {
+    background-image: url('../images/login.png');
+    height: 32px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}

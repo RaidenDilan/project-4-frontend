@@ -20,6 +20,7 @@
   }
 }
 #searchFlightsForm {
+  text-transform: uppercase;
   margin: 50px auto;
   background-color: rgba(0, 0, 0, 0.20);
   border-radius: 10px;
@@ -103,5 +104,15 @@ em {
       background-color: $white;
       border-radius: 10px;
     }
+  }
+}
+
+#searchFlightsButton {
+  &:before {
+    background-image: url('../images/skyscanner.png');
+    height: 32px;
+  }
+  &:hover {
+    color: transparent;
   }
 }

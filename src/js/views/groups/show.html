@@ -4,30 +4,40 @@
 
 <section id="usersGroupsShowButtons">
   <div id="usersButtons">
-    <button ng-click="usersGroupsShow.toggleAttending()" ng-if="main.isAuthenticated() && !usersGroupsShow.isAttending()">Attend</button>
-    <button ng-click="usersGroupsShow.toggleAttending()" ng-if="main.isAuthenticated() && usersGroupsShow.isAttending()">Leave</button>
-    <button ng-if="main.isAuthenticated()" ui-sref="groupsEdit({ id: usersGroupsShow.group.id })">Edit</button>
-    <button ng-if="main.isAuthenticated()" ng-click="usersGroupsShow.delete()">Delete</button>
-    <button ui-sref="holidaysNew({ id: usersGroupsShow.group.id })">New Holiday</button>
+    <button ng-click="usersGroupsShow.toggleAttending()" ng-if="main.isAuthenticated() && !usersGroupsShow.isAttending()" id="attendGroup" class="button">Attend Group</button>
+    <button ng-click="usersGroupsShow.toggleAttending()" ng-if="main.isAuthenticated() && usersGroupsShow.isAttending()" id="leaveGroup" class="button">Leave</button>
+    <button ng-if="main.isAuthenticated()" ui-sref="groupsEdit({ id: usersGroupsShow.group.id })" id="editGroup" class="button">Edit Group</button>
+    <button ng-if="main.isAuthenticated()" ng-click="usersGroupsShow.delete()" id="deleteGroup" class="button">Delete Group</button>
   </div>
 </section>
 
 <section id="usersGroupShowAttendees">
   <h1>Users</h1>
-    <ul>
-      <li ng-repeat="attendee in usersGroupsShow.group.attendees" id="users">
-        <a ui-sref="usersShow({ id: attendee.id })"><img ng-src="{{ attendee.image_src }}" id="attendeesImage"></a>
-      </li>
-    </ul>
+    <div class="row row-centered">
+      <div ng-repeat="attendee in usersGroupsShow.group.attendees" id="users" class="col-xs-4 col-md-2 col-centered">
+        <a ui-sref="usersShow({ id: attendee.id })">
+          <div style="background-image:url('{{ attendee.image_src }}')" id="attendeesImage"></div>
+        </a>
+      </div>
+    </div>
 </section>
 
 <section id="usersGroupShowHolidays">
   <h1>Holidays</h1>
   <div id="holidaysMultiImages">
     <ul class="row">
-      <li ng-repeat="holiday in usersGroupsShow.group.holidays" class="col-sm-12 col-md-8 col-lg-4">
+      <li class="col-sm-12 col-md-8 col-lg-2" style="background-image:url('../images/add1.png')" id="addHolidaysImage">
+        <a ui-sref="holidaysNew({ id: usersGroupsShow.group.id })">
+          <div class="overlay">
+            <h4 id="addHoliday">Add your holiday</h4>
+          </div>
+        </a>
+      </li>
+      <li ng-repeat="holiday in usersGroupsShow.group.holidays" class="col-sm-12 col-md-8 col-lg-2" style="background-image:url('{{ holiday.cover_photo }}')" id="holidaysImage">
         <a ui-sref="holidaysShow({ id: holiday.id })">
-          <img ng-src="{{ holiday.cover_photo }}" id="holidaysImage">
+          <div class="overlay">
+            <h4 id="holidayName">{{ holiday.location }}</h4>
+          </div>
         </a>
       </li>
     </ul>

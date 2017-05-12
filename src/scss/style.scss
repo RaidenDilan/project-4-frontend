@@ -20,7 +20,8 @@
 @import 'usersGroupsIndex';
 @import 'usersGroupsShow';
 @import 'searchFlightsForm';
-// @import 'iphone5';
+@import 'buttonSlideUpAnimation';
+@import 'iphone5';
 
 * {
   box-sizing: inherit;
@@ -46,9 +47,43 @@ body {
   font-weight: normal;
 }
 
-#avatar {
-  width: 10%;
-  margin-left: 90%;
-  border-radius: 99%;
-  border: 3px dotted white;
+#usersAvatar {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 22px;
+  border-radius: 100%;
+  border: 3px solid white;
+  &:hover {
+    background-color: $white;
+  }
+}
+
+#showGroups {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 23px;
+  border-radius: 100%;
+  margin-top: 1px;
+  border: 1px solid white;
+  &:hover {
+    background-color: black;
+  }
+}
+
+#newGroup {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 21px;
+  border-radius: 100%;
+  border: 3px solid white;
+  margin-top: 2px;
+  &:hover {
+    background-color: black;
+  }
 }

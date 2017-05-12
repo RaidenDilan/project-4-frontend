@@ -34,8 +34,22 @@
   }
 }
 
-#userImage {
-  width: 100px;
-  margin: auto 42%;
-  margin-bottom: 20px;
+#updateUser {
+  &:before {
+    background-image: url('../images/update.png');
+    height: 32px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}
+
+#camera {
+  &:before {
+    background-image: url('../images/camera.png');
+    height: 32px;
+  }
+  &:hover {
+    color: transparent;
+  }
 }

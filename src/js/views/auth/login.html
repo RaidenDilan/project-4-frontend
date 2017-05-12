@@ -20,17 +20,17 @@
       </div>
 
       <div>
-        <button>Login</button>
+        <button class="button" id="logInButton">Login</button>
       </div>
     </form>
 
     <div>
-      <button ng-click="login.authenticate('github')">Login with Github</button>
-      <!-- <button ng-click="login.authenticate('facebook')">Login with Facebook</button> -->
+      <button ng-click="login.authenticate('github')" class="button" id="gitHubButton">Login with Github</button>
+      <button ng-click="login.authenticate('facebook')" class="button" id="facebookButton">Login with Facebook</button>
     </div>
     <div>
       <p>New to this website?</p>
-      <button ng-if="!main.isAuthenticated()" ui-sref="register" class="createAccountButton">Create an account</button>
+      <button ng-if="!main.isAuthenticated()" ui-sref="register" class="button" id="signUpButton">Create an account</button>
     </div>
   </div>
 </section>
