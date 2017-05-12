@@ -1,8 +1,65 @@
-.groupsEditForm {
-  background-color: rgba(0, 0, 0, 0.30);
-  margin: 0 300px;
-  border-radius: 25px;
-  button {
-    margin-bottom: 25px;
+#groupsEditBackground {
+  background-image: url('../images/13.jpg');
+  @extend .background-styles;
+}
+
+#groupsEditForm {
+  padding: 30px;
+  top: 50%;
+  letter-spacing: 4px;
+  font-weight: lighter;
+  background-color: $background-color;
+  border-radius: 10px;
+  width: 80%;
+  margin: 10px;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  left: 50%;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  font-size: 1em;
+  h1 {
+    padding-bottom: 25px;
+    letter-spacing: 4px;
+    font-size: 2em;
+    border-bottom: 2px solid $white;
+    margin-bottom: 10px;
+  }
+  h3 {
+    padding-bottom: 5px;
+    letter-spacing: 4px;
+    font-size: 1.2em;
+    border-bottom: 2px solid yellow;
+    margin-bottom: 10px;
+  }
+}
+
+.attendees {
+  padding: 30px;
+  border: 2px dotted $white;
+  border-radius: 10px;
+  margin: 15px 0;
+  h3 {
+    font-size: 1.2em;
+    color: yellow;
+    border-bottom: 2px solid yellow;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+  label#attendeeName {
+    color: $white;
+    padding-left: 20px;
+  }
+  #attendees {
+    position: relative;
+  }
+  label:hover {
+    text-decoration: red line-through;
+  }
+  input#attendees[type="checkbox"] {
+    width: 20px;
+    top: -1px;
+    margin: 0 auto;
   }
 }

@@ -1,0 +1,21 @@
+#loginBackground {
+  background-image: url('../images/2.jpg');
+  @extend .background-styles;
+}
+
+#loginForm {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+  padding: 40px 50px;
+  h1 {
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 25px;
+    font-size: 40px;
+    font-weight: bold;
+  }
+}

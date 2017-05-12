@@ -1,34 +1,105 @@
-.usersgroupShow {
-  background-color: rgba(0, 0, 0, 0.30);
-  border-radius: 25px;
-  max-width: 90%;
+#groupsBackground {
+background-image: url('../images/12.jpg');
+@extend .background-styles;
+  h1 {
+    padding: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    letter-spacing: 4px;
+    font-weight: lighter;
+    background-color: $background-color;
+    border-radius: 10px;
+    width: 90%;
+    margin: 10px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+    font-size: 2em;
+  }
+}
+
+#usersButtons {
+  background-color: $white;
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#usersGroupsShowButtons {
+  margin: 25px auto 25px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: $brand-color;
+}
+
+#usersGroupShowAttendees {
+  margin: 25px auto;
+  width: 100%;
+  background-color: $brand-color;
+  padding: 0;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2em;
+    color: $white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid $white;
+  }
+  img {
+    border-radius: 100%;
+    &:hover {
+      background-color: $white;
+    }
+  }
+}
+
+#usersGroupShowHolidays {
+  margin: 25px auto;
+  width: 100%;
+  background-color: $brand-color;
+  padding: 0;
+  padding-top: 10px;
+  border-radius: 10px;
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+    color: $white;
+    padding-bottom: 10px;
+    border-bottom: 2px solid $white;
+  }
+  img {
+    border-radius: 10px;
+    border: 2px solid $white;
+  }
+  #holidaysMultiImages {
+    padding: 20px 30px 10px 30px;
+  }
+}
+
+#users {
+  display: inline;
+  margin: auto;
+}
+
+#attendeesImage {
   margin: 0 auto;
-  button {
-    width: 50%;
-  }
-  &:last-child {
-    margin-bottom: 30px;
-  }
-  .holidaysImage {
-    height: 300px;
-    width: 300px;
-    padding: 10px;
-  }
+  display: block;
+  width: 5%;
 }
 
-.newHolidayButton {
-  margin-bottom: 25px;
-}
-
-.users {
-  text-align: left;
-  margin: 0 auto;
-  padding-left: 20px;
-  display: inline-block;
-}
-
-.attendeeImage {
-  height: 60px;
-  width: 60px;
-  border-radius: 100px;
+#holidaysImage {
+  width: 100%;
+  height: 250px;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }

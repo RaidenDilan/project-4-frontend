@@ -13,7 +13,7 @@ header {
       position: relative;
       li {
         display: inline-block;
-        margin: 5px 10px;
+        margin: 5px 15px;
         line-height: 50px;
           &.newgroup {
             position: absolute;
@@ -37,7 +37,7 @@ header {
             content: "";
             height: 1px;
             width: 100%;
-            background-color: white;
+            background-color: $white;
             position: absolute;
             bottom: -5px;
             left: 0;
@@ -50,15 +50,23 @@ header {
           }
           &:focus {
             text-decoration: none;
-            color: white;
+            color: $white;
           }
           &:hover {
             margin-top: 10px;
             text-decoration: none;
-            color: white;
+            color: $white;
             &:after {
               text-decoration: none;
               opacity: 1;
+            }
+          }
+        }
+        &:nth-child(3) {
+          a {
+            &:after {
+              width: 0;
+              background-color: transparent;
             }
           }
         }

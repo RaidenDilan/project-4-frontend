@@ -1,6 +1,6 @@
-<div class="registerBackground"></div>
+<div id="registerBackground">
 <section class="registerSection">
-  <div class="registerForm">
+  <div id="registerForm">
     <h1>Start your Adventure Today</h1>
 
     <form name="login.registerForm" ng-submit="login.register()" novalidate>
@@ -63,8 +63,8 @@
         <p ng-message="required" class="formValidation">Your biography required.</p>
       </div>
 
-      <div>
-        <input type="file" base64 name="base64" id="base64" ng-model="login.user.base64" role="alert" required>
+      <div class="choose">Select a profile image
+        <input class="upload" type="file" base64 name="base64" id="base64" ng-model="login.user.base64" role="alert" required>
       </div>
       <div class="ng-message-error" ng-messages="login.registerForm.base64.$error" ng-show="(login.registerForm.$submitted)">
         <p ng-message="required" class="formValidation">A profile image is required.</p>
@@ -81,3 +81,4 @@
     </div>
   </div>
 </section>
+</div>

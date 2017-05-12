@@ -21,7 +21,11 @@
           <li ng-if="main.isAuthenticated()" class="newgroup"><a ui-sref="groupsNew">New Group</a></li>
           <li ng-if="!main.isAuthenticated()" class="left"><a ui-sref="login">Login</a></li>
           <li ng-if="!main.isAuthenticated()" class="right"><a ui-sref="register">Register</a></li>
-          <li ng-if="main.isAuthenticated()" class="right"><a ui-sref="usersShow({ id: main.currentUser.id })"><img ng-src="{{ main.currentUser.image_src }}" class="avatar"></a></li>
+          <li ng-if="main.isAuthenticated()" class="right">
+            <a ui-sref="usersShow({ id: main.currentUser.id })">
+              <img ng-src="{{ main.currentUser.image_src }}" id="avatar">
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -30,6 +34,6 @@
     </div>
     <main ui-view class="site-content">
     </main>
-    <!-- <footer>Made with <span class="heart">&hearts;</span> by Raiden Dilan  @ GA</footer> -->
+    <!-- <footer>&copy; Palm Trees</footer> -->
   </body>
 </html>

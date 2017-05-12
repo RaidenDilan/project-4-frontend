@@ -1,25 +1,32 @@
-.home {
+#homeBackground {
+  background-image: url('../images/home.jpg');
+  @extend .background-styles;
   h1 {
-    background-color: rgba(0, 0, 0, 0.30);
-    margin: 0 250px;
-    margin-bottom: 200px;
-    padding: 25px;
-    font-size: 40px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    padding: 30px;
+    top: 50%;
+    letter-spacing: 4px;
+    font-weight: lighter;
+    background-color: $background-color;
+    border-radius: 10px;
+    width: 80%;
+    margin: 10px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
     text-align: center;
-    color: white;
-    opacity: 1;
-    border-radius: 5px;
+    text-transform: uppercase;
+    color: $white;
+    font-size: 2em;
   }
-}
-
-p.discover {
-  font-size: 25px;
-  font-weight: 900;
-  color: white;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  p#discover {
+    font-size: 25px;
+    position: absolute;
+    font-weight: 900;
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

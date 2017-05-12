@@ -62,7 +62,10 @@ UsersGroupsIndexCtrl.$inject = ['User', 'Group', '$stateParams', '$state', '$aut
 function UsersGroupsIndexCtrl(User, Group, $stateParams, $state, $auth) {
   const vm = this;
 
+  // vm.groups = Group.get({ id: $auth.getPayload().id });
+
   vm.groups = User.get({ id: $auth.getPayload().id });
+  console.log('vm.groups', vm.groups);
 }
 
 UsersGroupsShowCtrl.$inject = ['User', 'Group', 'Holiday', '$stateParams', '$state', '$auth'];
@@ -73,6 +76,7 @@ function UsersGroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth) 
 
   Group.get($stateParams, (data) => {
     vm.group = data;
+    console.log('data',vm.group);
   });
 
   vm.group = Group.get($stateParams);

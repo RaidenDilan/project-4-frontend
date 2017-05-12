@@ -1,25 +1,43 @@
-.usersShowPage {
-  background-color: rgba(0, 0, 0, 0.30);
-  margin: 0 300px;
-  border-radius: 25px;
-  button {
-    &:last-child {
-      margin-bottom: 25px;
-    }
+#usersShowBackground {
+  background-image: url('../images/2.jpg');
+  @extend .background-styles;
+}
+#usersShowSection {
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  padding: 40px 100px;
+  width: 60%;
+  h1 {
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 25px;
+    font-size: 40px;
+    font-weight: bold;
+    color: $white;
   }
-}
-
-.profileImage {
-  height: 150px;
-  width: 150px;
-  border-radius: 100px;
-  margin-bottom: 20px;
-}
-
-p {
-  color: white;
+  p {
+    color: $white;
+    font-size: 15px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.40);
+    margin: 5px auto;
+    border-radius: 10px;
+    text-transform: none;
+  }
   strong {
-    // text-transform: uppercase;
-    color: rgb(255, 252, 0);
+    color: yellow;
   }
+  .usersShowButtons {
+    padding-top: 20px;
+  }
+}
+
+#userImage {
+  width: 100px;
+  margin: auto 42%;
+  margin-bottom: 20px;
 }

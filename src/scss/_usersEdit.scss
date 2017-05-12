@@ -1,19 +1,41 @@
-.usersEditPage {
-  background-color: rgba(0, 0, 0, 0.30);
-  margin: 0 300px;
-  border-radius: 25px;
-  button {
-    &:last-child {
-      margin-top: 10px;
-      margin-bottom: 25px;
-    }
+#usersEditBackground {
+  background-image: url('../images/13.jpg');
+  @extend .background-styles;
+}
+#usersEditSection {
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  padding: 40px 100px;
+  width: 60%;
+  h1 {
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 25px;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  p {
+    color: $white;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.40);
+    margin: 5px auto;
+    border-radius: 10px;
+    text-transform: capitalize;
+  }
+  strong {
+    color: yellow;
+  }
+  .usersShowButtons {
+    padding-top: 50px;
   }
 }
 
-.profileEditImage {
-  margin-bottom: 15px;
-  margin-top: 20px;
-  height: 150px;
-  width: 150px;
-  border-radius: 100px;
+#userImage {
+  width: 100px;
+  margin: auto 42%;
+  margin-bottom: 20px;
 }

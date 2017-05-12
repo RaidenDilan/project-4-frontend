@@ -2,71 +2,53 @@
 @import 'reset';
 @import 'variables';
 @import 'extends';
-@import 'body';
 @import 'header';
+@import 'forms';
 @import 'button';
 @import 'footer';
 @import 'section';
-@import 'forms';
-@import 'authForm';
 @import 'homePage';
-@import 'usersGroupsIndex';
-@import 'usersGroupsShow';
 @import 'groupsNew';
 @import 'groupsEdit';
+@import 'loginForm';
 @import 'usersShow';
 @import 'usersEdit';
 @import 'holidaysNew';
-@import 'holidaysShowPage';
-@import 'searchFlightsPage';
-@import 'iphone5';
+@import 'holidaysShow';
+@import 'holidaysEdit';
+@import 'registerForm';
+@import 'usersGroupsIndex';
+@import 'usersGroupsShow';
+@import 'searchFlightsForm';
+// @import 'iphone5';
+
+* {
+  box-sizing: inherit;
+}
+
+html {
+  line-height: 1.15;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
 
 .message {
   background-color: rgb(255, 0, 0);
   padding: 22px 0;
   color: white;
-  // margin-top: -10px;
-  // margin-bottom: 20px;
 }
 
-h2 {
-  font-size: 20px;
-  color: white;
-  text-transform: uppercase;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-h3 {
-  font-size: 25px;
-  color: white;
-  text-transform: uppercase;
-  padding-top: 20px;
+.formValidation {
+  padding-top: 0;
   padding-bottom: 0;
+  font-weight: normal;
 }
 
-h4 {
-  font-size: 35px;
-}
-
-p {
-  line-height: 30px;
-}
-
-em {
-  color: yellow;
-}
-
-span {
-  color: yellow;
-}
-
-.heart {
-  color: red;
-}
-
-.avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
+#avatar {
+  width: 10%;
+  margin-left: 90%;
+  border-radius: 99%;
+  border: 3px dotted white;
 }

@@ -1,15 +1,43 @@
-.usersGroupsIndexSection {
-  background-color: rgba(0, 0, 0, 0.30);
-  margin: 0 300px;
-  border-radius: 25px;
-  a {
-    text-decoration: none;
-    h2 {
-      padding-top: 0;
-      padding-bottom: 20px;
+#usersGroupsIndexSection {
+  background-image: url('../images/10.jpg');
+  @extend .background-styles;
+  #usersGroupsIndexList {
+    padding: 30px;
+    top: 40%;
+    letter-spacing: 4px;
+    font-weight: lighter;
+    background-color: $background-color;
+    border-radius: 10px;
+    width: 40%;
+    margin: 10px;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 50%;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+    font-size: 1em;
+    a {
+      text-decoration: none;
+      color: $white;
       &:hover {
         text-decoration: red line-through;
       }
     }
   }
+  h1 {
+    padding-bottom: 30px;
+    letter-spacing: 4px;
+    font-size: 2em;
+    border-bottom: 2px solid $white;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 1.2em;
+    padding-bottom: 10px;
+  }
+}
+
+span.groupNameStyle {
+  color: yellow;
 }

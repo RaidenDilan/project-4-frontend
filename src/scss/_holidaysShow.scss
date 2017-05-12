@@ -1,0 +1,226 @@
+#holidaysBackground {
+  @extend .background-styles;
+  h1 {
+    padding: 30px;
+    top: 50%;
+    letter-spacing: 4px;
+    font-weight: lighter;
+    background-color: $background-color;
+    border-radius: 5px;
+    width: 80%;
+    margin: 10px;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 50%;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+    font-size: 2em;
+  }
+  .holidaysBackground {
+    @extend .background-styles;
+    width: 100%;
+  }
+}
+
+div {
+  display: block;
+}
+
+#holidaysShow {
+  padding: 0;
+  p {
+    padding: 30px 0 30px 0;
+    text-transform: none;
+    font-weight: normal;
+  }
+  h1 {
+    color: $brand-color;
+    text-align: center;
+  }
+  h2 {
+    padding-top: 15px;
+    color: $brand-color;
+    font-size: 25px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  #description {
+    margin: 25px auto;
+    background-color: $brand-color;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  #description1 {
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 10px;
+    color: black;
+  }
+}
+
+.info2 {
+  border-radius: 10px;
+}
+
+.info1 {
+  background-color: $white;
+  padding: 20px;
+  margin: 0 20px 0 20px;
+  border-radius: 10px;
+}
+
+#info {
+  background-color: $brand-color;
+  border-radius: 10px;
+  padding: 10px;
+  padding: 20px 0 20px 0;
+  div {
+    p {
+      color: black;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}
+
+#discoveredBy {
+  width: 5%;
+  margin: 0 auto;
+  display: block;
+  margin-top: 10px;
+}
+
+#holidaysShowButtons {
+  background-color: $brand-color;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  #holidayButtons {
+    background-color: $white;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  button {
+    width: 33%;
+    border: 2px solid $brand-color;
+    &:hover {
+      background-color: $white;
+      border-color: $brand-color;
+    }
+  }
+}
+
+#holidaysShowDiscoveredBy {
+}
+
+#holidaysShowButtonsSection {
+  padding: 0;
+  margin: 25px auto;
+}
+
+.by {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background-color: $brand-color;
+  border-radius: 5px;
+  width: 100%;
+  margin: 25px auto;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    img {
+      border: 2px dotted $white;
+      border-radius: 100%;
+      &:hover {
+        background-color: $white;
+        border-color: $brand-color;
+      }
+    }
+  }
+}
+
+#holidayBy {
+  color: yellow;
+}
+
+#holidaysMultipleImages {
+  background-color: $brand-color;
+  margin: 5px auto;
+  width: 100%;
+  padding: 15px 30px;
+  border-radius: 5px;
+  .holidaysMultipleImages {
+    width: 100%;
+    height: 350px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 5px solid $white;
+  }
+}
+
+#holidaysShowReviews {
+  background-color: $brand-color;
+  margin: 25px auto;
+  width: 100%;
+  padding: 30px;
+  border-radius: 5px;
+  ul {
+    padding: 10px;
+    li {
+      text-align: center;
+      button {
+        width: 10%;
+        margin: 5px auto;
+        height: 25px;
+        display: block;
+      }
+    }
+  }
+  h1 {
+    text-align: center;
+    color: black;
+    border-bottom: 2px solid $brand-color;
+    padding-bottom: 5px;
+  }
+  #AddComment {
+    background-color: $white;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    h2 {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 20px;
+      padding-bottom: 20px;
+      font-weight: bold;
+    }
+    form {
+      text-align: center;
+      textarea {
+        height: 80px;
+        outline: none;
+        width: 50%;
+        border: 2px solid $brand-color;
+        border-radius: 5px;
+      }
+      button {
+        width: 50%;
+        background-color: $brand-color;
+        color: $white;
+        &:hover {
+          background-color: $white;
+          color: $brand-color;
+        }
+      }
+    }
+  }
+  #reviews {
+    background-color: $white;
+    border-radius: 5px;
+  }
+}

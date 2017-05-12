@@ -1,60 +1,59 @@
-<section class="searchFlightsSection">
-  <div class="searchFlightsPage">
-    <h1>Search Flights</h1>
-    <form ng-submit="flightsShow.searchFlights()">
+<div id="searchFlightsBackground">
+  <h1>Flights to {{ flightsShow.holiday.location }}</h1>
+</div>
+<div id="searchFlightsForm">
+  <h1>Search Flights</h1>
+  <form ng-submit="flightsShow.searchFlights()" class="searchFlightsForm">
 
+    <div>
+      <p id="recommendation"><strong>Recommended months are: </strong><span id="toGo">{{ flightsShow.holiday.when_to_go }}</span></p>
+    </div>
+
+    <div>
+      <label for="departureDate">Departure Date</label>
+      <input ng-model="flightsShow.holiday.departureDate" type="date" name="departureDate" id="departureDate">
+    </div>
+
+    <div>
+      <label for="returnDate">Return Date</label>
+      <input ng-model="flightsShow.holiday.returnDate" type="date" name="returnDate" id="returnDate">
+    </div>
+
+    <div>
+      <label for="departureAirport">Departure Airport</label>
+      <input ng-model="flightsShow.holiday.departureAirport" type="text" name="departureAirport" id="departureAirport">
+    </div>
+
+    <div>
+      <label for="arrivalAirport">Arrival Airport</label>
+      <input ng-model="flightsShow.holiday.arrivalAirport" type="text" name="arrivalAirport" id="arrivalAirport" disabled="true">
+    </div>
+
+    <div>
+      <button>Find Flights</button>
+    </div>
+  </form>
+</div>
+
+<div id="flightsBoard">
+  <!-- <h1>Flights to {{ flightsShow.holiday.location }}</h1> -->
+  <h1>Flights provided by </h1><a href="https://www.skyscanner.net" target="_blank"><img src="../images/skyscanner.png" alt="skyscanner.png" id="skyscanner"></a>
+  <!-- <img src="../images/skyscanner.png" alt="skyscanner.png" id="skyscanner"> -->
+  <br>
+  <ul>
+    <li ng-repeat="flight in flightsShow.flights">
       <div>
-        <p><strong>Recommended months are: </strong><br>{{ flightsShow.holiday.when_to_go }}</p>
-      </div>
-
-      <div>
-        <label for="departureDate">Departure Date</label>
-        <input ng-model="flightsShow.holiday.departureDate" type="date" name="departureDate">
-      </div>
-
-      <div>
-        <label for="returnDate">Return Date</label>
-        <input ng-model="flightsShow.holiday.returnDate" type="date" name="returnDate">
-      </div>
-
-      <div>
-        <label for="departureAirport">Departure Airport</label>
-        <input ng-model="flightsShow.holiday.departureAirport" type="text" name="departureAirport">
-      </div>
-
-      <div>
-        <label for="arrivalAirport">Arrival Airport</label>
-        <input ng-model="flightsShow.holiday.arrivalAirport" type="text" name="arrivalAirport" disabled="true">
-      </div>
-
-      <div class="searchFlightsButton">
-          <button>Find Flights</button>
-      </div>
-    </form>
-  </div>
-</section>
-
-<section class="betweenSections">
-  <div class="searchFlightsPage ">
-        <div class="flightsBoard">
-          <h1>Flights to {{ flightsShow.holiday.location }}</h1>
+          <h4>Ticket Price</h4>
+          <p><em>Min Price: </em>£{{ flight.MinPrice }}</p>
           <br>
-          <ul>
-            <li ng-repeat="flight in flightsShow.flights">
-              <div>
-                  <h4>Ticket Price</h4>
-                  <p><em>Min Price: </em>£{{ flight.MinPrice }}</p>
-                  <br>
-                  <h4>Outbound Flight</h4>
-                  <p><em>Airline: </em>{{ flight.OutboundCarrierName }}</p>
-                  <p><em>Departure Date: </em>{{ flight.QuoteDateTime | date:'dd-MM-yyyy' }}</p>
-                  <br>
-                  <h4>Inbound Flight</h4>
-                  <p><em>Airline: </em>{{ flight.InboundCarrierName }}</p>
-                  <p><em>Return Date: </em>{{ flight.InboundLeg.DepartureDate | date:'dd-MM-yyyy' }}</p>
-              </div>
-            </li>
-          </ul>
-        </div>
+          <h4>Outbound Flight</h4>
+          <p><em>Airline: </em>{{ flight.OutboundCarrierName }}</p>
+          <p><em>Departure Date: </em>{{ flight.QuoteDateTime | date:'dd-MM-yyyy' }}</p>
+          <br>
+          <h4>Inbound Flight</h4>
+          <p><em>Airline: </em>{{ flight.InboundCarrierName }}</p>
+          <p><em>Return Date: </em>{{ flight.InboundLeg.DepartureDate | date:'dd-MM-yyyy' }}</p>
       </div>
-</section>
+    </li>
+  </ul>
+</div>

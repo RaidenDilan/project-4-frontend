@@ -1,14 +1,14 @@
-#holidaysNewBackground {
-  background-image: url('../images/5.jpg');
+#holidaysEditBackground {
+  background-image: url('../images/2.jpg');
   @extend .background-styles;
 }
 
-#holidaysNewForm {
+#holidayEditForm {
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(251, 251, 251, 0.32);
   border-radius: 5px;
   padding: 40px 50px;
   width: 90%;

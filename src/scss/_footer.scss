@@ -1,20 +1,24 @@
-// footer {
-//   text-align: center;
-//   width: 100%;
-//   background-color: rgba(0, 0, 0, 0.30);
-//   color: #fff;
-//   padding: 15px 0;
-//   p {
-//     letter-spacing: 4px;
-//   }
+footer {
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  background-color: $background-color;
+  color: $white;
+  padding: 10px 0;
+  letter-spacing: 4px;
+  position: fixed;
+  clear: both;
+  height: 32px;
+  // margin-top: -500px;
+  bottom: 0;
+}
+
+// .site {
+//   display: flex;
+//   min-height: 100vh;
+//   flex-direction: column;
 // }
-
-.site {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-.site-content {
-  flex: 1;
-}
+//
+// .site-content {
+//   flex: 1;
+// }

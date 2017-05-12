@@ -1,54 +1,21 @@
 section {
-  &.loginSection {
-    margin-top: 240px;
-  }
-  &.registerSection {
-    margin-top: 100px;
-  }
-  &.homeSection {
-    margin-top: 300px;
-  }
-  &.usersGroupsIndexSection {
-    margin-top: 200px;
-  }
-  &.groupsNewSection {
-    margin-top: 150px;
-  }
-  &.usersGroupsShowSection {
-    margin-top: 150px;
-  }
-  &.usersShowSection {
-    margin-top: 150px;
-  }
-  &.usersEditSection {
-    margin-top: 100px;
-  }
-  &.groupsEditSection {
-    margin-top: 100px;
-  }
-  &.holidaysNewSection {
-    margin-top: 100px;
-  }
-  &.holidaysShowSection {
-    margin-top: 100px;
-  }
-  &.holidaysEditSection {
-    margin-top: 100px;
-  }
-  &.searchFlightsSection {
-    margin-top: 100px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  display: block;
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
   }
   div {
     h1 {
       font-size: 35px;
-      color: white;
+      color: $white;
       text-transform: uppercase;
       padding-top: 20px;
       padding-bottom: 20px;
     }
   }
-}
-
-.betweenSections {
-  padding-top: 50px;
 }

@@ -1,8 +1,8 @@
-<section class="usersEditSection">
-  <div class="usersEditPage">
+<div id="usersEditBackground">
+  <div id="usersEditSection">
 
     <div>
-      <!-- <img ng-src="{{ usersEdit.user.image_src }}" class="profileEditImage"> -->
+      <img ng-src="{{ usersEdit.user.image_src }}" id="userImage">
     </div>
 
     <form name="usersEdit.usersEditForm" ng-submit="usersEdit.update()" class="profilePhoto usersEditForm" novalidate>
@@ -64,8 +64,8 @@
         <p ng-message="required" class="formValidation">Biography is required</p>
       </div>
 
-      <div>
-        <input type="file" base64 name="base64" id="base64" ng-model="usersEdit.user.base64" required>
+      <div class="choose">Select an image
+        <input class="upload" type="file" base64 name="base64" id="base64" ng-model="usersEdit.user.base64" required>
       </div>
       <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.base64.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.base64.$touched)">
         <p ng-message="required" class="formValidation">Profile image is required</p>
@@ -77,4 +77,4 @@
 
     </form>
   </div>
-</section>
+</div>

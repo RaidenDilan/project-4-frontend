@@ -1,7 +1,6 @@
-<section class="groupsEditSection">
-  <div class="groupsEditForm">
+<div id="groupsEditBackground">
+  <div id="groupsEditForm">
     <h1>Edit Your Group</h1>
-
     <form name="groupsEdit.groupsEditForm" ng-submit="groupsEdit.update()" novalidate>
       <div>
         <input type="name" name="name" id="name" ng-model="groupsEdit.group.name" required>
@@ -11,15 +10,17 @@
       </div>
 
       <div class="attendees">
-        <h1>Users</h1>
-
-        <label ng-repeat="user in groupsEdit.users">
-          <input type="checkbox" name="attendees" checklist-model="groupsEdit.group.attendee_ids" checklist-value="user.id" >{{ user.username }}</label>
+        <h3>Users</h3>
+        <div class="attends">
+          <label ng-repeat="user in groupsEdit.users" class="attendeesNames" id="attendeeName">
+            <input type="checkbox" id="attendees" name="attendees" checklist-model="groupsEdit.group.attendee_ids" checklist-value="user.id" >
+            {{ user.username }}
+          </label>
+        </div>
       </div>
-
       <div>
         <button>Update your Group</button>
       </div>
     </form>
   </div>
-</section>
+</div>
