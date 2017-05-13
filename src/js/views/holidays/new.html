@@ -26,6 +26,13 @@
           </div>
 
           <div>
+            <input type="text" name="when_to_go" id="when_to_go" ng-model="holidaysNew.holiday.when_to_go" placeholder="Best time to go" required>
+          </div>
+          <div class="ng-message-error" ng-messages="holidaysNew.holidaysNewForm.when_to_go.$error" ng-show="(holidaysNew.holidaysNewForm.$submitted || holidaysNew.holidaysNewForm.when_to_go.$touched)">
+            <p ng-message="required" class="formValidation">Best time to go is required.</p>
+          </div>
+
+          <div>
             <input type="text" name="departureAirport" id="departureAirport" ng-model="holidaysNew.holiday.departureAirport" placeholder="Departure Airport" required>
           </div>
           <div class="ng-message-error" ng-messages="holidaysNew.holidaysNewForm.departureAirport.$error" ng-show="(holidaysNew.holidaysNewForm.$submitted || holidaysNew.holidaysNewForm.departureAirport.$touched)">
@@ -37,13 +44,6 @@
           </div>
           <div class="ng-message-error" ng-messages="holidaysNew.holidaysNewForm.arrivalAirport.$error" ng-show="(holidaysNew.holidaysNewForm.$submitted || holidaysNew.holidaysNewForm.arrivalAirport.$touched)">
             <p ng-message="required" class="formValidation">Arrival Airport Code is required.</p>
-          </div>
-
-          <div>
-            <input type="text" name="when_to_go" id="when_to_go" ng-model="holidaysNew.holiday.when_to_go" placeholder="Best time to go" required>
-          </div>
-          <div class="ng-message-error" ng-messages="holidaysNew.holidaysNewForm.when_to_go.$error" ng-show="(holidaysNew.holidaysNewForm.$submitted || holidaysNew.holidaysNewForm.when_to_go.$touched)">
-            <p ng-message="required" class="formValidation">Best time to go is required.</p>
           </div>
 
           <div>

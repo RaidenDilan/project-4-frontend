@@ -173,7 +173,7 @@ div {
     width: 100%;
     display: block;
     content: "";
-    padding: 45%;
+    padding: 30%;
     margin: 15px auto;
     border-radius: 10px;
     border: 5px solid $white;
@@ -269,7 +269,7 @@ div {
 
 #getFlights {
   &:before {
-    background-image: url('../images/logos/skyscanner.png');
+    background-image: url('../images/logos/skyscanner2.png');
     height: 32px;
   }
   &:hover {

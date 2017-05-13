@@ -5,11 +5,23 @@
 <section id="usersGroupsShowButtons">
   <div id="usersButtons">
     <button ng-click="usersGroupsShow.toggleAttending()" ng-if="main.isAuthenticated() && !usersGroupsShow.isAttending()" id="attendGroup" class="button">Attend Group</button>
-    <button ng-click="usersGroupsShow.toggleAttending()" ng-if="main.isAuthenticated() && usersGroupsShow.isAttending()" id="leaveGroup" class="button">Leave</button>
+    <button ng-click="usersGroupsShow.toggleAttending()" ng-if="main.isAuthenticated() && usersGroupsShow.isAttending()" id="leaveGroup" class="button">Leave Group</button>
     <button ng-if="main.isAuthenticated()" ui-sref="groupsEdit({ id: usersGroupsShow.group.id })" id="editGroup" class="button">Edit Group</button>
     <button ng-if="main.isAuthenticated()" ng-click="usersGroupsShow.delete()" id="deleteGroup" class="button">Delete Group</button>
   </div>
 </section>
+
+<!-- <section id="usersGroupShowCreatedBy">
+  <div>
+    <h1>Group Created By: {{ usersGroupsShow.user.id }}</h1>
+    <div>
+      <a ui-sref="usersGroupsShow({ id: usersGroupsShow.user.groups_created })">
+        <div style="background-image:url('{{ usersGroupsShow.user.groups_created.id }}')" id="discoveredBy">
+        </div>
+      </a>
+    </div>
+  </div>
+</section> -->
 
 <section id="usersGroupShowAttendees">
   <div class="container">

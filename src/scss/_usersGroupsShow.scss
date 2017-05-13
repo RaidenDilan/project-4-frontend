@@ -64,6 +64,25 @@ h4#holidayName {
   background-color: $brand-color;
 }
 
+#usersGroupShowCreatedBy {
+  margin: 25px auto;
+  width: 100%;
+  background-color: $brand-color;
+  padding: 0;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2em;
+    color: $white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid $white;
+  }
+}
+
 #usersGroupShowAttendees {
   margin: 25px auto;
   width: 100%;

@@ -10,14 +10,17 @@
       </div>
 
       <div class="attendees">
-        <h3>Users</h3>
+        <h3>Choose Attendees</h3>
         <div class="attends">
           <label ng-repeat="user in groupsEdit.users" class="attendeesNames" id="attendeeName">
-            <input type="checkbox" id="attendees" name="attendees" checklist-model="groupsEdit.group.attendee_ids" checklist-value="user.id" >
+            <input type="checkbox" id="attendees" name="attendees" checklist-model="groupsEdit.group.attendee_ids" checklist-value="user.id">
             {{ user.username }}
           </label>
         </div>
       </div>
+      <!-- <div class="ng-message-error" ng-messages="groupsEdit.groupsEditForm.attendees.$error" ng-show="(groupsEdit.groupsEditForm.$submitted || groupsEdit.groupsEditForm.attendees.$touched)">
+        <p ng-message="required" class="formValidation">Attendees are required</p>
+      </div> -->
       <div>
         <button class="button" id="updateGroupButton">Update your Group</button>
       </div>

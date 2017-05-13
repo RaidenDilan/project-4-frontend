@@ -10,7 +10,7 @@
       </div>
 
       <div class="attendees">
-        <h3>Users</h3>
+        <h3>Choose Attendees</h3>
         <div class="attends">
           <label ng-repeat="user in groupsNew.users" class="attendeesNames" id="attendeeName">
             <input type="checkbox" id="attendees" name="attendees" checklist-model="groupsNew.group.attendee_ids" checklist-value="user.id">
@@ -18,6 +18,9 @@
           </label>
         </div>
       </div>
+      <!-- <div class="ng-message-error" ng-messages="groupsNew.groupsNewForm.attendees.$error" ng-show="(groupsNew.groupsNewForm.$submitted || groupsNew.groupsNewForm.attendees.$touched)">
+        <p ng-message="required" class="formValidation">Attendees are required</p>
+      </div> -->
 
       <button class="button" id="createGroupButton">Create Group</button>
     </form>

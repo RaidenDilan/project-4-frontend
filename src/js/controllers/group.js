@@ -10,9 +10,6 @@ function GroupsNewCtrl(Group, User, $state, $auth) {
   vm.group = {};
   vm.user = User.get({ id: $auth.getPayload().id });
   vm.users = User.query();
-  // console.log('vm.users', vm.users);
-  // console.log(vm.group);
-  // console.log('vm.user', vm.user);
 
   function groupsCreate() {
     if(vm.groupsNewForm.$valid) {
@@ -20,6 +17,8 @@ function GroupsNewCtrl(Group, User, $state, $auth) {
       .save({ group: vm.group })
       .$promise
       .then((group) => $state.go('usersGroupsIndex', { id: group.id }));
+      vm.groupsNewForm.$setPristine();
+      vm.groupsNewForm.$setUntouched();
     }
   }
   vm.create = groupsCreate;
@@ -38,6 +37,8 @@ function GroupsEditCtrl(User, Group, $stateParams, $state) {
       .update({ id: vm.group.id, group: vm.group })
       .$promise
       .then(() => $state.go('usersGroupsShow', $stateParams));
+      vm.groupsEditForm.$setPristine();
+      vm.groupsEditForm.$setUntouched();
     }
   }
   vm.update = groupsUpdate;
