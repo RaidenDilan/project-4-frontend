@@ -15,7 +15,7 @@
           <div class="row">
             <label ng-repeat="user in groupsEdit.users" class="attendeesNames col-xs-12 col-sm-12 col-md-4 col-lg-4" id="attendeeName">
               <input type="checkbox" id="attendees" name="attendees" checklist-model="groupsEdit.group.attendee_ids" checklist-value="user.id">
-              {{ user.username }}
+              <em id="checkboxEditUser">{{ user.username }}</em>
               <div style="background-image:url('{{ user.image_src }}')" id="groupsEditAteendeeImage">
               </div>
             </label>

@@ -27,7 +27,7 @@
   <div class="container">
     <h1>Users</h1>
       <div class="row row-centered">
-        <div ng-repeat="attendee in groupsShow.group.attendees" id="users" class="col-xs-4 col-sm-12 col-md-2 col-centered">
+        <div ng-repeat="attendee in groupsShow.group.attendees" id="users" class="col-sm-12 col-md-2 col-centered">
           <a ui-sref="attendeesShow({ id: attendee.id })" ui-sref-active="active">
             <div style="background-image:url('{{ attendee.image_src }}')" id="attendeesImage"></div>
           </a>

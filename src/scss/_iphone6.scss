@@ -118,6 +118,22 @@
     }
   }
 
+  #groupsNewBackground {
+    height: 110vh;
+  }
+
+  #groupsNewAteendeeImage {
+    padding: 20px;
+  }
+
+  #groupsEditBackground {
+    height: 110vh;
+  }
+
+  #groupsEditAteendeeImage {
+    padding: 20px;
+  }
+
   .attendees {
     padding: 10px;
     h3 {
@@ -135,6 +151,14 @@
       margin: 5px auto;
       display: block;
     }
+  }
+
+  #checkboxEditUser {
+    display: none;
+  }
+
+  #checkboxNewUser {
+    display: none;
   }
 
   #groupsIndexSection {
@@ -161,7 +185,7 @@
     }
   }
 
-  #usersGroupsShowButtons {
+  #groupsShowButtons {
     width: 90%;
   }
 
@@ -169,7 +193,7 @@
     width: 90%;
   }
 
-  #usersGroupShowAttendees {
+  #groupShowAttendees {
     width: 90%;
   }
 
@@ -178,7 +202,7 @@
     width: 20%;
   }
 
-  #usersGroupShowHolidays {
+  #groupShowHolidays {
     width: 90%;
   }
 
