@@ -1,6 +1,5 @@
-// IPHONE 6
-@media only screen and (min-width : 375px) and (max-width : 667px) {
-
+// RECENT IPADS
+@media only screen and (min-width : 768px) and (max-width : 1024px)  {
   header {
     nav {
       ul {
@@ -19,7 +18,7 @@
   form {
     div {
       input {
-        padding: 1px 0 1px 0;
+        padding: 5px 0 5px 0;
       }
       input[type="file"] {
         height: 30px;
@@ -37,10 +36,14 @@
     }
   }
 
+  .upload {
+
+  }
+
   button {
     margin: 5px 0;
     width: 100%;
-    height: 25px;
+    height: 30px;
     font-weight: normal;
     font-size: 12px;
   }
@@ -53,7 +56,7 @@
   }
 
   #loginForm {
-    padding: 10px;
+    padding: 40px;
     width: 90%;
     .newTo {
       font-size: 15px;
@@ -64,38 +67,39 @@
     }
   }
   #registerForm {
-    padding: 20px;
+    padding: 40px;
     width: 90%;
     h1 {
-      font-size: 18px;
+      font-size: 25px;
     }
     .alreadyReg {
-      font-size: 15px;
+      font-size: 20px;
+      font-weight: bold;
       padding: 0;
     }
   }
 
   .choose {
-    padding-top: 4px;
-    height: 25px;
+    padding-top: 7px;
+    height: 30px;
     font-size: 12px;
   }
 
   #usersShowSection {
     width: 90%;
-    padding: 20px;
+    padding: 40px;
     h1 {
-      font-size: 12px;
-      padding-bottom: 0;
+      font-size: 25px;
+      padding-bottom: 15px;
     }
     p {
-      padding: 5px;
+      padding: 10px;
     }
   }
 
   #usersEditSection {
     width: 90%;
-    padding: 20px;
+    padding: 40px;
     h1 {
       font-size: 15px;
     }
@@ -104,16 +108,16 @@
   #groupsEditForm {
     width: 90%;
     margin: auto;
-    padding: 10px;
+    padding: 40px;
     h1 {
-      font-size: 18px;
+      font-size: 25px;
     }
   }
 
   #groupsNewForm {
     width: 90%;
     margin: auto;
-    padding: 10px;
+    padding: 40px;
     h1 {
       font-size: 20px;
     }
@@ -125,7 +129,7 @@
       font-size: 15px;
     }
     label#attendeeName {
-      font-size: 10px;
+      font-size: 20px;
       padding: 0;
       display: block;
       position: relative;
@@ -140,15 +144,15 @@
 
   #usersGroupsIndexSection {
     h2 {
-      font-size: 15px;
+      font-size: 20px;
     }
     #usersGroupsIndexList {
       width: 90%;
       margin: auto;
       top: 50%;
-      padding: 20px;
+      padding: 40px;
       h1 {
-        font-size: 20px;
+        font-size: 30px;
         padding-bottom: 15px;
       }
     }
@@ -167,7 +171,7 @@
   }
 
   #usersButtons {
-    width: 90%;
+    width: 100%;
   }
 
   #usersGroupShowAttendees {
@@ -175,7 +179,7 @@
   }
 
   #attendeesImage {
-    padding: 10%;
+    padding: 50%;
     width: 20%;
   }
 
@@ -184,21 +188,19 @@
   }
 
   #holidaysImage {
-    margin: 10px auto;
+    margin: 15px auto;
     width: 40%;
+    padding: 15%;
   }
 
   #addHolidaysImage {
-    margin: 10px auto;
+    margin: 15px auto;
     width: 40%;
+    padding: 15%;
   }
 
   #holidaysNewBackground {
-    height: 135vh;
-  }
-
-  #holidaysEditBackground {
-    height: 135vh;
+    height: 115vh;
   }
 
   #holidayEditForm {
@@ -219,7 +221,7 @@
 
   #holidaysNewForm {
     top: 50%;
-    padding: 25px;
+    padding: 40px;
     h1 {
       font-size: 20px;
     }
@@ -357,12 +359,16 @@
       font-size: 20px;
     }
     #skyscanner {
-      width: 50%;
-      margin-top: -15px;
-      margin-right: 70px;
+      width: 30%;
+      // margin-top: -15px;
+      // margin-right: 70px;
+      margin: -25px 225px 0 auto;
     }
     p {
       font-size: 15px;
+    }
+    h4:nth-child(1) {
+      padding-top: 10px;
     }
   }
 
@@ -450,5 +456,28 @@
   h4#holidayName {
     font-size: 12px;
     padding: 5px;
+  }
+
+  #attendeeShowSection {
+    width: 90%;
+  }
+
+  #attendeeShowHolidaySection {
+    width: 90%;
+  }
+
+  #attendeeShowGroupsAttending {
+    width: 90%;
+  }
+
+  #attendeeShowHolidaysImage {
+    margin: 15px auto;
+    padding: 50%;
+  }
+
+  #attendeeShowBackground {
+    h1 {
+      font-size: 1.5em;
+    }
   }
 }

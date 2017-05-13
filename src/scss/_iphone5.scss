@@ -53,22 +53,24 @@
   }
 
   #loginForm {
-    padding: 20px;
+    padding: 10px;
     width: 90%;
     .newTo {
       font-size: 15px;
       padding: 0;
     }
     h1 {
+      font-size: 30px;
       padding: 0 0 10px 0;
     }
   }
   #registerForm {
-    padding: 20px;
+    padding: 10px;
     width: 90%;
-    top: 53%;
+    top: 50%;
     h1 {
       font-size: 18px;
+      padding-bottom: 5px;
     }
     .alreadyReg {
       font-size: 15px;
@@ -76,7 +78,7 @@
     }
   }
   #registerBackground {
-    height: 120vh;
+    height: 130vh;
   }
 
   .choose {
@@ -89,10 +91,18 @@
     padding: 10px;
     width: 90%;
     h1 {
-      font-size: 15px;
+      font-size: 12px;
+      padding-bottom: 5px;
     }
     p {
       padding: 5px;
+      font-size: 12px;
+    }
+    #userImage {
+      margin: 0 auto 5px auto;
+    }
+    .usersShowButtons {
+      padding-top: 5px;
     }
   }
 
@@ -101,6 +111,9 @@
     padding: 10px;
     h1 {
       font-size: 15px;
+    }
+    #userImage {
+      margin: 0 auto 5px auto;
     }
   }
 
@@ -249,11 +262,11 @@
   }
 
   #holidaysNewBackground {
-    height: 135vh;
+    height: 190vh;
   }
 
   #holidaysEditBackground {
-    height: 135vh;
+    height: 190vh;
   }
 
   #holidayEditForm {
@@ -311,7 +324,7 @@
   }
 
   #searchFlightsButton:before {
-    top: -4px;
+    background-image: none;
   }
 
   #holidaysBackground {
@@ -343,7 +356,6 @@
   }
 
   #holidaysShowButtonsSection {
-    // padding: 10px;
     #holidaysShowButtons {
       width: 90%;
       margin: auto;
@@ -393,12 +405,12 @@
 
   #deleteComment {
     .button:before {
-      top: 1px;
+      background-image: none;
     }
   }
 
   #postButton:before {
-    height: 18px;
+    background-image: none;
   }
 
   #searchFlightsBackground {
@@ -410,7 +422,7 @@
   }
 
   .button:before {
-    top: -4px;
+    background-image: none;
   }
 
   #searchFlightsForm {
@@ -429,7 +441,7 @@
     #skyscanner {
       width: 50%;
       margin-top: -15px;
-      margin-right: 80px;
+      margin-right: 65px;
     }
     p {
       font-size: 15px;
@@ -437,91 +449,75 @@
   }
 
   #getFlights:before {
-    top: -4px;
+    background-image: none;
   }
 
   #editHoliday:before {
-    height: 20px;
-    top: 1px;
+    background-image: none;
   }
 
   #deleteHoliday:before {
-    height: 20px;
-    top: 1px;
+    background-image: none;
   }
 
   #createGroupButton:before {
-    height: 26px;
-    top: -2px;
+    background-image: none;
   }
 
   #leaveGroup:before {
-    height: 21px;
-    top: 0;
+    background-image: none;
   }
 
   #editGroup:before {
-    height: 21px;
-    top: 0;
+    background-image: none;
   }
 
   #deleteGroup:before {
-    height: 20px;
-    top: 0;
+    background-image: none;
   }
 
   #editUser:before {
-    height: 21px;
-    top: 0;
+    background-image: none;
   }
 
   #deleteUser:before {
-    height: 20px;
-    top: 0;
+    background-image: none;
   }
 
   #logout:before {
-    height: 20px;
-    top: 0;
+    background-image: none;
   }
 
   #camera:before {
-    height: 26px;
-    top: -3px;
+    background-image: none;
   }
 
   #updateUser:before {
-    height: 20px;
-    top: 0;
+    background-image: none;
   }
 
   #logInButton:before {
-    height: 20px;
+    background-image: none;
   }
 
   #gitHubButton:before {
-    height: 20px;
-    top: 0;
+    background-image: none;
   }
 
   #signUpButton:before {
-    height: 20px;
-    top: 0;
+    background-image: none;
   }
 
   #cameraButton:before {
-    height: 24px;
-    top: -2px;
+    background-image: none;
   }
 
   #registerButton:before {
-    height: 20px;
-    top: 0;
+    background-image: none;
   }
 
   #signInButton:before {
-    height: 20px;
-    top: 0;
+    background-image: none;
   }
 
   #homeBackground {
