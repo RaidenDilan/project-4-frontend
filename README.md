@@ -1,64 +1,44 @@
-### Using this Angular Gulp Setup
+<center><h1>GA WDI London - Project 4 (Final Project) April 2017</h1></center>
 
-To get setup with the starter-code, you first need to run:
+<center><h1>Project 4: Palm Trees</h1></center>
 
-```sh
-$ bower install && gulp install
-```
+<center>[Check it out here!]( https://desolate-sands-98689.herokuapp.com)</center>
 
-## How is gulp setup?
+![Imgur](http://i.imgur.com/SKFSDrN.jpg)
 
-Rather than trying to manage one giant `gulpfile.js` that is file responsible for creating multiple tasks, each task has been broken out into its own file and placed in a directory `tasks`. Any files in that directory get automatically required in the gulpfile using the `require-dir` npm package.
+The frontend of a full stack RESTful application. A lending site where users can log in and request and accept/decline friends on the app, upload items they are willing to lend to friends or mutual friends and friends. Users can also borrow their friends items.
 
-To add a new task, simply add a new task file that directory.
+<center><h1>Inspiration</h1></center>
 
-/tasks/default.js specifies the default set of tasks to run
-when you run `gulp`.
+<p>The idea was inspired by travelling and adventures, creating a community to share a selection of holiday destinations with users.</p>
 
-Configuration options are stored in the `package.json` file.
+<center><h1>Approach</h1></center>
 
-When deploying, ensure that a `postinstall` script has been added to
-your package.json, e.g.
+I had a clear view of how I wanted the application to function from the beggining. Similarly with the UX design, I wanted to keep it quite simple.
 
-```json
-"postinstall": "bower install && gulp deploy"
-```
+You must create a profile on the app before you can use a lot of the features. Users must also create a group before they can use a lot of the features the app provides. On creating a group you can add other users to communicate with them to share your discoveries and reviews. Users are also allowed to create multiple groups because maybe you wanna go on hoilday with multiple group of people.
 
-This setup expects that there is a bower.json file with at least ONE package
-installed. This will created a bower_components directory after
-the postinstall script has run.
+When a group is created you then have full access to the application. From within a group, you can create new holidays which will be posted in the group you created the holiday. Once a holiday has been created you can then find flights information provided by Skyscanner API.
 
-When deploying, this setup expects that the NODE_ENV is set to `production`.
-Also that the NPM_CONFIG_PRODUCTION is set to `false`. Then you can also set the API_URL to be the correct URL for your deployed app. This will automatically replace `http://localhost:4000` to be the correct url.
+Users will have access to all the holidays that have been stored in the group their attending, so that they can also check for flights information. When viewing a holiday users can also write reviews and talk to other attendees.
 
-You can do this by running:
+<center><h1>Technologies Used</h1></center>
 
-```bash
-$ heroku config:set NODE_ENV=production
-$ heroku config:set NPM_CONFIG_PRODUCTION=false
+* JavaScript, Express, Node.js, AngularJS, HTML5, CSS, SASS, Bootstrap were used to create the frontend application. Ruby, Ruby on Rails and PostgreSQL database in the backend.
+* Pictures are base64 encoded and stored using the AWS S3 service.
+* Authentication uses JWT with Satellizer and BCrypt.
+* The Google Web Font 'Raleway' & 'Poppins has been used to style the application
+* Background images are from Google.
 
-# An example url
-$ heroku config:set API_URL=https://project-on-heroku.herokuapp.com/
-```
+I own none of the images or background used in the game. All other work is my own.
 
-### Bower overrides
+<center><h1>Challenges & Problems</h1></center>
 
-Sometimes, you might want to `override` the `main` file(s) for a specific Bower component. You can do this directly inside the `bower.json` file like this:
+One of the more tricky parts of this project was the scope of it, at the start of the project there was so much to do it was overwhelming. I started building the app by keeping the scope small and building it up as I went further along. CSS was a challenge at the start as my background images were not dispayed the way I wanted them to. In the week this was completed, I was unable to display the groups that each user was attending.
 
-```json
-"overrides": {
-  "bootstrap": {
-    "main": [
-      "dist/css/bootstrap.css",
-      "dist/js/bootstrap.js",
-      "dist/fonts/*"
-    ]
-  },
-  "font-awesome": {
-    "main": [
-      "css/font-awesome.css",
-      "fonts/*"
-    ]
-  }
-},
-```
+Features & Bugs
+
+* The GitHub login after the first 'login with github' is slightly slow, maybe it's because I'm hosting my app on Heroku because Heroku is very slow.
+* Users can't delete their profiles which is very strange as deleting a user has been quite easy to do in my previous projects.
+
+<center><strong>Copyright © Palm Trees</strong></center>

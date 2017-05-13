@@ -18,7 +18,7 @@ function GroupsNewCtrl(Group, User, $state, $auth) {
       Group
       .save({ group: vm.group })
       .$promise
-      .then((group) => $state.go('usersGroupsIndex', { id: group.id }));
+      .then((group) => $state.go('groupsIndex', { id: group.id }));
       vm.groupsNewForm.$setPristine();
       vm.groupsNewForm.$setUntouched();
     }
@@ -38,7 +38,7 @@ function GroupsEditCtrl(User, Group, $stateParams, $state) {
       Group
       .update({ id: vm.group.id, group: vm.group })
       .$promise
-      .then(() => $state.go('usersGroupsShow', $stateParams));
+      .then(() => $state.go('groupsShow', $stateParams));
       vm.groupsEditForm.$setPristine();
       vm.groupsEditForm.$setUntouched();
     }
@@ -68,7 +68,7 @@ function GroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth) {
   function groupsDelete() {
     vm.group
       .$remove()
-      .then(() => $state.go('usersGroupsIndex'));
+      .then(() => $state.go('groupsIndex'));
   }
   vm.delete = groupsDelete;
 

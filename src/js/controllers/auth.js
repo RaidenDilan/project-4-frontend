@@ -28,7 +28,7 @@ function LoginCtrl($auth, $state) {
     if(vm.loginForm.$valid) {
       $auth.login(vm.credentials)
       // .then(user => console.log(user));
-      .then(() => $state.go('usersGroupsIndex'));
+      .then(() => $state.go('groupsIndex'));
       vm.loginForm.$setPristine();
       vm.loginForm.$setUntouched();
     }

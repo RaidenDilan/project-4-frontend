@@ -12,9 +12,9 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     templateUrl: 'js/views/index.html'
   })
 //-------------------------------ATTENDEES------------------------------------//
-.state('attendeeShow', {
-  url: '/attendee/:id',
-  templateUrl: '/js/views/attendees/attendee.html',
+.state('attendeesShow', {
+  url: '/attendees/:id',
+  templateUrl: '/js/views/attendees/show.html',
   controller: 'AttendeeShowCtrl as attendeeShow'
 })
 //---------------------------------HOLIDAY------------------------------------//

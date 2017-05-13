@@ -57,12 +57,12 @@
   }
 }
 
-#createGroupButton {
-  &:before {
-    background-image: url('../images/logos/addgroup.png');
-    height: 35px;
-  }
-  &:hover {
-    color: transparent;
-  }
+  #createGroupButton {
+    &:before {
+      background-image: url('../images/logos/addgroup.png');
+      height: 35px;
+    }
+    &:hover {
+      color: transparent;
+    }
 }

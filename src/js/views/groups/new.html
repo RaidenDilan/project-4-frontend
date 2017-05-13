@@ -15,6 +15,7 @@
           <label ng-repeat="user in groupsNew.users" class="attendeesNames" id="attendeeName">
             <input type="checkbox" id="attendees" name="attendees" checklist-model="groupsNew.group.attendee_ids" checklist-value="user.id">
             {{ user.username }}
+            <!-- {{ user.image_src }} -->
           </label>
         </div>
       </div>
