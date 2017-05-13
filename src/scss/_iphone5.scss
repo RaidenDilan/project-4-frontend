@@ -5,50 +5,6 @@
     line-height: 20px;
   }
 
-  body {
-      &.home {
-        margin-bottom: 0;
-      }
-      &.login {
-        margin-bottom: 0;
-      }
-      &.register {
-        margin-bottom: 0;
-      }
-      &.usersShow {
-        margin-bottom: 0;
-      }
-      &.usersEdit {
-        margin-bottom: 0;
-      }
-      &.groupsNew {
-        margin-bottom: 0;
-      }
-      &.groupsEdit {
-        margin-bottom: 0;
-      }
-      &.usersGroupsIndex {
-        margin-bottom: 0;
-      }
-      &.usersGroupsShow {
-        margin-bottom: 0;
-      }
-      &.holidaysEdit {
-        main {
-        margin-bottom: 0;
-      }
-      &.holidaysShow {
-        margin-bottom: 0;
-      }
-      &.holidaysNew {
-        margin-bottom: 0;
-      }
-      &.flightsShow {
-        margin-bottom: 0;
-      }
-    }
-  }
-
   header {
     nav {
       height: 50px;

@@ -1,0 +1,370 @@
+// IPHONE 6
+@media only screen and (min-width : 375px) and (max-width : 667px) {
+
+  box-sizing: border-box;
+
+  header {
+    nav {
+      ul {
+        li {
+          margin-top: 5px;
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  form {
+    div {
+      input {
+        padding: 1px 0 1px 0;
+      }
+      input[type="file"] {
+        height: 30px;
+      }
+      textarea {
+        padding: 0;
+        height: 30px;
+      }
+      p {
+        font-size: 15px;
+        color: red;
+        padding: 0;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  button {
+    margin: 5px 0;
+    width: 100%;
+    height: 25px;
+    font-weight: normal;
+    font-size: 12px;
+  }
+
+  footer {
+    font-size: 10px;
+    padding: 12px 0;
+    height: 3em;
+    margin-top: -3em;
+  }
+
+  #loginForm {
+    width: 90%;
+    .newTo {
+      font-size: 15px;
+      padding: 0;
+    }
+  }
+  #registerForm {
+    width: 90%;
+    h1 {
+      font-size: 15px;
+    }
+    .alreadyReg {
+      font-size: 15px;
+      padding: 0;
+    }
+  }
+
+  .choose {
+    padding-top: 4px;
+    height: 25px;
+    font-size: 12px;
+  }
+
+  #usersShowSection {
+    width: 90%;
+    padding: 20px;
+    h1 {
+      font-size: 15px;
+    }
+  }
+  #usersEditSection {
+    width: 90%;
+    padding: 20px;
+    h1 {
+      font-size: 15px;
+    }
+  }
+  #groupsNewForm {
+    width: 90%;
+    margin: auto;
+    h1 {
+      font-size: 20px;
+    }
+  }
+
+  .attendees {
+    padding: 10px;
+    h3 {
+      font-size: 15px;
+    }
+    label#attendeeName {
+      font-size: 10px;
+    }
+  }
+
+  #newGroup {
+    margin-left: -10px;
+  }
+
+  #usersGroupsIndexSection {
+    h2 {
+      font-size: 15px;
+    }
+    #usersGroupsIndexList {
+      width: 90%;
+      margin: auto;
+      top: 50%;
+      padding: 20px;
+      h1 {
+        font-size: 20px;
+        padding-bottom: 15px;
+      }
+    }
+  }
+
+  #groupsBackground {
+    h1 {
+      font-size: 20px;
+      margin: auto;
+      padding: 15px;
+    }
+  }
+
+  #usersGroupsShowButtons {
+    width: 90%;
+  }
+  #usersButtons {
+    width: 90%;
+  }
+  #usersGroupShowAttendees {
+    width: 90%;
+  }
+  #attendeesImage {
+    padding: 10%;
+    width: 20%;
+    // margin: 10px;
+  }
+  #usersGroupShowHolidays {
+    width: 90%;
+  }
+  #holidaysImage {
+    margin: 10px auto;
+    width: 40%;
+  }
+  #addHolidaysImage {
+    margin: 10px auto;
+    width: 40%;
+  }
+  #holidaysNewBackground {
+    height: 135vh;
+  }
+  #holidaysEditBackground {
+    height: 135vh;
+  }
+  #holidayEditForm {
+    top: 50%;
+    padding: 25px;
+    h1 {
+      font-size: 20px;
+    }
+  }
+  #holidaysNewForm {
+    top: 50%;
+    padding: 25px;
+    h1 {
+      font-size: 20px;
+    }
+  }
+  .leftColumn {
+    float: none;
+    display: block;
+    clear: left;
+    width: 100%;
+  }
+  .rightColumn {
+    float: none;
+    display: block;
+    clear: left;
+    width: 100%;
+  }
+  .departure {
+    padding-top: 0;
+  }
+  .return {
+    padding-top: 0;
+  }
+  #holidaysBackground {
+    h1 {
+      font-size: 20px;
+      margin: auto;
+      padding: 15px;
+    }
+  }
+  #holidaysShow {
+    width: 90%;
+    h2 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 15px;
+      padding: 10px;
+    }
+  }
+  #holidaysShowButtons {
+    width: 90%;
+    margin: auto;
+    button {
+      width: 100%;
+    }
+  }
+  .by {
+    width: 90%;
+  }
+  #holidaysMultipleImages {
+    width: 90%;
+  }
+  #holidaysShowReviews {
+    h1 {
+      font-size: 25px;
+    }
+    ul {
+      li {
+        button {
+          width: 30%;
+        }
+      }
+    }
+  }
+  #holidaysShowReviews {
+    width: 90%;
+    #AddComment {
+      form {
+        textarea {
+          width: 100%;
+        }
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+  #deleteComment {
+    .button:before {
+      top: 1px;
+    }
+  }
+  #postButton:before {
+    height: 18px;
+}
+  #searchFlightsBackground {
+    h1 {
+      font-size: 20px;
+      margin: auto;
+      padding: 15px;
+    }
+  }
+  .button:before {
+    top: -4px;
+  }
+  #searchFlightsForm {
+    width: 90%;
+    padding: 15px;
+    h1 {
+      font-size: 25px;
+    }
+  }
+  #flightsBoard  {
+    width: 90%;
+    h1 {
+      font-size: 20px;
+    }
+    #skyscanner {
+      width: 50%;
+      margin-top: -15px;
+      margin-right: 80px;
+    }
+    p {
+      font-size: 15px;
+    }
+  }
+  #getFlights:before {
+    top: -4px;
+  }
+  #editHoliday:before {
+    height: 20px;
+    top: 1px;
+  }
+  #deleteHoliday:before {
+    height: 20px;
+    top: 1px;
+  }
+  #createGroupButton:before {
+    height: 26px;
+    top: -2px;
+  }
+  #leaveGroup:before {
+    height: 21px;
+    top: 0;
+  }
+  #editGroup:before {
+    height: 21px;
+    top: 0;
+  }
+  #deleteGroup:before {
+    height: 20px;
+    top: 0;
+  }
+  #editUser:before {
+    height: 21px;
+    top: 0;
+  }
+  #deleteUser:before {
+    height: 20px;
+    top: 0;
+  }
+  #logout:before {
+    height: 20px;
+    top: 0;
+  }
+  #camera:before {
+    height: 26px;
+    top: -3px;
+  }
+  #updateUser:before {
+    height: 20px;
+    top: 0;
+  }
+  #logInButton:before {
+    height: 20px;
+  }
+  #gitHubButton:before {
+    height: 20px;
+    top: 0;
+  }
+  #signUpButton:before {
+    height: 20px;
+    top: 0;
+  }
+  #cameraButton:before {
+    height: 24px;
+    top: -2px;
+  }
+  #registerButton:before {
+    height: 20px;
+    top: 0;
+  }
+  #signInButton:before {
+    height: 20px;
+    top: 0;
+  }
+}
+
+// RECENT IPADS
+@media only screen and (min-width : 768px) and (max-width : 1024px)  {
+
+}
