@@ -12,6 +12,7 @@
     <div class="usersShowButtons">
       <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="usersEdit({ id: usersShow.user.id })" class="button" id="editUser">Edit</button>
       <!-- <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ng-click="usersShow.delete()" class="button" id="deleteUser">Delete</button> -->
+      <!-- <button ng-click="usersShow.delete()" class="button" id="deleteUser">Delete</button> -->
       <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ng-click="main.logout()" href="#" class="button" id="logout">Logout</button>
     </div>
   </div>

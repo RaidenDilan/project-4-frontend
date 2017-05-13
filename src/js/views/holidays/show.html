@@ -30,8 +30,8 @@
   <div id="holidaysShowButtons">
     <div id="holidayButtons">
       <button ui-sref="flightsShow({ id: holidaysShow.holiday.id })" id="getFlights" class="button">Get Flights</button>
-      <button ui-sref="holidaysEdit({ id: holidaysShow.holiday.id })" id="editHoliday" class="button">Edit Holiday</button>
-      <button ng-click="holidaysShow.delete()" id="deleteHoliday" class="button">Delete Holiday</button>
+      <button ng-if="main.isAuthenticated()" ui-sref="holidaysEdit({ id: holidaysShow.holiday.id })" id="editHoliday" class="button">Edit Holiday</button>
+      <button ng-if="main.isAuthenticated()" ng-click="holidaysShow.delete()" id="deleteHoliday" class="button">Delete Holiday</button>
     </div>
   </div>
 </section>

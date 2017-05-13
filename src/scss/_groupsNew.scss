@@ -29,7 +29,7 @@
 }
 
 .attendees {
-  padding: 30px;
+  padding: 10px;
   border: 2px dotted $white;
   border-radius: 10px;
   margin: 15px 0;
@@ -42,7 +42,7 @@
   }
   label#attendeeName {
     color: $white;
-    padding-left: 20px;
+    // padding-left: 20px;
   }
   #attendees {
     position: relative;
@@ -57,12 +57,25 @@
   }
 }
 
-  #createGroupButton {
-    &:before {
-      background-image: url('../images/logos/addgroup.png');
-      height: 35px;
-    }
-    &:hover {
-      color: transparent;
-    }
+#createGroupButton {
+  &:before {
+    background-image: url('../images/logos/addgroup.png');
+    height: 35px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}
+
+#groupsNewAteendeeImage {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+  width: 0%;
+  content: "";
+  display: block;
+  padding: 30px;
+  margin: 5px auto;
+  border: 2px solid $white;
 }

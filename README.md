@@ -36,8 +36,8 @@ I own none of the images or background used in the game. All other work is my ow
 
 One of the more tricky parts of this project was the scope of it, at the start of the project there was so much to do it was overwhelming. I started building the app by keeping the scope small and building it up as I went further along. CSS was a challenge at the start as my background images were not dispayed the way I wanted them to. In the week this was completed, I was unable to display the groups that each user was attending.
 
-Features & Bugs
-
+<p><strong>Features & Bugs
+</strong></p>
 * The GitHub login after the first 'login with github' is slightly slow, maybe it's because I'm hosting my app on Heroku because Heroku is very slow.
 * Users can't delete their profiles which is very strange as deleting a user has been quite easy to do in my previous projects.
 

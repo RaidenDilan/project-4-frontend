@@ -13,8 +13,8 @@ function LoginCtrl($auth, $state) {
   vm.authenticate = authenticate;
 
   function register() {
+    vm.group = null;
     if(vm.registerForm.$valid) {
-      console.log(vm.registerForm$valid);
       $auth.signup(vm.user)
       // .then(user => console.log(user));
       .then(() => $state.go('login'));
