@@ -1,15 +1,16 @@
 // IPHONE 6
 @media only screen and (min-width : 375px) and (max-width : 667px) {
 
-  box-sizing: border-box;
-
   header {
     nav {
       ul {
         li {
           margin-top: 5px;
           margin-left: 5px;
-          margin-right: 5px;
+          margin-right: 6px;
+        }
+        li.newgroup {
+          left: 49%;
         }
       }
     }
@@ -52,16 +53,21 @@
   }
 
   #loginForm {
+    padding: 20px;
     width: 90%;
     .newTo {
       font-size: 15px;
       padding: 0;
     }
+    h1 {
+      padding: 0 0 10px 0;
+    }
   }
   #registerForm {
+    padding: 20px;
     width: 90%;
     h1 {
-      font-size: 15px;
+      font-size: 18px;
     }
     .alreadyReg {
       font-size: 15px;
@@ -81,7 +87,11 @@
     h1 {
       font-size: 15px;
     }
+    p {
+      padding: 5px;
+    }
   }
+
   #usersEditSection {
     width: 90%;
     padding: 20px;
@@ -89,9 +99,20 @@
       font-size: 15px;
     }
   }
+
+  #groupsEditForm {
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    h1 {
+      font-size: 18px;
+    }
+  }
+
   #groupsNewForm {
     width: 90%;
     margin: auto;
+    padding: 10px;
     h1 {
       font-size: 20px;
     }
@@ -104,11 +125,16 @@
     }
     label#attendeeName {
       font-size: 10px;
+      padding: 0;
+      display: block;
+      position: relative;
     }
-  }
-
-  #newGroup {
-    margin-left: -10px;
+    input#attendees[type="checkbox"] {
+      width: 20px;
+      top: -1px;
+      margin: 5px auto;
+      display: block;
+    }
   }
 
   #usersGroupsIndexSection {
@@ -138,66 +164,100 @@
   #usersGroupsShowButtons {
     width: 90%;
   }
+
   #usersButtons {
     width: 90%;
   }
+
   #usersGroupShowAttendees {
     width: 90%;
   }
+
   #attendeesImage {
     padding: 10%;
     width: 20%;
-    // margin: 10px;
   }
+
   #usersGroupShowHolidays {
     width: 90%;
   }
+
   #holidaysImage {
     margin: 10px auto;
     width: 40%;
   }
+
   #addHolidaysImage {
     margin: 10px auto;
     width: 40%;
   }
+
   #holidaysNewBackground {
     height: 135vh;
   }
+
   #holidaysEditBackground {
     height: 135vh;
   }
+
   #holidayEditForm {
     top: 50%;
     padding: 25px;
     h1 {
       font-size: 20px;
     }
+    #departureDate {
+      padding: 0;
+      padding-left: 25px;
+    }
+    #returnDate {
+      padding: 0;
+      padding-left: 25px;
+    }
   }
+
   #holidaysNewForm {
     top: 50%;
     padding: 25px;
     h1 {
       font-size: 20px;
     }
+    #departureDate {
+      padding: 0;
+      padding-left: 25px;
+    }
+    #returnDate {
+      padding: 0;
+      padding-left: 25px;
+    }
   }
+
   .leftColumn {
     float: none;
     display: block;
     clear: left;
     width: 100%;
   }
+
   .rightColumn {
     float: none;
     display: block;
     clear: left;
     width: 100%;
   }
+
   .departure {
     padding-top: 0;
   }
+
   .return {
     padding-top: 0;
   }
+
+  #searchFlightsButton:before {
+    top: -4px;
+  }
+
   #holidaysBackground {
     h1 {
       font-size: 20px;
@@ -205,6 +265,7 @@
       padding: 15px;
     }
   }
+
   #holidaysShow {
     width: 90%;
     h2 {
@@ -215,6 +276,7 @@
       padding: 10px;
     }
   }
+
   #holidaysShowButtons {
     width: 90%;
     margin: auto;
@@ -222,12 +284,15 @@
       width: 100%;
     }
   }
+
   .by {
     width: 90%;
   }
+
   #holidaysMultipleImages {
     width: 90%;
   }
+
   #holidaysShowReviews {
     h1 {
       font-size: 25px;
@@ -240,6 +305,7 @@
       }
     }
   }
+
   #holidaysShowReviews {
     width: 90%;
     #AddComment {
@@ -253,14 +319,17 @@
       }
     }
   }
+
   #deleteComment {
     .button:before {
       top: 1px;
     }
   }
+
   #postButton:before {
     height: 18px;
-}
+  }
+
   #searchFlightsBackground {
     h1 {
       font-size: 20px;
@@ -268,9 +337,11 @@
       padding: 15px;
     }
   }
+
   .button:before {
     top: -4px;
   }
+
   #searchFlightsForm {
     width: 90%;
     padding: 15px;
@@ -278,6 +349,7 @@
       font-size: 25px;
     }
   }
+
   #flightsBoard  {
     width: 90%;
     h1 {
@@ -292,75 +364,107 @@
       font-size: 15px;
     }
   }
+
   #getFlights:before {
     top: -4px;
   }
+
   #editHoliday:before {
     height: 20px;
     top: 1px;
   }
+
   #deleteHoliday:before {
     height: 20px;
     top: 1px;
   }
+
   #createGroupButton:before {
     height: 26px;
     top: -2px;
   }
+
   #leaveGroup:before {
     height: 21px;
     top: 0;
   }
+
   #editGroup:before {
     height: 21px;
     top: 0;
   }
+
   #deleteGroup:before {
     height: 20px;
     top: 0;
   }
+
   #editUser:before {
     height: 21px;
     top: 0;
   }
+
   #deleteUser:before {
     height: 20px;
     top: 0;
   }
+
   #logout:before {
     height: 20px;
     top: 0;
   }
+
   #camera:before {
     height: 26px;
     top: -3px;
   }
+
   #updateUser:before {
     height: 20px;
     top: 0;
   }
+
   #logInButton:before {
     height: 20px;
   }
+
   #gitHubButton:before {
     height: 20px;
     top: 0;
   }
+
   #signUpButton:before {
     height: 20px;
     top: 0;
   }
+
   #cameraButton:before {
     height: 24px;
     top: -2px;
   }
+
   #registerButton:before {
     height: 20px;
     top: 0;
   }
+
   #signInButton:before {
     height: 20px;
     top: 0;
+  }
+
+  #homeBackground {
+    h1 {
+      margin: auto;
+    }
+    p#discover {
+      font-size: 15px;
+      position: relative;
+    }
+  }
+  h4#holidayName {
+    font-size: 12px;
+    padding: 5px;
   }
 }
 
