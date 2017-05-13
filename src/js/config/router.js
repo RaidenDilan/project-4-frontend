@@ -11,7 +11,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     url: '/',
     templateUrl: 'js/views/index.html'
   })
-//-------------------------------ADVENTURER-----------------------------------//
+//-------------------------------ATTENDEES------------------------------------//
 .state('attendeeShow', {
   url: '/attendee/:id',
   templateUrl: '/js/views/attendees/attendee.html',
@@ -34,10 +34,20 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     controller: 'HolidaysEditCtrl as holidaysEdit'
   })
 //---------------------------------GROUP--------------------------------------//
+.state('groupsIndex', {
+  url: '/groups',
+  templateUrl: 'js/views/groups/index.html',
+  controller: 'GroupsIndexCtrl as groupsIndex'
+})
 .state('groupsNew', {
   url: '/groups/new',
   templateUrl: 'js/views/groups/new.html',
   controller: 'GroupsNewCtrl as groupsNew'
+})
+.state('groupsShow', {
+  url: '/groups/:id',
+  templateUrl: '/js/views/groups/show.html',
+  controller: 'GroupsShowCtrl as groupsShow'
 })
 .state('groupsEdit', {
   url: '/groups/:id/edit',
@@ -54,17 +64,6 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     url: '/users/:id/edit',
     templateUrl: 'js/views/users/edit.html',
     controller: 'UsersEditCtrl as usersEdit'
-  })
-//-----------------------------USER'S GROUPS----------------------------------//
-  .state('usersGroupsIndex', {
-    url: '/groups',
-    templateUrl: 'js/views/users/groups/index.html',
-    controller: 'UsersGroupsIndexCtrl as usersGroupsIndex'
-  })
-  .state('usersGroupsShow', {
-    url: '/groups/:id',
-    templateUrl: '/js/views/groups/show.html',
-    controller: 'UsersGroupsShowCtrl as usersGroupsShow'
   })
 //----------------------------------BUDGET------------------------------------//
   .state('flightsShow', {

@@ -1,7 +1,9 @@
 angular
   .module('holiday')
   .controller('GroupsNewCtrl', GroupsNewCtrl)
-  .controller('GroupsEditCtrl', GroupsEditCtrl);
+  .controller('GroupsEditCtrl', GroupsEditCtrl)
+  .controller('GroupsIndexCtrl', GroupsIndexCtrl)
+  .controller('GroupsShowCtrl', GroupsShowCtrl);
 
 GroupsNewCtrl.$inject = ['Group', 'User', '$state', '$auth'];
 function GroupsNewCtrl(Group, User, $state, $auth) {
@@ -42,4 +44,55 @@ function GroupsEditCtrl(User, Group, $stateParams, $state) {
     }
   }
   vm.update = groupsUpdate;
+}
+
+GroupsIndexCtrl.$inject = ['User', 'Group', '$stateParams', '$state', '$auth'];
+function GroupsIndexCtrl(User, Group, $stateParams, $state, $auth) {
+  const vm = this;
+
+  vm.groups = User.get({ id: $auth.getPayload().id });
+}
+
+GroupsShowCtrl.$inject = ['User', 'Group', 'Holiday', '$stateParams', '$state', '$auth'];
+function GroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth) {
+  const vm = this;
+
+  if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
+
+  Group.get($stateParams, (data) => {
+    vm.group = data;
+  });
+
+  vm.group = Group.get($stateParams);
+
+  function groupsDelete() {
+    vm.group
+      .$remove()
+      .then(() => $state.go('usersGroupsIndex'));
+  }
+  vm.delete = groupsDelete;
+
+  function groupsUpdate() {
+    Group
+      .update({ id: vm.group.id, group: vm.group });
+  }
+
+  function toggleAttending() {
+    const index = vm.group.attendee_ids.indexOf(vm.currentUser.id);
+    if(index > -1) {
+      vm.group.attendee_ids.splice(index, 1);
+      vm.group.attendees.splice(index, 1);
+    } else {
+      vm.group.attendee_ids.push(vm.currentUser.id);
+      vm.group.attendees.push(vm.currentUser);
+    }
+    groupsUpdate();
+  }
+
+  vm.toggleAttending = toggleAttending;
+
+  function isAttending() {
+    return $auth.getPayload() && vm.group.$resolved && vm.group.attendee_ids.includes(vm.currentUser.id);
+  }
+  vm.isAttending = isAttending;
 }
