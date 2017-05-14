@@ -2,7 +2,7 @@
 
 <center><h1>Project 4: Palm Trees</h1></center>
 
-<center>[Check it out here!](https://desolate-sands-98689.herokuapp.com)</center>
+<center>[Launch Application!](https://desolate-sands-98689.herokuapp.com)</center>
 
 ![Imgur](http://i.imgur.com/SKFSDrN.jpg)
 
@@ -38,6 +38,7 @@ One of the more tricky parts of this project was the scope of it, at the start o
 
 <p><strong>Features & Bugs
 </strong></p>
+
 * The GitHub login after the first 'login with github' is slightly slow, maybe it's because I'm hosting my app on Heroku because Heroku is very slow.
 * Users can't delete their profiles which is very strange as deleting a user has been quite easy to do in my previous projects.
 <br>
