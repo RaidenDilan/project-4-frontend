@@ -57,7 +57,7 @@
 
       <div>
         <!-- <label for="bio">Biography</label> -->
-        <textarea type="text" name="bio" id="bio" placeholder="Biography" ng-model="login.user.bio" role="alert" required></textarea>
+        <textarea type="text" name="bio" id="bio" placeholder="Biography" ng-model="login.user.bio" maxlength="500" role="alert" required></textarea>
       </div>
       <div class="ng-message-error" ng-messages="login.registerForm.bio.$error" ng-show="(login.registerForm.$submitted || login.registerForm.bio.$touched)">
         <p ng-message="required" class="formValidation">Your biography required.</p>

@@ -47,7 +47,7 @@
           </div>
 
           <div>
-            <textarea type="text" name="description" id="description" ng-model="holidaysNew.holiday.description" placeholder="Description" required></textarea>
+            <textarea type="text" name="description" id="description" ng-model="holidaysNew.holiday.description" placeholder="Description" maxlength="1000" required></textarea>
           </div>
           <div class="ng-message-error" ng-messages="holidaysNew.holidaysNewForm.description.$error" ng-show="(holidaysNew.holidaysNewForm.$submitted || holidaysNew.holidaysNewForm.description.$touched)">
             <p ng-message="required" class="formValidation">Description is required.</p>
