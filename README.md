@@ -40,7 +40,6 @@ One of the more tricky parts of this project was the scope of it, at the start o
 </strong></p>
 
 * The GitHub login after the first 'login with github' is slightly slow, maybe it's because I'm hosting my app on Heroku because Heroku is very slow.
-* Users can't delete their profiles which is very strange as deleting a user has been quite easy to do in my previous projects.
 <br>
 <br>
 

@@ -10,10 +10,10 @@
       <p><strong>Preferred Airport: </strong>{{ usersShow.user.airport }}</p>
     </div>
     <div class="usersShowButtons">
-      <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="usersEdit({ id: usersShow.user.id })" class="button" id="editUser">Edit</button>
-      <!-- <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ng-click="usersShow.delete()" class="button" id="deleteUser">Delete</button> -->
+      <button ng-if="main.currentUser.id === usersShow.user.id" ui-sref="usersEdit({ id: usersShow.user.id })" class="button" id="editUser">Edit Account</button>
+      <button ng-if="main.currentUser.id === usersShow.user.id" ng-click="usersShow.delete()" class="button" id="deleteUser">Delete Account</button>
       <!-- <button ng-click="usersShow.delete()" class="button" id="deleteUser">Delete</button> -->
-      <button ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ng-click="main.logout()" href="#" class="button" id="logout">Logout</button>
+      <button ng-if="main.currentUser.id === usersShow.user.id" ng-click="main.logout()" href="#" class="button" id="logout">Logout</button>
     </div>
   </div>
 </div>

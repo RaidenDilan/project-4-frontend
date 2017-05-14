@@ -1,9 +1,17 @@
 angular
   .module('holiday')
-  .controller('GroupsNewCtrl', GroupsNewCtrl)
-  .controller('GroupsEditCtrl', GroupsEditCtrl)
   .controller('GroupsIndexCtrl', GroupsIndexCtrl)
-  .controller('GroupsShowCtrl', GroupsShowCtrl);
+  .controller('GroupsNewCtrl', GroupsNewCtrl)
+  .controller('GroupsShowCtrl', GroupsShowCtrl)
+  .controller('GroupsEditCtrl', GroupsEditCtrl);
+
+GroupsIndexCtrl.$inject = ['User', 'Group', '$stateParams', '$state', '$auth'];
+function GroupsIndexCtrl(User, Group, $stateParams, $state, $auth) {
+  const vm = this;
+
+  vm.groups = User.get({ id: $auth.getPayload().id });
+}
+
 
 GroupsNewCtrl.$inject = ['Group', 'User', '$state', '$auth'];
 function GroupsNewCtrl(Group, User, $state, $auth) {
@@ -24,33 +32,6 @@ function GroupsNewCtrl(Group, User, $state, $auth) {
     }
   }
   vm.create = groupsCreate;
-}
-
-GroupsEditCtrl.$inject = ['User', 'Group', '$stateParams', '$state'];
-function GroupsEditCtrl(User, Group, $stateParams, $state) {
-  const vm = this;
-
-  vm.group = Group.get($stateParams);
-  vm.users = User.query();
-
-  function groupsUpdate() {
-    if(vm.groupsEditForm.$valid) {
-      Group
-      .update({ id: vm.group.id, group: vm.group })
-      .$promise
-      .then(() => $state.go('groupsShow', $stateParams));
-      vm.groupsEditForm.$setPristine();
-      vm.groupsEditForm.$setUntouched();
-    }
-  }
-  vm.update = groupsUpdate;
-}
-
-GroupsIndexCtrl.$inject = ['User', 'Group', '$stateParams', '$state', '$auth'];
-function GroupsIndexCtrl(User, Group, $stateParams, $state, $auth) {
-  const vm = this;
-
-  vm.groups = User.get({ id: $auth.getPayload().id });
 }
 
 GroupsShowCtrl.$inject = ['User', 'Group', 'Holiday', '$stateParams', '$state', '$auth'];
@@ -95,4 +76,24 @@ function GroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth) {
     return $auth.getPayload() && vm.group.$resolved && vm.group.attendee_ids.includes(vm.currentUser.id);
   }
   vm.isAttending = isAttending;
+}
+
+GroupsEditCtrl.$inject = ['User', 'Group', '$stateParams', '$state'];
+function GroupsEditCtrl(User, Group, $stateParams, $state) {
+  const vm = this;
+
+  vm.group = Group.get($stateParams);
+  vm.users = User.query();
+
+  function groupsUpdate() {
+    if(vm.groupsEditForm.$valid) {
+      Group
+      .update({ id: vm.group.id, group: vm.group })
+      .$promise
+      .then(() => $state.go('groupsShow', $stateParams));
+      vm.groupsEditForm.$setPristine();
+      vm.groupsEditForm.$setUntouched();
+    }
+  }
+  vm.update = groupsUpdate;
 }

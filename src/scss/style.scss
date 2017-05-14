@@ -80,9 +80,15 @@ body {
 }
 
 .message {
-  background-color: rgb(255, 0, 0);
-  padding: 22px 0;
-  color: white;
+  background-color: red;
+    padding: 22px 0;
+    color: black;
+    margin: 0 auto;
+    // position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
 }
 
 .formValidation {
