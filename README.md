@@ -2,7 +2,7 @@
 
 <center><h1>Project 4: Palm Trees</h1></center>
 
-<center>[Check it out here!]( https://desolate-sands-98689.herokuapp.com)</center>
+<center>[Check it out here!](https://desolate-sands-98689.herokuapp.com)</center>
 
 ![Imgur](http://i.imgur.com/SKFSDrN.jpg)
 

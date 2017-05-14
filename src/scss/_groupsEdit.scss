@@ -50,8 +50,6 @@
   label#attendeeName {
     color: $white;
     padding-left: 10px;
-    // position: relative;
-    // display: inline;
   }
   #attendees {
     position: relative;
@@ -64,6 +62,16 @@
     top: -1px;
     margin: 0 auto;
   }
+}
+
+#checkboxEditUser {
+  color: $white;
+  display: none;
+}
+
+#checkboxNewUser {
+  color: $white;
+  display: none;
 }
 
 #updateGroupButton {

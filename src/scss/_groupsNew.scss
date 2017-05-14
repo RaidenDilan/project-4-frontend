@@ -57,6 +57,16 @@
   }
 }
 
+#checkboxEditUser {
+  color: $white;
+  display: none;
+}
+
+#checkboxNewUser {
+  color: $white;
+  display: none;
+}
+
 #createGroupButton {
   &:before {
     background-image: url('../images/logos/addgroup.png');
