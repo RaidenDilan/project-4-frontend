@@ -1,25 +1,25 @@
-@import 'bootstrap/bootstrap-grid';
 @import 'reset';
+@import 'bootstrap/bootstrap-grid';
+@import 'header';
 @import 'variables';
 @import 'extends';
-@import 'header';
 @import 'forms';
 @import 'button';
-@import 'footer';
 @import 'section';
 @import 'homePage';
-@import 'groupsNew';
-@import 'groupsEdit';
-@import 'groupsShow';
-@import 'groupsIndex';
 @import 'loginForm';
+@import 'registerForm';
+@import 'footer';
+@import 'groupsNew';
+@import 'groupsIndex';
+@import 'groupsShow';
+@import 'groupsEdit';
 @import 'usersShow';
 @import 'usersEdit';
 @import 'holidaysNew';
 @import 'holidaysShow';
-@import 'attendeeShow';
 @import 'holidaysEdit';
-@import 'registerForm';
+@import 'attendeeShow';
 @import 'searchFlightsForm';
 @import 'buttonSlideUpAnimation';
 @import 'iphone5';
@@ -36,18 +36,6 @@ html {
 
 body {
   font-family: 'Raleway', sans-serif;
-}
-
-.message {
-  background-color: rgb(255, 0, 0);
-  padding: 22px 0;
-  color: white;
-}
-
-.formValidation {
-  padding-top: 0;
-  padding-bottom: 0;
-  font-weight: normal;
 }
 
 #usersAvatar {
@@ -89,4 +77,16 @@ body {
   &:hover {
     background-color: black;
   }
+}
+
+.message {
+  background-color: rgb(255, 0, 0);
+  padding: 22px 0;
+  color: white;
+}
+
+.formValidation {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-weight: normal;
 }

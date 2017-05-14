@@ -105,6 +105,22 @@
     }
   }
 
+  #groupsNewBackground {
+    height: 130vh;
+  }
+
+  #groupsEditBackground {
+    height: 130vh;
+  }
+
+  #groupsEditAteendeeImage {
+    padding: 20px;
+  }
+
+  #groupsNewAteendeeImage {
+    padding: 20px;
+  }
+
   #usersEditSection {
     width: 90%;
     padding: 10px;
@@ -173,9 +189,25 @@
     }
   }
 
+  #groupsShowButtons {
+    padding: 10px;
+    width: 90%;
+  }
+
+  #groupShowAttendees {
+    padding: 10px;
+    width: 90%;
+  }
+
+  #groupShowHolidays {
+    padding: 10px;
+    width: 90%;
+  }
+
   #attendeeShowHolidaySection {
     padding: 10px;
     width: 90%;
+    margin-bottom: 50px;
     h1 {
       font-size: 1.5em;
     }
