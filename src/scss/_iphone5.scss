@@ -292,6 +292,16 @@
     margin: 10px auto;
     width: 40%;
   }
+  .overlay {
+    #addHoliday {
+      font-size: 9px;
+      padding: 0;
+    }
+    #holidayName {
+      font-size: 10px;
+      padding: 0;
+    }
+  }
 
   #addHolidaysImage {
     margin: 10px auto;
@@ -303,7 +313,10 @@
   }
 
   #holidaysEditBackground {
-    height: 190vh;
+    height: 120vh;
+    .return {
+      padding-top: 10px;
+    }
   }
 
   #holidayEditForm {
