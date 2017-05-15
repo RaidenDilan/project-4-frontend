@@ -157,7 +157,7 @@
     padding: 5px;
     .attends {
       .row {
-        flex-wrap: nowrap;
+        // flex-wrap: nowrap;
       }
     }
     h3 {
@@ -168,6 +168,7 @@
       padding: 0;
       display: block;
       position: relative;
+      margin-left: 23px;
     }
     input#attendees[type="checkbox"] {
       width: 20px;

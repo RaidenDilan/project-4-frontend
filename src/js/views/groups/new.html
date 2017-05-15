@@ -12,12 +12,13 @@
         <h3>Choose Attendees</h3>
         <div class="attends">
           <div class="row">
-            <label ng-repeat="user in groupsNew.users" class="attendeesNames col-xs-12 col-sm-12 col-md-4 col-lg-4" id="attendeeName">
-              <input type="checkbox" id="attendees" name="attendees" checklist-model="groupsNew.group.attendee_ids" checklist-value="user.id">
-              <!-- <em id="checkboxNewUser">{{ user.username }}</em> -->
-              <div style="background-image:url('{{ user.image_src }}')" id="groupsNewAteendeeImage">
+              <label ng-repeat="user in groupsNew.users" class="attendeesNames" id="attendeeName">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <input type="checkbox" id="attendees" name="attendees" checklist-model="groupsNew.group.attendee_ids" checklist-value="user.id">
+                <!-- <em id="checkboxNewUser">{{ user.username }}</em> -->
+                <div style="background-image:url('{{ user.image_src }}')" id="groupsNewAteendeeImage"></div>
               </div>
-            </label>
+              </label>
           </div>
         </div>
       </div>

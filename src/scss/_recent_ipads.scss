@@ -136,10 +136,12 @@
       padding: 0;
       display: block;
       position: relative;
+      margin-left: 24px;
     }
     input#attendees[type="checkbox"] {
       width: 20px;
       top: -1px;
+      left: 24px;
       margin: 5px auto;
       display: block;
     }
