@@ -54,6 +54,5 @@ One of the more tricky parts of this project was the scope of it, at the start o
 * npm i && bower i
 
 <br>
-<br>
 
 <center><strong>Copyright © Palm Trees</strong></center>
