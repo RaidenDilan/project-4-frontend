@@ -107,7 +107,7 @@
   }
 
   #groupsNewBackground {
-    height: 130vh;
+    height: 100vh;
   }
 
   #groupsEditBackground {
@@ -156,6 +156,9 @@
     text-align: center;
     padding: 5px;
     .attends {
+      .row {
+        flex-wrap: nowrap;
+      }
     }
     h3 {
       font-size: 15px;

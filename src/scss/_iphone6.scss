@@ -124,11 +124,12 @@
   }
 
   #groupsNewBackground {
-    height: 110vh;
+    height: 100vh;
   }
 
   #groupsNewAteendeeImage {
     padding: 20px;
+    margin: auto;
   }
 
   #groupsEditBackground {
@@ -155,6 +156,11 @@
       top: -1px;
       margin: 5px auto;
       display: block;
+    }
+    .attends {
+      .row {
+        flex-wrap: nowrap;
+      }
     }
   }
 
