@@ -115,11 +115,11 @@
   }
 
   #groupsEditAteendeeImage {
-    padding: 20px;
+    padding: 15px;
   }
 
   #groupsNewAteendeeImage {
-    padding: 20px;
+    padding: 15px;
   }
 
   #usersEditSection {
@@ -171,7 +171,8 @@
     }
     input#attendees[type="checkbox"] {
       width: 20px;
-      top: -1px;
+      top: 0;
+      left: 1px;
       margin: 5px auto;
       display: block;
     }
