@@ -4,20 +4,32 @@
 }
 
 #loginForm {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
   background-color: rgba(255, 255, 255, 0.35);
   border-radius: 10px;
-  padding: 40px 50px;
+  padding: 10px 40px;
   width: 50%;
+  margin: 150px auto 0 auto;
   h1 {
     text-transform: uppercase;
     text-align: center;
     padding-bottom: 25px;
     font-size: 40px;
     font-weight: bold;
+  }
+  p {
+    color: $yellow;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.40);
+    margin: 5px auto;
+    border-radius: 10px;
+    text-transform: capitalize;
+  }
+  .newTo {
+    background-color: transparent;
+    color: $black;
+    padding: 5px;
+    margin: 5px auto;
+    text-transform: uppercase;
   }
 }
 

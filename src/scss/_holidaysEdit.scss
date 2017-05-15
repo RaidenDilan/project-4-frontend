@@ -4,13 +4,13 @@
 }
 
 #holidayEditForm {
-  top: 55%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
   background-color: rgba(251, 251, 251, 0.32);
   border-radius: 10px;
-  padding: 40px 50px;
+  padding: 10px 40px;
   width: 90%;
   h1 {
     text-transform: uppercase;
@@ -22,7 +22,7 @@
   }
   div {
     input {
-      margin: 10px 0;
+      margin: 5px 0 0 0;
     }
   }
   button {

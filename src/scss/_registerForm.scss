@@ -1,16 +1,15 @@
 #registerBackground {
   background-image: url('../images/backgrounds/2.jpg');
   @extend .background-styles;
+  height: 130vh;
 }
 
 #registerForm {
-  top: 52%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
   background-color: rgba(255, 255, 255, 0.35);
   border-radius: 10px;
-  padding: 20px 40px;
+  padding: 10px 40px;
+  margin: 80px auto 0 auto;
+  width: 50%;
   h1 {
     text-transform: uppercase;
     text-align: center;
@@ -20,11 +19,24 @@
     font-weight: bold;
   }
   p {
-    padding: 20px 0 0 0;
+    color: $yellow;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.40);
+    margin: 5px auto;
+    border-radius: 10px;
+    text-transform: capitalize;
   }
-  .formValidation {
-    padding-top: 0;
-    padding-bottom: 0;
+  .alreadyReg {
+    background-color: transparent;
+    color: $black;
+    padding: 5px;
+    margin: 5px auto;
+    text-transform: uppercase;
+  }
+  div {
+    input {
+      margin: 5px 0 0 0;
+    }
   }
 }
 

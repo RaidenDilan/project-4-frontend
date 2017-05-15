@@ -65,6 +65,7 @@
   #registerForm {
     padding: 20px;
     width: 90%;
+    margin: 60px auto 0 auto;
     h1 {
       font-size: 18px;
     }
@@ -72,6 +73,10 @@
       font-size: 15px;
       padding: 0;
     }
+  }
+
+  #registerBackground {
+    height: 130vh;
   }
 
   .choose {
