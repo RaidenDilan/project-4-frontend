@@ -57,7 +57,7 @@
 
         <div class="rightColumn">
           <div class="departure">
-            <label for="departureDate">Departure Date</label>
+            <label for="departureDate">Departure Date</label><br>
             <input type="date" name="departureDate" id="departureDate" ng-model="holidaysEdit.holiday.departureDate" required>
           </div>
           <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.departureDate.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.departureDate.$touched)">
@@ -65,7 +65,7 @@
           </div>
 
           <div class="return">
-              <label for="returnDate">Return Date</label>
+              <label for="returnDate">Return Date</label><br>
             <input type="date" name="returnDate" id="returnDate" ng-model="holidaysEdit.holiday.returnDate" required>
           </div>
           <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.returnDate.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.returnDate.$touched)">
