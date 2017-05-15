@@ -41,15 +41,16 @@ One of the more tricky parts of this project was the scope of it, at the start o
 
 * The GitHub login after the first 'login with github' is slightly slow, maybe it's because I'm hosting my app on Heroku because Heroku is very slow.
 
-###Project Forking
+<h3>Project Forking</h3>
 
-######In Terminal
+<h5>In Terminal</h5>
 
-######Back-End
+<p><strong>Back-End</strong></p>
 * rails db:create db:migrate db:seed
 * bundle
 
-######Front-End
+<p><strong>Front-End</strong></p>
+
 * npm i && bower i
 
 <br>
