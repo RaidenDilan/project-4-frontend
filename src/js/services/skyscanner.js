@@ -10,9 +10,12 @@ function Skyscanner($http, API_URL) {
     return $http
       .get(`${API_URL}/flights`, { params: { origin, destination, departDate, returnDate } })
       .then((response) => {
-        console.log('Skyscanner Response Service', response);
+        console.log(response);
         response.data.Quotes.forEach((quote) => {
+          console.log(quote);
           const destination = response.data.Places.find((place) => {
+            console.log(place);
+            console.log(place.PlaceId);
             return place.PlaceId === quote.OutboundLeg.DestinationId;
           });
 
@@ -22,10 +25,12 @@ function Skyscanner($http, API_URL) {
           quote.DestinationPrice = quote.MinPrice;
 
           const outboundCarrier = response.data.Carriers.find((carrier) => {
+            console.log('outbound', carrier);
             return carrier.CarrierId === quote.OutboundLeg.CarrierIds[0];
           });
 
           const inboundCarrier = response.data.Carriers.find((carrier) => {
+            console.log('indbound', carrier);
             return carrier.CarrierId === quote.InboundLeg.CarrierIds[0];
           });
 
