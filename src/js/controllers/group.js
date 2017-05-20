@@ -12,14 +12,13 @@ function GroupsIndexCtrl(User, Group, $stateParams, $state, $auth) {
   vm.groups = User.get({ id: $auth.getPayload().id });
 }
 
-
 GroupsNewCtrl.$inject = ['Group', 'User', '$state', '$auth'];
 function GroupsNewCtrl(Group, User, $state, $auth) {
   const vm = this;
 
   vm.group = {};
-  vm.user = User.get({ id: $auth.getPayload().id });
   vm.users = User.query();
+  vm.user = User.get({ id: $auth.getPayload().id });
 
   function groupsCreate() {
     if(vm.groupsNewForm.$valid) {

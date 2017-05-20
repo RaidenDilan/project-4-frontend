@@ -4,10 +4,10 @@
 
 <section id="groupsShowButtons">
   <div id="usersButtons">
-    <button ng-click="groupsShow.toggleAttending()" ng-if="main.isAuthenticated() && !groupsShow.isAttending()" id="attendGroup" class="button">Attend Group</button>
-    <button ng-click="groupsShow.toggleAttending()" ng-if="main.isAuthenticated() && groupsShow.isAttending()" id="leaveGroup" class="button">Leave Group</button>
+    <button ng-if="main.isAuthenticated() && !groupsShow.isAttending()" ng-click="groupsShow.toggleAttending()" id="attendGroup" class="button">Attend Group</button>
+    <button ng-if="main.isAuthenticated() && groupsShow.isAttending()" ng-click="groupsShow.toggleAttending()" id="leaveGroup" class="button">Leave Group</button>
     <button ng-if="main.isAuthenticated()" ui-sref="groupsEdit({ id: groupsShow.group.id })" id="editGroup" class="button">Edit Group</button>
-    <button ng-if="main.isAuthenticated()" ng-click="groupsShow.delete()" id="deleteGroup" class="button">Delete Group</button>
+    <button ng-if="main.isAuthenticated()" ng-click="groupsShow.delete()"id="deleteGroup" class="button">Delete Group</button>
   </div>
 </section>
 
