@@ -46,6 +46,7 @@ One of the more tricky parts of this project was the scope of it, at the start o
 <h5>In Terminal</h5>
 
 <p><strong>Back-End</strong></p>
+
 * rails db:create db:migrate db:seed
 * bundle
 
