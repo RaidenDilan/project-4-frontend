@@ -7,7 +7,7 @@
     <button ng-if="main.isAuthenticated() && !groupsShow.isAttending()" ng-click="groupsShow.toggleAttending()" id="attendGroup" class="button">Attend Group</button>
     <button ng-if="main.isAuthenticated() && groupsShow.isAttending()" ng-click="groupsShow.toggleAttending()" id="leaveGroup" class="button">Leave Group</button>
     <button ng-if="main.isAuthenticated()" ui-sref="groupsEdit({ id: groupsShow.group.id })" id="editGroup" class="button">Edit Group</button>
-    <button ng-if="main.isAuthenticated()" ng-click="groupsShow.delete()"id="deleteGroup" class="button">Delete Group</button>
+    <button ng-if="main.isAuthenticated()" ng-click="groupsShow.delete()" id="deleteGroup" class="button">Delete Group</button>
   </div>
 </section>
 
@@ -24,11 +24,11 @@
 </section> -->
 
 <section id="groupShowAttendees">
+  <h1>Users</h1>
   <div class="container">
-    <h1>Users</h1>
-      <div class="row row-centered">
-        <div ng-repeat="attendee in groupsShow.group.attendees" id="users" class="col-sm-12 col-md-2 col-centered">
-          <a ui-sref="attendeesShow({ id: attendee.id })" ui-sref-active="active">
+      <div class="row">
+        <div ng-repeat="attendee in groupsShow.group.attendees" id="users">
+          <a ui-sref="attendeesShow({ id: attendee.id })" ui-sref-active="active" class="col-xs-12 col-sm-12 col-md-4 col-lg-2">
             <div style="background-image:url('{{ attendee.image_src }}')" id="attendeesImage"></div>
           </a>
         </div>
