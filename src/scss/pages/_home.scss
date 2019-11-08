@@ -1,0 +1,102 @@
+#homeBackground {
+  background-image: url('../images/background.jpg');
+  @extend .background-styles;
+
+  div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.75);
+
+    h1 {
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 3.5rem;
+      font-weight: lighter;
+      border-radius: 5px;
+      color: $white;
+    }
+    p#discover {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 1rem;
+      font-weight: lighter;
+      color: $white;
+      padding: 1rem 0 0 0;
+    }
+  }
+}
+
+#login {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 21px;
+  border-radius: 25%;
+  border: 3px solid white;
+  margin-top: 2px;
+  &:hover {
+    background-color: $white;
+  }
+}
+
+#register {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 21px;
+  border-radius: 25%;
+  border: 3px solid white;
+  margin-top: 2px;
+  &:hover {
+    background-color: $white;
+  }
+}
+
+
+#usersAvatar {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 22px;
+  border-radius: 100%;
+  border: 3px solid white;
+  &:hover {
+    background-color: $white;
+  }
+}
+
+#showGroups {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 23px;
+  border-radius: 100%;
+  margin-top: 1px;
+  border: 1px solid white;
+  &:hover {
+    background-color: black;
+  }
+}
+
+#newGroup {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 21px;
+  border-radius: 100%;
+  border: 3px solid white;
+  margin-top: 2px;
+  &:hover {
+    background-color: black;
+  }
+}

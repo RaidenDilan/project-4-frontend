@@ -1,5 +1,5 @@
 angular
-  .module('holiday')
+  .module('holidayApp')
   .controller('UsersShowCtrl', UsersShowCtrl)
   .controller('UsersEditCtrl', UsersEditCtrl)
   .controller('UsersIndexCtrl', UsersIndexCtrl);
@@ -46,11 +46,18 @@ function UsersEditCtrl(User, $stateParams, $state) {
 
   vm.user = User.get($stateParams);
 
+  // User.get($stateParams).$promise.then((user) => {
+  //   vm.user = user;
+  // });
+
   function usersUpdate() {
-    if(vm.usersEditForm) {
-      vm.user
-      .$update()
-      .then(() => $state.go('usersShow', $stateParams));
+    // wrap the data in a `user` object and pass the user's id
+    // to the model so it can generate the correct URL
+    if(vm.usersEditForm.$valid) {
+      User
+        .update({ id: vm.user.id, user: vm.user })
+        .$promise
+        .then(() => $state.go('usersShow', $stateParams));
     }
   }
   vm.update = usersUpdate;

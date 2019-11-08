@@ -1,117 +1,33 @@
 @import 'reset';
-@import 'bootstrap/bootstrap-grid';
-@import 'header';
 @import 'variables';
-@import 'extends';
-@import 'forms';
-@import 'button';
-@import 'section';
-@import 'homePage';
-@import 'loginForm';
-@import 'registerForm';
-@import 'footer';
-@import 'groupsNew';
-@import 'groupsIndex';
-@import 'groupsShow';
-@import 'groupsEdit';
-@import 'usersShow';
-@import 'usersEdit';
-@import 'holidaysNew';
-@import 'holidaysShow';
-@import 'holidaysEdit';
-@import 'attendeeShow';
-@import 'searchFlightsForm';
-@import 'buttonSlideUpAnimation';
-@import 'iphone5';
-@import 'iphone6';
-@import 'recent_ipads';
+@import 'typography';
+@import 'structure';
 
-* {
-  box-sizing: inherit;
-}
+@import 'modules/button';
+@import 'modules/header';
+@import 'modules/extends';
+@import 'modules/forms';
+@import 'modules/footer';
 
-html {
-  line-height: 1.15;
-}
+@import 'pages/home';
 
-body {
-  font-family: 'Raleway', sans-serif;
-}
+@import 'pages/auth/loginForm';
+@import 'pages/auth/registerForm';
 
-// .scrollToTop {
-//   position: fixed;
-//   top: 97%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   border-radius: 100%;
-//   background-color: white;
-// }
-//
-// .scrollToTop:hover {
-// 	text-decoration:none;
-// }
-//
-// .up {
-//   width: 35px;
-//   height: 35px;
-//   display: block;
-// }
+@import 'pages/user/usersShow';
+@import 'pages/user/usersEdit';
 
-#usersAvatar {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  padding: 22px;
-  border-radius: 100%;
-  border: 3px solid white;
-  &:hover {
-    background-color: $white;
-  }
-}
+@import 'pages/group/groupsNew';
+@import 'pages/group/groupsIndex';
+@import 'pages/group/groupsShow';
+@import 'pages/group/groupsEdit';
+@import 'pages/group/attendeeShow';
 
-#showGroups {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  padding: 23px;
-  border-radius: 100%;
-  margin-top: 1px;
-  border: 1px solid white;
-  &:hover {
-    background-color: black;
-  }
-}
+@import 'pages/holiday/holidaysNew';
+@import 'pages/holiday/holidaysShow';
+@import 'pages/holiday/holidaysEdit';
+@import 'pages/holiday/searchFlightsForm';
 
-#newGroup {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  padding: 21px;
-  border-radius: 100%;
-  border: 3px solid white;
-  margin-top: 2px;
-  &:hover {
-    background-color: black;
-  }
-}
-
-.message {
-  background-color: red;
-    padding: 22px 0;
-    color: black;
-    margin: 0 auto;
-    // position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-}
-
-.formValidation {
-  padding-top: 0;
-  padding-bottom: 0;
-  font-weight: normal;
-}
+@import 'queries/iphone5';
+@import 'queries/iphone6';
+@import 'queries/recent_ipads';

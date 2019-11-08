@@ -1,5 +1,5 @@
 angular
-  .module('holiday')
+  .module('holidayApp')
   .factory('User', User);
 
 User.$inject = ['$resource', 'API_URL'];

@@ -1,0 +1,71 @@
+#registerBackground {
+  background-image: url('../images/backgrounds/2.jpg');
+  @extend .background-styles;
+  height: 130vh;
+}
+
+#registerForm {
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+  padding: 10px 40px;
+  margin: 80px auto 0 auto;
+  width: 50%;
+  h1 {
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 25px;
+    padding-top: 5px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  p {
+    color: $yellow;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.40);
+    margin: 5px auto;
+    border-radius: 10px;
+    text-transform: capitalize;
+  }
+  .alreadyReg {
+    background-color: transparent;
+    color: $black;
+    padding: 5px;
+    margin: 5px auto;
+    text-transform: uppercase;
+  }
+  div {
+    input {
+      margin: 5px 0 0 0;
+    }
+  }
+}
+
+#registerButton {
+  &:before {
+    background-image: url('../images/logos/register.png');
+    height: 22px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}
+
+#cameraButton {
+  &:before {
+    background-image: url('../images/logos/camera.png');
+    height: 22px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}
+
+#signInButton {
+  &:before {
+    background-image: url('../images/logos/login.png');
+    height: 22px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}

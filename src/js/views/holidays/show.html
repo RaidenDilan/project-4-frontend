@@ -1,13 +1,8 @@
-<div id="holidaysBackground" style="background-image:url('{{ holidaysShow.holiday.cover_photo }}')">
+<div id="holidaysBackground" style="background-image:url('{{ holidaysShow.holiday.image_src }}')">
   <h1>Welcome to {{ holidaysShow.holiday.location }}</h1>
 </div>
 
 <section id="holidaysShow">
-  <div id="description">
-    <div id="description1">
-      <p id="description2">{{ holidaysShow.holiday.description }}</p>
-    </div>
-  </div>
     <div id="info">
       <div class="info1 row">
         <div class="col-sm-12 col-md-4 col-lg-4 info2">
@@ -29,9 +24,29 @@
 <section id="holidaysShowButtonsSection">
   <div id="holidaysShowButtons">
     <div id="holidayButtons">
-      <button ui-sref="flightsShow({ id: holidaysShow.holiday.id })" id="getFlights" class="button">Get Flights</button>
-      <button ng-if="main.isAuthenticated()" ui-sref="holidaysEdit({ id: holidaysShow.holiday.id })" id="editHoliday" class="button">Edit Holiday</button>
-      <button ng-if="main.isAuthenticated()" ng-click="holidaysShow.delete()" id="deleteHoliday" class="button">Delete Holiday</button>
+      <a
+        ui-sref="flightsShow({ id: holidaysShow.group.id, holidayId: holidaysShow.holiday.id })"
+        id="getFlights"
+        class="button"
+        >
+        Get Flights
+      </a>
+      <a
+        ng-if="main.isAuthenticated()"
+        ui-sref="holidaysEdit({ id: holidaysShow.group.id, holidayId: holidaysShow.holiday.id })"
+        id="editHoliday"
+        class="button"
+        >
+        Edit Holiday
+      </a>
+      <a
+        ng-if="main.isAuthenticated()"
+        ng-click="holidaysShow.delete()"
+        id="deleteHoliday"
+        class="button"
+        >
+        Delete Holiday
+      </a>
     </div>
   </div>
 </section>
@@ -42,23 +57,6 @@
       <div style="background-image:url('{{ holidaysShow.holiday.user.image_src }}')" id="discoveredBy">
       </div>
     </a>
-  </div>
-</section>
-
-<section id="holidaysMultipleImages">
-  <div class="row">
-      <div class="col-md-6 col-lg-6">
-        <div style="background-image:url('{{ holidaysShow.holiday.image_one }}" class="holidaysMultipleImages"></div>
-      </div>
-      <div class="col-md-6 col-lg-6">
-        <div style="background-image:url('{{ holidaysShow.holiday.image_two }}" class="holidaysMultipleImages"></div>
-      </div>
-      <div class="col-md-6 col-lg-6">
-        <div style="background-image:url('{{ holidaysShow.holiday.image_three }}" class="holidaysMultipleImages"></div>
-      </div>
-      <div class="col-md-6 col-lg-6">
-        <div style="background-image:url('{{ holidaysShow.holiday.image_four }}" class="holidaysMultipleImages"></div>
-      </div>
   </div>
 </section>
 
@@ -78,7 +76,7 @@
       <div ng-if="main.isAuthenticated()">
         <h2>Add Comment</h2>
         <form ng-submit="holidaysShow.addComment()">
-          <textarea type="text" name="body" ng-model="holidaysShow.comment.body" placeholder="Review" maxlength="100"></textarea><br>
+          <textarea type="text" name="body" ng-model="holidaysShow.newComment.body" placeholder="Review" maxlength="100"></textarea><br>
             <button id="postButton" class="button">Post</button>
         </form>
       </div>

@@ -1,63 +1,92 @@
 <!DOCTYPE html>
-<html ng-app="holiday">
+<html ng-app="holidayApp">
   <head>
     <base href="/">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Palm Trees</title>
     <link rel="icon" href="/images/logos/palmtree.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> -->
     <!-- inject:js -->
     <!-- endinject -->
     <!-- inject:css -->
     <!-- endinject -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-100585783-5', 'auto');
-      ga('send', 'pageview');
-
-    </script>
   </head>
   <body ng-controller="MainCtrl as main" ng-class="main.pageName" class="site">
+
     <header>
       <nav>
         <ul>
-          <li ng-if="main.isAuthenticated()" class="left">
+          <li
+            ng-if="main.isAuthenticated()"
+            class="left"
+            >
             <a ui-sref="groupsIndex({ id: main.currentUser.id })">
-              <div style="background-image:url('../images/logos/group1.png')" id="showGroups"></div>
+              <div
+                style="background-image:url('../images/logos/group1.png')"
+                id="showGroups"
+                >
+              </div>
             </a>
           </li>
-          <li ng-if="main.isAuthenticated()" class="newgroup">
+          <li
+            ng-if="main.isAuthenticated()" clas
+            ="newgroup"
+            >
             <a ui-sref="groupsNew">
-              <div style="background-image:url('../images/logos/addgroup.png')" id="newGroup"></div>
+              <div
+                style="background-image:url('../images/logos/addgroup.png')"
+                id="newGroup"
+                >
+              </div>
             </a>
           </li>
-          <li ng-if="!main.isAuthenticated()" class="left">
-            <a ui-sref="login"><div style="background-image:url('../images/logos/login.png')" id="login"></div></a>
+          <li
+            ng-if="!main.isAuthenticated()"
+            class="left"
+            >
+            <a ui-sref="login">
+              <div
+                style="background-image:url('../images/logos/login.png')"
+                id="login"
+                >
+              </div>
+            </a>
           </li>
-          <li ng-if="!main.isAuthenticated()" class="right">
+          <li
+            ng-if="!main.isAuthenticated()"
+            class="right"
+            >
             <a ui-sref="register">
-            <div style="background-image:url('../images/logos/register.png')" id="register"></div>
+            <div
+              style="background-image:url('../images/logos/register.png')"
+              id="register"
+              >
+            </div>
           </a>
           </li>
-          <li ng-if="main.isAuthenticated()" class="right">
+          <li
+            ng-if="main.isAuthenticated()"
+            class="right"
+            >
             <a ui-sref="usersShow({ id: main.currentUser.id })">
-              <div style="background-image:url('{{ main.currentUser.image_src }}')" id="usersAvatar"></div>
+              <div
+                style="background-image: url('{{ main.loggedInUser.image_src }}')"
+                id="usersAvatar"
+                >
+              </div>
             </a>
           </li>
         </ul>
       </nav>
     </header>
-    <div class="message" ng-if="main.message">
-      <div>{{ main.message }}</div>
-    </div>
-    <main ui-view class="site-content">
-    </main>
+
+    <div class="message" ng-if="main.message"><div>{{ main.message }}</div></div>
+
+    <main ui-view class="site-content"></main>
+
     <footer>&copy; Palm Trees</footer>
+
   </body>
 </html>

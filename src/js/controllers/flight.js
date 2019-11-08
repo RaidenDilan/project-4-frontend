@@ -1,29 +1,49 @@
 angular
-  .module('holiday')
+  .module('holidayApp')
   .controller('FlightsShowCtrl', FlightsShowCtrl);
 
-FlightsShowCtrl.$inject = ['Holiday', '$stateParams', 'skyscanner'];
-function FlightsShowCtrl(Holiday, $stateParams, skyscanner) {
+FlightsShowCtrl.$inject = ['Holiday', 'Group', '$stateParams', 'skyscanner', '$moment'];
+function FlightsShowCtrl(Holiday, Group, $stateParams, skyscanner, $moment) {
   const vm = this;
 
   vm.flights = [];
+  // vm.departureDate = '';
+  // vm.returnDate = '';
+  // vm.modalOpen = true;
+  // vm.toggleModal = toggleModal;
+  //
+  // function toggleModal() {
+  //   vm.modalOpen = !vm.modalOpen;
+  // }
 
-  Holiday.get($stateParams).$promise.then((holiday) => {
-    holiday.departureDate = new Date(holiday.departureDate);
-    holiday.returnDate = new Date(holiday.returnDate);
-    vm.holiday = holiday;
+  vm.group = Group.get($stateParams);
+
+  Holiday
+    .get($stateParams)
+    .$promise
+    .then((holiday) => {
+      vm.holiday = holiday;
+      console.log('FlightsShowCtrl ::', holiday);
+
+      holiday.departureDate = $moment(holiday.departureDate).add(1, 'month').format("YYYY-MM-DD");
+      holiday.returnDate = $moment(holiday.returnDate).add(1, 'month').add(7, 'days').format("YYYY-MM-DD");
+
+      return vm.holiday;
   });
 
   function searchFlights() {
     getFlights();
   }
-
   vm.searchFlights = searchFlights;
 
   function getFlights() {
-    skyscanner.getFlights(vm.holiday.departureAirport, vm.holiday.arrivalAirport, vm.holiday.departureDate, vm.holiday.returnDate) // put the departure and arrival date, this is also how it is called in the flights form
-      .then((quotes) => {
-        vm.flights = quotes;
-      });
+    skyscanner
+      .getFlights(
+        vm.holiday.departureAirport,
+        vm.holiday.arrivalAirport,
+        vm.holiday.departureDate,
+        vm.holiday.returnDate
+      )
+      .then((quotes) => vm.flights = quotes);
   }
 }

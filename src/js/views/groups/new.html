@@ -1,31 +1,109 @@
 <div id="groupsNewBackground">
   <div id="groupsNewForm">
     <h1>New group</h1>
-    <form name="groupsNew.groupsNewForm" ng-submit="groupsNew.create()" novalidate>
+    <form name="groupsNew.groupsNewForm" class="groupsNewForm" ng-submit="groupsNew.create()" novalidate>
+
       <div>
-        <input type="name" name="name" id="name" ng-model="groupsNew.group.name" placeholder="Group Name" required>
+        <input
+          type="name"
+          name="name"
+          id="name"
+          ng-model="groupsNew.group.name"
+          placeholder="Group Name"
+          required
+          >
       </div>
+
       <div class="ng-message-error" ng-messages="groupsNew.groupsNewForm.name.$error" ng-show="(groupsNew.groupsNewForm.$submitted || groupsNew.groupsNewForm.name.$touched)">
         <p ng-message="required" class="formValidation">Your group name is required.</p>
       </div>
-      <div class="attendees">
-        <h3>Choose Attendees</h3>
-        <div class="attends">
-          <div class="row">
-              <label ng-repeat="user in groupsNew.users" class="attendeesNames" id="attendeeName">
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                <input type="checkbox" id="attendees" name="attendees" checklist-model="groupsNew.group.attendee_ids" checklist-value="user.id">
-                <!-- <em id="checkboxNewUser">{{ user.username }}</em> -->
-                <div style="background-image:url('{{ user.image_src }}')" id="groupsNewAteendeeImage"></div>
-              </div>
-              </label>
-          </div>
-        </div>
-      </div>
-      <!-- <div class="ng-message-error" ng-messages="groupsNew.groupsNewForm.attendees.$error" ng-show="(groupsNew.groupsNewForm.$submitted || groupsNew.groupsNewForm.attendees.$touched)">
-        <p ng-message="required" class="formValidation">Attendees are required</p>
-      </div> -->
-      <button class="button" id="createGroupButton">Create Group</button>
+
     </form>
+
+    <div class="col s6 searchUsers">
+      <div id="search-bar" ng-show="groupsNew.showPreSearchBar()" class="toolbar-tools">
+        <button ng-click="groupsNew.initiateSearch()">
+          <!-- <md-icon>search</md-icon> -->
+          <span>Search Users</span>
+        </button>
+      </div>
+
+      <div ng-show="groupsNew.showSearchBar()" class="md-toolbar-tools search-bar">
+        <button class="button" ng-click="groupsNew.submitSearch()">
+          <!-- <md-icon>search</md-icon> -->
+        </button>
+
+        <div class="input-container">
+          <input
+          id="search-input"
+          type="text"
+          class="search"
+          name="groupsNew.groupsSearchUsers"
+          ng-model="groupsNew.query"
+          placeholder="Search for users..."
+          aria-label="Search users"
+          />
+          <div ng-show="groupsNew.filteredLength > 0" class="char-counter">{{ groupsNew.filteredLength }} / {{ groupsNew.availableUsersLength }}</div>
+        </div>
+
+        <button class="button" ng-click="groupsNew.endSearch()">
+          <!-- <md-icon>close</md-icon> -->
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="col s6 groupUsersToAdd"
+      ng-if="(groupsNew.query !== null) && user.id !== main.currentUserId"
+      ng-repeat="user in groupsNew.filtered"
+      ng-show="!groupsNew.chosenUsers.includes(user)"
+      >
+      <div class="userSearchResults" ng-click="groupsNew.addUser(user)">
+        <img
+        ng-src="{{ user.image_src }}"
+        alt="{{ user.username }}"
+        class="addUserImage"
+        style="width: 40px; height: 40px;"
+        >
+        <h5>{{ user.username }}</h5>
+      </div>
+    </div>
+
+
+    <div class="chosenUsers">
+      <span class="md-headline">Chosen Users:</span>
+      <!-- <md-divider></md-divider> -->
+      <hr>
+    </div>
+
+    <div
+      class="col s6 chosenGroupUsers"
+      ng-if="!user.group && user.id !== main.currentUserId"
+      ng-repeat="user in groupsNew.chosenUsers track by $index"
+      >
+      <div>
+        <img
+        ng-src="{{ user.image_src }}"
+        alt="{{ user.username }}"
+        class="chosenUsersImage"
+        style="width: 40px; height: 40px;"
+        >
+        <h5>{{ user.username }}</h5>
+
+        <smart-confirm confirm="groupsNew.removeUser(user)">
+          <!-- <md-icon class="material-icons">close</md-icon> -->
+        </smart-confirm>
+      </div>
+    </div>
+
+
+    <button
+      class="button"
+      id="createGroupButton"
+      ng-click="groupsNew.create()"
+      ng-disabled="groupsNew.groupsNewForm.$invalid"
+      >
+      Create Group
+    </button>
   </div>
 </div>

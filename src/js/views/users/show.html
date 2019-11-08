@@ -1,11 +1,11 @@
 <div id="usersShowBackground">
   <div id="usersShowSection">
-    <!-- <h1>{{ usersShow.user.full_name }}</h1> -->
-    <div style="background-image:url('{{ usersShow.user.image_src }}')" id="userImage">
+    <!-- <h1>{{ usersShow.user.username }}</h1> -->
+    <div style="background-image: url('{{ usersShow.user.image_src }}');" id="userImage">
     </div>
     <div>
       <p><strong>Email: </strong>{{usersShow.user.email}}</p>
-      <p><strong>Full Name: </strong>{{ usersShow.user.full_name }}</p>
+      <p><strong>Full Name: </strong>{{ usersShow.user.username }}</p>
       <p><strong>Bio: </strong>{{ usersShow.user.bio }}</p>
       <p><strong>Preferred Airport: </strong>{{ usersShow.user.airport }}</p>
     </div>

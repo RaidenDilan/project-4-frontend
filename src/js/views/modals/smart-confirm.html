@@ -1,0 +1,26 @@
+<a
+  class="raised primary button ink-ripple"
+  ng-hide="show"
+  ng-click="show=true"
+  ng-transclude
+  aria-label="Confirm"
+  >
+  <!-- <icon class="material-icons">close</icon> -->
+</a>
+
+<div ng-show="show">
+  <button
+    class="raised warn button ink-ripple"
+    ng-click="confirm(user); show = false"
+    >
+    <!-- <icon class="material-icons">check</icon> -->
+    <span>check ICON here</span>
+  </button>
+  <button
+    class="raised primary button ink-ripple"
+    ng-click="show = false"
+    >
+    <!-- <icon class="material-icons">close</icon> -->
+    <span>close ICON here</span>
+  </button>
+</div>

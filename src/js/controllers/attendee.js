@@ -1,4 +1,4 @@
-angular.module('holiday')
+angular.module('holidayApp')
   .controller('AttendeeShowCtrl', AttendeeShowCtrl);
 
 AttendeeShowCtrl.$inject = ['User', '$state', 'Group'];
@@ -8,5 +8,4 @@ function AttendeeShowCtrl(User, $state, Group) {
   vm.user = User.get($state.params, (attendee) => {
     vm.groups = Group.query({ attendee: attendee.id }); // find all the groups with user id
   });
-
 }

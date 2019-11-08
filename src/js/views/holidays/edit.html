@@ -1,15 +1,28 @@
-<div id="holidaysEditBackground" style="background-image:url('{{ holidaysEdit.holiday.cover_photo }}')">
+<div id="holidaysEditBackground" style="background-image:url('{{ holidaysEdit.holiday.image_src }}')">
     <div id="holidayEditForm">
       <form name="holidaysEdit.holidaysEditForm" ng-submit="holidaysEdit.update()" novalidate>
 
-        <h1>Edit your adventure</h1>
+        <h1>Edit Holiday</h1>
 
-        <div class="leftColumn">
-          <div>
-            <input type="text" name="cover_photo" id="cover_photo" ng-model="holidaysEdit.holiday.cover_photo" placeholder="Main Image" required>
+        <!-- <div class="leftColumn"> -->
+          <!-- <div>
+            <input type="text" name="image_src" id="image_src" ng-model="holidaysEdit.holiday.image_src" placeholder="Main Image" required>
           </div>
-          <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.cover_photo.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.cover_photo.$touched)">
+
+          <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.image_src.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.image_src.$touched)">
             <p ng-message="required" class="formValidation">Main image is required</p>
+          </div> -->
+
+          <div class="choose button" id="camera">Select an image
+            <label for="base64"></label>
+            <input
+              class="upload"
+              type="file"
+              base64
+              name="base64"
+              id="base64"
+              ng-model="holidaysEdit.holiday.base64"
+              >
           </div>
 
           <div>
@@ -46,64 +59,39 @@
           <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.arrivalAirport.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.arrivalAirport.$touched)">
             <p ng-message="required" class="formValidation">Arrival Airport Code is required.</p>
           </div>
+        <!-- </div> -->
 
-          <div>
-            <textarea type="text" name="description" id="description" ng-model="holidaysEdit.holiday.description" placeholder="Description" maxlength="1000" required></textarea>
-          </div>
-          <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.description.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.description.$touched)">
-            <p ng-message="required" class="formValidation">Description is required.</p>
-          </div>
-        </div>
-
-        <div class="rightColumn">
+        <!-- <div class="rightColumn"> -->
           <div class="departure">
             <label for="departureDate">Departure Date</label><br>
-            <input type="date" name="departureDate" id="departureDate" ng-model="holidaysEdit.holiday.departureDate" required>
+            <!-- <input type="date" name="departureDate" id="departureDate" ng-model="holidaysEdit.holiday.departureDate" required> -->
+            <date-input
+              label="'Your return Date:'"
+              date="holidaysEdit.holiday.departureDate"
+              id="departureDate"
+              >
+            </date-input>
           </div>
           <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.departureDate.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.departureDate.$touched)">
             <p ng-message="required" class="formValidation">Departure Date is required.</p>
           </div>
 
           <div class="return">
-              <label for="returnDate">Return Date</label><br>
-            <input type="date" name="returnDate" id="returnDate" ng-model="holidaysEdit.holiday.returnDate" required>
+            <label for="returnDate">Return Date</label><br>
+            <!-- <input type="date" name="returnDate" id="returnDate" ng-model="holidaysEdit.holiday.returnDate" required> -->
+            <date-input
+              label="'Your return Date:'"
+              date="holidaysEdit.holiday.returnDate"
+              id="returnDate"
+              >
+            </date-input>
           </div>
           <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.returnDate.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.returnDate.$touched)">
             <p ng-message="required" class="formValidation">Return Date is required.</p>
           </div>
+        <!-- </div> -->
 
-          <div class="fourImages">
-            <div>
-              <input type="text" name="image_one" id="image_one" ng-model="holidaysEdit.holiday.image_one" placeholder="Image One" required>
-            </div>
-            <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.image_one.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.image_one.$touched)">
-              <p ng-message="required" class="formValidation">Image one is required.</p>
-            </div>
-
-            <div>
-              <input type="text" name="image_two" id="image_two" ng-model="holidaysEdit.holiday.image_two" placeholder="Image Two" required>
-            </div>
-            <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.image_two.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.image_two.$touched)">
-              <p ng-message="required" class="formValidation">Image two is required.</p>
-            </div>
-
-            <div>
-              <input type="text" name="image_three" id="image_three" ng-model="holidaysEdit.holiday.image_three" placeholder="Image Three" required>
-            </div>
-            <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.image_three.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.image_three.$touched)">
-              <p ng-message="required" class="formValidation">Image three is required.</p>
-            </div>
-
-            <div>
-              <input type="text" name="image_four" id="image_four" ng-model="holidaysEdit.holiday.image_four" placeholder="Image Four" required>
-            </div>
-            <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.image_four.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.image_four.$touched)">
-              <p ng-message="required" class="formValidation">Image four is required.</p>
-            </div>
-          </div>
-        </div>
-
-        <button class="button" id="updateHolidayButton">Update Holiday</button>
+        <button class="button" id="updateHolidayButton">Update</button>
       </form>
     </div>
 </div>

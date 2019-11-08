@@ -1,5 +1,5 @@
 <div id="attendeeShowBackground">
-  <h1>Welcome to {{ attendeeShow.user.full_name }}'s profile</h1>
+  <h1>Welcome to {{ attendeeShow.user.username }}'s profile</h1>
 </div>
 
 <section id="attendeeShowSection">
@@ -11,7 +11,7 @@
   <div id="attendeeShowHolidaysMultiImages">
     <ul class="row">
       <li class="col-sm-12 col-md-4 col-lg-4" ng-repeat="holiday in attendeeShow.user.holidays">
-        <div id="attendeeShowHolidaysImage" style="background-image:url('{{ holiday.cover_photo }}')">
+        <div id="attendeeShowHolidaysImage" style="background-image:url('{{ holiday.image_src }}')">
           <div class="attendeeShowHolidayImageOverlay">
             <h4 id="attendeeShowHolidayName">{{ holiday.location }}</h4>
           </div>

@@ -1,5 +1,5 @@
 angular
-  .module('holiday')
+  .module('holidayApp')
   .config(Auth);
 
 Auth.$inject = ['$authProvider', 'API_URL'];

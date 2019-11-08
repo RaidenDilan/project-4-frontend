@@ -1,0 +1,59 @@
+#usersEditBackground {
+  background-image: url('../images/background.jpg');
+  @extend .background-styles;
+}
+
+#usersEditSection {
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 40px 100px;
+  width: 60%;
+
+  h1 {
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 25px;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  div {
+    p {
+      color: $yellow;
+      padding: 5px;
+      background-color: rgba(0, 0, 0, 0.40);
+      margin: 5px auto;
+      border-radius: 10px;
+      text-transform: capitalize;
+    }
+    strong {
+      color: yellow;
+    }
+  }
+  .usersShowButtons {
+    padding-top: 50px;
+  }
+}
+
+#updateUser {
+  &:before {
+    background-image: url('../images/logos/update.png');
+    height: 22px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}
+
+#camera {
+  &:before {
+    background-image: url('../images/logos/camera.png');
+    height: 22px;
+  }
+  &:hover {
+    color: transparent;
+  }
+}

@@ -1,18 +1,15 @@
 <div id="groupsIndexSection">
   <div id="groupsIndexList">
     <h1>My Groups</h1>
-    <div ng-repeat="group in groupsIndex.groups.groups_created && groupsIndex.groups.groups_attending">
+
+    <div ng-repeat="group in groupsIndex.groups">
       <a ui-sref="groupsShow({ id: group.id })">
-        <h2 class="groupName"><span class="groupNameStyle">-</span> {{ group.name }} <span class="groupNameStyle">-</span></h2>
+        <h2 class="groupName">
+          <span class="groupNameStyle">-</span>
+          {{ group.name }}
+          <span class="groupNameStyle">-</span>
+        </h2>
       </a>
     </div>
   </div>
-  <!-- <div id="groupsIndexList2">
-    <h1>Groups Attending</h1>
-    <div ng-repeat="group in groupsIndex.groups.groups_attending || !groupsIndex.groups.groups_created">
-      <a ui-sref="usersGroupsShow({ id: groups.id })">
-        <h2 class="groupName"><span class="groupNameStyle">-</span> {{ group.name }} <span class="groupNameStyle">-</span></h2>
-      </a>
-    </div>
-  </div> -->
 </div>

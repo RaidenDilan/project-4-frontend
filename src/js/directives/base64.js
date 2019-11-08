@@ -1,11 +1,9 @@
 angular
-  .module('holiday')
+  .module('holidayApp')
   .directive('base64', base64);
 
 function base64() {
-
   const fileReader = new FileReader();
-
   return {
     restrict: 'A',
     require: 'ngModel',

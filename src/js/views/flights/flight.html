@@ -1,4 +1,4 @@
-<div id="searchFlightsBackground" style="background-image:url('{{ flightsShow.holiday.cover_photo }}')">
+<div id="searchFlightsBackground" style="background-image:url('{{ flightsShow.holiday.image_src }}')">
   <h1>Flights to {{ flightsShow.holiday.location }}</h1>
 </div>
 <div id="searchFlightsForm">
@@ -6,27 +6,67 @@
   <form ng-submit="flightsShow.searchFlights()" class="searchFlightsForm">
 
     <div>
-      <p id="recommendation"><strong>Recommended months are: </strong><span id="toGo">{{ flightsShow.holiday.when_to_go }}</span></p>
+      <p id="recommendation">
+        <strong>Recommended months are: </strong>
+        <span id="toGo">{{ flightsShow.holiday.when_to_go }}</span>
+      </p>
     </div>
 
     <div>
       <label for="departureDate">Departure Date</label><br>
-      <input ng-model="flightsShow.holiday.departureDate" type="date" name="departureDate" id="departureDate">
+      <date-input
+        label="'Your departure Date:'"
+        date="flightsShow.holiday.departureDate"
+        id="departureDate"
+        >
+      </date-input>
+      <!-- <input
+        ng-model="flightsShow.holiday.departureDate"
+        type="date"
+        pattern="DD/MM/YYYY"
+        ng-pattern="DD/MM/YYYY"
+        name="departureDate"
+        id="departureDate"
+        > -->
     </div>
 
     <div>
       <label for="returnDate">Return Date</label><br>
-      <input ng-model="flightsShow.holiday.returnDate" type="date" name="returnDate" id="returnDate">
+      <date-input
+        label="'Your return Date:'"
+        date="flightsShow.holiday.returnDate"
+        id="returnDate"
+        >
+      </date-input>
+      <!-- <input
+        ng-model="flightsShow.holiday.returnDate"
+        type="date"
+        pattern="DD/MM/YYYY"
+        ng-pattern="DD/MM/YYYY"
+        name="returnDate"
+        id="returnDate"
+        > -->
     </div>
 
     <div>
       <label for="departureAirport">Departure Airport</label>
-      <input ng-model="flightsShow.holiday.departureAirport" type="text" name="departureAirport" id="departureAirport">
+      <input
+        ng-model="flightsShow.holiday.departureAirport"
+        type="text"
+        name="departureAirport"
+        id="departureAirport"
+        >
     </div>
 
     <div>
       <label for="arrivalAirport">Arrival Airport</label>
-      <input ng-model="flightsShow.holiday.arrivalAirport" type="text" name="arrivalAirport" id="arrivalAirport" disabled="true">
+      <input
+        ng-model="flightsShow.holiday.arrivalAirport"
+        type="text"
+        name="arrivalAirport"
+        id="arrivalAirport"
+        disabled="true"
+        >
     </div>
 
     <div>
@@ -38,8 +78,8 @@
 <div id="flightsBoard">
   <h1>Flights provided by </h1><a href="https://www.skyscanner.net" target="_blank"><img src="../images/logos/skyscanner.png" alt="skyscanner.png" id="skyscanner"></a>
   <br>
-  <ul>
-    <li ng-repeat="flight in flightsShow.flights">
+  <ul ng-repeat="flight in flightsShow.flights">
+    <li>
       <div>
           <h4>Ticket Price</h4>
           <p><em>Min Price: </em>£{{ flight.MinPrice }}</p>

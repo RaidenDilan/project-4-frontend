@@ -14,20 +14,6 @@
       </div>
 
       <div>
-        <input type="text" name="first_name" id="first_name" ng-model="usersEdit.user.first_name" placeholder="Firstname" required>
-      </div>
-      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.first_name.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.first_name.$touched)">
-        <p ng-message="required" class="formValidation">First name is required</p>
-      </div>
-
-      <div>
-        <input type="text" name="last_name" id="last_name" ng-model="usersEdit.user.last_name" placeholder="Lastname" required>
-      </div>
-      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.last_name.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.last_name.$touched)">
-        <p ng-message="required" class="formValidation">Last name is required</p>
-      </div>
-
-      <div>
         <input type="email" name="email" id="email" ng-model="usersEdit.user.email" placeholder="Email" required>
       </div>
       <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.email.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.email.$touched)">
@@ -65,10 +51,7 @@
 
       <div class="choose button" id="camera">Select an image
         <label for="base64"></label>
-        <input class="upload" type="file" base64 name="base64" id="base64" ng-model="usersEdit.user.base64" required>
-      </div>
-      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.base64.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.base64.$touched)">
-        <p ng-message="required" class="formValidation">Profile image is required</p>
+        <input class="upload" type="file" base64 name="base64" id="base64" ng-model="usersEdit.user.base64">
       </div>
 
       <div class="usersEditButton">

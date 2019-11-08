@@ -1,0 +1,242 @@
+// .groupsShow {
+//   background-image: url('../images/Ao Nang, Krabi, Thailand.jpg');
+//   @extend .background-styles;
+// }
+#groupsBackground {
+  background-image: url('../images/background.jpg');
+  @extend .background-styles;
+  // background-attachment: fixed;
+
+
+  h1 {
+    padding: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    letter-spacing: 4px;
+    font-weight: lighter;
+    background-color: $background-color;
+    border-radius: 10px;
+    width: 90%;
+    margin: 10px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+    font-size: 2em;
+  }
+}
+
+  h4#addHoliday {
+    top: 50%;
+    text-transform: uppercase;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: $white;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  h4#holidayName {
+    top: 50%;
+    text-transform: uppercase;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: $white;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  #usersButtons {
+    background-color: $white;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  #groupsShowButtons {
+    margin: 25px auto 25px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: $brand-color;
+  }
+
+  #groupShowCreatedBy {
+    margin: 25px auto;
+    width: 100%;
+    background-color: $brand-color;
+    padding: 0;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    h1 {
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 2em;
+      color: $white;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid $white;
+    }
+  }
+
+  #groupShowAttendees {
+    margin: 25px auto;
+    width: 100%;
+    background-color: $brand-color;
+    padding: 0;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    h1 {
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 2em;
+      color: $white;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid $white;
+    }
+    img {
+      border-radius: 100%;
+      &:hover {
+        background-color: $white;
+      }
+    }
+  }
+
+  #groupShowHolidays {
+    margin: 25px auto 50px auto;
+    width: 100%;
+    background-color: $brand-color;
+    padding: 0;
+    padding-top: 10px;
+    border-radius: 10px;
+    h1 {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 2em;
+      color: $white;
+      padding-bottom: 10px;
+      border-bottom: 2px solid $white;
+    }
+    #holidaysMultiImages {
+      padding: 20px 30px 10px 30px;
+    }
+  }
+
+  #users {
+    display: inline;
+    margin: auto;
+
+    a {
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: center;
+      // align-items: center;
+      // text-align: center;
+    }
+  }
+
+  #attendeesImage {
+    content: '';
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 1rem auto;
+    border: 3px solid $white;
+    border-radius: 100%;
+
+    &:hover {
+      background-color: $white;
+    }
+  }
+
+  #addHolidaysImage {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    padding: 15%;
+    margin: 20px auto;
+    background-color: $white;
+  }
+
+  #holidaysImage {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    padding: 15%;
+    margin: 20px auto;
+    background-color: $white;
+    border: 3px solid $white;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,.5);
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    border-radius: 10px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  #deleteGroup {
+    &:before {
+      background-image: url('../images/logos/delete.png');
+      height: 22px;
+    }
+    &:hover {
+      color: transparent;
+    }
+  }
+
+  #editGroup {
+    &:before {
+      background-image: url('../images/logos/edit.png');
+      height: 22px;
+    }
+    &:hover {
+      color: transparent;
+    }
+  }
+
+  #attendGroup {
+    &:before {
+      background-image: url('../images/logos/checked.png');
+      height: 22px;
+    }
+    &:hover {
+      color: transparent;
+    }
+  }
+
+  #leaveGroup {
+    &:before {
+      background-image: url('../images/logos/unchecked.png');
+      height: 22px;
+    }
+    &:hover {
+      color: transparent;
+    }
+}
