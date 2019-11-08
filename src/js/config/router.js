@@ -11,11 +11,6 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/',
       templateUrl: 'js/views/index.html'
     })
-    .state('attendeesShow', {
-      url: '/attendees/:id',
-      templateUrl: '/js/views/attendees/show.html',
-      controller: 'AttendeeShowCtrl as attendeeShow'
-    })
     .state('holidaysNew', {
       url: '/groups/:id/holidays/new',
       templateUrl: 'js/views/holidays/new.html',

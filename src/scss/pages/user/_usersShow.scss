@@ -1,95 +1,108 @@
-#usersShowBackground {
+md-content {
   background-image: url('../images/background.jpg');
   @extend .background-styles;
-}
 
-#usersShowSection {
-  top: 52%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-  padding: 40px 100px;
-  width: 60%;
+  #usersShowSection {
+    width: 50%;
+    padding: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
 
-  h1 {
-    text-transform: uppercase;
-    text-align: center;
-    padding-bottom: 25px;
-    font-size: 40px;
-    font-weight: bold;
-    color: $white;
-  }
-  div {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: flex-start;
-    // align-items: flex-start;
+    md-divider {
+      border-color: $white;
+    }
 
-    p {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: flex-start;
-      // width: 100%;
-      // text-align: left;
-      color: $white;
-      font-size: 15px;
-      padding: 10px;
-      background-color: $brand-color;
-      margin: 5px auto;
-      border-radius: 5px;
-      text-transform: none;
+    div {
+      p {
+        // width: 40%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        color: $white;
+        font-size: 15px;
+        padding: 5px;
+        // border: 1px solid $white;
+        margin: 0.5rem auto;
+        border-radius: 5px;
+        text-transform: none;
 
-      strong {
-        margin: 0 1rem;
-        color: $yellow;
+        strong {
+          margin: 0 1rem;
+          color: $yellow;
+        }
       }
     }
-  }
-  .usersShowButtons {
-    padding-top: 20px;
-  }
-}
+    .userInfo {
+      // width: 50%;
+      // margin: 0 auto;
+    }
+    .usersShowButtons {
+      padding-top: 20px;
 
-#userImage {
-  content: '';
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: block;
-  width: 150px;
-  height: 150px;
-  margin: 1rem auto;
-  border: 3px solid $white;
-  border-radius: 100%;
-}
+      .md-button {
+        margin: 6px 0;
+        width: 100%;
+      }
+    }
+    #userImage {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: $white;
+      width: 150px;
+      height: 150px;
+      margin: 1rem auto;
+      border: 3px solid $white;
+      border-radius: 100%;
+    }
 
-#editUser {
-  &:before {
-    background-image: url('../images/logos/edit.png');
-    height: 22px;
-  }
-  &:hover {
-    color: transparent;
-  }
-}
-#deleteUser {
-  &:before {
-    background-image: url('../images/logos/delete.png');
-    height: 22px;
-  }
-  &:hover {
-    color: transparent;
-  }
-}
-#logout {
-  &:before {
-    background-image: url('../images/logos/logout.png');
-    height: 22px;
-  }
-  &:hover {
-    color: transparent;
+    #editUser {
+      background-color: $white;
+
+      &:before {
+        background-image: url('../images/logos/edit.png');
+        height: 22px;
+
+      }
+      &:hover {
+        color: transparent;
+
+        &:before {
+          top: 7px;
+        }
+      }
+    }
+    #deleteUser {
+      &:before {
+        background-image: url('../images/logos/delete.png');
+        height: 22px;
+      }
+      &:hover {
+        color: transparent;
+
+        &:before {
+          top: 7px;
+        }
+      }
+    }
+    #logout {
+      background-color: $white;
+
+      &:before {
+        background-image: url('../images/logos/logout.png');
+        height: 22px;
+      }
+      &:hover {
+        color: transparent;
+
+        &:before {
+          top: 7px;
+        }
+      }
+    }
   }
 }

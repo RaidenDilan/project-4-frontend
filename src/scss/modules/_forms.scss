@@ -23,6 +23,7 @@ form {
       transition: all .5s ease;
       text-transform: uppercase;
       text-align: center;
+      
       &:hover {
         background: 0 0;
         color: $button-color;
@@ -46,22 +47,23 @@ form {
 }
 
 .choose {
-  padding-top: 12px;
-  position: relative;
-  overflow: hidden;
-  margin: 5px 0;
-  width: 100%;
-  background: $button-color;
-  border: 2px solid $white;
-  height: 40px;
-  border-radius: 10px;
+  margin: 6px 8px;
+  padding-top: 8px;
+  // position: relative;
+  // overflow: hidden;
+  // margin: 5px 0;
+  // width: 100%;
+  // background: $button-color;
+  // border: 2px solid $white;
+  // height: 40px;
+  // border-radius: 10px;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 12px;
   outline: 0;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   text-transform: uppercase;
   text-align: center;
-  
+
   &:hover {
     background: 0 0;
     border-color: $brand-color;

@@ -5,8 +5,9 @@ angular
     'ngMessages',
     'satellizer',
     'ngMap',
-    'ui.bootstrap',
+    // 'ui.bootstrap',
     'ngAnimate',
+    'ngMaterial',
     'checklist-model',
     'angular-momentjs'
   ])

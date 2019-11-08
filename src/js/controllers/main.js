@@ -7,11 +7,7 @@ function MainCtrl($rootScope, $state, $auth, User) {
   const vm = this;
   const protectedStates = ['holidaysNew', 'holidaysEdit', 'holidaysShow', 'groupsNew', 'groupsEdit', 'groupsShow', 'groupsIndex', 'attendeesShow', 'usersShow', 'flightsShow'];
 
-  // vm.currentUser = $auth.getPayload();
-  if ($auth.getPayload()) {
-    vm.loggedInUser = User.get({ id: $auth.getPayload().id });
-    // console.log('main : vm.loggedInUser', vm.loggedInUser);
-  }
+  if ($auth.getPayload()) vm.loggedInUser = User.get({ id: $auth.getPayload().id });
 
   vm.isAuthenticated = $auth.isAuthenticated;
 
@@ -36,15 +32,9 @@ function MainCtrl($rootScope, $state, $auth, User) {
         .$promise
         .then((user) => {
           vm.user = user;
-          // console.log('vm.user', vm.user);
-
           if ((toState.name === 'propertiesIndex' && vm.user.group === null) && protectedStates.includes(toState.name)) {
             event.preventDefault();
-
             $state.go('groupsNew');
-            vm.message = 'You must create a group before searching for properties';
-
-            // ToastAlertService.customToast(vm.message, vm.toastDelay, 'warning');
           }
           return !vm.user.group ? vm.currentGroupId = null : vm.currentGroupId = vm.user.group.id;
         });

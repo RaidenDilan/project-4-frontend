@@ -1,63 +1,146 @@
-<div id="usersEditBackground">
-  <div id="usersEditSection">
+<md-content id="usersEditBackground">
+  <md-card id="usersEditSection">
 
-    <div style="background-image:url('{{ usersEdit.user.image_src }}')" id="userImage">
-    </div>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Edit Profile</span>
+      </md-card-title-text>
+    </md-card-title>
 
-    <form name="usersEdit.usersEditForm" ng-submit="usersEdit.update()" class="profilePhoto usersEditForm" novalidate>
+    <div style="background-image:url('{{ usersEdit.user.image_src }}')" id="userImage"></div>
 
-      <div>
-        <input type="text" name="username" id="username" ng-model="usersEdit.user.username" placeholder="Username" required>
+    <form
+      name="usersEdit.usersEditForm"
+      ng-submit="usersEdit.update()"
+      class="profilePhoto usersEditForm"
+      novalidate
+      >
+      <div class="col s6">
+        <md-input-container class="md-block">
+          <input
+            type="text"
+            name="username"
+            id="username"
+            ng-model="usersEdit.user.username"
+            placeholder="Username"
+            required
+            >
+        </md-input-container>
       </div>
+
       <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.username.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.username.$touched)">
         <p ng-message="required" class="formValidation">Username is required</p>
       </div>
 
-      <div>
-        <input type="email" name="email" id="email" ng-model="usersEdit.user.email" placeholder="Email" required>
+      <div class="col s6">
+        <md-input-container class="md-block">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            ng-model="usersEdit.user.email"
+            placeholder="Email"
+            required
+            >
+        </md-input-container>
       </div>
       <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.email.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.email.$touched)">
         <p ng-message="required" class="formValidation">Email is required</p>
         <p ng-message="email" class="formValidation">A valid email is required</p>
       </div>
 
-      <div>
-        <input type="password" name="password" id="password" ng-model="usersEdit.user.password" placeholder="Password" required>
+      <div class="col s6">
+        <md-input-container class="md-block">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            ng-model="usersEdit.user.password"
+            placeholder="Password"
+            required
+            >
+        </md-input-container>
       </div>
       <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.password.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.password.$touched)">
         <p ng-message="required" class="formValidation">Password is required</p>
       </div>
 
-      <div>
-        <input type="password" name="passwordConfirmation" id="password_confirmation" ng-model="usersEdit.user.password_confirmation" placeholder="Password Confirmation" required>
+      <div class="col s6">
+        <md-input-container class="md-block">
+          <input
+            type="password"
+            name="password_confirmation"
+            id="password_confirmation"
+            ng-model="usersEdit.user.password_confirmation"
+            placeholder="Password Confirmation"
+            required
+            >
+        </md-input-container>
       </div>
-      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.password_confrimation.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.password_confrimation.$touched)">
+      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.password_confirmation.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.password_confirmation.$touched)">
         <p ng-message="required" class="formValidation">Password Confirmation is required</p>
       </div>
 
-      <div>
-        <input type="text" name="airport" id="airport" ng-model="usersEdit.user.airport" placeholder="Prefered Airport" required>
+      <div class="col s6">
+        <md-input-container class="md-block">
+          <input
+            type="text"
+            name="airport"
+            id="airport"
+            ng-model="usersEdit.user.airport"
+            placeholder="Prefered Airport"
+            required
+            >
+        </md-input-container>
       </div>
       <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.airport.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.airport.$touched)">
         <p ng-message="required" class="formValidation">Prefered airport is required</p>
       </div>
 
-      <div>
-        <textarea type="text" name="bio" id="bio" ng-model="usersEdit.user.bio" placeholder="Biography" required></textarea>
+      <div class="col s6">
+        <md-input-container class="md-block">
+          <textarea
+            type="text"
+            name="bio"
+            id="bio"
+            ng-model="usersEdit.user.bio"
+            placeholder="Biography"
+            required
+            >
+          </textarea>
+        </md-input-container>
       </div>
       <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.bio.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.bio.$touched)">
         <p ng-message="required" class="formValidation">Biography is required</p>
       </div>
 
-      <div class="choose button" id="camera">Select an image
-        <label for="base64"></label>
-        <input class="upload" type="file" base64 name="base64" id="base64" ng-model="usersEdit.user.base64">
+      <div class="choose button" id="camera">
+        Select an image
+        <!-- <label for="base64" class="md-raised md-accent md-button md-ink-ripple">
+          <md-icon class="material-icons">add_a_photo</md-icon>
+        </label> -->
+        <input
+          class="upload md-button"
+          type="file"
+          base64
+          name="base64"
+          id="base64"
+          placeholder="Profile image link.."
+          ng-model="usersEdit.user.base64"
+          style="display:none"
+          >
       </div>
 
       <div class="usersEditButton">
-        <button class="button" id="updateUser">Update</button>
+        <md-button
+          class="md-raised md-button md-ink-ripple"
+          ng-click="usersEdit.update()"
+          id="updateUser"
+          >
+          Update
+        </md-button>
       </div>
 
     </form>
-  </div>
-</div>
+  </md-card>
+</md-content>

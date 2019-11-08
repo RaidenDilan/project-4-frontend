@@ -9,6 +9,7 @@ header {
     position: fixed;
     top: 0;
     opacity: 1;
+
     ul {
       margin: 0;
       padding: 0;
@@ -17,11 +18,12 @@ header {
         display: inline-block;
         margin: 5px 15px;
         line-height: 50px;
-          &.newgroup {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-          }
+
+        &.newgroup {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
         &.right {
           float: right;
         }
@@ -35,6 +37,8 @@ header {
           text-decoration: none;
           text-transform: uppercase;
           letter-spacing: 3px;
+          padding: 0;
+
           &:after {
             content: '';
             height: 1px;
@@ -55,13 +59,15 @@ header {
             color: $white;
           }
           &:hover {
-            margin-top: 10px;
-            text-decoration: none;
-            color: $white;
-            &:after {
-              text-decoration: none;
-              opacity: 1;
-            }
+            background-color: transparent;
+            // margin-top: 10px;
+            // text-decoration: none;
+            // color: $white;
+            //
+            // &:after {
+            //   text-decoration: none;
+            //   opacity: 1;
+            // }
           }
         }
         &:nth-child(3) {

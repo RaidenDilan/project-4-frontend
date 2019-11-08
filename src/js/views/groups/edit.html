@@ -1,43 +1,46 @@
-<div id="groupsEditBackground">
-  <div id="groupsEditForm">
-    <h1>Edit Your Group</h1>
+<md-content id="groupsEditBackground">
+  <md-card id="groupsEditForm">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Edit Group</span>
+      </md-card-title-text>
+    </md-card-title>
+
     <form name="groupsEdit.groupsEditForm" class="groupsEditForm" ng-submit="groupsEdit.update()" novalidate>
-      <div>
-        <input
-          type="name"
-          name="name"
-          id="name"
-          ng-model="groupsEdit.group.name"
-          placeholder="Group Name"
-          required
-          >
-      </div>
-      
-      <div class="ng-message-error" ng-messages="groupsEdit.groupsEditForm.name.$error" ng-show="(groupsEdit.groupsEditForm.$submitted || groupsEdit.groupsEditForm.name.$touched)">
-        <p ng-message="required" class="formValidation">Your group name is required.</p>
+      <div class="col s6">
+        <md-input-container class="md-block">
+          <input
+            type="name"
+            name="name"
+            id="name"
+            ng-model="groupsEdit.group.name"
+            placeholder="Group Name"
+            required
+            >
+        </md-input-container>
       </div>
 
-      <!-- <div>
-        <button class="button" id="updateGroupButton">Update your Group</button>
+      <!-- <div class="ng-message-error" ng-messages="groupsEdit.groupsEditForm.name.$error" ng-show="(groupsEdit.groupsEditForm.$submitted || groupsEdit.groupsEditForm.name.$touched)">
+        <p ng-message="required" class="formValidation">Your group name is required.</p>
       </div> -->
     </form>
 
     <div class="col s6 searchUsers">
 
-      <div id="search-bar" ng-show="groupsEdit.showPreSearchBar()" class="toolbar-tools">
-        <button ng-click="groupsEdit.initiateSearch();">
-          <!-- <md-icon>search</md-icon> -->
+      <div id="search-bar" ng-show="groupsEdit.showPreSearchBar()" class="md-toolbar-tools">
+        <md-button ng-click="groupsEdit.initiateSearch();">
+          <md-icon>search</md-icon>
           <span>Search Users</span>
-        </button>
+        </md-button>
       </div>
 
-      <div ng-show="groupsEdit.showSearchBar()" class="toolbar-tools search-bar">
+      <div ng-show="groupsEdit.showSearchBar()" class="md-toolbar-tools search-bar">
 
-        <button class="button" ng-click="groupsEdit.submitSearch()">
-          <!-- <md-icon class="material-icons" arial-label="Enter search bar">search</md-icon> -->
-        </button>
+        <md-button class="md-icon-button" ng-click="groupsEdit.submitSearch()">
+          <md-icon class="material-icons" arial-label="Enter search bar">search</md-icon>
+        </md-button>
 
-        <div class="input-container">
+        <md-input-container flex>
           <input
             id="search-input"
             type="text"
@@ -46,16 +49,16 @@
             ng-model="groupsEdit.query"
             aria-label="Search for properties"
             />
-          <div ng-show="groupsEdit.filteredLength > 0" class="char-counter">{{ groupsEdit.filteredLength }} / {{ groupsEdit.availableUsersLength }}</div>
-        </div>
+          <div ng-show="groupsEdit.filteredLength > 0" class="md-char-counter">{{ groupsEdit.filteredLength }} / {{ groupsEdit.availableUsersLength }}</div>
+        </md-input-container>
 
-        <button class="icon-button" ng-click="groupsEdit.endSearch()">
-          <!-- <md-icon>close</md-icon> -->
-        </button>
+        <md-button class="md-icon-button" ng-click="groupsEdit.endSearch()">
+          <md-icon>close</md-icon>
+        </md-button>
       </div>
     </div>
 
-    <hr>
+    <md-devider></md-devider>
 
     <div
       class="col s6 groupUsersToAdd"
@@ -73,9 +76,10 @@
       </div>
     </div>
 
+    <md-divider></md-divider>
 
     <div class="chosenUsers">
-      <span class="headline">Chosen Users:</span>
+      <span class="md-title">Chosen Users:</span>
     </div>
 
     <div
@@ -83,7 +87,6 @@
       ng-if="user.id !== main.currentUser.id"
       ng-repeat="user in groupsEdit.groupUsers track by $index"
       >
-      <!-- ng-if="user.id !== main.currentUser.id" -->
       <div>
         <img
           ng-src="{{ user.image_src }}"
@@ -92,27 +95,16 @@
           style="width: 40px; height: 40px;"
           >
         <h5>{{ user.username }}</h5>
-        <smart-confirm confirm="groupsEdit.removeUser(user)">
-          <!-- <icon class="material-icons">close</icon> -->
 
+        <smart-confirm confirm="groupsEdit.removeUser(user)">
+          <md-icon class="material-icons">close</md-icon>
         </smart-confirm>
       </div>
     </div>
 
-    <button
-      class="button"
-      id="updateGroupButton"
-      ng-click="groupsEdit.update()"
-      ng-disabled="groupsEdit.groupsEditForm.$invalid"
-      >
-      Update Group
-    </button>
-    <!-- <button
-      class="button"
-      ng-click="groupsEdit.group.groupName = ''"
-      ng-disabled="groupsEdit.groupsEditForm.$invalid"
-      >
-      Clear Form
-    </button> -->
-  </div>
-</div>
+    <div class="col s6 groupsNewButtons">
+      <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="groupsEdit.update()" ng-disabled="groupsEdit.groupsEditForm.$invalid"><i class="material-icons left"></i>Update</md-button>
+      <!-- <md-button class="md-raised" ng-click="groupsEdit.group = {}"><i class="material-icons left"></i>Clear Form</md-button> -->
+    </div>
+  </md-card>
+</md-content>

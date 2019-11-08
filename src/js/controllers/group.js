@@ -48,7 +48,8 @@ function GroupsNewCtrl(Group, User, Membership, $stateParams, $state, $auth, $sc
       .then((users) => {
         vm.availableUsers = [];
         users.forEach((user) => (user.groups.length === 0) && (vm.availableUsers.push(user)));
-        if (vm.availableUsers.length > 0) vm.availableUsersLength = vm.availableUsers.length;
+        if (vm.availableUsers.length !== 0) vm.availableUsersLength = vm.availableUsers.length;
+        // if (vm.availableUsers.length === 0) vm.
       });
   }
 
@@ -139,6 +140,14 @@ function GroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth) {
 
   vm.group = Group.get($stateParams);
 
+  // vm.user = User.get($state.params, (user) => {
+  //   console.log(user);
+  //
+  //   vm.groups = Group.query({ user: user.id }); // find all the groups with user id
+  //
+  //   console.log(vm.groups);
+  // });
+
   if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
 
   function groupsDelete() {
@@ -150,37 +159,27 @@ function GroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth) {
 
   function groupsUpdate() {
     Group.update({ id: vm.group.id, group: vm.group });
-
-    // vm.group
-    //   .$update()
-    //   .then((group) => $state.go('groupsHome', $stateParams));
   }
   vm.groupsUpdate = groupsUpdate;
 
   function toggleAttending() {
     const index = vm.group.users.indexOf(vm.currentUser.id);
 
-    if(index > -1) {
-      // vm.group.attendee_ids.splice(index, 1);
-      vm.group.users.splice(index, 1);
-    } else {
-      // vm.group.attendee_ids.push(vm.currentUser.id);
-      vm.group.users.push(vm.currentUser);
-    }
+    if(index > -1) vm.group.users.splice(index, 1);
+    else vm.group.users.push(vm.currentUser);
+
     groupsUpdate();
   }
   vm.toggleAttending = toggleAttending;
 
   function isAttending() {
-    // return $auth.getPayload() && vm.group.$resolved && vm.group.users.includes(vm.currentUser.id);
-    // console.log('vm.group.$resolved', vm.group.$resolved);
     return $auth.getPayload() && vm.group.$resolved && vm.group.users.includes(vm.currentUser.id);
   }
   vm.isAttending = isAttending;
 }
 
-GroupsEditCtrl.$inject = ['Group', 'GroupUser', 'Membership', 'User', '$stateParams', '$state', '$auth', '$scope', 'searchFilter', '$uibModal'];
-function GroupsEditCtrl(Group, GroupUser, Membership, User, $stateParams, $state, $auth, $scope, searchFilter, $uibModal) {
+GroupsEditCtrl.$inject = ['Group', 'Membership', 'User', '$stateParams', '$state', '$auth', '$scope', 'searchFilter'];
+function GroupsEditCtrl(Group, Membership, User, $stateParams, $state, $auth, $scope, searchFilter) {
   const vm         = this;
   const authUserId = $auth.getPayload();
 
@@ -207,6 +206,7 @@ function GroupsEditCtrl(Group, GroupUser, Membership, User, $stateParams, $state
         group.users.forEach((user) => (user.id !== authUserId.id) && (vm.groupUsers.push(user)));
 
         fetchUsers(); // REMOVE THIS LINE IF YOU DECIDE TO CALL fetchUsers FUNCTION ABOVE !
+        fetchGroup();
       });
   }
 
@@ -253,6 +253,7 @@ function GroupsEditCtrl(Group, GroupUser, Membership, User, $stateParams, $state
         Membership.save({ membership: { user_id: user.id, group_id: group.id } });
         vm.groupUsers.push(user);
         clearFilter();
+        fetchGroup();
       });
   };
 

@@ -1,68 +1,42 @@
-#groupsIndexSection {
+md-content {
   background-image: url('../images/background.jpg');
   @extend .background-styles;
 
   #groupsIndexList {
+    width: 50%;
+    padding: 2rem;
     position: absolute;
     left: 50%;
-    transform: translate(-50%,-50%);
     top: 50%;
-    padding: 30px;
-    letter-spacing: 4px;
-    font-weight: lighter;
-    background-color: $background-color;
-    border-radius: 10px;
-    width: 40%;
-    margin: 10px;
-    text-align: center;
-    text-transform: uppercase;
-    color: $white;
-    font-size: 1em;
-    a {
-      text-decoration: none;
-      color: $white;
-      &:hover {
-        text-decoration: red line-through;
-      }
-    }
-  }
-  #groupsIndexList2 {
-    padding: 30px;
-    top: 43.5%;
-    letter-spacing: 4px;
-    font-weight: lighter;
-    background-color: $background-color;
-    border-radius: 10px;
-    width: 40%;
-    margin: 10px;
-    transform: translate(-50%,-50%);
-    position: absolute;
-    left: 73%;
-    text-align: center;
-    text-transform: uppercase;
-    color: $white;
-    font-size: 1em;
-    a {
-      text-decoration: none;
-      color: $white;
-      &:hover {
-        text-decoration: red line-through;
-      }
-    }
-  }
-  h1 {
-    padding-bottom: 30px;
-    letter-spacing: 4px;
-    font-size: 2em;
-    border-bottom: 2px solid $white;
-    margin-bottom: 10px;
-  }
-  h2 {
-    font-size: 1.2em;
-    padding-bottom: 10px;
-  }
-}
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    // background-color: rgba(255, 255, 255, 0.9);
 
-span.groupNameStyle {
-  color: $yellow;
+    md-card-title {
+      width: 100%;
+      color: $white;
+      text-align: center;
+      margin: 0 auto 2.5rem auto;
+      border-bottom: 1px solid $white;
+    }
+
+    div {
+      text-align: center;
+
+      &:hover {
+        h2 {
+          color: $yellow;
+        }
+      }
+
+      h2 {
+        font-size: 1.2em;
+        padding-bottom: 10px;
+        color: $white;
+      }
+      span {
+        color: $yellow;
+      }
+    }
+  }
 }

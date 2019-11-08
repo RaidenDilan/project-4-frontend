@@ -1,89 +1,90 @@
-
-<div id="groupsBackground">
-  <h1>Welcome to {{ groupsShow.group.name }}</h1>
-</div>
-
-<section id="groupsShowButtons">
-  <div id="usersButtons">
-    <button
-      ng-if="main.isAuthenticated() && main.currentUser.id !== groupsShow.group.creator.id && !groupsShow.isAttending();"
-      ng-click="groupsShow.toggleAttending()"
-      id="attendGroup"
-      class="button"
-      >
-      Attend Group
-    </button>
-    <button
-      ng-if="main.isAuthenticated() && main.currentUser.id !== groupsShow.group.creator.id && groupsShow.isAttending();"
-      ng-click="groupsShow.toggleAttending()"
-      id="leaveGroup"
-      class="button"
-      >
-      Leave Group
-    </button>
-    <button
-      ng-if="main.isAuthenticated() && main.currentUser.id === groupsShow.group.creator.id"
-      ui-sref="groupsEdit({ id: groupsShow.group.id })"
-      id="editGroup"
-      class="button"
-      >
-      Edit Group
-    </button>
-    <button
-      ng-if="main.isAuthenticated() && main.currentUser.id === groupsShow.group.creator.id"
-      ng-click="groupsShow.delete()"
-      id="deleteGroup"
-      class="button"
-      >
-      Delete Group
-    </button>
+<md-content>
+  <div id="groupsBackground">
+    <h1>Welcome to {{ groupsShow.group.name }}</h1>
   </div>
-</section>
 
-<!-- <section id="usersGroupShowCreatedBy">
-  <div>
-    <h1>Group Created By: {{ groupsShow.user.id }}</h1>
-    <div>
-      <a ui-sref="groupsShow({ id: groupsShow.user.groups_created })">
-        <div style="background-image:url('{{ groupsShow.user.groups_created.id }}')" id="discoveredBy">
-        </div>
-      </a>
+  <md-card class="groupsShowButtons">
+    <div id="usersButtons">
+      <button
+        ng-if="main.isAuthenticated() && main.currentUser.id !== groupsShow.group.creator.id && !groupsShow.isAttending();"
+        ng-click="groupsShow.toggleAttending()"
+        id="attendGroup"
+        class="button"
+        >
+        Attend Group
+      </button>
+      <button
+        ng-if="main.isAuthenticated() && main.currentUser.id !== groupsShow.group.creator.id && groupsShow.isAttending();"
+        ng-click="groupsShow.toggleAttending()"
+        id="leaveGroup"
+        class="button"
+        >
+        Leave Group
+      </button>
+      <button
+        ng-if="main.isAuthenticated() && main.currentUser.id === groupsShow.group.creator.id"
+        ui-sref="groupsEdit({ id: groupsShow.group.id })"
+        id="editGroup"
+        class="button"
+        >
+        Edit Group
+      </button>
+      <button
+        ng-if="main.isAuthenticated() && main.currentUser.id === groupsShow.group.creator.id"
+        ng-click="groupsShow.delete()"
+        id="deleteGroup"
+        class="button"
+        >
+        Delete Group
+      </button>
     </div>
-  </div>
-</section> -->
+  </md-card>
 
-<section id="groupShowAttendees">
-  <h1>Users</h1>
-  <div class="container">
-      <div class="row">
-        <div ng-repeat="attendee in groupsShow.group.users" id="users">
-          <a ui-sref="attendeesShow({ id: attendee.id })" ui-sref-active="active" class="col-xs-12 col-sm-12 col-md-4 col-lg-2">
-            <div style="background-image:url('{{ attendee.image_src }}')" id="attendeesImage"></div>
-            <span style="display: inline-block; color: #FFFFFF; margin: 10px 0px;">{{ attendee.username }}</span>
-          </a>
-        </div>
+  <!-- <section id="usersGroupShowCreatedBy">
+    <div>
+      <h1>Group Created By: {{ groupsShow.user.id }}</h1>
+      <div>
+        <a ui-sref="groupsShow({ id: groupsShow.user.groups_created })">
+          <div style="background-image:url('{{ groupsShow.user.groups_created.id }}')" id="discoveredBy">
+          </div>
+        </a>
       </div>
-  </div>
-</section>
+    </div>
+  </section> -->
 
-<section id="groupShowHolidays">
-  <h1>Holidays</h1>
-  <div id="holidaysMultiImages">
-    <ul class="row">
-      <li class="col-sm-12 col-md-5 col-lg-2" style="background-image:url('../images/logos/add1.png')" id="addHolidaysImage">
-        <a ui-sref="holidaysNew({ id: groupsShow.group.id })">
-          <div class="overlay">
-            <h4 id="addHoliday">Add your holiday</h4>
+  <md-card class="groupShowAttendees">
+    <h1>Users</h1>
+
+    <div class="container">
+        <div class="row">
+          <div ng-repeat="user in groupsShow.group.users" class="col s4">
+            <div style="background-image:url('{{ user.image_src }}')" class="usersImage"></div>
+            <div class="groupUsername"><h3>{{ user.username }}</h3></div>
           </div>
-        </a>
-      </li>
-      <li ng-repeat="holiday in groupsShow.group.holidays" class="col-sm-12 col-md-5 col-lg-2" style="background-image: url('{{ holiday.image_src }}');" id="holidaysImage">
-        <a ui-sref="holidaysShow({ id: groupsShow.group.id, holidayId: holiday.id })">
-          <div class="overlay">
-            <h4 id="holidayName">{{ holiday.location }}</h4>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </div>
-</section>
+        </div>
+    </div>
+  </md-card>
+
+  <md-card id="groupShowHolidays">
+    <h1>Holidays</h1>
+    <div id="holidaysMultiImages">
+      <ul class="row">
+        <li class="col-sm-12 col-md-5 col-lg-2" style="background-image:url('../images/logos/add1.png')" id="addHolidaysImage">
+          <a ui-sref="holidaysNew({ id: groupsShow.group.id })">
+            <div class="overlay">
+              <h4 id="addHoliday">Add your holiday</h4>
+            </div>
+          </a>
+        </li>
+        <li ng-repeat="holiday in groupsShow.group.holidays" class="col-sm-12 col-md-5 col-lg-2" style="background-image: url('{{ holiday.image_src }}');" id="holidaysImage">
+          <a ui-sref="holidaysShow({ id: groupsShow.group.id, holidayId: holiday.id })">
+            <div class="overlay">
+              <h4 id="holidayName">{{ holiday.location }}</h4>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </md-card>
+
+</md-content>

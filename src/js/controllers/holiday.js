@@ -34,8 +34,6 @@ function HolidaysShowCtrl(Holiday, Group, User, $stateParams, $state, $auth, Com
   vm.group = Group.get($stateParams);
   vm.holiday = Holiday.get($stateParams);
 
-  console.log('vm.holiday', vm.holiday);
-
   function holidaysDelete() {
     vm.holiday
       .$remove()

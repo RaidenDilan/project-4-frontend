@@ -1,8 +1,4 @@
-// .groupsShow {
-//   background-image: url('../images/Ao Nang, Krabi, Thailand.jpg');
-//   @extend .background-styles;
-// }
-#groupsBackground {
+md-content {
   background-image: url('../images/background.jpg');
   @extend .background-styles;
   // background-attachment: fixed;
@@ -25,7 +21,10 @@
     color: $white;
     font-size: 2em;
   }
-}
+
+  md-card {
+    padding: 20px;
+  }
 
   h4#addHoliday {
     top: 50%;
@@ -63,21 +62,22 @@
     border-radius: 10px;
   }
 
-  #groupsShowButtons {
+  .groupsShowButtons {
     margin: 25px auto 25px;
     width: 100%;
-    padding: 20px;
+    // padding: 20px;
     border-radius: 10px;
     background-color: $brand-color;
   }
 
-  #groupShowCreatedBy {
-    margin: 25px auto;
+  .groupShowAttendees {
     width: 100%;
     background-color: $brand-color;
-    padding: 0;
     padding-bottom: 10px;
     border-radius: 10px;
+    margin: 25px auto;
+    padding: 0;
+
     h1 {
       text-transform: uppercase;
       text-align: center;
@@ -88,29 +88,25 @@
       margin-bottom: 10px;
       border-bottom: 2px solid $white;
     }
-  }
 
-  #groupShowAttendees {
-    margin: 25px auto;
-    width: 100%;
-    background-color: $brand-color;
-    padding: 0;
-    padding-bottom: 10px;
-    border-radius: 10px;
-    h1 {
-      text-transform: uppercase;
-      text-align: center;
-      font-size: 2em;
-      color: $white;
-      padding-bottom: 10px;
-      padding-top: 10px;
-      margin-bottom: 10px;
-      border-bottom: 2px solid $white;
-    }
-    img {
+    div.usersImage {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 40px;
+      height: 40px;
+      margin: 0 auto;
       border-radius: 100%;
-      &:hover {
-        background-color: $white;
+    }
+
+    div.groupUsername {
+      padding-top: 10px;
+
+      h3 {
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 auto;
+        color: $white;
       }
     }
   }
@@ -132,36 +128,6 @@
     }
     #holidaysMultiImages {
       padding: 20px 30px 10px 30px;
-    }
-  }
-
-  #users {
-    display: inline;
-    margin: auto;
-
-    a {
-      // display: flex;
-      // flex-direction: column;
-      // justify-content: center;
-      // align-items: center;
-      // text-align: center;
-    }
-  }
-
-  #attendeesImage {
-    content: '';
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: block;
-    width: 60px;
-    height: 60px;
-    margin: 1rem auto;
-    border: 3px solid $white;
-    border-radius: 100%;
-
-    &:hover {
-      background-color: $white;
     }
   }
 
@@ -239,4 +205,6 @@
     &:hover {
       color: transparent;
     }
+  }
+
 }

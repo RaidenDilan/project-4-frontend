@@ -1,15 +1,19 @@
-<div id="groupsIndexSection">
-  <div id="groupsIndexList">
-    <h1>My Groups</h1>
+<md-content id="groupsIndexSection">
+  <md-card id="groupsIndexList">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">My Groups</span>
+      </md-card-title-text>
+    </md-card-title>
 
-    <div ng-repeat="group in groupsIndex.groups">
+    <div ng-repeat="group in groupsIndex.groups track by $index">
       <a ui-sref="groupsShow({ id: group.id })">
         <h2 class="groupName">
-          <span class="groupNameStyle">-</span>
+          <span>-</span>
           {{ group.name }}
-          <span class="groupNameStyle">-</span>
+          <span>-</span>
         </h2>
       </a>
     </div>
-  </div>
-</div>
+  </md-card>
+</md-content>

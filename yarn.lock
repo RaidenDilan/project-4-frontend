@@ -68,6 +68,11 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
+angular-material@^1.1.20:
+  version "1.1.20"
+  resolved "https://registry.yarnpkg.com/angular-material/-/angular-material-1.1.20.tgz#138def4a4f3982fddfa7788c9775e663f12cba85"
+  integrity sha512-R2jILX9g7AVvEZbIMqEp8mkjlH/iSrDG150pCSzL7+6PHdi4dYuyXNRtYlpYKe+72Q4fIV4YBYSxepNob3hU9A==
+
 angular-momentjs@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/angular-momentjs/-/angular-momentjs-0.2.2.tgz#2a980b4b74039a6d45bbabaea2b0bdc0a505fad1"

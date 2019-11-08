@@ -23,8 +23,8 @@
     p#discover {
       text-transform: uppercase;
       letter-spacing: 2px;
-      font-size: 1rem;
-      font-weight: lighter;
+      font-size: 0.95rem;
+      font-weight: 300;
       color: $white;
       padding: 1rem 0 0 0;
     }
@@ -82,6 +82,7 @@
   border-radius: 100%;
   margin-top: 1px;
   border: 1px solid white;
+
   &:hover {
     background-color: black;
   }

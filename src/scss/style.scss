@@ -2,6 +2,7 @@
 @import 'variables';
 @import 'typography';
 @import 'structure';
+@import 'material';
 
 @import 'modules/button';
 @import 'modules/header';
@@ -21,7 +22,6 @@
 @import 'pages/group/groupsIndex';
 @import 'pages/group/groupsShow';
 @import 'pages/group/groupsEdit';
-@import 'pages/group/attendeeShow';
 
 @import 'pages/holiday/holidaysNew';
 @import 'pages/holiday/holidaysShow';

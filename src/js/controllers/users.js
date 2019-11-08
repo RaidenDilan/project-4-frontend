@@ -46,13 +46,7 @@ function UsersEditCtrl(User, $stateParams, $state) {
 
   vm.user = User.get($stateParams);
 
-  // User.get($stateParams).$promise.then((user) => {
-  //   vm.user = user;
-  // });
-
   function usersUpdate() {
-    // wrap the data in a `user` object and pass the user's id
-    // to the model so it can generate the correct URL
     if(vm.usersEditForm.$valid) {
       User
         .update({ id: vm.user.id, user: vm.user })

@@ -1,256 +1,211 @@
 #groupsNewBackground {
   background-image: url('../images/background.jpg');
   @extend .background-styles;
-}
 
-#groupsNewForm {
-  padding: 30px;
-  top: 50%;
-  letter-spacing: 4px;
-  font-weight: lighter;
-  background-color: $background-color;
-  border-radius: 10px;
-  width: 80%;
-  margin: 10px;
-  transform: translate(-50%,-50%);
-  position: absolute;
-  left: 50%;
-  text-align: center;
-  text-transform: uppercase;
-  color: $white;
-  font-size: 1em;
+  #groupsNewForm {
+    width: 50%;
+    padding: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.75);
 
-  h1 {
-    padding-bottom: 25px;
-    letter-spacing: 4px;
-    font-size: 2em;
-    border-bottom: 2px solid $white;
-    margin-bottom: 10px;
-  }
+    md-card-title {
+      margin: 0 auto 2.5rem auto;
+      color: $white;
+    }
+    form {
+      md-input-container {
+        width: 100%;
+        margin: 0.5rem 0;
 
-  form {
-    div.input-container {
-      width: 100%;
-      margin: 0.5rem 0;
-    }
-    label {
-      width: 100%;
-      margin: 1rem 0;
-    }
-    button {
-      width: 100%;
-      margin: 0 0 1rem 0;
-    }
-    img {
-      border-radius: 50%;
-      width: 25px;
-      height: 25px;
-    }
-
-  }
-  .toolbar-tools {
-    padding: 0;
-
-    .button {
-      padding: 0;
-    }
-
-    .button:last-child {
-      margin: 0;
-    }
-    .button:first-child {
-      margin: 0;
-    }
-  }
-  .chosenUsers {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem 0px;
-  }
-  .chosenGroupUsers {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    padding: 10px 0;
-
-    smart-confirm {
-      margin: 0;
-    }
-    .md-divider {
-      margin: 5px 0;
-    }
-    div {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-      align-items: center;
-
-      h5 {
-        text-transform: uppercase;
+        input {
+          color: $white;
+          border-color: $white;
+        }
       }
-      .button {
+      label {
+        width: 100%;
+        margin: 0.5rem 0;
+        color: $white;
+      }
+      img {
+        background-color: $white;
+        border-radius: 50%;
+        border: 1px solid $white;
+        width: 25px;
+        height: 25px;
+      }
+      h5 {
+        color: $white;
+      }
+
+      .md-divider {
+        color: $white;
+      }
+      .md-toolbar-tools {
+        padding: 0;
+
+        md-icon {
+          color: $white;
+        }
+
+        .md-button {
+          padding: 0;
+          color: $white;
+        }
+
+        .md-button:last-child {
+          margin: 0;
+        }
+        .md-button:first-child {
+          margin: 0;
+        }
+      }
+      .chosenUsers {
         display: flex;
+        flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-        width: 25px;
-        min-width: 25px;
-        height: 25px;
-        min-height: 25px;
-        margin: 0 0.5rem;
+        margin: 1rem 0px;
+        color: $white;
+      }
+      .chosenGroupUsers {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        // border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        padding: 10px 0;
 
-        .icon {
-          font-size: 18px;
-          height: auto;
-          width: auto;
-          min-height: auto;
-          min-width: auto;
+        smart-confirm {
+          margin: 0;
+        }
+        .md-divider {
+          margin: 5px 0;
+          border-color: $white;
+        }
+        div {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+          align-items: center;
+
+          h5 {
+            text-transform: uppercase;
+            color: $white;
+          }
+          .md-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25px;
+            min-width: 25px;
+            height: 25px;
+            min-height: 25px;
+            margin: 0 0.5rem;
+
+            .md-icon {
+              color: $white;
+              font-size: 18px;
+              height: auto;
+              width: auto;
+              min-height: auto;
+              min-width: auto;
+            }
+          }
+        }
+      }
+      .groupUsersToAdd {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        -webkit-transition: 0.5s linear all;
+        transition: 0.5s linear all;
+
+        &.ng-move,
+        &.ng-enter,
+        &.ng-leave {
+          -webkit-transition: all linear 0.1s;
+          transition: all linear 0.1s;
+        }
+
+        &.ng-leave.ng-leave-active,
+        &.ng-move,
+        &.ng-enter {
+          opacity: 0;
+          max-height: 0;
+        }
+
+        &.ng-leave,
+        &.ng-move.ng-move-active,
+        &.ng-enter.ng-enter-active {
+          opacity: 1;
+          max-height: 40px;
+        }
+
+        /**
+        * Stagger Leave (hide) animation
+        */
+        &.ng-leave-stagger {
+          /* this will have a 100ms delay between each successive leave animation */
+          -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+
+          /* in case the stagger doesn't work then these two values
+          must be set to 0 to avoid an accidental CSS inheritance */
+          -webkit-transition-duration: 0s;
+          transition-duration: 0s;
+        }
+
+        /**
+        * Stagger ENTER ANIMATION
+        */
+        &.ng-enter-stagger {
+          /* this will have a 100ms delay between each successive enter animation */
+          -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+
+          /* in case the stagger doesn't work then these two values
+          must be set to 0 to avoid an accidental CSS inheritance */
+          -webkit-transition-duration: 0s;
+          transition-duration: 0s;
+        }
+
+        div {
+          padding: 0 1rem;
+          margin: 0.5rem 0;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+          align-items: center;
+
+          h5 {
+            padding: 0 0 0 1rem;
+            text-transform: uppercase;
+          }
+        }
+      }
+      .chosenUsersLength {
+        padding: 2rem 0 1rem 0;
+        text-align: center;
+        text-transform: uppercase;
+
+      }
+      .md-char-counter {
+        color: $white;
+      }
+      .groupsNewButtons {
+        margin-top: 1rem;
+
+        .md-button {
+          color: $black;
+          background-color: rgba(255, 255, 255, 1);
+
+          &:disabled {
+            color: rgba(255, 255, 255, 0.52);
+            background-color: rgba(255, 255, 255, 0.12);
+          }
         }
       }
     }
   }
-  .groupUsersToAdd {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    -webkit-transition: 0.5s linear all;
-    transition: 0.5s linear all;
-
-    &.ng-move,
-    &.ng-enter,
-    &.ng-leave {
-      -webkit-transition: all linear 0.1s;
-      transition: all linear 0.1s;
-    }
-
-    &.ng-leave.ng-leave-active,
-    &.ng-move,
-    &.ng-enter {
-      opacity: 0;
-      max-height: 0;
-    }
-
-    &.ng-leave,
-    &.ng-move.ng-move-active,
-    &.ng-enter.ng-enter-active {
-      opacity: 1;
-      max-height: 40px;
-    }
-
-    /**
-    * Stagger Leave (hide) animation
-    */
-    &.ng-leave-stagger {
-      /* this will have a 100ms delay between each successive leave animation */
-      -webkit-transition-delay: 0.1s;
-      transition-delay: 0.1s;
-
-      /* in case the stagger doesn't work then these two values
-      must be set to 0 to avoid an accidental CSS inheritance */
-      -webkit-transition-duration: 0s;
-      transition-duration: 0s;
-    }
-
-    /**
-    * Stagger ENTER ANIMATION
-    */
-    &.ng-enter-stagger {
-      /* this will have a 100ms delay between each successive enter animation */
-      -webkit-transition-delay: 0.1s;
-      transition-delay: 0.1s;
-
-      /* in case the stagger doesn't work then these two values
-      must be set to 0 to avoid an accidental CSS inheritance */
-      -webkit-transition-duration: 0s;
-      transition-duration: 0s;
-    }
-
-    div {
-      padding: 0 1rem;
-      margin: 0.5rem 0;
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: flex-start;
-      align-items: center;
-
-      h5 {
-        padding: 0 0 0 1rem;
-        text-transform: uppercase;
-      }
-    }
-  }
-  .chosenUsersLength {
-    padding: 2rem 0 1rem 0;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  .groupsNewButtons {
-    margin-top: 1rem;
-
-    .button {
-      width: 100%;
-    }
-  }
-}
-
-.attendees {
-  padding: 10px;
-  border: 2px dotted $white;
-  border-radius: 10px;
-  margin: 15px 0;
-
-  h3 {
-    font-size: 1.2em;
-    color: yellow;
-    border-bottom: 2px solid yellow;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-  }
-  label#attendeeName {
-    color: $white;
-    // padding-left: 20px;
-  }
-  #attendees {
-    position: relative;
-  }
-  label:hover {
-    text-decoration: red line-through;
-  }
-  input#attendees[type='checkbox'] {
-    width: 20px;
-    top: -1px;
-    margin: 0 auto 0 23px;
-  }
-}
-
-#checkboxEditUser {
-  color: $white;
-  // display: none;
-}
-
-#checkboxNewUser {
-  color: $white;
-  // display: none;
-}
-
-#createGroupButton {
-  &:before {
-    background-image: url('../images/logos/addgroup.png');
-    height: 35px;
-  }
-  &:hover {
-    color: transparent;
-  }
-}
-
-#groupsNewAteendeeImage {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 100%;
-  width: 0%;
-  content: '';
-  display: block;
-  padding: 30px;
-  margin: 5px auto;
-  border: 2px solid $white;
 }
