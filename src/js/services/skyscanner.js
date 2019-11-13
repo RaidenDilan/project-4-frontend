@@ -1,6 +1,6 @@
 angular
   .module('holidayApp')
-  .service('skyscanner', Skyscanner);
+  .service('Skyscanner', Skyscanner);
 
 Skyscanner.$inject = ['$http', 'API_URL'];
 function Skyscanner($http, API_URL) {

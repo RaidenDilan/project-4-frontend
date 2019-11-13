@@ -2,22 +2,12 @@ angular
   .module('holidayApp')
   .controller('FlightsShowCtrl', FlightsShowCtrl);
 
-FlightsShowCtrl.$inject = ['Holiday', 'Group', '$stateParams', 'skyscanner', '$moment'];
-function FlightsShowCtrl(Holiday, Group, $stateParams, skyscanner, $moment) {
+FlightsShowCtrl.$inject = ['Holiday', 'Group', '$stateParams', 'Skyscanner', '$moment'];
+function FlightsShowCtrl(Holiday, Group, $stateParams, Skyscanner, $moment) {
   const vm = this;
 
-  vm.flights = [];
-  // vm.departureDate = '';
-  // vm.returnDate = '';
-  // vm.modalOpen = true;
-  // vm.toggleModal = toggleModal;
-  //
-  // function toggleModal() {
-  //   vm.modalOpen = !vm.modalOpen;
-  // }
-
-  vm.group = Group.get($stateParams);
-
+  vm.flights    = [];
+  vm.group      = Group.get($stateParams);
   vm.dateFormat = /^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$/;
 
   Holiday
@@ -38,7 +28,7 @@ function FlightsShowCtrl(Holiday, Group, $stateParams, skyscanner, $moment) {
   vm.searchFlights = searchFlights;
 
   function getFlights() {
-    skyscanner
+    Skyscanner
       .getFlights(
         vm.holiday.departureAirport,
         vm.holiday.arrivalAirport,
