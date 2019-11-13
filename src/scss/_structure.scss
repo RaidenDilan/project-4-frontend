@@ -1,18 +1,27 @@
 .message {
-  // display: block;
   position: absolute;
   top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
-  padding: 20px;
-  // margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.8);
   color: $white;
-  background-color: rgb(255, 0, 0);
+  padding: 1rem;
+  z-index: 1;
 }
 
 .formValidation {
+  font-size: 13px;
   padding-top: 0;
   padding-bottom: 0;
   font-weight: normal;
+}
+
+.usersImage {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 100%;
 }

@@ -1,71 +1,63 @@
 #registerBackground {
-  background-image: url('../images/backgrounds/2.jpg');
+  background-image: url('../images/background.jpg');
   @extend .background-styles;
-  height: 130vh;
-}
 
-#registerForm {
-  background-color: rgba(255, 255, 255, 0.35);
-  border-radius: 10px;
-  padding: 10px 40px;
-  margin: 80px auto 0 auto;
-  width: 50%;
-  h1 {
-    text-transform: uppercase;
-    text-align: center;
-    padding-bottom: 25px;
-    padding-top: 5px;
-    font-size: 30px;
-    font-weight: bold;
-  }
-  p {
-    color: $yellow;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.40);
-    margin: 5px auto;
-    border-radius: 10px;
-    text-transform: capitalize;
-  }
-  .alreadyReg {
-    background-color: transparent;
-    color: $black;
-    padding: 5px;
-    margin: 5px auto;
-    text-transform: uppercase;
-  }
-  div {
-    input {
-      margin: 5px 0 0 0;
+  .registerForm {
+    width: 50%;
+    padding: 1rem 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+
+    md-card-title {
+      margin: 0 auto;
+      color: $white;
     }
-  }
-}
 
-#registerButton {
-  &:before {
-    background-image: url('../images/logos/register.png');
-    height: 22px;
-  }
-  &:hover {
-    color: transparent;
-  }
-}
+    form {
+      .choose {
+        &:hover {
+          border: 1px solid $yellow;
+          color: $yellow;
+        }
+      }
+      md-input-container {
+        width: 100%;
+        margin: 0.5rem 0;
+        color: $white;
 
-#cameraButton {
-  &:before {
-    background-image: url('../images/logos/camera.png');
-    height: 22px;
-  }
-  &:hover {
-    color: transparent;
-  }
-}
+        input[type='password'] {
+          font-size: 16px;
+        }
+        input[type='file'] {
+          display: none;
+          border: 1px solid $yellow;
+        }
+        input {
+          border-color: $white;
+          color: $white;
+        }
+        textarea, label {
+          color: $white;
+        }
+        .md-errors-spacer {
+          min-height: auto;
+        }
+      }
+    }
 
-#signInButton {
-  &:before {
-    background-image: url('../images/logos/login.png');
-    height: 22px;
-  }
-  &:hover {
-    color: transparent;
+    .login {
+      text-align: center;
+      padding-top: 1rem;
+
+      span {
+        color: $white;
+      }
+      a {
+        color: $yellow;
+      }
+    }
   }
 }

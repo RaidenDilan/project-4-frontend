@@ -1,5 +1,5 @@
 <a
-  class="md-raised md-primary md-button md-ink-ripple"
+  class="md-raised md-warn md-button md-ink-ripple"
   ng-hide="show"
   ng-click="show=true"
   ng-transclude
@@ -10,13 +10,13 @@
 
 <div ng-show="show">
   <md-button
-    class="raised warn button ink-ripple"
+    class="md-raised md-accent md-button md-ink-ripple"
     ng-click="confirm(user); show = false"
     >
     <icon class="material-icons">check</icon>
   </md-button>
   <md-button
-    class="raised primary button ink-ripple"
+    class="md-raised md-warn md-button md-ink-ripple"
     ng-click="show = false"
     >
     <icon class="material-icons">close</icon>

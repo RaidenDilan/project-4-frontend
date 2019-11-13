@@ -104,21 +104,22 @@
             name="bio"
             id="bio"
             ng-model="usersEdit.user.bio"
-            placeholder="Biography"
+            rows="2"
+            md-maxlength="150"
+            md-select-on-focus
+            placeholder="Write your bio"
             required
             >
           </textarea>
         </md-input-container>
       </div>
+
       <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.bio.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.bio.$touched)">
         <p ng-message="required" class="formValidation">Biography is required</p>
       </div>
 
-      <div class="choose button" id="camera">
+      <div class="choose button">
         Select an image
-        <!-- <label for="base64" class="md-raised md-accent md-button md-ink-ripple">
-          <md-icon class="material-icons">add_a_photo</md-icon>
-        </label> -->
         <input
           class="upload md-button"
           type="file"
@@ -127,13 +128,12 @@
           id="base64"
           placeholder="Profile image link.."
           ng-model="usersEdit.user.base64"
-          style="display:none"
           >
       </div>
 
       <div class="usersEditButton">
         <md-button
-          class="md-raised md-button md-ink-ripple"
+          class="md-raised md-primary md-button md-ink-ripple"
           ng-click="usersEdit.update()"
           id="updateUser"
           >

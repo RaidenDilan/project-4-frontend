@@ -1,334 +1,325 @@
-#holidaysBackground {
-  background-image: url('../images/background.jpg');
-  @extend .background-styles;
-  h1 {
-    padding: 30px;
-    top: 50%;
-    letter-spacing: 4px;
-    font-weight: lighter;
-    background-color: $background-color;
-    border-radius: 5px;
-    width: 80%;
-    margin: 10px;
-    transform: translate(-50%,-50%);
-    position: absolute;
-    left: 50%;
-    text-align: center;
-    text-transform: uppercase;
-    color: $white;
-    font-size: 2em;
-  }
-}
+md-content {
+  .holidaysBackground {
+    background-image: url('../images/background.jpg');
+    @extend .background-styles;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-div {
-  display: block;
-}
+    md-card-title {
+      span {
+        background-color: rgba(0, 0, 0, 0.75);
+        padding: 30px;
+        border-radius: 5px;
+        font-size: 2rem;
+        font-weight: 200;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: $white;
+      }
+    }
+  }
+  #holidaysShow {
+    p {
+      padding: 30px 0 30px 0;
+      text-transform: none;
+      font-weight: normal;
+    }
+    h1 {
+      color: $brand-color;
+      text-align: center;
+    }
+    h2 {
+      padding-top: 15px;
+      color: $brand-color;
+      font-size: 25px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    #description {
+      margin: 25px auto;
+      background-color: $brand-color;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    #description1 {
+      background-color: white;
+      margin: 0 auto;
+      border-radius: 10px;
+      color: black;
+    }
+    #description2 {
+      text-transform: capitalize;
+    }
+  }
 
-#holidaysShow {
-  padding: 0;
-  p {
-    padding: 30px 0 30px 0;
-    text-transform: none;
-    font-weight: normal;
-  }
-  h1 {
-    color: $brand-color;
-    text-align: center;
-  }
-  h2 {
-    padding-top: 15px;
-    color: $brand-color;
-    font-size: 25px;
-    text-transform: uppercase;
-    text-align: center;
-  }
-  #description {
-    margin: 25px auto;
+  .info-container {
     background-color: $brand-color;
     border-radius: 10px;
-    padding: 20px;
-  }
-  #description1 {
-    background-color: white;
-    margin: 0 auto;
-    border-radius: 10px;
-    color: black;
-  }
-  #description2 {
-    text-transform: capitalize;
-  }
-}
+    padding: 1.5rem;
 
-.info2 {
-  border-radius: 10px;
-}
-
-.info1 {
-  background-color: $white;
-  padding: 20px;
-  margin: 0 20px 0 20px;
-  border-radius: 10px;
-}
-
-#info {
-  background-color: $brand-color;
-  border-radius: 10px;
-  padding: 10px;
-  padding: 20px 0 20px 0;
-  div {
-    p {
-      color: black;
-      font-weight: bold;
-      text-align: center;
-    }
-  }
-}
-
-#discoveredBy {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 100%;
-  width: 0%;
-  content: '';
-  display: block;
-  padding: 30px;
-  margin: auto;
-  margin-bottom: 2px;
-  margin-top: 10px;
-  border: 3px solid $white;
-  &:hover {
-    background-color: $white;
-  }
-}
-
-#holidaysShowButtons {
-  background-color: $brand-color;
-  border-radius: 10px;
-  padding: 10px;
-  text-align: center;
-  #holidayButtons {
-    background-color: $white;
-    border-radius: 10px;
-    padding: 10px;
-  }
-  button {
-    width: 33%;
-    border: 2px solid $brand-color;
-    &:hover {
+    .info {
       background-color: $white;
-      border-color: $brand-color;
-    }
-  }
-}
+      margin: 0;
+      border-radius: 5px;
 
-#holidaysShowButtonsSection {
-  padding: 0;
-  margin: 25px auto;
-}
-
-.by {
-  padding-bottom: 10px;
-  padding-top: 10px;
-  background-color: $brand-color;
-  border-radius: 5px;
-  width: 100%;
-  margin: 25px auto;
-  text-align: center;
-  a {
-    text-decoration: none;
-    color: $white;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    img {
-      border: 2px dotted $white;
-      border-radius: 100%;
-      &:hover {
-        background-color: $white;
-        border-color: $brand-color;
-      }
-    }
-  }
-}
-
-.discoBy {
-  text-transform: uppercase;
-  color: $white;
-}
-
-#holidayBy {
-  color: yellow;
-  text-transform: uppercase;
-}
-
-#holidaysMultipleImages {
-  background-color: $brand-color;
-  margin: 5px auto;
-  width: 100%;
-  padding: 15px 30px;
-  border-radius: 5px;
-  .holidaysMultipleImages {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    display: block;
-    content: '';
-    padding: 30%;
-    margin: 15px auto;
-    border-radius: 10px;
-    border: 5px solid $white;
-  }
-}
-
-#holidaysShowReviews {
-  background-color: $brand-color;
-  margin: 25px auto 50px auto;
-  width: 100%;
-  padding: 30px;
-  border-radius: 5px;
-  ul {
-    padding: 10px;
-    li {
-      text-align: center;
-      button {
-        width: 10%;
-        margin: 5px auto;
-        height: 25px;
-        display: block;
-        padding-top: 4px;
-      }
-    }
-  }
-  h1 {
-    text-align: center;
-    color: black;
-    border-bottom: 2px solid $brand-color;
-    padding-bottom: 5px;
-  }
-  #AddComment {
-    background-color: $white;
-    border-radius: 5px;
-    padding: 20px;
-    margin-top: 20px;
-    h2 {
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 20px;
-      padding-bottom: 20px;
-      font-weight: bold;
-    }
-    form {
-      text-align: center;
-      textarea {
-        height: 80px;
-        outline: none;
-        width: 50%;
-        border: 2px solid $brand-color;
-        border-radius: 5px;
-      }
-      button {
-        width: 50%;
-        background-color: $brand-color;
-        color: $white;
-        &:hover {
-          background-color: $white;
-          color: $brand-color;
+      div {
+        p {
+          color: black;
+          font-weight: bold;
+          text-align: center;
         }
       }
     }
   }
-  #reviews {
-    background-color: $white;
-    border-radius: 5px;
-  }
-}
 
-#commentBy {
-  color: $brand-color;
-}
+  #holidaysShowButtons {
+    background-color: $brand-color;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
 
-.comment {
-  border: 2px solid $brand-color;
-  border-radius: 10px;
-  margin: 5px auto;
-  padding: 5px;
-  // width: 100%;
-}
+    #holidayButtons {
+      background-color: $white;
+      border-radius: 10px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-#commentBody {
-  color: $black;
-}
+      // a {
+      //   width: 50%;
+      //
+      //   .md-button {
+      //     width: 100%;
+      //     margin: 6px 0;
+      //   }
+      // }
+      .md-button {
+        width: 25%;
+        margin: 6px auto;
 
-#commentTimestamp {
-  color: $hotpink;
-}
+        &:first-child {
+          background-color: #0770e3;
+          color: $white;
+        }
+      }
+    }
+  }
 
-#editHoliday {
-  &:before {
-    background-image: url('../images/logos/edit.png');
-    height: 22px;
-  }
-  &:hover {
-    color: transparent;
-  }
-}
+  .createdBy {
+    background-color: $brand-color;
+    text-align: center;
+    padding: 1.5rem;
 
-#deleteHoliday {
-  &:before {
-    background-image: url('../images/logos/delete.png');
-    height: 22px;
+    h1 {
+      text-transform: uppercase;
+      font-size: 1.75rem;
+      color: $white;
+      border: 0;
+    }
+    .holidayCreatedBy {
+      padding: 1rem;
+      border-radius: 5px;
+      background-color: $white;
+    }
+    span {
+      margin: 0.5rem auto auto auto;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: $black;
+    }
+    a {
+      img {
+        border: 2px dotted $white;
+        border-radius: 100%;
+      }
+    }
   }
-  &:hover {
-    color: transparent;
-  }
-}
 
-#getFlights {
-  &:before {
-    background-image: url('../images/logos/skyscanner2.png');
-    height: 22px;
-  }
-  &:hover {
-    color: transparent;
-  }
-}
+  #holidaysShowReviews {
+    background-color: $brand-color;
+    padding: 1.5rem;
 
-#deleteComment {
-  &:before {
-    background-image: url('../images/logos/delete.png');
-    height: 18px;
-  }
-  &:hover {
-    color: transparent;
-  }
-}
+    h1 {
+      text-transform: uppercase;
+      font-size: 1.75rem;
+      color: $white;
+      border: 0;
+    }
 
-#postButton {
-  &:before {
-    background-image: url('../images/logos/post.png');
-    height: 22px;
-  }
-  &:hover {
-    color: transparent !important;
-  }
-}
+    .reviews {
+      padding: 1rem;
+      background-color: $white;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 10px 0;
 
-#holidaysShowGoogleMap {
-  background-color: $brand-color;
-  margin: 5px auto;
-  width: 100%;
-  padding: 15px 30px;
-  border-radius: 5px;
-}
+      ul.comment {
+        width: 100%;
+        margin: 5px auto;
+        padding: 5px;
 
-.google-map {
-  width: 100%;
-  height: 310px;
-  margin-top: 10px;
-  position: relative;
-  overflow: hidden;
-  background-color: $white;
-  border-radius: 10px;
-  border: 5px solid $white;
+        li {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+          align-items: center;
+
+          .comment-container {
+            border: 2px solid $brand-color;
+            border-radius: 5px;
+            padding: 1rem;
+            width: 98%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .comment-header {
+            width: 12%;
+            display: flex;
+            flex-flow: column wrap;
+
+            .commentImage {
+              padding: 0.25rem 0;
+              margin: 0;
+            }
+            .commentBy {
+              padding: 0.15rem 0;
+              font-size: 0.9rem;
+            }
+            .commentTimestamp {
+              padding: 0.15rem 0;
+              font-size: 0.9rem;
+            }
+          }
+          .comment-body {
+            width: 80%;
+            padding-top: 1rem;
+
+            .commentBody {
+              padding: 0.25rem 0;
+
+              -ms-word-break: break-all;
+                  word-break: break-all;
+              /* Non standard for WebKit */
+                  word-break: break-word;
+              -webkit-hyphens: auto;
+                 -moz-hyphens: auto;
+                      hyphens: auto;
+            }
+          }
+
+          smart-confirm {
+            width: auto;
+
+            a {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              margin: 0 0.25rem;
+              width: 30px;
+              height: 30px;
+              min-width: 30px;
+              min-height: 30px;
+              font-size: 20px;
+
+              .md-icon {
+                width: 20px;
+                height: 20px;
+                min-width: 20px;
+                min-height: 20px;
+                font-size: 20px;
+              }
+            }
+            div {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+
+              button {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin: 0 0.25rem;
+                width: 30px;
+                height: 30px;
+                min-width: 30px;
+                min-height: 30px;
+                font-size: 20px;
+
+                .md-icon {
+                  width: 20px;
+                  height: 20px;
+                  min-width: 20px;
+                  min-height: 20px;
+                  font-size: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    #AddComment {
+      background-color: $white;
+      border-radius: 5px;
+      padding: 1rem;
+
+      h2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 20px;
+        padding-bottom: 20px;
+        font-weight: bold;
+      }
+      form {
+        // md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused label,
+        // md-input-container.md-input-focused label,
+        // md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused md-icon,
+        // md-input-container:not(.md-input-invalid).md-input-focused md-icon {}
+        md-input-container {
+          label {
+            // padding-bottom: 0.5rem;
+            padding: 0 10px;
+          }
+        }
+        md-input-container.md-input-focused label {
+          color: $black;
+        }
+        input[type=date]::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          display: none;
+        }
+        input[type=date]::-webkit-calendar-picker-indicator {
+          -webkit-appearance: none;
+          display: none;
+        }
+        textarea {
+          padding: 10px;
+          outline: none;
+          border: 1px solid $brand-color;
+          border-radius: 5px;
+
+          // &::-webkit-input-placeholder { color: $black; }
+          // &:-moz-placeholder { /* Firefox 18- */ color: $black; }
+          // &::-moz-placeholder {  /* Firefox 19+ */ color: $black; }
+          // &:-ms-input-placeholder { color: $black; }
+          // &::placeholder { color: $black; }
+        }
+      }
+    }
+  }
 }

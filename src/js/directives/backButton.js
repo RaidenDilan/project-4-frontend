@@ -7,7 +7,7 @@ function backButton($window) {
 	const directive = {
 		restrict: 'E',
 		transclude: true,
-    template: '<button class="button backButton">back</button>',
+    template: '<md-button class="md-raised md-primary md-button md-ink-ripple backButton">back</md-button>',
     link: (scope, element, attrs) => {
       element.on('click', () => $window.history.back());
     }

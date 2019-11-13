@@ -18,21 +18,22 @@ function FlightsShowCtrl(Holiday, Group, $stateParams, skyscanner, $moment) {
 
   vm.group = Group.get($stateParams);
 
+  vm.dateFormat = /^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$/;
+
   Holiday
     .get($stateParams)
     .$promise
     .then((holiday) => {
       vm.holiday = holiday;
-      console.log('FlightsShowCtrl ::', holiday);
 
-      holiday.departureDate = $moment(holiday.departureDate).add(1, 'month').format("YYYY-MM-DD");
-      holiday.returnDate = $moment(holiday.returnDate).add(1, 'month').add(7, 'days').format("YYYY-MM-DD");
+      vm.holiday.departureDate = $moment().add('7', 'd').format("YYYY-MM-DD");
+      vm.holiday.returnDate    = $moment().add('14', 'd').format("YYYY-MM-DD");
 
       return vm.holiday;
   });
 
   function searchFlights() {
-    getFlights();
+    if (vm.flightsShowForm.$valid) getFlights();
   }
   vm.searchFlights = searchFlights;
 

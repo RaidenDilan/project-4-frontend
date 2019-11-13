@@ -11,6 +11,11 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/',
       templateUrl: 'js/views/index.html'
     })
+    // .state('groupsAttend', {
+    //   url: '/groups/:id/attend',
+    //   templateUrl: 'js/views/memberships/attend.html',
+    //   controller: 'MembershipsCtrl as memberships'
+    // })
     .state('holidaysNew', {
       url: '/groups/:id/holidays/new',
       templateUrl: 'js/views/holidays/new.html',
@@ -69,7 +74,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('register', {
       url: '/register',
       templateUrl: 'js/views/auth/register.html',
-      controller: 'LoginCtrl as login'
+      controller: 'RegisterCtrl as register'
     });
 
     $urlRouterProvider.otherwise('/');

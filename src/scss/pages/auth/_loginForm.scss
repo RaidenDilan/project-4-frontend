@@ -1,76 +1,63 @@
-@import 'variables';
-
 #loginBackground {
-  background-image: url('../images/backgrounds/2.jpg');
+  background-image: url('../images/background.jpg');
   @extend .background-styles;
-}
 
-#loginForm {
-  background-color: rgba(255, 255, 255, 0.35);
-  border-radius: 10px;
-  padding: 10px 40px;
-  width: 50%;
-  margin: 150px auto 0 auto;
-  h1 {
-    text-transform: uppercase;
-    text-align: center;
-    padding-bottom: 25px;
-    font-size: 40px;
-    font-weight: bold;
-  }
-  p {
-    color: $yellow;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.40);
-    margin: 5px auto;
-    border-radius: 10px;
-    text-transform: capitalize;
-  }
-  .newTo {
-    background-color: transparent;
-    color: $black;
-    padding: 5px;
-    margin: 5px auto;
-    text-transform: uppercase;
-  }
-}
+  .loginForm {
+    width: 50%;
+    padding: 1rem 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
 
-#gitHubButton {
-  &:before {
-    background-image: url('../images/logos/github4.png');
-    height: 22px;
-  }
-  &:hover {
-    color: transparent;
-  }
-}
+    md-card-title {
+      margin: 0 auto;
+      color: $white;
+    }
 
-#facebookButton {
-  &:before {
-    background-image: url('../images/logos/facebook4.png');
-    height: 22px;
-  }
-  &:hover {
-    color: transparent;
-  }
-}
+    form {
+      md-input-container {
+        width: 100%;
+        margin: 0.5rem 0;
+        color: $white;
 
-#signUpButton {
-  &:before {
-    background-image: url('../images/logos/register.png');
-    height: 22px;
-  }
-  &:hover {
-    color: transparent;
-  }
-}
+        input[type='password'] {
+          font-size: 16px;
+        }
+        input {
+          border-color: $white;
+          color: $white;
+        }
+        textarea, label {
+          color: $white;
+        }
+        .md-errors-spacer {
+          min-height: auto;
+        }
+      }
+    }
 
-#logInButton {
-  &:before {
-    background-image: url('../images/logos/login.png');
-    height: 22px;
-  }
-  &:hover {
-    color: transparent;
+    .register {
+      text-align: center;
+      padding-top: 1rem;
+
+      span {
+        color: $white;
+      }
+      a {
+        color: $yellow;
+      }
+    }
+    .oauth {
+      #github {
+        background-color: #24292E;
+        color: $white;
+      }
+      #facebook {
+        background-color: #3B5998;
+        color: $white;
+      }
+    }
   }
 }

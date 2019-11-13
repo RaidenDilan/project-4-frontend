@@ -6,7 +6,7 @@ angular
   function Material($mdThemingProvider) {
     $mdThemingProvider.theme('default')
       .primaryPalette('yellow')
-      .accentPalette('blue-grey')
+      .accentPalette('green')
       .warnPalette('red')
       .backgroundPalette('grey');
   }

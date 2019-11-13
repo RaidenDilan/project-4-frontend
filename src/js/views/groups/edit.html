@@ -1,5 +1,7 @@
 <md-content id="groupsEditBackground">
   <md-card id="groupsEditForm">
+    <back-button></back-button>
+    
     <md-card-title>
       <md-card-title-text>
         <span class="md-headline">Edit Group</span>
@@ -7,6 +9,7 @@
     </md-card-title>
 
     <form name="groupsEdit.groupsEditForm" class="groupsEditForm" ng-submit="groupsEdit.update()" novalidate>
+
       <div class="col s6">
         <md-input-container class="md-block">
           <input
@@ -44,9 +47,10 @@
           <input
             id="search-input"
             type="text"
-            class="query"
-            name="groupsEdit"
+            class="search"
+            name="groupsEdit.groupsSearchUsers"
             ng-model="groupsEdit.query"
+            placeholder="Search for users..."
             aria-label="Search for properties"
             />
           <div ng-show="groupsEdit.filteredLength > 0" class="md-char-counter">{{ groupsEdit.filteredLength }} / {{ groupsEdit.availableUsersLength }}</div>
@@ -61,9 +65,10 @@
     <md-devider></md-devider>
 
     <div
-      class="col s6 groupUsersToAdd"
+      class="col s6 m6 l6 groupUsersToAdd"
       ng-if="(groupsEdit.query !== null) && user.id !== main.currentUser.id"
       ng-repeat="user in groupsEdit.filtered"
+      ng-show="!groupsEdit.groupUsers.includes(user)"
       >
       <div class="userSearchResults" ng-click="groupsEdit.addUser(user)">
         <img
@@ -84,7 +89,7 @@
 
     <div
       class="col s6 chosenGroupUsers"
-      ng-if="user.id !== main.currentUser.id"
+      ng-show="user.id !== main.currentUser.id"
       ng-repeat="user in groupsEdit.groupUsers track by $index"
       >
       <div>
@@ -101,6 +106,8 @@
         </smart-confirm>
       </div>
     </div>
+
+    <div class="chosenUsersLength md-char-counter" ng-show="groupsEdit.groupUsers.length > 0">{{ groupsEdit.groupUsers.length }} Users</div>
 
     <div class="col s6 groupsNewButtons">
       <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="groupsEdit.update()" ng-disabled="groupsEdit.groupsEditForm.$invalid"><i class="material-icons left"></i>Update</md-button>

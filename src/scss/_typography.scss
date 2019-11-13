@@ -1,53 +1,93 @@
+// app-root {
+//   display: flex;
+//   flex-direction: column;
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+// }
+
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
-  // outline: none;
+  padding: 0;
+  outline: 0;
+}
+
+// $min_width: 320px;
+// $max_width: 1200px;
+// $min_font: 16px;
+// $max_font: 24px;
+
+// $mod_1: 1.2; // mobile
+// $mod_2: 1.5; // desktop
+//
+// h1 {
+//   font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem;
+//   @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+// }
+// h2 {
+//   font-size: $mod_1*$mod_1*$mod_1 *1rem;
+//   @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+// }
+// h3 {
+//   font-size: $mod_1*$mod_1 *1rem;
+//   @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
+// }
+
+html {
+  // @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  height: 100%;
+  // height: calc(100% + 10px);
 }
 
 html, body {
   // height: auto;
-  letter-spacing: 0.5px;
-  user-select: none;
-}
-
-html {
-  // height: auto;
-  height: 100%;
+  // letter-spacing: 0.5px;
+  // user-select: none;
 }
 
 body {
   // background-image: url('../images/Ao Nang, Krabi, Thailand.jpg');
   // @extend .background-styles;
-  // width: 100%;
-  height: 100vh; /* Avoid the IE 10-11 `min-height` bug. */
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-height: 100%;
+  // height: calc(100% + 10px);
+  // height: 100vh; /* Avoid the IE 10-11 `min-height` bug. */
   // @include iOS-Viewport;
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   font-family: 'Lato', sans-serif;
 }
 
-section {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
-  display: block;
-
-  &:after {
-    clear: both;
-    content: '';
-    display: block;
-  }
-  div {
-    h1 {
-      font-size: 35px;
-      color: $white;
-      text-transform: uppercase;
-      padding-top: 20px;
-      padding-bottom: 20px;
-    }
-  }
-}
 main {
+  // height: 100% !important;
+  // height: auto;
   flex: 5 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
 }
+
+// section {
+//   max-width: 1200px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   padding: 20px;
+//   display: block;
+//
+//   &:after {
+//     clear: both;
+//     content: '';
+//     display: block;
+//   }
+//   div {
+//     h1 {
+//       font-size: 35px;
+//       color: $white;
+//       text-transform: uppercase;
+//       padding-top: 20px;
+//       padding-bottom: 20px;
+//     }
+//   }
+// }

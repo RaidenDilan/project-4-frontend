@@ -1,104 +1,94 @@
 md-content {
-  background-image: url('../images/background.jpg');
-  @extend .background-styles;
-  // background-attachment: fixed;
+  .groupsBackground {
+    background-image: url('../images/background.jpg');
+    @extend .background-styles;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-
-  h1 {
-    padding: 30px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    letter-spacing: 4px;
-    font-weight: lighter;
-    background-color: $background-color;
-    border-radius: 10px;
-    width: 90%;
-    margin: 10px;
-    position: absolute;
-    text-align: center;
-    text-transform: uppercase;
-    color: $white;
-    font-size: 2em;
+    md-card-title {
+      span {
+        background-color: $background-color;
+        padding: 30px;
+        border-radius: 5px;
+        font-size: 2rem;
+        font-weight: lighter;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: $white;
+      }
+    }
   }
 
   md-card {
-    padding: 20px;
-  }
-
-  h4#addHoliday {
-    top: 50%;
-    text-transform: uppercase;
-    padding: 20px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: $white;
-    width: 100%;
-    font-size: 25px;
-    font-weight: 900;
-    text-align: center;
-  }
-
-  h4#holidayName {
-    top: 50%;
-    text-transform: uppercase;
-    padding: 20px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: $white;
-    width: 100%;
-    font-size: 25px;
-    font-weight: 900;
-    text-align: center;
-  }
-
-  #usersButtons {
-    background-color: $white;
-    width: 50%;
-    margin: auto;
-    padding: 10px;
-    border-radius: 10px;
-  }
-
-  .groupsShowButtons {
-    margin: 25px auto 25px;
-    width: 100%;
-    // padding: 20px;
-    border-radius: 10px;
-    background-color: $brand-color;
-  }
-
-  .groupShowAttendees {
-    width: 100%;
-    background-color: $brand-color;
-    padding-bottom: 10px;
-    border-radius: 10px;
-    margin: 25px auto;
-    padding: 0;
+    // // padding: 20px;
+    // padding: 1rem 0;
+    // margin: 1rem;
+    // border-radius: 5px;
+    // background-color: $brand-color;
 
     h1 {
       text-transform: uppercase;
       text-align: center;
       font-size: 2em;
       color: $white;
-      padding-bottom: 10px;
-      padding-top: 10px;
-      margin-bottom: 10px;
+      // padding: 0 0 1rem 0;
       border-bottom: 2px solid $white;
     }
 
-    div.usersImage {
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      width: 40px;
-      height: 40px;
-      margin: 0 auto;
-      border-radius: 100%;
-    }
+    &.usersGroupShowOwner {
+      padding: 1rem 0 0 0;
 
+      div {
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+
+        .creator {
+          // font-size: 1.255rem;
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 2em;
+          color: $white;
+          padding: 0 0 1rem 0;
+          border-bottom: 2px solid $white;
+        }
+        .username {
+          color: $yellow;
+          padding: 0.5rem 0 0 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .groupsShowButtons {
+    padding: 1rem;
+  }
+
+  .groupShowAttendees {
+    padding: 1rem 0;
+
+    h1 {
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 2em;
+      color: $white;
+      padding: 0 0 1rem 0;
+      // margin-bottom: 10px;
+      border-bottom: 2px solid $white;
+    }
+    div.groupAttendees {
+      padding: 2rem 0 0 0;
+
+      .row {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+      }
+    }
     div.groupUsername {
       padding-top: 10px;
 
@@ -111,100 +101,187 @@ md-content {
     }
   }
 
-  #groupShowHolidays {
-    margin: 25px auto 50px auto;
-    width: 100%;
-    background-color: $brand-color;
+  .holidaysCreated {
+    padding: 1rem;
+
+    .row {
+      margin-bottom: 0;
+    }
+  }
+
+  .new-holiday {
+    .content {
+      .content-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .content-title {
+        font-size: 1.4rem;
+      }
+      .material-icons {
+        font-size: 200px;
+        color: $black;
+      }
+    }
+  }
+
+  .groupShowHolidays {
     padding: 0;
-    padding-top: 10px;
-    border-radius: 10px;
+
     h1 {
       text-align: center;
       text-transform: uppercase;
       font-size: 2em;
       color: $white;
-      padding-bottom: 10px;
+      padding: 1rem 0;
       border-bottom: 2px solid $white;
     }
-    #holidaysMultiImages {
-      padding: 20px 30px 10px 30px;
+    #holidaysImage {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 5px;
+      padding: 15%;
+      margin: 20px auto;
+      background-color: $white;
+      border: 3px solid $white;
     }
   }
+}
 
-  #addHolidaysImage {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    padding: 15%;
-    margin: 20px auto;
-    background-color: $white;
-  }
+.groupHolidays {
+  // width: 200px;
+}
 
-  #holidaysImage {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    padding: 15%;
-    margin: 20px auto;
-    background-color: $white;
-    border: 3px solid $white;
-  }
+.container {
+  // padding: 1em 0;
+  // padding: 1em;
+  // float: left;
+  // width: 50%;
 
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255,255,255,.5);
-    opacity: 0;
-    transition: all .3s ease-in-out;
-    border-radius: 10px;
-    &:hover {
-      opacity: 1;
-    }
-  }
+  // .row {
+  //   margin-bottom: 0;
+  // }
+}
+// @media screen and (max-width: 640px) {
+//   .container {
+//     display: block;
+//     width: 100%;
+//   }
+// }
+//
+// @media screen and (min-width: 900px) {
+//   .container {
+//     width: 44.44444%;
+//   }
+// }
 
-  #deleteGroup {
-    &:before {
-      background-image: url('../images/logos/delete.png');
-      height: 22px;
-    }
-    &:hover {
-      color: transparent;
-    }
-  }
+// .container .title {
+.title {
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 10px;
+}
 
-  #editGroup {
-    &:before {
-      background-image: url('../images/logos/edit.png');
-      height: 22px;
-    }
-    &:hover {
-      color: transparent;
-    }
-  }
+.content {
+  position: relative;
+  // width: 90%;
+  width: 100%;
+  max-width: 300px;
+  // margin: auto;
+  margin: 1rem auto;
+  overflow: hidden;
+  border: 3px solid $white;
+  border-radius: 5px;
+}
 
-  #attendGroup {
-    &:before {
-      background-image: url('../images/logos/checked.png');
-      height: 22px;
-    }
-    &:hover {
-      color: transparent;
-    }
-  }
+.content .content-overlay {
+  // background: rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 3px solid $white;
 
-  #leaveGroup {
-    &:before {
-      background-image: url('../images/logos/unchecked.png');
-      height: 22px;
-    }
-    &:hover {
-      color: transparent;
-    }
-  }
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+     -moz-transition: all 0.4s ease-in-out 0s;
+          transition: all 0.4s ease-in-out 0s;
+}
 
+.content:hover .content-overlay {
+  opacity: 1;
+}
+
+.new-holiday {
+  // max-width: 100px;
+}
+
+.content-image {
+  // width: 200px;
+  height: 300px;
+  // background: rgba(255, 255, 255, 0.25);
+  // content: url('../images/backgrounds/img2.jpg');
+  // background: linear-gradient(rgba(255, 255, 255, 0.15) 100%, rgba(255, 255, 255, 0.15) 100%, url('../images/backgrounds/img2.jpg'));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+     -moz-transition: all 0.3s ease-in-out 0s;
+          transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .content-details {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-details h3 {
+  color: #ffffff;
+  font-size: 1.5em;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.content-details p {
+  color: #ffffff;
+  font-size: 0.8em;
+}
+
+.fadeIn-bottom {
+  top: 80%;
+}
+
+.fadeIn-top {
+  top: 20%;
+}
+
+.fadeIn-left {
+  left: 20%;
+}
+
+.fadeIn-right {
+  left: 80%;
 }

@@ -4,40 +4,71 @@ angular
   .controller('HolidaysShowCtrl', HolidaysShowCtrl)
   .controller('HolidaysEditCtrl', HolidaysEditCtrl);
 
-HolidaysNewCtrl.$inject = ['Group', 'User', 'Holiday', '$state', '$stateParams', '$moment'];
-function HolidaysNewCtrl(Group, User, Holiday, $state, $stateParams, $moment) {
+HolidaysNewCtrl.$inject = ['Group', 'User', 'Holiday', '$state', '$stateParams', '$moment', '$auth', '$log'];
+function HolidaysNewCtrl(Group, User, Holiday, $state, $stateParams, $moment, $auth, $log) {
   const vm = this;
 
   vm.holiday = {};
+  vm.user    = User.get({ id: $auth.getPayload().id });
+  vm.group   = Group.get($stateParams);
+
+  // console.log('$stateParams', $stateParams);
+  // console.log('vm.group', vm.group);
+
+  vm.holiday.departureDate = new Date();
+  vm.holiday.returnDate    = new Date();
 
   // vm.holiday.departureDate = $moment(vm.holiday.departureDate).add(1, 'month').format("YYYY-MM-DD");
   // vm.holiday.returnDate = $moment(vm.holiday.returnDate).add(1, 'month').add(7, 'days').format("YYYY-MM-DD");
 
+  vm.onDateChanged = () => {
+    $log.log('Updated departureDate: ', vm.departureDate);
+    $log.log('Updated returnDate: ', vm.returnDate);
+  };
+
   function holidaysCreate() {
     if(vm.holidaysNewForm.$valid) {
-      vm.holiday.group_id = $stateParams.id; // we are passing in the group id here when creating a new holiday
+      // vm.holiday.group_id = $stateParams.id; // we are passing in the group id here when creating a new holiday
+      // vm.holiday.user_id = vm.user.id; // we are passing in the group id here when creating a new holiday
 
       Holiday
-        .save({ holiday: vm.holiday })
+        .save({ id: $stateParams.id, holiday: vm.holiday })
         .$promise
-        .then((holiday) => $state.go('holidaysShow', { id: holiday.id }));
+        // .then((holiday) => $state.go('holidaysShow', { id: holiday.id }));
+        .then((holiday) => {
+          console.log('holiday ==?', holiday);
+          return $state.go('holidaysShow', { id: vm.group.id, holidayId: holiday.id });
+        });
     }
   }
   vm.create = holidaysCreate;
 }
 
-HolidaysShowCtrl.$inject = ['Holiday', 'Group', 'User', '$stateParams', '$state', '$auth', 'Comment'];
-function HolidaysShowCtrl(Holiday, Group, User, $stateParams, $state, $auth, Comment) {
+HolidaysShowCtrl.$inject = ['Holiday', 'Group', 'User', 'Comment', '$stateParams', '$state', '$auth', '$moment'];
+function HolidaysShowCtrl(Holiday, Group, User, Comment, $stateParams, $state, $auth, $moment) {
   const vm = this;
 
   vm.user = User.get({ id: $auth.getPayload().id });
-  vm.group = Group.get($stateParams);
-  vm.holiday = Holiday.get($stateParams);
+
+  Group
+    .get($stateParams)
+    .$promise
+    .then((group) => vm.group = group);
+
+  Holiday
+    .get($stateParams)
+    .$promise
+    .then((holiday) => {
+      vm.holiday = holiday;
+      vm.holiday.comments.forEach((comment) => comment.created_at = $moment(comment.created_at).fromNow());
+
+      return vm.holiday;
+    });
 
   function holidaysDelete() {
     vm.holiday
-      .$remove()
-      .then(() => $state.go('usersGroupsIndex'));
+      .$remove({ id: $stateParams.id, holidayId: vm.holiday.id })
+      .then(() => $state.go('groupsShow', $stateParams));
   }
   vm.delete = holidaysDelete;
 
@@ -45,10 +76,10 @@ function HolidaysShowCtrl(Holiday, Group, User, $stateParams, $state, $auth, Com
     vm.newComment.holiday_id = vm.holiday.id; // attaching the comment to the group id.
 
     Comment
-      .save({ id: vm.group.id, holidayId: vm.holiday.id }, vm.newComment)
+      .save({ comment: vm.newComment })
       .$promise
       .then((comment) => {
-        console.log('comment created :::', comment);
+        comment.created_at = $moment(comment.created_at).fromNow();
         vm.holiday.comments.push(comment);
         vm.newComment = {};
       });
@@ -57,7 +88,7 @@ function HolidaysShowCtrl(Holiday, Group, User, $stateParams, $state, $auth, Com
 
   function deleteComment(comment) {
     Comment
-      .delete({ id: vm.group.id, holidayId: vm.holiday.id, commentId: comment.id })
+      .delete({ id: comment.id })
       .$promise
       .then(() => {
         const index = vm.holiday.comments.indexOf(comment);
@@ -65,51 +96,35 @@ function HolidaysShowCtrl(Holiday, Group, User, $stateParams, $state, $auth, Com
       });
   }
   vm.deleteComment = deleteComment;
-
-  // Holiday.get($state.params, (holiday) => {
-  //   vm.holiday = holiday;
-  //   vm.center = {};
-  //
-  // // Google Map
-  //   MapService
-  //   .getCoords(vm.holiday.location)
-  //   .then(res => {
-  //     vm.center = res;
-  //   }, err => {
-  //     console.log(err);
-  //   });
-  // });
 }
 
-HolidaysEditCtrl.$inject = ['Holiday', '$stateParams', '$state', '$moment'];
-function HolidaysEditCtrl(Holiday, $stateParams, $state, $moment) {
+HolidaysEditCtrl.$inject = ['Holiday', 'Group', '$stateParams', '$state', '$moment'];
+function HolidaysEditCtrl(Holiday, Group, $stateParams, $state, $moment) {
   const vm = this;
+
+  vm.group = Group.get($stateParams);
 
   Holiday
     .get($stateParams)
-    .$promise.then((holiday) => {
+    .$promise
+    .then((holiday) => {
       vm.holiday = holiday;
 
-      console.log(vm.holiday);
-
-      // holiday.departureDate = new Date(holiday.departureDate); // run this logic first before vm.holiday runs underneath this line.
-      // holiday.returnDate = new Date(holiday.returnDate); // run this logic first before vm.holiday runs underneath this line.
-
-      holiday.departureDate = $moment(holiday.departureDate).add(1, 'month').format("YYYY-MM-DD");
-      holiday.returnDate = $moment(holiday.returnDate).add(1, 'month').add(7, 'days').format("YYYY-MM-DD");
-
-      // holiday.departureDate = $moment(holiday.departureDate).format("YYYY-MM-DD");
-      // holiday.returnDate = $moment(holiday.returnDate).format("YYYY-MM-DD");
+      vm.holiday.departureDate = $moment().add('7', 'd').format("YYYY/MM/DD");
+      vm.holiday.returnDate    = $moment().add('14', 'd').format("YYYY/MM/DD");
 
       return vm.holiday;
-  });
+    });
 
   function holidaysUpdate() {
     if(vm.holidaysEditForm.$valid) {
       Holiday
-        .update({ id: vm.holiday.id, holiday: vm.holiday })
+        .update({ id: vm.group.id, holidayId: vm.holiday.id, holiday: vm.holiday })
         .$promise
         .then(() => $state.go('holidaysShow', $stateParams));
+
+      console.log('vm.holiday', vm.holiday);
+      console.log('vm.group', vm.group);
     }
   }
   vm.update = holidaysUpdate;

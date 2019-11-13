@@ -1,12 +1,18 @@
-<div class="modal-header">
-  <h3 class="modal-title">Success!</h3>
-</div>
-<div class="modal-body">
-  <h4>You are attending the  <strong>{{ memberships.group.name }}</strong> group</h4>
-  <p>on {{ memberships.group.date | date:'EEEE, d MMMM yyyy' }}</p>
-  <p>at {{ memberships.group.location }}</p>
-  <h3>Check your email inbox for your memberships!</h3>
-</div>
-<div class="modal-footer">
-  <button ng-click="memberships.close()">Back</button>
-</div>
+<md-dialog class="groupsDeleteModal" aria-label="Delete Group Confirmation">
+  <md-toolbar>
+    <div class="md-toolbar-tools" layout="row" layout-align="center center">
+      <h2>Success!</h2>
+    </div>
+  </md-toolbar>
+
+  <md-dialog-content>
+    <div class="md-dialog-content" layout="column" layout-align="center center">
+      <h4>You are about to join <strong>{{ membership.group.name }}</strong> group</h4>
+    </div>
+  </md-dialog-content>
+
+  <md-dialog-actions>
+    <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="membership.close()">Back</md-button>
+    <md-button class="md-raised md-warn md-button md-ink-ripple" ng-click="membership.create()">Join</md-button>
+  </md-dialog-actions>
+</md-dialog>

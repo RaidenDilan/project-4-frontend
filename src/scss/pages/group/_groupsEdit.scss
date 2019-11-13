@@ -9,39 +9,79 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.75);
 
     md-card-title {
       margin: 0 auto 2.5rem auto;
+      color: $white;
     }
     form {
       md-input-container {
         width: 100%;
         margin: 0.5rem 0;
+
+        input {
+          color: $white;
+          border-color: $white;
+        }
       }
       label {
         width: 100%;
         margin: 1rem 0;
+        color: $white;
       }
-      // button {
-      //   width: 100%;
-      //   margin: 0 0 1rem 0;
-      // }
       img {
+        background-color: $white;
         border-radius: 50%;
+        border: 1px solid $white;
         width: 25px;
         height: 25px;
       }
-      // md-devider {
-      //   margin: 1rem 0;
-      // }
+      h5 {
+        color: $white;
+      }
+      .md-divider {
+        color: $white;
+      }
     }
 
+    md-input-container {
+      width: 100%;
+      margin: 0.5rem 0;
+      text-align: center;
+
+      input {
+        color: $white;
+        border-color: $white;
+        // padding: 5px 10px;
+        // background-color: rgba(0, 0, 0, 0) !important;
+        // width: 100%;
+        text-align: center;
+        // outline: none;
+        // margin: 5px 0;
+        // border: none;
+        // border-radius: 10px;
+        // color: #000000;
+
+        // &:focus {
+        //   box-shadow: 0 1px 0 -1px #26a69a;
+        // }
+      }
+    }
+    .md-divider {
+      color: $white;
+      border-top-color: $white;
+    }
     .md-toolbar-tools {
       padding: 0;
 
+      md-icon {
+        color: $white;
+      }
+
       .md-button {
         padding: 0;
+        color: $white;
       }
 
       .md-button:last-child {
@@ -57,13 +97,25 @@
       flex-flow: column nowrap;
       justify-content: center;
       align-items: center;
+      color: $white;
     }
     .chosenGroupUsers {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
       padding: 10px 0;
 
       smart-confirm {
         margin: 0;
+      }
+      .md-divider {
+        margin: 5px 0;
+        border-color: $white;
+      }
+      img {
+        background-color: $white;
+        border-radius: 50%;
+        border: 1px solid $white;
+        width: 25px;
+        height: 25px;
       }
       div {
         margin: 0;
@@ -75,6 +127,7 @@
 
         h5 {
           text-transform: uppercase;
+          color: $white;
         }
         .md-button {
           display: flex;
@@ -86,7 +139,8 @@
           min-height: 25px;
           margin: 0 0.5rem;
 
-          md-icon {
+          .md-icon {
+            color: $white;
             font-size: 18px;
             height: auto;
             width: auto;
@@ -97,7 +151,7 @@
       }
     }
     .groupUsersToAdd {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
       -webkit-transition: 0.5s linear all;
               transition: 0.5s linear all;
 
@@ -164,10 +218,26 @@
         }
       }
     }
+    .userSearchResults {
+
+      img {
+        background-color: $white;
+        border-radius: 50%;
+        border: 1px solid $white;
+        width: 25px;
+        height: 25px;
+      }
+      h5 {
+        color: $white;
+      }
+    }
     .chosenUsersLength {
       padding: 2rem 0 1rem 0;
       text-align: center;
       text-transform: uppercase;
+    }
+    .md-char-counter {
+      color: $white;
     }
     .groupsEditButtons {
       margin-top: 1rem;

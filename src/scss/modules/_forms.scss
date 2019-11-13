@@ -1,7 +1,25 @@
+@import 'variables';
+
 form {
   div {
+    /* Change Autocomplete styles in Chrome*/
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+      -webkit-text-fill-color: $white;
+      background-color: transparent;
+      -webkit-box-shadow: 0 0 0px 100px transparent inset;
+      transition: background-color 5000s ease-in-out 0s !important;
+    }
     input {
       padding: 5px 10px;
+      // background-color: rgba(0, 0, 0, 0) !important;
       width: 100%;
       text-align: center;
       outline: none;
@@ -9,12 +27,16 @@ form {
       border: none;
       border-radius: 10px;
       color: #000000;
+
+      &:focus {
+        box-shadow: 0 1px 0 -1px #26a69a;
+      }
     }
     input[type='file'] {
       margin: 5px 0;
       width: 100%;
-      background: $button-color;
-      border: 2px solid #01A3BC;
+      // background: $button-color;
+      // border: 2px solid #01A3BC;
       height: 30px;
       border-radius: 10px;
       color: #ffffff;
@@ -23,20 +45,30 @@ form {
       transition: all .5s ease;
       text-transform: uppercase;
       text-align: center;
-      
+      // display: none;
+
       &:hover {
         background: 0 0;
-        color: $button-color;
+        color: $yellow;
+        border: 1px solid $yellow;
       }
     }
+    input[type='date']::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      display: none;
+    }
+    input[type='date']::-webkit-calendar-picker-indicator {
+      -webkit-appearance: none;
+      display: none;
+    }
     textarea {
-      width: 100%;
-      height: 85px;
-      text-align: center;
-      outline: none;
-      margin: 5px 0;
-      border: none;
-      border-radius: 10px;
+      // width: 100%;
+      // height: 85px;
+      // text-align: center;
+      // outline: none;
+      // margin: 5px 0;
+      // border: none;
+      // border-radius: 10px;
     }
     p {
       font-size: 15px;
@@ -49,6 +81,7 @@ form {
 .choose {
   margin: 6px 8px;
   padding-top: 8px;
+  // border: 1px solid $yellow;
   // position: relative;
   // overflow: hidden;
   // margin: 5px 0;
@@ -81,6 +114,10 @@ form {
   cursor: pointer;
   opacity: 0;
   filter: alpha(opacity=0);
+}
+
+.formValidation {
+  color: $yellow;
 }
 
 div {

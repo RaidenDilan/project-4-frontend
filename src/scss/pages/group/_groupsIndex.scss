@@ -1,8 +1,9 @@
-md-content {
+#groupsIndexSection {
   background-image: url('../images/background.jpg');
   @extend .background-styles;
 
-  #groupsIndexList {
+  md-card.groupsIndexList {
+    margin: 0;
     width: 50%;
     padding: 2rem;
     position: absolute;
@@ -18,6 +19,17 @@ md-content {
       text-align: center;
       margin: 0 auto 2.5rem auto;
       border-bottom: 1px solid $white;
+    }
+
+    .newMember {
+      h3 {
+        font-size: 1rem;
+        padding-bottom: 10px;
+        color: $white;
+      }
+      a {
+        color: $yellow;
+      }
     }
 
     div {

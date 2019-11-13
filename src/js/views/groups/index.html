@@ -1,19 +1,24 @@
 <md-content id="groupsIndexSection">
-  <md-card id="groupsIndexList">
+  <md-card class="groupsIndexList">
+
     <md-card-title>
       <md-card-title-text>
         <span class="md-headline">My Groups</span>
       </md-card-title-text>
     </md-card-title>
 
+    <div class="newMember" ng-show="groupsIndex.groups.length === 0">
+      <h3>You have no groups created/attending.</h3>
+      <a ui-sref="groupsNew">Create One!</a>
+    </div>
+
     <div ng-repeat="group in groupsIndex.groups track by $index">
       <a ui-sref="groupsShow({ id: group.id })">
         <h2 class="groupName">
-          <span>-</span>
-          {{ group.name }}
-          <span>-</span>
+          <span> - </span>{{ group.name }}<span> - </span>
         </h2>
       </a>
     </div>
+
   </md-card>
 </md-content>

@@ -2,28 +2,47 @@ angular
   .module('holidayApp')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$rootScope', '$state', '$auth', 'User'];
-function MainCtrl($rootScope, $state, $auth, User) {
+MainCtrl.$inject = ['$rootScope', '$state', '$auth', 'User']; // 'Flash'
+function MainCtrl($rootScope, $state, $auth, User) { // Flash
   const vm = this;
-  const protectedStates = ['holidaysNew', 'holidaysEdit', 'holidaysShow', 'groupsNew', 'groupsEdit', 'groupsShow', 'groupsIndex', 'attendeesShow', 'usersShow', 'flightsShow'];
+
+  const protectedStates = [
+    'holidaysNew',
+    'holidaysEdit',
+    'holidaysShow',
+    'groupsNew',
+    'groupsEdit',
+    'groupsShow',
+    'groupsIndex',
+    'usersShow',
+    'usersEdit',
+    'flightsShow'
+  ];
 
   if ($auth.getPayload()) vm.loggedInUser = User.get({ id: $auth.getPayload().id });
 
   vm.isAuthenticated = $auth.isAuthenticated;
+  // vm.flash = Flash;
 
   $rootScope.$on('error', stateErrors);
   $rootScope.$on('$stateChangeStart', secureState);
   $rootScope.$on('$stateChangeSuccess', authenticateState);
 
-  function stateErrors(event, err) {
+  function stateErrors(e, err) {
     vm.stateHasChanged = false;
-    vm.message = err.data.message;
-    $state.go('login');
+    vm.message = err.data.errors;
+    console.log('err.data', err.data);
+    // vm.message = err.data.errors.toString();
+    // Flash.setMessage(vm.message);
+    // vm.flash.setMessage(vm.message);
+    if(err.status === 401) $state.go('login');
   }
 
   function authenticateState(event, toState, toParams, fromState, fromParams) {
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
+    if (vm.stateHasChanged) document.body.scrollTop = document.documentElement.scrollTop = 0; // BUG????
+
     if ($auth.getPayload()) {
       vm.currentUser = $auth.getPayload();
 
@@ -41,8 +60,11 @@ function MainCtrl($rootScope, $state, $auth, User) {
     }
   }
 
-  function secureState(event, toState, toParams, fromState, fromParams) {
+  function secureState(e, toState, toParams, fromState, fromParams) {
     if((!$auth.isAuthenticated() && protectedStates.includes(toState.name))) {
+      console.log('$auth.isAuthenticated()', $auth.isAuthenticated());
+
+      // console.log('!$auth.isAuthenticated() && protectedStates.includes(toState.name)', !$auth.isAuthenticated() && protectedStates.includes(toState.name));
       e.preventDefault();
       $state.go('login');
       vm.message = 'You must be logged in to access this page.';
@@ -51,9 +73,7 @@ function MainCtrl($rootScope, $state, $auth, User) {
   }
 
   function logout() {
-    $auth.logout();
-    $state.go('login');
+    $auth.logout().then(() => $state.go('home'));
   }
-
   vm.logout = logout;
 }

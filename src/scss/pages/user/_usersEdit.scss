@@ -1,4 +1,4 @@
-md-content {
+#usersEditBackground {
   background-image: url('../images/background.jpg');
   @extend .background-styles;
 
@@ -11,33 +11,20 @@ md-content {
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.6);
 
-    h1 {
-      text-transform: uppercase;
-      text-align: center;
-      padding-bottom: 25px;
-      font-size: 40px;
-      font-weight: bold;
-    }
-    div {
-      p {
-        color: $yellow;
-        padding: 5px;
-        background-color: rgba(0, 0, 0, 0.40);
-        margin: 5px auto;
-        border-radius: 10px;
-        text-transform: capitalize;
-      }
-      strong {
-        color: yellow;
-      }
-    }
-
     md-card-title {
       margin: 0 auto 1rem auto;
       color: $white;
     }
 
     form {
+      .choose {
+        margin: 0;
+
+        &:hover {
+          border: 1px solid $yellow;
+          color: $yellow;
+        }
+      }
       md-input-container {
         width: 100%;
         margin: 0.5rem 0;
@@ -45,6 +32,10 @@ md-content {
 
         input[type='password'] {
           font-size: 16px;
+        }
+        input[type='file'] {
+          display: none;
+          border: 1px solid $yellow;
         }
         input {
           border-color: $white;
@@ -58,38 +49,13 @@ md-content {
           min-height: auto;
         }
       }
-      .choose {
-        background-color: $yellow;
-        color: $black;
-        border-color: $yellow;
-      }
     }
 
-
-    .usersShowButtons {
-      padding-top: 50px;
+    .usersEditButton {
+      margin: 6px 0;
 
       .md-button {
-        // width: 100%;
-      }
-    }
-
-    #updateUser {
-      &:before {
-        background-image: url('../images/logos/update.png');
-        height: 22px;
-      }
-      &:hover {
-        color: transparent;
-      }
-    }
-    #camera {
-      &:before {
-        background-image: url('../images/logos/camera.png');
-        height: 22px;
-      }
-      &:hover {
-        color: transparent;
+        margin: 6px 0;
       }
     }
   }

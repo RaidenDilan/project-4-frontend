@@ -1,93 +1,136 @@
-<div id="holidaysBackground" style="background-image:url('{{ holidaysShow.holiday.image_src }}')">
-  <h1>Welcome to {{ holidaysShow.holiday.location }}</h1>
-</div>
+<md-content>
+  <div class="holidaysBackground" id="holidaysBackground" style="background-image:url('{{ holidaysShow.holiday.image_src }}')">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Welcome to {{ holidaysShow.holiday.location }}</span>
+      </md-card-title-text>
+    </md-card-title>
+  </div>
 
-<section id="holidaysShow">
-    <div id="info">
-      <div class="info1 row">
-        <div class="col-sm-12 col-md-4 col-lg-4 info2">
+  <md-card id="holidaysShow">
+    <div class="info-container">
+      <div class="info">
+        <div>
           <h2>Closest Airport</h2>
           <p>{{ holidaysShow.holiday.arrivalAirport }}</p>
         </div>
-        <div class="col-sm-12 col-md-4 col-lg-4 info2">
+        <div>
           <h2>Attractions</h2>
           <p>{{ holidaysShow.holiday.attractions }}</p>
         </div>
-        <div class="col-sm-12 col-md-4 col-lg-4 info2">
+        <div>
           <h2>Best time of the year</h2>
           <p>{{ holidaysShow.holiday.when_to_go }}</p>
         </div>
       </div>
     </div>
-</section>
+  </md-card>
 
-<section id="holidaysShowButtonsSection">
-  <div id="holidaysShowButtons">
-    <div id="holidayButtons">
-      <a
-        ui-sref="flightsShow({ id: holidaysShow.group.id, holidayId: holidaysShow.holiday.id })"
-        id="getFlights"
-        class="button"
-        >
-        Get Flights
-      </a>
-      <a
-        ng-if="main.isAuthenticated()"
-        ui-sref="holidaysEdit({ id: holidaysShow.group.id, holidayId: holidaysShow.holiday.id })"
-        id="editHoliday"
-        class="button"
-        >
-        Edit Holiday
-      </a>
-      <a
-        ng-if="main.isAuthenticated()"
-        ng-click="holidaysShow.delete()"
-        id="deleteHoliday"
-        class="button"
-        >
-        Delete Holiday
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="by">
-  <div><span class="discoBy">Discovered By: </span><span id="holidayBy">{{ holidaysShow.holiday.user.username }}</span>
-    <a ui-sref="usersShow({ id: holidaysShow.holiday.user.id })">
-      <div style="background-image:url('{{ holidaysShow.holiday.user.image_src }}')" id="discoveredBy">
-      </div>
-    </a>
-  </div>
-</section>
-
-<section id="holidaysShowReviews">
-  <div>
-    <div id="reviews">
-      <h1>Reviews</h1>
-      <ul>
-        <li ng-repeat="comment in holidaysShow.holiday.comments" class="comment">
-            <em id="commentBody">{{ comment.body }}</em><br> ~ <strong id="commentBy">{{ comment.user.username }}</strong><br>
-            <em id="commentTimestamp">{{ comment.user.created_at | date:'dd-MM-yyyy @ HH:mm:ss'}}</em>
-          <button ng-click="holidaysShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id" id="deleteComment" class="button">Delete</button>
-        </li>
-      </ul>
-    </div>
-    <div id="AddComment">
-      <div ng-if="main.isAuthenticated()">
-        <h2>Add Comment</h2>
-        <form ng-submit="holidaysShow.addComment()">
-          <textarea type="text" name="body" ng-model="holidaysShow.newComment.body" placeholder="Review" maxlength="100"></textarea><br>
-            <button id="postButton" class="button">Post</button>
-        </form>
+  <md-card id="holidaysShowButtonsSection">
+    <div id="holidaysShowButtons">
+      <div id="holidayButtons">
+        <md-button
+          id="getFlights"
+          class="md-raised md-primary md-button md-ink-ripple"
+          ui-sref="flightsShow({ id: holidaysShow.group.id, holidayId: holidaysShow.holiday.id })"
+          >
+          Get Flights
+        </md-button>
+        <md-button
+          id="editHoliday"
+          class="md-raised md-primary md-button md-ink-ripple"
+          ui-sref="holidaysEdit({ id: holidaysShow.group.id, holidayId: holidaysShow.holiday.id })"
+          ng-if="main.isAuthenticated() && main.currentUser.id === holidaysShow.holiday.user.id"
+          >
+          Edit Holiday
+        </md-button>
+        <md-button
+          ng-if="main.isAuthenticated() && main.currentUser.id === holidaysShow.holiday.user.id"
+          ng-click="holidaysShow.delete()"
+          id="deleteHoliday"
+          class="md-raised md-warn md-button md-ink-ripple"
+          >
+          Delete Holiday
+        </md-button>
       </div>
     </div>
-  </div>
-</section>
+  </md-card>
 
-<!-- <section id="holidaysShowGoogleMap">
-  <div class="google-map">
-    <ng-map center="city-name" zoom="13" scrollwheel="false">
-      <marker position="58.887110, 25.569944" animation="DROP"></marker>
-    </ng-map>
-  </div>
-</section> -->
+  <md-card class="createdBy">
+    <h1>Created By</h1>
+
+    <div class="holidayCreatedBy">
+      <div
+        style="background-image:url('{{ holidaysShow.holiday.user.image_src }}')"
+        class="usersImage"
+        >
+      </div>
+      <span>{{ holidaysShow.holiday.user.username }}</span>
+    </div>
+  </md-card>
+
+  <md-card id="holidaysShowReviews">
+    <h1 ng-if="holidaysShow.holiday.comments.length > 0">Reviews</h1>
+
+    <div>
+      <div class="reviews" ng-if="holidaysShow.holiday.comments.length > 0">
+        <ul ng-repeat="comment in holidaysShow.holiday.comments" class="comment">
+          <li>
+
+            <div class="comment-container">
+              <div class="comment-header">
+                <div class="commentImage usersImage" style="background-image:url('{{ comment.user.image.url }}')"></div>
+                <span class="commentBy">{{ comment.user.username }}</span>
+                <span class="commentTimestamp">{{ comment.created_at }}</span>
+              </div>
+
+              <div class="comment-body">
+                <span class="commentBody">{{ comment.body }}</span>
+              </div>
+
+              <smart-confirm
+                confirm="holidaysShow.deleteComment(comment)"
+                ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id"
+                >
+                <md-icon class="material-icons">close</md-icon>
+              </smart-confirm>
+            </div>
+
+          </li>
+        </ul>
+      </div>
+
+      <div id="AddComment">
+        <div ng-if="main.isAuthenticated()">
+          <h2>Add Comment</h2>
+
+          <form ng-submit="holidaysShow.addComment()">
+            <div class="col s6">
+              <md-input-container class="md-block">
+                <textarea
+                  type="text"
+                  name="body"
+                  id="body"
+                  ng-model="holidaysShow.newComment.body"
+                  rows="2"
+                  md-maxlength="150"
+                  md-select-on-focus
+                  placeholder="Post a comment"
+                  aria-label="Post a Comment"
+                  >
+                </textarea>
+              </md-input-container>
+            </div>
+
+            <md-button
+              class="md-raised md-primary md-button md-ink-ripple"
+              ng-click="holidaysShow.addComment()"
+              >
+              Post
+            </md-button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </md-card>
+</md-content>

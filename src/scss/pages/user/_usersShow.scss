@@ -1,4 +1,4 @@
-md-content {
+#usersShowBackground {
   background-image: url('../images/background.jpg');
   @extend .background-styles;
 
@@ -17,7 +17,6 @@ md-content {
 
     div {
       p {
-        // width: 40%;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -25,7 +24,6 @@ md-content {
         color: $white;
         font-size: 15px;
         padding: 5px;
-        // border: 1px solid $white;
         margin: 0.5rem auto;
         border-radius: 5px;
         text-transform: none;
@@ -35,10 +33,6 @@ md-content {
           color: $yellow;
         }
       }
-    }
-    .userInfo {
-      // width: 50%;
-      // margin: 0 auto;
     }
     .usersShowButtons {
       padding-top: 20px;
@@ -58,51 +52,6 @@ md-content {
       margin: 1rem auto;
       border: 3px solid $white;
       border-radius: 100%;
-    }
-
-    #editUser {
-      background-color: $white;
-
-      &:before {
-        background-image: url('../images/logos/edit.png');
-        height: 22px;
-
-      }
-      &:hover {
-        color: transparent;
-
-        &:before {
-          top: 7px;
-        }
-      }
-    }
-    #deleteUser {
-      &:before {
-        background-image: url('../images/logos/delete.png');
-        height: 22px;
-      }
-      &:hover {
-        color: transparent;
-
-        &:before {
-          top: 7px;
-        }
-      }
-    }
-    #logout {
-      background-color: $white;
-
-      &:before {
-        background-image: url('../images/logos/logout.png');
-        height: 22px;
-      }
-      &:hover {
-        color: transparent;
-
-        &:before {
-          top: 7px;
-        }
-      }
     }
   }
 }

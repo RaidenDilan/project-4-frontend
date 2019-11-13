@@ -73,7 +73,6 @@
       }
       .chosenGroupUsers {
         border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-        // border-bottom: 1px solid rgba(0, 0, 0, 0.12);
         padding: 10px 0;
 
         smart-confirm {
@@ -117,9 +116,9 @@
         }
       }
       .groupUsersToAdd {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         -webkit-transition: 0.5s linear all;
-        transition: 0.5s linear all;
+                transition: 0.5s linear all;
 
         &.ng-move,
         &.ng-enter,
@@ -194,17 +193,17 @@
         color: $white;
       }
       .groupsNewButtons {
-        margin-top: 1rem;
+        padding-top: 1rem;
 
-        .md-button {
-          color: $black;
-          background-color: rgba(255, 255, 255, 1);
-
-          &:disabled {
-            color: rgba(255, 255, 255, 0.52);
-            background-color: rgba(255, 255, 255, 0.12);
-          }
-        }
+        // .md-button {
+        //   // color: $black;
+        //   // background-color: rgba(255, 255, 255, 1);
+        //
+        //   &:disabled {
+        //     // color: rgba(255, 255, 255, 0.52);
+        //     // background-color: rgba(255, 255, 255, 0.12);
+        //   }
+        // }
       }
     }
   }

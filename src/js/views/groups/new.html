@@ -1,5 +1,7 @@
 <md-content id="groupsNewBackground">
   <md-card id="groupsNewForm">
+    <back-button></back-button>
+    
     <md-card-title>
       <md-card-title-text>
         <span class="md-headline">New Group</span>
@@ -26,6 +28,7 @@
       </div> -->
 
       <div class="col s6 searchUsers">
+
         <div id="search-bar" ng-show="groupsNew.showPreSearchBar()" class="md-toolbar-tools">
           <md-button ng-click="groupsNew.initiateSearch()">
             <md-icon>search</md-icon>
@@ -34,8 +37,9 @@
         </div>
 
         <div ng-show="groupsNew.showSearchBar()" class="md-toolbar-tools search-bar">
+
           <md-button class="md-icon-button" ng-click="groupsNew.submitSearch()">
-            <md-icon>search</md-icon>
+            <md-icon class="material-icons" arial-label="Enter search bar">search</md-icon>
           </md-button>
 
           <md-input-container flex>
@@ -58,11 +62,11 @@
       </div>
 
       <div
-        class="col s6 groupUsersToAdd"
-        ng-if="(groupsNew.query !== null) && user.id !== main.currentUserId"
+        class="col s6 m6 l6 groupUsersToAdd"
         ng-repeat="user in groupsNew.filtered"
-        ng-show="!groupsNew.chosenUsers.includes(user)"
+        ng-show="(groupsNew.query !== null) && user.id !== main.currentUser.id && !groupsNew.chosenUsers.includes(user.id)"
         >
+        <!-- ng-if="(groupsNew.query !== null) && user.id !== main.currentUser.id" -->
         <div class="userSearchResults" ng-click="groupsNew.addUser(user)">
           <img
             ng-src="{{ user.image_src }}"
@@ -82,7 +86,7 @@
 
       <div
         class="col s6 chosenGroupUsers"
-        ng-if="!user.group && user.id !== main.currentUserId"
+        ng-if="!user.group && user.id !== main.currentUser.id"
         ng-repeat="user in groupsNew.chosenUsers track by $index"
         >
         <div>
