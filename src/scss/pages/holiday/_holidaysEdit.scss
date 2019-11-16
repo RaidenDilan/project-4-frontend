@@ -1,169 +1,19 @@
-#holidaysEditBackground {
-  // background-image: url('../images/background.jpg');
+md-content.holidaysEditBackground {
+  background-image: url('../images/background.jpg');
   @extend .background-styles;
-}
+  @include flexbox(flex, column, center, center);
 
-#holidaysEditForm {
-  width: 50%;
-  padding: 2rem;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.75);
+  md-card.holidaysEditForm {
+    padding: 1rem;
 
-  h1 {
-    text-transform: uppercase;
-    text-align: center;
-    padding-bottom: 25px;
-    font-size: 25px;
-    font-weight: bold;
-    color: $white;
-  }
-  div {
-    input {
-      margin: 5px 0 0 0;
-    }
-  }
-  button {
-    margin-top: 20px;
-  }
-  p {
-    color: $yellow;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.40);
-    margin: 5px auto;
-    border-radius: 10px;
-    text-transform: capitalize;
-  }
+    md-card-title {
+      margin-bottom: 1rem;
+      border-bottom: 2px solid $white;
+      color: $white;
 
-  md-card-title {
-    margin: 0 auto 2.5rem auto;
-    color: $white;
-  }
-  form {
-    .choose {
-      margin: 6px 0;
-
-      &:hover {
-        border: 1px solid $yellow;
-        color: $yellow;
+      h1 {
+        @extend .custom-header;
       }
     }
-    // md-input-container {
-    //   width: 100%;
-    //   margin: 0.5rem 0;
-    //
-    //   input {
-    //     color: $white;
-    //   }
-    // }
-    input {
-      color: $white;
-    }
-    label {
-      width: 100%;
-      margin: 1rem 0;
-      color: $white;
-    }
-    img {
-      background-color: $white;
-      border-radius: 50%;
-      border: 1px solid $white;
-      width: 25px;
-      height: 25px;
-    }
-    h5 {
-      color: $white;
-    }
   }
 }
-
-.backButton {
-  margin: 1rem 0;
-}
-
-// #holidaysEditBackground {
-//   background-image: url('../images/background.jpg');
-//   @extend .background-styles;
-// }
-//
-// #holidayEditForm {
-//   top: 52%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   position: absolute;
-//   background-color: rgba(251, 251, 251, 0.32);
-//   border-radius: 10px;
-//   padding: 10px 40px;
-//   width: 90%;
-//   h1 {
-//     text-transform: uppercase;
-//     text-align: center;
-//     padding-bottom: 25px;
-//     font-size: 40px;
-//     font-weight: bold;
-//     color: $white;
-//   }
-//   div {
-//     input {
-//       margin: 5px 0 0 0;
-//     }
-//   }
-//   button {
-//     margin-top: 20px;
-//   }
-// }
-//
-// #image_four {
-//   margin-bottom: 0;
-//   &:last-of-type {
-//     margin-bottom: 0;
-//   }
-// }
-//
-// .leftColumn {
-//   float: left;
-//   display: block;
-//   clear: left;
-//   width: 48%;
-// }
-//
-// .rightColumn {
-//   float: right;
-//   display: block;
-//   clear: right;
-//   width: 48%;
-// }
-//
-// label {
-//   color: yellow;
-// }
-//
-// #departureDate {
-//   padding: 2.5px;
-// }
-//
-// #returnDate {
-//   padding: 2.5px;
-// }
-//
-// // .departure {
-// //   padding-top: 34px;
-// //   text-align: center;
-// // }
-//
-// // .return {
-// //   text-align: center;
-// //   padding-top: 33px
-// // }
-//
-// #updateHolidayButton {
-//   &:before {
-//     background-image: url('../images/logos/update.png');
-//     height: 22px;
-//   }
-//   &:hover {
-//     color: transparent;
-//   }
-// }

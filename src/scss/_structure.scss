@@ -9,19 +9,121 @@
   z-index: 1;
 }
 
-.formValidation {
+.form-validation {
   font-size: 13px;
   padding-top: 0;
   padding-bottom: 0;
   font-weight: normal;
+  color: $yellow;
 }
 
-.usersImage {
+.user-image {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
-  margin: 0 auto;
+  background-color: $white;
+  width: 35px;
+  height: 35px;
+  // margin: 0 auto;
+  border: 1px solid $white;
   border-radius: 100%;
 }
+
+.chosen-users {
+  padding-top: 0.5rem;
+  color: $white;
+  text-align: center;
+}
+
+.chosen-usersLength {
+  border-top: 1px solid $white;
+  padding: 1rem 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.chosenGroupUsers {
+  padding: 10px 0;
+
+  smart-confirm {
+    display: block;
+    margin: 0;
+  }
+  div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-size: 0.7rem;
+      color: $white;
+    }
+    .md-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 25px;
+      min-width: 25px;
+      height: 25px;
+      min-height: 25px;
+      margin: 0 0.25rem;
+
+      .md-icon {
+        color: $white;
+        font-size: 18px;
+        height: auto;
+        width: auto;
+        min-height: auto;
+        min-width: auto;
+      }
+    }
+  }
+}
+
+.groupUsersToAdd {
+  transition: 0.5s linear all;
+
+  &.ng-move, &.ng-enter, &.ng-leave {
+    transition: all linear 0.1s;
+  }
+  &.ng-leave.ng-leave-active, &.ng-move, &.ng-enter {
+    opacity: 0;
+    max-height: 0;
+  }
+  &.ng-leave, &.ng-move.ng-move-active, &.ng-enter.ng-enter-active {
+    opacity: 1;
+    max-height: 40px;
+  }
+  // Stagger Leave (hide) animation
+  &.ng-leave-stagger {
+    // this will have a 100ms delay between each successive leave animation
+    transition-delay: 0.1s;
+    // in case the stagger doesn't work then these two values must be set to 0 to avoid an accidental CSS inheritance
+    transition-duration: 0s;
+  }
+  // Stagger ENTER ANIMATION
+  &.ng-enter-stagger {
+    // this will have a 100ms delay between each successive enter animation
+    transition-delay: 0.1s;
+    // in case the stagger doesn't work then these two values must be set to 0 to avoid an accidental CSS inheritance
+    transition-duration: 0s;
+  }
+
+  div {
+    padding: 0 1rem;
+    margin: 0.5rem 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    span {
+      padding-left: 1rem;
+      font-size: 0.7rem;
+      color: $white;
+    }
+  }
+}
+
+// .userSearchResults {}

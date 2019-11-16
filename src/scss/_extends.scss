@@ -1,0 +1,16 @@
+.background-styles {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+.custom-header {
+  align-self: center;
+  text-transform: uppercase;
+  color: $white;
+  font-weight: 100;
+  user-select: none;
+}

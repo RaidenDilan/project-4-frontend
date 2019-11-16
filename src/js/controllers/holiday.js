@@ -18,6 +18,9 @@ function HolidaysNewCtrl(Group, User, Holiday, $state, $stateParams, $moment, $a
   vm.holiday.departureDate = new Date();
   vm.holiday.returnDate    = new Date();
 
+  vm.min = $moment().format("YYYY-MM-DD");
+  console.log('vm.min', vm.min);
+
   // vm.holiday.departureDate = $moment(vm.holiday.departureDate).add(1, 'month').format("YYYY-MM-DD");
   // vm.holiday.returnDate = $moment(vm.holiday.returnDate).add(1, 'month').add(7, 'days').format("YYYY-MM-DD");
 

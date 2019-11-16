@@ -1,36 +1,36 @@
-#usersShowBackground {
+md-content.usersShowBackground {
   background-image: url('../images/background.jpg');
   @extend .background-styles;
+  @include flexbox(flex, column, center, center);
 
-  #usersShowSection {
-    width: 50%;
+  md-card.usersShowSection {
+    margin: 0;
     padding: 2rem;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.6);
 
-    md-divider {
-      border-color: $white;
-    }
+    div.userInfo {
+      padding: 0.5rem 0;
+      border-top: 1px solid $white; // #9e9e9e
+      border-bottom: 1px solid $white;
 
-    div {
+      // align-self: center;
+      // text-align: center;
+
       p {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-start;
-        color: $white;
+        // color: $white;
+        color: $yellow;
         font-size: 15px;
-        padding: 5px;
-        margin: 0.5rem auto;
-        border-radius: 5px;
-        text-transform: none;
+        // font-weight: 400;
+        text-transform: uppercase;
 
         strong {
-          margin: 0 1rem;
-          color: $yellow;
+          padding-right: 1rem;
+          // color: $yellow;
+          color: $white;
         }
       }
     }

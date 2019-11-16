@@ -1,158 +1,206 @@
-md-content {
-  .groupsBackground {
-    background-image: url('../images/background.jpg');
-    @extend .background-styles;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+md-content.groupShow {
+  background-image: url('../images/background.jpg');
+  // @extend .background-styles;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100%;
 
-    md-card-title {
-      span {
-        background-color: $background-color;
-        padding: 30px;
-        border-radius: 5px;
-        font-size: 2rem;
-        font-weight: lighter;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        color: $white;
-      }
+  .groupsBackground {
+    height: 100vh;
+    @include flexbox(flex, column, center, center);
+
+    h1 {
+      @extend .custom-header;
+      background-color: $background-color;
+      border-radius: 5px;
+      padding: 1rem;
     }
   }
 
   md-card {
-    // // padding: 20px;
-    // padding: 1rem 0;
-    // margin: 1rem;
-    // border-radius: 5px;
-    // background-color: $brand-color;
-
-    h1 {
-      text-transform: uppercase;
-      text-align: center;
-      font-size: 2em;
-      color: $white;
-      // padding: 0 0 1rem 0;
-      border-bottom: 2px solid $white;
-    }
-
-    &.usersGroupShowOwner {
-      padding: 1rem 0 0 0;
-
-      div {
-        padding: 1rem 0;
-        display: flex;
-        flex-direction: column;
-
-        .creator {
-          // font-size: 1.255rem;
-          text-transform: uppercase;
-          text-align: center;
-          font-size: 2em;
-          color: $white;
-          padding: 0 0 1rem 0;
-          border-bottom: 2px solid $white;
-        }
-        .username {
-          color: $yellow;
-          padding: 0.5rem 0 0 0;
-          text-align: center;
-        }
+    md-card-title {
+      h2 {
+        text-align: center;
+        text-transform: uppercase;
+        color: $white;
+        font-weight: 200;
+        // font-family: 'Roboto', sans-serif;
+        // user-select: none;
       }
     }
-  }
+    md-card-content {
+      display: flex;
+      flex-direction: column;
 
-  .groupsShowButtons {
-    padding: 1rem;
-  }
-
-  .groupShowAttendees {
-    padding: 1rem 0;
-
-    h1 {
-      text-transform: uppercase;
-      text-align: center;
-      font-size: 2em;
-      color: $white;
-      padding: 0 0 1rem 0;
-      // margin-bottom: 10px;
-      border-bottom: 2px solid $white;
-    }
-    div.groupAttendees {
-      padding: 2rem 0 0 0;
-
-      .row {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-    div.groupUsername {
-      padding-top: 10px;
-
-      h3 {
+      .creator {
+        // font-size: 1.255rem;
         text-transform: uppercase;
         text-align: center;
-        margin: 0 auto;
+        font-size: 2em;
         color: $white;
+        padding: 0 0 1rem 0;
+        border-bottom: 2px solid $white;
+      }
+      .username {
+        font-size: 0.75rem;
+        color: $yellow;
+        padding: 0.25rem 0;
+        text-align: center;
+      }
+
+      div.user-image {
+        width: 55px;
+        height: 55px;
+      }
+    }
+    md-card-actions {
+      padding: 1.5rem;
+
+      .md-button {
+        margin: 0;
       }
     }
   }
 
-  .holidaysCreated {
-    padding: 1rem;
+  md-card.usersButtons {
 
-    .row {
-      margin-bottom: 0;
+  }
+
+  md-card.usersGroupShowOwner {
+    .user-image {
+      margin: 0 auto;
     }
   }
 
-  .new-holiday {
-    .content {
-      .content-image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .content-title {
-        font-size: 1.4rem;
-      }
-      .material-icons {
-        font-size: 200px;
-        color: $black;
+  md-card.groupShowAttendees {
+    div {
+      @include flexbox(flex, row, center, center);
+
+      .attendees {
+        padding: 0 0.5rem;
+        @include flexbox(flex, column, center, center);
       }
     }
-  }
 
-  .groupShowHolidays {
-    padding: 0;
-
-    h1 {
+    span {
+      font-size: 0.75rem;
+      color: $yellow;
+      padding: 0.25rem 0;
       text-align: center;
-      text-transform: uppercase;
-      font-size: 2em;
-      color: $white;
-      padding: 1rem 0;
-      border-bottom: 2px solid $white;
     }
-    #holidaysImage {
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      border-radius: 5px;
-      padding: 15%;
-      margin: 20px auto;
-      background-color: $white;
-      border: 3px solid $white;
+
+    .user-image {
+      margin: 0 auto;
+    }
+  }
+
+  md-card.groupShowHolidays {
+
+    md-card-content.holidaysCreated {
+      // @include display-grid;
+      // -ms-grid-columns: 1fr 1fr 1fr;
+      // -ms-grid-rows: 100px 100px;
+      // grid-template-columns: repeat(3, 1fr);
+      // grid-auto-rows: 100px;
+
+      .customRow {
+        // display: flex;
+        // flex-flow: row wrap;
+        // justify-content: flex-start;
+        // align-items: flex-start;
+
+        // &:not(:nth-child(n+4)) {
+        //   margin-bottom: 10px;
+        // }
+        // &:not(:nth-child(3n)) {
+        //   margin-right: 10px;
+        // }
+
+        .new-holiday, .groupHolidays {
+          // margin: auto;
+          // width: calc(100% / 4);
+          // width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+        }
+
+        .new-holiday {
+          // margin: 0 0 1rem 1rem;
+          // display: block;
+          // position: relative;
+          // width: auto;
+
+          .content {
+            .content-image {
+              // width: 300px;
+              height: 300px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            .content-title {
+              font-size: 1.4rem;
+            }
+            .material-icons {
+              font-size: 200px;
+              color: $black;
+            }
+          }
+        }
+        .groupHolidays {
+          // margin: 0 0 1rem 1rem;
+          // display: block;
+          // position: relative;
+          // width: auto;
+
+          .content {
+            .content-image {
+              // width: 300px;
+              height: 300px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            .content-title {
+              font-size: 1.4rem;
+            }
+            .material-icons {
+              font-size: 200px;
+              color: $black;
+            }
+          }
+        }
+        // h1 {
+        //   text-align: center;
+        //   text-transform: uppercase;
+        //   font-size: 2em;
+        //   color: $white;
+        //   padding: 1rem 0;
+        //   // border-bottom: 2px solid $white;
+        // }
+        #holidaysImage {
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-color: $white;
+          border-radius: 5px;
+          padding: 15%;
+          margin: 20px auto;
+          border: 3px solid $white;
+        }
+      }
     }
   }
 }
 
-.groupHolidays {
-  // width: 200px;
-}
+// @supports(display: grid) {
+//   md-card-content.holidaysCreated {
+//     grid-gap: 10px;
+//     margin-right: 0;
+//     margin-bottom: 0;
+//   }
+// }
 
 .container {
   // padding: 1em 0;
@@ -188,18 +236,20 @@ md-content {
   position: relative;
   // width: 90%;
   width: 100%;
-  max-width: 300px;
+  // max-width: 300px;
+  max-width: 100%;
   // margin: auto;
-  margin: 1rem auto;
+  // margin: 1rem auto;
+  // margin: 1rem auto;
   overflow: hidden;
   border: 3px solid $white;
   border-radius: 5px;
 }
 
 .content .content-overlay {
-  // background: rgba(0, 0, 0, 0.7);
-  background-color: rgba(255, 255, 255, 0.25);
-  border: 3px solid $white;
+  background: rgba(0, 0, 0, 0.7);
+  // background-color: rgba(255, 255, 255, 0.25);
+  // border: 1px solid $white;
 
   position: absolute;
   height: 100%;
@@ -257,7 +307,7 @@ md-content {
 }
 
 .content-details h3 {
-  color: #ffffff;
+  color: $white;
   font-size: 1.5em;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -266,7 +316,7 @@ md-content {
 }
 
 .content-details p {
-  color: #ffffff;
+  color: $white;
   font-size: 0.8em;
 }
 

@@ -300,10 +300,8 @@ function GroupsEditCtrl(Group, Membership, User, $stateParams, $state, $auth, $s
   function filterUsers(query) {
     const params = { username: vm.query };
 
-    vm.filtered = searchFilter(vm.availableUsers, query);
+    vm.filtered = $filter('filter')(vm.availableUsers, query);
     if (vm.filtered && vm.filtered.length > 0) vm.filteredLength = vm.filtered.length;
-    // vm.filtered = $filter('filter')(vm.availableUsers, params);
-    // if (vm.filtered && vm.filtered.length > 0) vm.filteredLength = vm.filtered.length;
   }
 
   function clearFilter() {

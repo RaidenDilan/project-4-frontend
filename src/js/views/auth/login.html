@@ -1,17 +1,14 @@
-<md-content id="loginBackground">
+<md-content class="loginBackground">
   <md-card class="loginForm">
+
     <md-card-title>
       <md-card-title-text>
-        <span class="md-headline">Login</span>
+        <h1>Login</h1>
       </md-card-title-text>
     </md-card-title>
 
-    <form
-      name="login.loginForm"
-      ng-submit="login.submit()"
-      novalidate
-      >
-      <div class="col s6">
+    <form class="loginForm" name="login.loginForm" ng-submit="login.submit()" novalidate>
+      <div>
         <md-input-container class="md-block">
           <input
             type="text"
@@ -23,11 +20,12 @@
             >
         </md-input-container>
       </div>
+
       <div class="ng-message-error" ng-messages="login.loginForm.email.$error" ng-show="(login.loginForm.$submitted || login.loginForm.email.$touched)">
-        <p ng-message="required" class="formValidation">Your email is required.</p>
+        <p ng-message="required" class="form-validation">Your email is required.</p>
       </div>
 
-      <div class="cold s6">
+      <div>
         <md-input-container class="md-block">
           <input
             type="password"
@@ -39,8 +37,9 @@
             >
         </md-input-container>
       </div>
+
       <div class="ng-message-error" ng-messages="login.loginForm.password.$error" ng-show="(login.loginForm.$submitted || login.loginForm.password.$touched)">
-        <p ng-message="required" class="formValidation">Your password is required.</p>
+        <p ng-message="required" class="form-validation">Your password is required.</p>
       </div>
 
       <div class="loginBtn">
@@ -54,14 +53,15 @@
       </div>
     </form>
 
-    <div class="oauth">
+    <md-card-actions class="oauth">
       <md-button ng-click="login.authenticate('github')" class="md-raised md-button md-ink-ripple" id="github">Login with Github</md-button>
       <md-button ng-click="login.authenticate('facebook')" class="md-raised md-button md-ink-ripple" id="facebook">Login with Facebook</md-button>
-    </div>
-    <div class="register">
+    </md-card-actions>
+
+    <md-card-content class="register">
       <span>New to this site?</span>
       <a ng-if="!main.isAuthenticated()" ui-sref="register">Sign up!</a>
-    </div>
+    </md-card-content>
 
   </md-card>
 </md-content>

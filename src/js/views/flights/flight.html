@@ -1,26 +1,23 @@
-<md-content id="searchFlightsBackground" style="background-image:url('{{ flightsShow.holiday.image_src }}')">
+<md-content class="searchFlightsBackground" style="background-image:url('{{ flightsShow.holiday.image_src }}')">
   <md-card class="searchFlightsForm">
     <back-button></back-button>
-    <!-- <md-card-title>
+
+    <md-card-title>
       <md-card-title-text>
-        <span class="md-headline">Flights to {{ flightsShow.holiday.location }}</span>
+        <h1>Flights to {{ flightsShow.holiday.location }}</h1>
       </md-card-title-text>
-    </md-card-title> -->
+    </md-card-title>
 
-    <h1>Flights to {{ flightsShow.holiday.location }}</h1>
-
-    <div>
+    <md-card-content>
       <p>
         <span>Best time to go from </span>
         <span id="toGo">{{ flightsShow.holiday.when_to_go }}</span>
       </p>
-    </div>
 
-    <form name="flightsShow.flightsShowForm" class="searchFlightsForm" ng-submit="flightsShow.searchFlights()" novalidate>
-      <div class="col s6 m6 l6">
-        <md-input-container class="md-block">
-          <!-- <label for="departureAirport">From</label> -->
-          <input
+      <form name="flightsShow.flightsShowForm" class="searchFlightsForm" ng-submit="flightsShow.searchFlights()" novalidate>
+        <div>
+          <md-input-container class="md-block">
+            <input
             type="text"
             name="departureAirport"
             id="departureAirport"
@@ -28,69 +25,73 @@
             placeholder="From"
             required
             >
-        </md-input-container>
-        </div>
-
-        <div class="ng-message-error" ng-messages="flightsShow.flightsShowForm.departureAirport.$error" ng-show="(flightsShow.flightsShowForm.$submitted || flightsShow.flightsShowForm.departureAirport.$touched)">
-          <p ng-message="required" class="formValidation">Departure Location is required.</p>
-        </div>
-
-        <div class="col s6 m6 l6">
-          <md-input-container class="md-block">
-            <!-- <label for="arrivalAirport">To</label> -->
-            <input
-              type="text"
-              name="arrivalAirport"
-              id="arrivalAirport"
-              ng-model="flightsShow.holiday.arrivalAirport"
-              placeholder="To"
-              ng-disabled="true"
-              required
-              >
           </md-input-container>
         </div>
 
-        <div class="col s6 m6 l6">
+        <div class="ng-message-error" ng-messages="flightsShow.flightsShowForm.departureAirport.$error" ng-show="(flightsShow.flightsShowForm.$submitted || flightsShow.flightsShowForm.departureAirport.$touched)">
+          <p ng-message="required" class="form-validation">Departure Location is required.</p>
+        </div>
+
+        <div>
           <md-input-container class="md-block">
-            <!-- <label for="departureDate">Outbound</label><br> -->
             <input
-              type="text"
-              name="departureDate"
-              id="departureDate"
+            type="text"
+            name="arrivalAirport"
+            id="arrivalAirport"
+            ng-model="flightsShow.holiday.arrivalAirport"
+            placeholder="To"
+            ng-disabled="true"
+            required
+            >
+          </md-input-container>
+        </div>
+
+        <div>
+          <md-input-container class="md-block">
+            <input
+            type="text"
+            name="departureDate"
+            id="departureDate"
+            ng-model="flightsShow.holiday.departureDate"
+            placeholder="Outbound"
+            ng-min="flightsShow.holiday.departureDate"
+            ng-pattern="flightsShow.dateFormat"
+            required
+            >
+            <!-- <md-datepicker
               ng-model="flightsShow.holiday.departureDate"
-              placeholder="Outbound"
-              ng-pattern="flightsShow.dateFormat"
-              required
+              md-placeholder="Enter date"
               >
+            </md-datepicker> -->
           </md-input-container>
         </div>
 
         <div class="ng-message-error" ng-messages="flightsShow.flightsShowForm.departureDate.$error" ng-show="(flightsShow.flightsShowForm.$submitted || flightsShow.flightsShowForm.departureDate.$touched)">
-          <p ng-message="required" class="formValidation">Departure Date is required</p>
-          <p ng-message="pattern" class="formValidation">Departure Date pattern must be YYYY/MM/DD</p>
+          <p ng-message="required" class="form-validation">Departure Date is required</p>
+          <p ng-message="pattern" class="form-validation">Departure Date pattern must be YYYY/MM/DD</p>
         </div>
 
-        <div class="col s6 m6 l6">
+        <div>
           <md-input-container class="md-block">
-            <!-- <label for="returnDate">Return</label><br> -->
             <input
-              type="text"
-              name="returnDate"
-              id="returnDate"
-              ng-model="flightsShow.holiday.returnDate"
-              placeholder="Return"
-              ng-pattern="flightsShow.dateFormat"
-              required
-              >
+            type="text"
+            name="returnDate"
+            id="returnDate"
+            ng-model="flightsShow.holiday.returnDate"
+            placeholder="Return"
+            ng-min="flightsShow.holiday.returnDate"
+            ng-pattern="flightsShow.dateFormat"
+            required
+            >
           </md-input-container>
         </div>
 
         <div class="ng-message-error" ng-messages="flightsShow.flightsShowForm.returnDate.$error" ng-show="(flightsShow.flightsShowForm.$submitted || flightsShow.flightsShowForm.returnDate.$touched)">
-          <p ng-message="required" class="formValidation">Return Date is required</p>
-          <p ng-message="pattern" class="formValidation">Return Date pattern must be YYYY/MM/DD</p>
+          <p ng-message="required" class="form-validation">Return Date is required</p>
+          <p ng-message="pattern" class="form-validation">Return Date pattern must be YYYY/MM/DD</p>
         </div>
 
-        <div>
+        <md-card-actions>
           <md-button
             class="md-raised md-primary md-button md-ink-ripple"
             ng-click="flightsShow.searchFlights()"
@@ -98,28 +99,42 @@
             >
             Find Flights
           </md-button>
-      </div>
-    </form>
-  </md-card>
-</md-content>
+        </md-card-actions>
+      </form>
+    </md-card-content>
 
-<md-content class="flightsBoard" ng-show="flightsShow.flights.length !== 0">
-  <h1>Flights provided by </h1><a href="https://www.skyscanner.net" target="_blank"><img src="../images/logos/skyscanner.png" alt="skyscanner.png" id="skyscanner"></a>
-  <br>
-  <ul ng-repeat="flight in flightsShow.flights">
-    <li>
-      <div>
-        <h4>Ticket Price</h4>
-        <p><em>Min Price: </em>£{{ flight.MinPrice }}</p>
-        <br>
-        <h4>Outbound Flight</h4>
-        <p><em>Airline: </em>{{ flight.OutboundCarrierName }}</p>
-        <p><em>Departure Date: </em>{{ flight.QuoteDateTime | date:'dd-MM-yyyy' }}</p>
-        <br>
-        <h4>Inbound Flight</h4>
-        <p><em>Airline: </em>{{ flight.InboundCarrierName }}</p>
-        <p><em>Return Date: </em>{{ flight.InboundLeg.DepartureDate | date:'dd-MM-yyyy' }}</p>
-      </div>
-    </li>
-  </ul>
+  </md-card>
+
+  <md-card class="flightsBoard" ng-show="flightsShow.flights.length !== 0">
+
+    <md-card-title class="flights-header">
+      <md-card-title-text>
+        <h1>Flights provided by </h1>
+
+        <a href="https://www.skyscanner.net" target="_blank">
+          <img src="../images/logos/skyscanner.png" alt="skyscanner.png" id="skyscanner">
+        </a>
+      </md-card-title-text>
+    </md-card-title>
+
+    <md-card-content>
+      <ul ng-repeat="flight in flightsShow.flights">
+        <li>
+          <div>
+            <h4>Ticket Price</h4>
+            <p><em>Min Price: </em>£{{ flight.MinPrice }}</p>
+            <br>
+            <h4>Outbound Flight</h4>
+            <p><em>Airline: </em>{{ flight.OutboundCarrierName }}</p>
+            <p><em>Departure Date: </em>{{ flight.QuoteDateTime | date:'dd-MM-yyyy' }}</p>
+            <br>
+            <h4>Inbound Flight</h4>
+            <p><em>Airline: </em>{{ flight.InboundCarrierName }}</p>
+            <p><em>Return Date: </em>{{ flight.InboundLeg.DepartureDate | date:'dd-MM-yyyy' }}</p>
+          </div>
+        </li>
+      </ul>
+    </md-card-content>
+
+  </md-card>
 </md-content>

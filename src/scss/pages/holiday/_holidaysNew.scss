@@ -1,179 +1,19 @@
-#holidaysNewBackground {
+md-content.holidaysNewBackground {
   background-image: url('../images/background.jpg');
   @extend .background-styles;
-}
+  @include flexbox(flex, column, center, center);
 
-#holidaysNewForm {
-  width: 50%;
-  padding: 2rem;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.75);
+  md-card.holidaysNewForm {
+    padding: 1rem;
 
-  h1 {
-    border: 0;
-    text-transform: uppercase;
-    text-align: center;
-    padding-bottom: 25px;
-    font-size: 25px;
-    font-weight: bold;
-    color: $white;
-  }
-  div {
-    input {
-      margin: 5px 0 0 0;
-    }
-  }
-  button {
-    margin-top: 20px;
-  }
-  p {
-    color: $yellow;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.40);
-    margin: 5px auto;
-    border-radius: 10px;
-    text-transform: capitalize;
-  }
+    md-card-title {
+      margin-bottom: 1rem;
+      border-bottom: 2px solid $white;
+      color: $white;
 
-  md-card-title {
-    margin: 0 auto 2.5rem auto;
-    color: $white;
-  }
-  form {
-    .choose {
-      margin: 6px 0;
-
-      &:hover {
-        border: 1px solid $yellow;
-        color: $yellow;
+      h1 {
+        @extend .custom-header;
       }
     }
-    // md-input-container {
-    //   width: 100%;
-    //   margin: 0.5rem 0;
-    //
-    //   input {
-    //     color: $white;
-    //   }
-    // }
-    input {
-      color: $white;
-    }
-    label {
-      width: 100%;
-      margin: 1rem 0;
-      color: $white;
-    }
-    img {
-      background-color: $white;
-      border-radius: 50%;
-      border: 1px solid $white;
-      width: 25px;
-      height: 25px;
-    }
-    h5 {
-      color: $white;
-    }
   }
 }
-
-.backButton {
-  margin: 1rem 0;
-}
-
-// md-datepicker {
-//   md-icon {
-//     color: $white;
-//   }
-//   .md-datepicker-input-container {
-//     input, input::-webkit-input-placeholder {
-//       color: $white;
-//     }
-//     .md-datepicker-expand-triangle {
-//       border-top-color: $white;
-//     }
-//   }
-// }
-
-// .md-calendar-date {
-//   // width: 75px;
-// }
-// .md-calendar-scroll-mask {
-//   // width: 100%;
-// }
-// .md-virtual-repeat-container {
-//   // width: 100%;
-// }
-// .md-virtual-repeat-container .md-virtual-repeat-scroller {
-//   // width: 100%;
-// }
-// md-datepicker, ._md-datepicker-has-triangle-icon {
-//   // width: 100px;
-//   // display: flex;
-//   // flex-flow: row nowrap;
-//   // justify-content: center;
-//   // align-items: center;
-// }
-// .md-datepicker-input-container {
-//   // width: 100px;
-// }
-// .md-calendar-day-header {
-//   thead {
-//     tr {
-//       th {
-//         // padding: 10px 0px;
-//         // height: auto;
-//         // height: 25px;
-//       }
-//     }
-//   }
-// }
-// .md-datepicker-calendar-pane {
-//
-// }
-// .md-datepicker-calendar-pane.md-pane-open {
-//   position: fixed;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-// }
-// .md-icon-button + .md-datepicker-input-container {
-//   // margin: 0;
-//
-//   input {
-//     // width: 100%;
-//   }
-// }
-// .md-calendar-scroll-mask {
-//   // width: auto !important;
-// }
-
-// .datepickerdemoBasicUsage {
-//   /** Demo styles for mdCalendar. */
-// }
-// .datepickerdemoBasicUsage md-content {
-//   padding-bottom: 200px;
-// }
-// .datepickerdemoBasicUsage .validation-messages {
-//   font-size: 11px;
-//   color: darkred;
-//   margin: 10px 0 0 25px;
-// }
-// .md-calendar-day-header {
-//   background-color: #7D9BC1;
-// }
-//
-// .md-default-theme .md-calendar-date.md-calendar-selected-date .md-calendar-date-selection-indicator,
-// .md-calendar-date.md-calendar-selected-date .md-calendar-date-selection-indicator,
-// .md-default-theme .md-calendar-date.md-focus.md-calendar-selected-date .md-calendar-date-selection-indicator,
-// .md-calendar-date.md-focus.md-calendar-selected-date .md-calendar-date-selection-indicator {
-//   background: #105FA8;
-// }
-//
-// .md-default-theme .md-datepicker-open .md-datepicker-calendar-icon,
-// .md-datepicker-open .md-datepicker-calendar-icon {
-//   fill: #105FA8;
-// }

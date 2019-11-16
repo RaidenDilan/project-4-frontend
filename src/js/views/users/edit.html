@@ -1,13 +1,13 @@
-<md-content id="usersEditBackground">
-  <md-card id="usersEditSection">
+<md-content class="usersEditBackground">
+  <md-card class="usersEditSection">
 
     <md-card-title>
       <md-card-title-text>
-        <span class="md-headline">Edit Profile</span>
+        <h1>Edit Profile</h1>
       </md-card-title-text>
     </md-card-title>
 
-    <div style="background-image:url('{{ usersEdit.user.image_src }}')" id="userImage"></div>
+    <!-- <div style="background-image:url('{{ usersEdit.user.image_src }}')" id="userImage"></div> -->
 
     <form
       name="usersEdit.usersEditForm"
@@ -28,10 +28,6 @@
         </md-input-container>
       </div>
 
-      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.username.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.username.$touched)">
-        <p ng-message="required" class="formValidation">Username is required</p>
-      </div>
-
       <div class="col s6">
         <md-input-container class="md-block">
           <input
@@ -45,8 +41,8 @@
         </md-input-container>
       </div>
       <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.email.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.email.$touched)">
-        <p ng-message="required" class="formValidation">Email is required</p>
-        <p ng-message="email" class="formValidation">A valid email is required</p>
+        <p ng-message="required" class="form-validation">Email is required</p>
+        <p ng-message="email" class="form-validation">A valid email is required</p>
       </div>
 
       <div class="col s6">
@@ -56,13 +52,16 @@
             name="password"
             id="password"
             ng-model="usersEdit.user.password"
+            minlength="4"
+            ng-minlength="4"
             placeholder="Password"
             required
             >
         </md-input-container>
       </div>
+
       <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.password.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.password.$touched)">
-        <p ng-message="required" class="formValidation">Password is required</p>
+        <p ng-message="required" class="form-validation">Password is required</p>
       </div>
 
       <div class="col s6">
@@ -72,13 +71,16 @@
             name="password_confirmation"
             id="password_confirmation"
             ng-model="usersEdit.user.password_confirmation"
+            minlength="4"
+            ng-minlength="4"
             placeholder="Password Confirmation"
             required
             >
         </md-input-container>
       </div>
+
       <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.password_confirmation.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.password_confirmation.$touched)">
-        <p ng-message="required" class="formValidation">Password Confirmation is required</p>
+        <p ng-message="required" class="form-validation">Password Confirmation is required</p>
       </div>
 
       <div class="col s6">
@@ -93,9 +95,6 @@
             >
         </md-input-container>
       </div>
-      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.airport.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.airport.$touched)">
-        <p ng-message="required" class="formValidation">Prefered airport is required</p>
-      </div>
 
       <div class="col s6">
         <md-input-container class="md-block">
@@ -105,6 +104,7 @@
             id="bio"
             ng-model="usersEdit.user.bio"
             rows="2"
+            maxlength="150"
             md-maxlength="150"
             md-select-on-focus
             placeholder="Write your bio"
@@ -112,10 +112,6 @@
             >
           </textarea>
         </md-input-container>
-      </div>
-
-      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.bio.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.bio.$touched)">
-        <p ng-message="required" class="formValidation">Biography is required</p>
       </div>
 
       <div class="choose button">
@@ -126,7 +122,7 @@
           base64
           name="base64"
           id="base64"
-          placeholder="Profile image link.."
+          placeholder="Upload a profile image"
           ng-model="usersEdit.user.base64"
           >
       </div>
@@ -135,6 +131,7 @@
         <md-button
           class="md-raised md-primary md-button md-ink-ripple"
           ng-click="usersEdit.update()"
+          ng-disabled="usersEdit.usersEditForm.$invalid"
           id="updateUser"
           >
           Update

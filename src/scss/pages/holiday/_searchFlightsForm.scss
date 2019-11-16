@@ -1,115 +1,123 @@
-#searchFlightsBackground {
-  @extend .background-styles;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+md-content.searchFlightsBackground {
+  // @extend .background-styles;
+  @include flexbox(flex, column, center, center);
 
-  md-card-title {
-    span {
-      // background-color: $background-color;
-      // padding: 30px;
-      // border-radius: 5px;
-      // font-size: 2rem;
-      // font-weight: lighter;
-      // text-align: center;
-      // text-transform: uppercase;
-      // letter-spacing: 4px;
-      // color: $white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  // height: 100%;
+
+  md-card {
+    display: block;
+    position: relative;
+
+    padding: 1rem;
+    margin: 7rem 1rem;
+    height: unset;
+  }
+
+  md-card.searchFlightsForm {
+    // padding: 1rem;
+    // margin: 7rem 1rem;
+    // height: unset;
+
+    md-card-title {
+      padding: 0;
+      border-bottom: 0;
+
+      h1 {
+        margin: 0;
+        @extend .custom-header;
+        font-size: 2rem;
+      }
+    }
+    md-card-content {
+      padding: 0;
+
+      p {
+        text-align: center;
+        padding: 0 0 1rem 0;
+        line-height: 2rem;
+
+        span:first-child {
+          color: $white;
+          // font-size: calc(2vw - 5px);
+        }
+        span:last-child {
+          color: $yellow;
+          // font-size: calc(2vw - 5px);
+        }
+      }
+      form label {
+        // font-size: 0.9rem;
+      }
+    }
+    md-card-actions {
+      padding: 0;
+      margin: 0;
     }
   }
-  md-card.searchFlightsForm {
-    // margin: 0 auto;
-    // background-color: rgba(0, 0, 0, 0.9);
+  md-card.flightsBoard {
+    // @include flexbox(flex, column, center, center);
+    // // background-color: rgba(0, 0, 0, 0.75);
+    // // font-family: 'Space Mono', monospace;
+    // text-transform: uppercase;
+    // padding: 0 0 1rem 0;
     // border-radius: 10px;
-    // padding: 40px 50px;
+    // letter-spacing: 2px;
+    // margin: 2.5rem auto;
     // width: 75%;
 
-    width: 50%;
-    padding: 2rem;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem;
 
-    h1 {
-      border: 0;
-      // text-align: center;
-      padding-bottom: 25px;
-      font-size: 30px;
-      font-weight: bold;
-      color: $white;
+    md-card-title {
+      padding: 0;
+      border-bottom: 0;
+
+      h1 {
+        @extend .custom-header;
+        font-size: 2rem;
+        margin: 0;
+      }
+      a {
+        margin: 0 auto;
+
+        img {
+          // width: 300px;
+        }
+      }
+    }
+    // md-card-content {}
+
+    div.flights-header {
+      @include flexbox(flex, row, center, center);
+      // margin-bottom: 1rem;
+    }
+
+    h4 {
+      // font-size: 25px;
+      padding-bottom: 10px;
+      text-align: center;
     }
     p {
-      padding: 0;
+      text-align: center;
       color: $white;
-      text-transform: capitalize;
-
-      span:first-child {
-        color: $white;
-      }
-      span:last-child {
-        color: $yellow;;
-      }
-    }
-    form {
-      input {
-        color: $white;
-      }
-      input[disabled] {
-        cursor: no-drop;
-        border-bottom: 1px solid #9e9e9e;
-      }
-      label {
-        text-align: center;
-        color: $white;
-      }
-    }
-  }
-}
-
-md-content.flightsBoard {
-  background-color: rgba(0, 0, 0, 0.2);
-  font-family: 'Space Mono', monospace;
-  text-transform: uppercase;
-  padding: 20px;
-  border-radius: 10px;
-  letter-spacing: 2px;
-  margin: 25px auto 50px auto;
-  width: 75%;
-
-  h1 {
-    color: $white;
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 20px;
-  }
-  h4 {
-    font-size: 25px;
-    padding-bottom: 10px;
-    text-align: center;
-  }
-  p {
-    color: $white;
-    background-color: rgba(26, 24, 24, 0.40);
-    padding: 5px 0;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  em {
-    color: $yellow;
-  }
-  #skyscanner {
-    width: 16%;
-    display: inline;
-    float: right;
-    margin-top: -48px;
-    margin-right: 180px;
-    outline: none;
-
-    &:hover {
-      background-color: $white;
+      background-color: rgba(26, 24, 24, 1);
+      font-size: 0.65rem;
+      // background-color: rgba(26, 24, 24, 0.4);
+      // background-color: red;
+      padding: 5px 0;
       border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    em {
+      color: $yellow;
+    }
+    #skyscanner {
+      width: 200px;
     }
   }
+  // .md-datepicker-calendar-pane.md-pane-open {}
 }

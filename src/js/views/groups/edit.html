@@ -1,18 +1,19 @@
-<md-content id="groupsEditBackground">
-  <md-card id="groupsEditForm">
+<md-content class="groupsEditBackground">
+  <md-card>
     <back-button></back-button>
-    
+
     <md-card-title>
       <md-card-title-text>
-        <span class="md-headline">Edit Group</span>
+        <h1>Edit Group</h1>
       </md-card-title-text>
     </md-card-title>
 
-    <form name="groupsEdit.groupsEditForm" class="groupsEditForm" ng-submit="groupsEdit.update()" novalidate>
+    <md-card-content>
+      <form name="groupsEdit.groupsEditForm" class="groupsEditForm" ng-submit="groupsEdit.update()" novalidate>
 
-      <div class="col s6">
-        <md-input-container class="md-block">
-          <input
+        <div class="col s6">
+          <md-input-container class="md-block">
+            <input
             type="name"
             name="name"
             id="name"
@@ -20,98 +21,91 @@
             placeholder="Group Name"
             required
             >
-        </md-input-container>
+          </md-input-container>
+        </div>
+      </form>
+
+      <div class="col s6 searchUsers">
+
+        <div id="search-bar" ng-show="groupsEdit.showPreSearchBar()" class="md-toolbar-tools">
+          <md-button ng-click="groupsEdit.initiateSearch();">
+            <md-icon>search</md-icon>
+            <span>Search Users</span>
+          </md-button>
+        </div>
+
+        <div ng-show="groupsEdit.showSearchBar()" class="md-toolbar-tools search-bar">
+
+          <md-button class="md-icon-button" ng-click="groupsEdit.submitSearch()">
+            <md-icon class="material-icons" arial-label="Enter search bar">search</md-icon>
+          </md-button>
+
+          <md-input-container flex>
+            <input
+              id="search-input"
+              type="text"
+              class="search"
+              name="groupsEdit.groupsSearchUsers"
+              ng-model="groupsEdit.query"
+              placeholder="Search for users..."
+              aria-label="Search for properties"
+              />
+            <div ng-show="groupsEdit.filteredLength > 0" class="md-char-counter">{{ groupsEdit.filteredLength }} / {{ groupsEdit.availableUsersLength }}</div>
+          </md-input-container>
+
+          <md-button class="md-icon-button" ng-click="groupsEdit.endSearch()">
+            <md-icon>close</md-icon>
+          </md-button>
+        </div>
       </div>
 
-      <!-- <div class="ng-message-error" ng-messages="groupsEdit.groupsEditForm.name.$error" ng-show="(groupsEdit.groupsEditForm.$submitted || groupsEdit.groupsEditForm.name.$touched)">
-        <p ng-message="required" class="formValidation">Your group name is required.</p>
-      </div> -->
-    </form>
-
-    <div class="col s6 searchUsers">
-
-      <div id="search-bar" ng-show="groupsEdit.showPreSearchBar()" class="md-toolbar-tools">
-        <md-button ng-click="groupsEdit.initiateSearch();">
-          <md-icon>search</md-icon>
-          <span>Search Users</span>
-        </md-button>
+      <div
+        class="col s6 m6 l6 groupUsersToAdd"
+        ng-repeat="user in groupsEdit.filtered"
+        ng-show="(groupsEdit.query !== null) && user.id !== main.currentUser.id && !groupsEdit.groupUsers.includes(user)"
+        >
+        <div class="userSearchResults" ng-click="groupsEdit.addUser(user)">
+          <img
+            ng-src="{{ user.image_src }}"
+            alt="{{ user.username }}"
+            class="user-image"
+            >
+          <span>{{ user.username }}</span>
+        </div>
       </div>
 
-      <div ng-show="groupsEdit.showSearchBar()" class="md-toolbar-tools search-bar">
-
-        <md-button class="md-icon-button" ng-click="groupsEdit.submitSearch()">
-          <md-icon class="material-icons" arial-label="Enter search bar">search</md-icon>
-        </md-button>
-
-        <md-input-container flex>
-          <input
-            id="search-input"
-            type="text"
-            class="search"
-            name="groupsEdit.groupsSearchUsers"
-            ng-model="groupsEdit.query"
-            placeholder="Search for users..."
-            aria-label="Search for properties"
-            />
-          <div ng-show="groupsEdit.filteredLength > 0" class="md-char-counter">{{ groupsEdit.filteredLength }} / {{ groupsEdit.availableUsersLength }}</div>
-        </md-input-container>
-
-        <md-button class="md-icon-button" ng-click="groupsEdit.endSearch()">
-          <md-icon>close</md-icon>
-        </md-button>
+      <div class="chosen-users">
+        <span class="md-title">Chosen Users:</span>
       </div>
-    </div>
 
-    <md-devider></md-devider>
+      <div
+        class="col s6 chosenGroupUsers"
+        ng-show="user.id !== main.currentUser.id"
+        ng-repeat="user in groupsEdit.groupUsers track by $index"
+        >
+        <div>
+          <img
+            ng-src="{{ user.image_src }}"
+            alt="{{ user.username }}"
+            class="user-image"
+            >
+          <span>{{ user.username }}</span>
 
-    <div
-      class="col s6 m6 l6 groupUsersToAdd"
-      ng-if="(groupsEdit.query !== null) && user.id !== main.currentUser.id"
-      ng-repeat="user in groupsEdit.filtered"
-      ng-show="!groupsEdit.groupUsers.includes(user)"
-      >
-      <div class="userSearchResults" ng-click="groupsEdit.addUser(user)">
-        <img
-          ng-src="{{ user.image_src }}"
-          alt="{{ user.username }}"
-          class="addUserImage"
-          style="width: 40px; height: 40px;"
-          >
-        <h5>{{ user.username }}</h5>
+          <smart-confirm confirm="groupsEdit.removeUser(user)">
+            <md-icon class="material-icons">close</md-icon>
+          </smart-confirm>
+        </div>
       </div>
-    </div>
 
-    <md-divider></md-divider>
-
-    <div class="chosenUsers">
-      <span class="md-title">Chosen Users:</span>
-    </div>
-
-    <div
-      class="col s6 chosenGroupUsers"
-      ng-show="user.id !== main.currentUser.id"
-      ng-repeat="user in groupsEdit.groupUsers track by $index"
-      >
-      <div>
-        <img
-          ng-src="{{ user.image_src }}"
-          alt="{{ user.username }}"
-          class="chosenUsersImage"
-          style="width: 40px; height: 40px;"
-          >
-        <h5>{{ user.username }}</h5>
-
-        <smart-confirm confirm="groupsEdit.removeUser(user)">
-          <md-icon class="material-icons">close</md-icon>
-        </smart-confirm>
+      <div class="chosen-usersLength md-char-counter" ng-show="groupsEdit.groupUsers.length > 0">
+        <span>{{ groupsEdit.groupUsers.length }} Users</span>
       </div>
-    </div>
 
-    <div class="chosenUsersLength md-char-counter" ng-show="groupsEdit.groupUsers.length > 0">{{ groupsEdit.groupUsers.length }} Users</div>
+      <div class="col s6 groupsNewButtons">
+        <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="groupsEdit.update()" ng-disabled="groupsEdit.groupsEditForm.$invalid"><i class="material-icons left"></i>Update</md-button>
+        <!-- <md-button class="md-raised" ng-click="groupsEdit.group = {}"><i class="material-icons left"></i>Clear Form</md-button> -->
+      </div>
+    </md-card-content>
 
-    <div class="col s6 groupsNewButtons">
-      <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="groupsEdit.update()" ng-disabled="groupsEdit.groupsEditForm.$invalid"><i class="material-icons left"></i>Update</md-button>
-      <!-- <md-button class="md-raised" ng-click="groupsEdit.group = {}"><i class="material-icons left"></i>Clear Form</md-button> -->
-    </div>
   </md-card>
 </md-content>

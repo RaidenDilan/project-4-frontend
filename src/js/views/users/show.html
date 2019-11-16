@@ -1,8 +1,6 @@
-<md-content id="usersShowBackground">
-  <md-card id="usersShowSection">
+<md-content class="usersShowBackground">
+  <md-card class="usersShowSection">
     <div style="background-image: url('{{ usersShow.user.image_src }}');" id="userImage"></div>
-
-    <md-divider></md-divider>
 
     <div class="userInfo">
       <p><strong>Email: </strong>{{usersShow.user.email}}</p>
@@ -10,8 +8,6 @@
       <p><strong>Bio: </strong>{{ usersShow.user.bio }}</p>
       <p><strong>Preferred Airport: </strong>{{ usersShow.user.airport }}</p>
     </div>
-
-    <md-divider></md-divider>
 
     <div class="usersShowButtons">
       <a

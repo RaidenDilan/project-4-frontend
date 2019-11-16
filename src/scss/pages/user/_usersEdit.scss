@@ -1,61 +1,18 @@
-#usersEditBackground {
+md-content.usersEditBackground {
   background-image: url('../images/background.jpg');
   @extend .background-styles;
+  @include flexbox(flex, column, center, center);
 
-  #usersEditSection {
-    width: 50%;
-    padding: 2rem;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.6);
+  md-card {
+    padding: 1rem;
 
     md-card-title {
-      margin: 0 auto 1rem auto;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid $white;
       color: $white;
-    }
 
-    form {
-      .choose {
-        margin: 0;
-
-        &:hover {
-          border: 1px solid $yellow;
-          color: $yellow;
-        }
-      }
-      md-input-container {
-        width: 100%;
-        margin: 0.5rem 0;
-        color: $white;
-
-        input[type='password'] {
-          font-size: 16px;
-        }
-        input[type='file'] {
-          display: none;
-          border: 1px solid $yellow;
-        }
-        input {
-          border-color: $white;
-          color: $white;
-        }
-        textarea, label {
-          color: $white;
-        }
-
-        .md-errors-spacer {
-          min-height: auto;
-        }
-      }
-    }
-
-    .usersEditButton {
-      margin: 6px 0;
-
-      .md-button {
-        margin: 6px 0;
+      h1 {
+        @extend .custom-header;
       }
     }
   }

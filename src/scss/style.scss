@@ -1,14 +1,19 @@
 @import 'reset';
 @import 'variables';
-// @import 'mixins';
-// @import 'fluidVerticalRhythem';
+// @import 'mixins/grid';
+// @import 'mixins/grid-1';
+@import 'mixins/grid-layout';
+// @import 'mixins/fluid-typography';
+@import 'mixins/fluidVerticalRhythem';
+@import 'mixins/grid-layout';
+@import 'mixins/simple-mixins';
 @import 'typography';
 @import 'structure';
 @import 'material';
+@import 'extends';
 
 @import 'modules/button';
 @import 'modules/header';
-@import 'modules/extends';
 @import 'modules/forms';
 @import 'modules/footer';
 

@@ -1,85 +1,89 @@
-<md-content>
-  <div class="holidaysBackground" id="holidaysBackground" style="background-image:url('{{ holidaysShow.holiday.image_src }}')">
-    <md-card-title>
+<md-content class="holidaysShowBackground" style="background-image:url('{{ holidaysShow.holiday.image_src }}')">
+
+  <div class="holidaysBackground">
+    <h1>Welcome to {{ holidaysShow.holiday.location }}</h1>
+    <!-- <md-card-title>
       <md-card-title-text>
-        <span class="md-headline">Welcome to {{ holidaysShow.holiday.location }}</span>
+        <h1>Welcome to {{ holidaysShow.holiday.location }}</h1>
       </md-card-title-text>
-    </md-card-title>
+    </md-card-title> -->
   </div>
 
-  <md-card id="holidaysShow">
-    <div class="info-container">
+  <md-card class="holidaysShow">
+    <md-card-content class="info-container">
       <div class="info">
         <div>
-          <h2>Closest Airport</h2>
-          <p>{{ holidaysShow.holiday.arrivalAirport }}</p>
+          <h3>Closest Airport</h3>
+          <h5>{{ holidaysShow.holiday.arrivalAirport }}</h5>
         </div>
         <div>
-          <h2>Attractions</h2>
-          <p>{{ holidaysShow.holiday.attractions }}</p>
+          <h3>Attractions</h3>
+          <h5>{{ holidaysShow.holiday.attractions }}</h5>
         </div>
         <div>
-          <h2>Best time of the year</h2>
-          <p>{{ holidaysShow.holiday.when_to_go }}</p>
+          <h3>Best time of the year</h3>
+          <h5>{{ holidaysShow.holiday.when_to_go }}</h5>
         </div>
       </div>
-    </div>
+    </md-card-content>
   </md-card>
 
-  <md-card id="holidaysShowButtonsSection">
-    <div id="holidaysShowButtons">
-      <div id="holidayButtons">
-        <md-button
-          id="getFlights"
-          class="md-raised md-primary md-button md-ink-ripple"
-          ui-sref="flightsShow({ id: holidaysShow.group.id, holidayId: holidaysShow.holiday.id })"
-          >
-          Get Flights
-        </md-button>
-        <md-button
-          id="editHoliday"
-          class="md-raised md-primary md-button md-ink-ripple"
-          ui-sref="holidaysEdit({ id: holidaysShow.group.id, holidayId: holidaysShow.holiday.id })"
-          ng-if="main.isAuthenticated() && main.currentUser.id === holidaysShow.holiday.user.id"
-          >
-          Edit Holiday
-        </md-button>
-        <md-button
-          ng-if="main.isAuthenticated() && main.currentUser.id === holidaysShow.holiday.user.id"
-          ng-click="holidaysShow.delete()"
-          id="deleteHoliday"
-          class="md-raised md-warn md-button md-ink-ripple"
-          >
-          Delete Holiday
-        </md-button>
-      </div>
-    </div>
+  <md-card class="holidaysShowButtons">
+    <md-card-actions id="holidayButtons">
+      <md-button
+        id="getFlights"
+        class="md-raised md-primary md-button md-ink-ripple"
+        ui-sref="flightsShow({ id: holidaysShow.group.id, holidayId: holidaysShow.holiday.id })"
+        >
+        Get Flights
+      </md-button>
+      <md-button
+        id="editHoliday"
+        class="md-raised md-primary md-button md-ink-ripple"
+        ui-sref="holidaysEdit({ id: holidaysShow.group.id, holidayId: holidaysShow.holiday.id })"
+        ng-if="main.isAuthenticated() && main.currentUser.id === holidaysShow.holiday.user.id"
+        >
+        Edit Holiday
+      </md-button>
+      <md-button
+        ng-if="main.isAuthenticated() && main.currentUser.id === holidaysShow.holiday.user.id"
+        ng-click="holidaysShow.delete()"
+        id="deleteHoliday"
+        class="md-raised md-warn md-button md-ink-ripple"
+        >
+        Delete Holiday
+      </md-button>
+    </md-card-actions>
   </md-card>
 
   <md-card class="createdBy">
-    <h1>Created By</h1>
+    <md-card-title>
+      <md-card-title-text>
+        <h1>Created By</h1>
+      </md-card-title-text>
+    </md-card-title>
 
-    <div class="holidayCreatedBy">
-      <div
-        style="background-image:url('{{ holidaysShow.holiday.user.image_src }}')"
-        class="usersImage"
-        >
-      </div>
+    <md-card-content class="holidayCreatedBy">
+      <div class="user-image" style="background-image:url('{{ holidaysShow.holiday.user.image_src }}')"></div>
       <span>{{ holidaysShow.holiday.user.username }}</span>
-    </div>
+    </md-card-content>
   </md-card>
 
-  <md-card id="holidaysShowReviews">
-    <h1 ng-if="holidaysShow.holiday.comments.length > 0">Reviews</h1>
+  <md-card class="holidaysShowReviews">
+    <md-card-title ng-if="holidaysShow.holiday.comments.length > 0">
+      <md-card-title-text>
+        <h1>Reviews</h1>
+      </md-card-title-text>
+    </md-card-title>
 
-    <div>
+    <md-card-content>
       <div class="reviews" ng-if="holidaysShow.holiday.comments.length > 0">
         <ul ng-repeat="comment in holidaysShow.holiday.comments" class="comment">
           <li>
 
             <div class="comment-container">
               <div class="comment-header">
-                <div class="commentImage usersImage" style="background-image:url('{{ comment.user.image.url }}')"></div>
+                <div class="commentImage user-image" style="background-image:url('{{ comment.user.image.url }}')"></div>
                 <span class="commentBy">{{ comment.user.username }}</span>
                 <span class="commentTimestamp">{{ comment.created_at }}</span>
               </div>
@@ -88,35 +92,39 @@
                 <span class="commentBody">{{ comment.body }}</span>
               </div>
 
-              <smart-confirm
-                confirm="holidaysShow.deleteComment(comment)"
-                ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id"
-                >
-                <md-icon class="material-icons">close</md-icon>
-              </smart-confirm>
+              <div class="comment-footer">
+                <smart-confirm
+                  confirm="holidaysShow.deleteComment(comment)"
+                  ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id"
+                  >
+                  <md-icon class="material-icons">close</md-icon>
+                </smart-confirm>
+              </div>
             </div>
 
           </li>
         </ul>
       </div>
 
-      <div id="AddComment">
+      <div class="postComment">
         <div ng-if="main.isAuthenticated()">
           <h2>Add Comment</h2>
 
           <form ng-submit="holidaysShow.addComment()">
-            <div class="col s6">
+            <div>
               <md-input-container class="md-block">
                 <textarea
                   type="text"
                   name="body"
                   id="body"
                   ng-model="holidaysShow.newComment.body"
-                  rows="2"
+                  rows="4"
+                  maxlength="150"
                   md-maxlength="150"
                   md-select-on-focus
                   placeholder="Post a comment"
                   aria-label="Post a Comment"
+                  required
                   >
                 </textarea>
               </md-input-container>
@@ -131,6 +139,6 @@
           </form>
         </div>
       </div>
-    </div>
+    </md-card-content>
   </md-card>
 </md-content>

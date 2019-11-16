@@ -1,0 +1,167 @@
+// // Here is a grid system
+// // Relying on `calc()` (http://caniuse.com/#search=calc)
+// // and advanced CSS selectors (http://caniuse.com/#feat=css-sel3)
+// // Expect it to work on IE9+, Android 4.4+ and any other browsers
+//
+//
+// // Applying a clean box-model to all elements
+// * {
+//   box-sizing: border-box;
+// }
+//
+// // Grid configuration
+// $grid-gutter     :  10px !default;
+// $grid-columns    :    12 !default;
+// $grid-children   : 'div' !default;
+// $grid-breakpoint :  48em !default;
+//
+// // Creating placeholders
+// // For all columns of the grid
+// @for $i from 1 through $grid-columns {
+//   %grid-col-#{$i} {
+//     $multiplier: $i / $grid-columns;
+//     width: calc(100% * #{$multiplier} - #{$grid-gutter} * (1 - #{$multiplier}));
+//   }
+// }
+//
+// // Parent, grid wrapper
+// %grid-parent {
+//   overflow: hidden;
+// }
+//
+// // Children, grid columns
+// %grid-child {
+//   float: left;
+//   margin-right: $grid-gutter;
+// }
+//
+// // Last child from grid
+// %grid-last-child {
+//   margin-right: 0;
+// }
+//
+// // Instanciate placeholder inside a media query
+// // So it can be extended from within the same media query elsewhere in the CSS
+// // This aims at reducing CSS output by merging all those rules
+// @media (max-width: $grid-breakpoint) {
+//   %grid-fallback > #{$grid-children} {
+//     width: 100% !important;
+//     float: none;
+//     margin-right: 0;
+//   }
+// }
+//
+//
+// // Mixin to be called on parent
+// // Will use :nth-of-type selectors to define columns width
+// // e.g. grid(1, 2, 4, 5) will result in
+// // | 1 |  2   |     4      |       5       |
+// @mixin grid($cols...) {
+//   // Clearing inner floats
+//   @extend %grid-parent;
+//
+//   // Direct children (default 'div')
+//   > #{$grid-children} {
+//     @extend %grid-child;
+//
+//     // Setting columns
+//     @for $i from 1 through length($cols) {
+//       &:nth-of-type(#{$i}n) {
+//         @extend %grid-col-#{nth($cols, $i)};
+//       }
+//     }
+//
+//     // Cancelling right margin on last element from each row
+//     &:nth-of-type(#{length($cols)}n) {
+//       @extend %grid-last-child;
+//     }
+//   }
+//
+//   // Small screens
+//   @media (max-width: $grid-breakpoint) {
+//     @extend %grid-fallback;
+//   }
+// }
+//
+// .grid-main {
+//   padding: $grid-gutter;
+// }
+//
+// // Including the mixin
+// // First col: 2 on 12
+// // Second col: 8 on 12
+// // Last col: 2 on 12
+// .grid-wrapper {
+//   @include grid(2, 8, 2);
+// }
+//
+// // Including the mixin for inner grid
+// // Specifying the pattern for a single row
+// // Which will be repeated for next rows
+// .grid-main {
+//   @include grid(2, 4, 2, 4);
+//   padding-bottom: 0;
+// }
+//
+// // Including the mixin for inner grid
+// // Specifying the pattern for a single row
+// // Which will be reopeat for next rows
+// .footer {
+//   @include grid(4, 4, 4);
+// }
+//
+// .header {
+//   @include grid(2, 10);
+// }
+//
+// .footer,
+// .header {
+//   margin: $grid-gutter 0;
+// }
+//
+// .sidebar, .aside {
+//   min-height: calc(5em * 3 + 4 * #{$grid-gutter}); // Strictly relative to demo
+// }
+//
+// .block {
+//   min-height: 5em;
+//   margin-bottom: $grid-gutter;
+// }
+//
+//
+// .col {
+//   min-height: 2em;
+// }
+//
+// body {
+//   padding: 0 $grid-gutter;
+// }
+//
+//
+// // Colors
+// .header,
+// .footer {
+//   background: #7f8c8d;
+// }
+//
+// .sidebar,
+// .aside {
+//   background: #1abc9c;
+// }
+//
+// .grid-main {
+//   background: #3498db;
+// }
+//
+// .block {
+//   background: #34495e;
+// }
+//
+// .col {
+//   background: darken(#7f8c8d, 20%);
+// }
+//
+// .p {
+//   text-align: center;
+//   font-family: Arial, sans-serif;
+// }

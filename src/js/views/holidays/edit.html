@@ -1,131 +1,119 @@
-<md-content id="holidaysEditBackground" style="background-image:url('{{ holidaysEdit.holiday.image_src }}')">
-  <md-card id="holidaysEditForm">
+<md-content class="holidaysEditBackground" style="background-image:url('{{ holidaysEdit.holiday.image_src }}')">
+  <md-card class="holidaysEditForm">
     <back-button></back-button>
 
+    <md-card-title>
+      <md-card-title-text>
+        <h1>Edit Holiday</h1>
+      </md-card-title-text>
+    </md-card-title>
+
     <form name="holidaysEdit.holidaysEditForm" ng-submit="holidaysEdit.update()" novalidate>
-      <h1>Edit Holiday</h1>
 
       <div>
-        <input
-          type="text"
-          name="location"
-          id="location"
-          ng-model="holidaysEdit.holiday.location"
-          placeholder="Location"
-          required
-          >
-      </div>
-
-      <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.location.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.location.$touched)">
-        <p ng-message="required" class="formValidation">Location is required</p>
+        <md-input-container class="md-block">
+          <input
+            type="text"
+            name="location"
+            id="location"
+            ng-model="holidaysEdit.holiday.location"
+            placeholder="Location"
+            required
+            >
+        </md-input-container>
       </div>
 
       <div>
-        <input
-          type="text"
-          name="attractions"
-          id="attractions"
-          ng-model="holidaysEdit.holiday.attractions"
-          placeholder="Attractions"
-          required
-          >
-      </div>
-
-      <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.attractions.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.attractions.$touched)">
-        <p ng-message="required" class="formValidation">Attractions is required</p>
-      </div>
-
-      <div>
-        <input
-          type="text"
-          name="when_to_go"
-          id="when_to_go"
-          ng-model="holidaysEdit.holiday.when_to_go"
-          placeholder="Best time to go"
-          required
-          >
-      </div>
-
-      <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.when_to_go.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.when_to_go.$touched)">
-        <p ng-message="required" class="formValidation">Best time to go is required.</p>
+        <md-input-container class="md-block">
+          <input
+            type="text"
+            name="attractions"
+            id="attractions"
+            ng-model="holidaysEdit.holiday.attractions"
+            placeholder="Attractions"
+            required
+            >
+        </md-input-container>
       </div>
 
       <div>
-        <input
-          type="text"
-          name="departureAirport"
-          id="departureAirport"
-          ng-model="holidaysEdit.holiday.departureAirport"
-          placeholder="Departure Airport"
-          required
-          >
-      </div>
-
-      <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.departureAirport.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.departureAirport.$touched)">
-        <p ng-message="required" class="formValidation">Departure Airport Code is required.</p>
+        <md-input-container class="md-block">
+          <input
+            type="text"
+            name="when_to_go"
+            id="when_to_go"
+            ng-model="holidaysEdit.holiday.when_to_go"
+            placeholder="Best time to go"
+            required
+            >
+        </md-input-container>
       </div>
 
       <div>
-        <input
-          type="text"
-          name="arrivalAirport"
-          id="arrivalAirport"
-          ng-model="holidaysEdit.holiday.arrivalAirport"
-          placeholder="Arrival Airport"
-          required
-          >
+        <md-input-container class="md-block">
+          <input
+            type="text"
+            name="departureAirport"
+            id="departureAirport"
+            ng-model="holidaysEdit.holiday.departureAirport"
+            placeholder="Departure Airport"
+            required
+            >
+        </md-input-container>
       </div>
 
-      <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.arrivalAirport.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.arrivalAirport.$touched)">
-        <p ng-message="required" class="formValidation">Arrival Airport Code is required.</p>
+      <div>
+        <md-input-container class="md-block">
+          <input
+            type="text"
+            name="arrivalAirport"
+            id="arrivalAirport"
+            ng-model="holidaysEdit.holiday.arrivalAirport"
+            placeholder="Arrival Airport"
+            required
+            >
+        </md-input-container>
       </div>
 
       <!-- <div>
-        <input
-          type="text"
-          name="departureDate"
-          id="departureDate"
-          ng-model="holidaysEdit.holiday.departureDate"
-          placeholder="Departure Date"
-          required
-          >
-      </div>
-
-      <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.departureDate.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.departureDate.$touched)">
-        <p ng-message="required" class="formValidation">Departure Date is required.</p>
+        <md-input-container class="md-block">
+          <input
+            type="text"
+            name="departureDate"
+            id="departureDate"
+            ng-model="holidaysEdit.holiday.departureDate"
+            placeholder="Departure Date"
+            required
+            >
+        </md-input-container>
       </div>
 
       <div>
-        <input
-          type="text"
-          name="returnDate"
-          id="returnDate"
-          ng-model="holidaysEdit.holiday.returnDate"
-          placeholder="Return Date"
-          required
-          ng-disabled="true"
-          >
-      </div>
-
-      <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.returnDate.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.returnDate.$touched)">
-        <p ng-message="required" class="formValidation">Return Date is required.</p>
+        <md-input-container class="md-block">
+          <input
+            type="text"
+            name="returnDate"
+            id="returnDate"
+            ng-model="holidaysEdit.holiday.returnDate"
+            placeholder="Return Date"
+            required
+            ng-disabled="true"
+            >
+          </md-input-container>
       </div> -->
 
-      <div class="choose button" id="camera">Select an image
-        <label for="base64"></label>
+      <div class="choose button">
+        Select an image
         <input
-          class="upload"
+          class="upload md-button"
           type="file"
           base64
           name="base64"
           id="base64"
+          placeholder="Upload a holiday background image"
           ng-model="holidaysEdit.holiday.base64"
           >
       </div>
-
-      <!-- <div class="ng-message-error" ng-messages="holidaysEdit.holidaysEditForm.image_src.$error" ng-show="(holidaysEdit.holidaysEditForm.$submitted || holidaysEdit.holidaysEditForm.image_src.$touched)">
-        <p ng-message="required" class="formValidation">Main image is required</p>
-      </div> -->
 
       <div class="updateHolidayButton">
         <md-button

@@ -1,149 +1,152 @@
-<md-content id="registerBackground">
-<md-card class="registerForm">
-  <md-card-title>
-    <md-card-title-text>
-      <span class="md-headline">Sign Up</span>
-    </md-card-title-text>
-  </md-card-title>
+<md-content class="registerBackground">
+  <md-card class="registerForm">
 
-  <form
-    name="register.registerForm"
-    ng-submit="register.submit()"
-    novalidate
-    >
+    <md-card-title>
+      <md-card-title-text>
+        <h1>Sign Up</h1>
+      </md-card-title-text>
+    </md-card-title>
 
-    <div class="col s6">
-      <md-input-container class="md-block">
+    <form class="registerForm" name="register.registerForm" ng-submit="register.submit()" novalidate>
+
+      <div>
+        <md-input-container class="md-block">
+          <input
+            type="text"
+            name="username"
+            id="username" ng-model="register.user.username"
+            placeholder="Username"
+            required
+            >
+        </md-input-container>
+      </div>
+
+      <div class="ng-message-error" ng-messages="register.registerForm.username.$error" ng-show="(register.registerForm.$submitted || register.registerForm.username.$touched)">
+        <p ng-message="required" class="form-validation">Your username is required.</p>
+      </div>
+
+      <div>
+        <md-input-container class="md-block">
+          <input
+            type="text"
+            name="email"
+            id="email"
+            ng-model="register.user.email"
+            placeholder="Email"
+            required
+            >
+        </md-input-container>
+      </div>
+
+      <div class="ng-message-error" ng-messages="register.registerForm.email.$error" ng-show="(register.registerForm.$submitted || register.registerForm.email.$touched)">
+        <p ng-message="required" class="form-validation">Your email is required.</p>
+        <p ng-message="email" class="form-validation">A valid email is required.</p>
+      </div>
+
+      <div>
+        <md-input-container class="md-block">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            ng-model="register.user.password"
+            placeholder="Password"
+            required
+            >
+        </md-input-container>
+      </div>
+
+      <div class="ng-message-error" ng-messages="register.registerForm.password.$error" ng-show="(register.registerForm.$submitted || register.registerForm.password.$touched)">
+        <p ng-message="required" class="form-validation">Your password is required.</p>
+      </div>
+
+      <div>
+        <md-input-container class="md-block">
+          <input
+            type="password"
+            name="passwordConfirmation"
+            id="passwordConfirmation"
+            ng-model="register.user.password_confirmation"
+            placeholder="Password Confirmation"
+            required
+            >
+        </md-input-container>
+      </div>
+
+      <div class="ng-message-error" ng-messages="register.registerForm.passwordConfirmation.$error" ng-show="(register.registerForm.$submitted || register.registerForm.passwordConfirmation.$touched)">
+        <p ng-message="required" class="form-validation">Your password confirmation is required.</p>
+      </div>
+
+      <div>
+        <md-input-container class="md-block">
+          <input
+            type="text"
+            name="airport"
+            id="airport"
+            ng-model="register.user.airport"
+            placeholder="Preferred Airport"
+            required
+            >
+        </md-input-container>
+      </div>
+
+      <div class="ng-message-error" ng-messages="register.registerForm.airport.$error" ng-show="(register.registerForm.$submitted || register.registerForm.airport.$touched)">
+        <p ng-message="required" class="form-validation">Your prefered airport is required.</p>
+      </div>
+
+      <div>
+        <md-input-container class="md-block">
+          <textarea
+            type="text"
+            name="bio"
+            id="bio"
+            placeholder="Biography"
+            ng-model="register.user.bio"
+            rows="2"
+            md-maxlength="150"
+            md-select-on-focus
+            required
+            >
+          </textarea>
+        </md-input-container>
+      </div>
+
+      <div class="ng-message-error" ng-messages="register.registerForm.bio.$error" ng-show="(register.registerForm.$submitted || register.registerForm.bio.$touched)">
+        <p ng-message="required" class="form-validation">Your biography required.</p>
+      </div>
+
+      <div class="choose button">
+        Select an image
         <input
-          type="text"
-          name="username"
-          id="username" ng-model="register.user.username"
-          placeholder="Username"
+          class="upload md-button"
+          type="file"
+          base64
+          name="base64"
+          id="base64"
+          placeholder="Upload a profile image"
+          ng-model="register.user.base64"
           required
           >
-      </md-input-container>
-    </div>
-    <div class="ng-message-error" ng-messages="register.registerForm.username.$error" ng-show="(register.registerForm.$submitted || register.registerForm.username.$touched)">
-      <p ng-message="required" class="formValidation">Your username is required.</p>
-    </div>
+      </div>
 
-    <div class="col s6">
-      <md-input-container class="md-block">
-        <input
-          type="text"
-          name="email"
-          id="email"
-          ng-model="register.user.email"
-          placeholder="Email"
-          required
+      <div class="ng-message-error" ng-messages="register.registerForm.base64.$error" ng-show="(register.registerForm.$submitted)">
+        <p ng-message="required" class="form-validation">A profile image is required.</p>
+      </div>
+
+      <md-card-actions>
+        <md-button
+          class="md-raised md-primary md-button md-ink-ripple"
+          ng-click="register.submit()"
+          ng-disabled="register.registerForm.$invalid"
           >
-      </md-input-container>
-    </div>
-    <div class="ng-message-error" ng-messages="register.registerForm.email.$error" ng-show="(register.registerForm.$submitted || register.registerForm.email.$touched)">
-      <p ng-message="required" class="formValidation">Your email is required.</p>
-      <p ng-message="email" class="formValidation">A valid email is required.</p>
-    </div>
+          Sign Up
+        </md-button>
+      </md-card-actions>
+    </form>
 
-    <div class="col s6">
-      <md-input-container class="md-block">
-        <input
-          type="password"
-          name="password"
-          id="password"
-          ng-model="register.user.password"
-          placeholder="Password"
-          required
-          >
-      </md-input-container>
-    </div>
-    <div class="ng-message-error" ng-messages="register.registerForm.password.$error" ng-show="(register.registerForm.$submitted || register.registerForm.password.$touched)">
-      <p ng-message="required" class="formValidation">Your password is required.</p>
-    </div>
-
-    <div class="col s6">
-      <md-input-container class="md-block">
-        <input
-          type="password"
-          name="passwordConfirmation"
-          id="passwordConfirmation"
-          ng-model="register.user.password_confirmation"
-          placeholder="Password Confirmation"
-          required
-          >
-      </md-input-container>
-    </div>
-    <div class="ng-message-error" ng-messages="register.registerForm.passwordConfirmation.$error" ng-show="(register.registerForm.$submitted || register.registerForm.passwordConfirmation.$touched)">
-      <p ng-message="required" class="formValidation">Your password confirmation is required.</p>
-    </div>
-
-    <div class="col s6">
-      <md-input-container class="md-block">
-        <input
-          type="text"
-          name="airport"
-          id="airport"
-          ng-model="register.user.airport"
-          placeholder="Preferred Airport"
-          required
-          >
-      </md-input-container>
-    </div>
-    <div class="ng-message-error" ng-messages="register.registerForm.airport.$error" ng-show="(register.registerForm.$submitted || register.registerForm.airport.$touched)">
-      <p ng-message="required" class="formValidation">Your prefered airport is required.</p>
-    </div>
-
-    <div class="col s6">
-      <md-input-container class="md-block">
-        <textarea
-          type="text"
-          name="bio"
-          id="bio"
-          placeholder="Biography"
-          ng-model="register.user.bio"
-          rows="2"
-          md-maxlength="150"
-          md-select-on-focus
-          required
-          >
-        </textarea>
-      </md-input-container>
-    </div>
-    <div class="ng-message-error" ng-messages="register.registerForm.bio.$error" ng-show="(register.registerForm.$submitted || register.registerForm.bio.$touched)">
-      <p ng-message="required" class="formValidation">Your biography required.</p>
-    </div>
-
-    <div class="choose button">
-      Select an image
-      <input
-        class="upload md-button"
-        type="file"
-        base64
-        name="base64"
-        id="base64"
-        placeholder="Profile image link.."
-        ng-model="register.user.base64"
-        required
-        >
-    </div>
-
-    <div class="ng-message-error" ng-messages="register.registerForm.base64.$error" ng-show="(register.registerForm.$submitted)">
-      <p ng-message="required" class="formValidation">A profile image is required.</p>
-    </div>
-
-    <div>
-      <md-button
-        class="md-raised md-primary md-button md-ink-ripple"
-        ng-click="register.submit()"
-        ng-disabled="register.registerForm.$invalid"
-        >
-        Sign Up
-      </md-button>
-    </div>
-  </form>
-
-  <div class="login">
-    <span>Already Registered?</span>
-    <a ng-if="!main.isAuthenticated()" ui-sref="login">Login!</a>
-  </div>
-</md-card>
+    <md-card-content class="login">
+      <span>Already Registered?</span>
+      <a ng-if="!main.isAuthenticated()" ui-sref="login">Login!</a>
+    </md-card-content>
+  </md-card>
 </md-content>

@@ -1,243 +1,78 @@
-#groupsEditBackground {
+md-content.groupsEditBackground {
   background-image: url('../images/background.jpg');
   @extend .background-styles;
+  @include flexbox(flex, column, center, center);
 
-  #groupsEditForm {
-    width: 50%;
-    padding: 2rem;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.75);
+  md-card {
+    padding: 1rem;
 
     md-card-title {
-      margin: 0 auto 2.5rem auto;
-      color: $white;
+      border: 0;
+      padding: 1rem;
+
+      h1 {
+        @extend .custom-header;
+      }
+    }
+    md-card-content {
+      padding: 1rem;
     }
     form {
       md-input-container {
         width: 100%;
         margin: 0.5rem 0;
-
-        input {
-          color: $white;
-          border-color: $white;
-        }
       }
       label {
         width: 100%;
-        margin: 1rem 0;
-        color: $white;
-      }
-      img {
-        background-color: $white;
-        border-radius: 50%;
-        border: 1px solid $white;
-        width: 25px;
-        height: 25px;
-      }
-      h5 {
-        color: $white;
-      }
-      .md-divider {
-        color: $white;
       }
     }
-
     md-input-container {
       width: 100%;
       margin: 0.5rem 0;
-      text-align: center;
-
-      input {
-        color: $white;
-        border-color: $white;
-        // padding: 5px 10px;
-        // background-color: rgba(0, 0, 0, 0) !important;
-        // width: 100%;
-        text-align: center;
-        // outline: none;
-        // margin: 5px 0;
-        // border: none;
-        // border-radius: 10px;
-        // color: #000000;
-
-        // &:focus {
-        //   box-shadow: 0 1px 0 -1px #26a69a;
-        // }
-      }
     }
-    .md-divider {
-      color: $white;
-      border-top-color: $white;
-    }
+
     .md-toolbar-tools {
-      padding: 0;
+      // padding: 0;
 
-      md-icon {
+      .md-icon {
         color: $white;
       }
-
       .md-button {
         padding: 0;
         color: $white;
-      }
 
-      .md-button:last-child {
-        margin: 0;
-      }
-      .md-button:first-child {
-        margin: 0;
-      }
-    }
-    .chosenUsers {
-      margin: 1rem 0;
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: center;
-      align-items: center;
-      color: $white;
-    }
-    .chosenGroupUsers {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 10px 0;
-
-      smart-confirm {
-        margin: 0;
-      }
-      .md-divider {
-        margin: 5px 0;
-        border-color: $white;
-      }
-      img {
-        background-color: $white;
-        border-radius: 50%;
-        border: 1px solid $white;
-        width: 25px;
-        height: 25px;
-      }
-      div {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-
-        h5 {
-          text-transform: uppercase;
-          color: $white;
+        &:last-child {
+          margin: 0;
         }
-        .md-button {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 25px;
-          min-width: 25px;
-          height: 25px;
-          min-height: 25px;
-          margin: 0 0.5rem;
-
-          .md-icon {
-            color: $white;
-            font-size: 18px;
-            height: auto;
-            width: auto;
-            min-height: auto;
-            min-width: auto;
-          }
+        &:first-child {
+          margin: 0;
         }
       }
-    }
-    .groupUsersToAdd {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      -webkit-transition: 0.5s linear all;
-              transition: 0.5s linear all;
-
-      &.ng-move,
-      &.ng-enter,
-      &.ng-leave {
-        -webkit-transition: all linear 0.1s;
-                transition: all linear 0.1s;
-      }
-
-      &.ng-leave.ng-leave-active,
-      &.ng-move,
-      &.ng-enter {
-        opacity: 0;
-        max-height: 0;
-      }
-
-      &.ng-leave,
-      &.ng-move.ng-move-active,
-      &.ng-enter.ng-enter-active {
-        opacity: 1;
-        max-height: 40px;
-      }
-
-      /**
-       * Stagger Leave (hide) animation
-       */
-      &.ng-leave-stagger {
-        /* this will have a 100ms delay between each successive leave animation */
-        -webkit-transition-delay: 0.1s;
-                transition-delay: 0.1s;
-
-        /* in case the stagger doesn't work then these two values
-         must be set to 0 to avoid an accidental CSS inheritance */
-        -webkit-transition-duration: 0s;
-                transition-duration: 0s;
-      }
-
-      /**
-       * Stagger ENTER ANIMATION
-       */
-      &.ng-enter-stagger {
-        /* this will have a 100ms delay between each successive enter animation */
-        -webkit-transition-delay: 0.1s;
-                transition-delay: 0.1s;
-
-        /* in case the stagger doesn't work then these two values
-         must be set to 0 to avoid an accidental CSS inheritance */
-        -webkit-transition-duration: 0s;
-                transition-duration: 0s;
-      }
-
-      div {
-        padding: 0 1rem;
-        margin: 0.5rem 0;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-        align-items: center;
-
-        h5 {
-          padding: 0 0 0 1rem;
-          text-transform: uppercase;
-        }
-      }
-    }
-    .userSearchResults {
-
-      img {
-        background-color: $white;
-        border-radius: 50%;
-        border: 1px solid $white;
-        width: 25px;
-        height: 25px;
-      }
-      h5 {
+      .md-char-counter {
         color: $white;
       }
     }
-    .chosenUsersLength {
-      padding: 2rem 0 1rem 0;
+    // .chosen-users {
+    //   display: flex;
+    //   flex-flow: column nowrap;
+    //   justify-content: center;
+    //   align-items: center;
+    //   margin: 1rem 0;
+    //   color: $white;
+    // }
+    .chosen-usersLength {
+      border-top: 1px solid $white;
+      padding: 1rem 0;
       text-align: center;
       text-transform: uppercase;
     }
     .md-char-counter {
       color: $white;
+
+      span {
+        font-size: 0.7rem;
+        color: $white;
+      }
     }
     .groupsEditButtons {
       margin-top: 1rem;
@@ -246,15 +81,5 @@
         width: 100%;
       }
     }
-    // .search-bar-instruction {
-    //   padding: 0 0 0 2rem;
-    //
-    //   p {
-    //     color: rgb(100, 100, 100);
-    //     font-size: 13px;
-    //     letter-spacing: 1px;
-    //     line-height: 1.5;
-    //   }
-    // }
   }
 }

@@ -1,115 +1,110 @@
-<md-content id="groupsNewBackground">
-  <md-card id="groupsNewForm">
+<md-content class="groupsNewBackground">
+  <md-card>
     <back-button></back-button>
-    
+
     <md-card-title>
       <md-card-title-text>
-        <span class="md-headline">New Group</span>
+        <h1>New Group</h1>
       </md-card-title-text>
     </md-card-title>
 
-    <form name="groupsNew.groupsNewForm" class="groupsNewForm" ng-submit="groupsNew.create()" novalidate>
+    <md-card-content>
+      <form name="groupsNew.groupsNewForm" class="groupsNewForm" ng-submit="groupsNew.create()" novalidate>
 
-      <div class="col s6">
-        <md-input-container class="md-block">
-          <input
-            type="name"
-            name="name"
-            id="name"
-            ng-model="groupsNew.group.name"
-            placeholder="Group Name"
-            required
-            >
-        </md-input-container>
-      </div>
-
-      <!-- <div class="ng-message-error" ng-messages="groupsNew.groupsNewForm.name.$error" ng-show="(groupsNew.groupsNewForm.$submitted || groupsNew.groupsNewForm.name.$touched)">
-        <div ng-message="required" class="formValidation">Group name is required.</div>
-      </div> -->
-
-      <div class="col s6 searchUsers">
-
-        <div id="search-bar" ng-show="groupsNew.showPreSearchBar()" class="md-toolbar-tools">
-          <md-button ng-click="groupsNew.initiateSearch()">
-            <md-icon>search</md-icon>
-            <span>Search Users</span>
-          </md-button>
-        </div>
-
-        <div ng-show="groupsNew.showSearchBar()" class="md-toolbar-tools search-bar">
-
-          <md-button class="md-icon-button" ng-click="groupsNew.submitSearch()">
-            <md-icon class="material-icons" arial-label="Enter search bar">search</md-icon>
-          </md-button>
-
-          <md-input-container flex>
+        <div class="col s6">
+          <md-input-container class="md-block">
             <input
-              id="search-input"
-              type="text"
-              class="search"
-              name="groupsNew.groupsSearchUsers"
-              ng-model="groupsNew.query"
-              placeholder="Search for users..."
-              aria-label="Search users"
-              />
-            <div ng-show="groupsNew.filteredLength > 0" class="md-char-counter">{{ groupsNew.filteredLength }} / {{ groupsNew.availableUsersLength }}</div>
+              type="name"
+              name="name"
+              id="name"
+              ng-model="groupsNew.group.name"
+              placeholder="Group Name"
+              required
+              >
           </md-input-container>
-
-          <md-button class="md-icon-button" ng-click="groupsNew.endSearch()">
-            <md-icon>close</md-icon>
-          </md-button>
         </div>
-      </div>
 
-      <div
-        class="col s6 m6 l6 groupUsersToAdd"
-        ng-repeat="user in groupsNew.filtered"
-        ng-show="(groupsNew.query !== null) && user.id !== main.currentUser.id && !groupsNew.chosenUsers.includes(user.id)"
-        >
-        <!-- ng-if="(groupsNew.query !== null) && user.id !== main.currentUser.id" -->
-        <div class="userSearchResults" ng-click="groupsNew.addUser(user)">
-          <img
-            ng-src="{{ user.image_src }}"
-            alt="{{ user.username }}"
-            class="addUserImage"
-            style="width: 40px; height: 40px;"
-            >
-          <h5>{{ user.username }}</h5>
+        <div class="col s6 searchUsers">
+
+          <div id="search-bar" ng-show="groupsNew.showPreSearchBar()" class="md-toolbar-tools">
+            <md-button ng-click="groupsNew.initiateSearch()">
+              <md-icon>search</md-icon>
+              <span>Search Users</span>
+            </md-button>
+          </div>
+
+          <div ng-show="groupsNew.showSearchBar()" class="md-toolbar-tools search-bar">
+
+            <md-button class="md-icon-button" ng-click="groupsNew.submitSearch()">
+              <md-icon class="material-icons" arial-label="Enter search bar">search</md-icon>
+            </md-button>
+
+            <md-input-container flex>
+              <input
+                id="search-input"
+                type="text"
+                class="search"
+                name="groupsNew.groupsSearchUsers"
+                ng-model="groupsNew.query"
+                placeholder="Search for users..."
+                aria-label="Search users"
+                />
+              <div ng-show="groupsNew.filteredLength > 0" class="md-char-counter">{{ groupsNew.filteredLength }} / {{ groupsNew.availableUsersLength }}</div>
+            </md-input-container>
+
+            <md-button class="md-icon-button" ng-click="groupsNew.endSearch()">
+              <md-icon>close</md-icon>
+            </md-button>
+          </div>
         </div>
-      </div>
 
-      <md-divider></md-divider>
-
-      <div class="chosenUsers">
-        <span class="md-title">Chosen Users:</span>
-      </div>
-
-      <div
-        class="col s6 chosenGroupUsers"
-        ng-if="!user.group && user.id !== main.currentUser.id"
-        ng-repeat="user in groupsNew.chosenUsers track by $index"
-        >
-        <div>
-          <img
-            ng-src="{{ user.image_src }}"
-            alt="{{ user.username }}"
-            class="chosenUsersImage"
-            style="width: 40px; height: 40px;"
+        <div
+          class="col s6 m6 l6 groupUsersToAdd"
+          ng-repeat="user in groupsNew.filtered"
+          ng-show="(groupsNew.query !== null) && user.id !== main.currentUser.id && !groupsNew.chosenUsers.includes(user)"
           >
-          <h5>{{ user.username }}</h5>
-
-          <smart-confirm confirm="groupsNew.removeUser(user)">
-            <md-icon class="material-icons">close</md-icon>
-          </smart-confirm>
+          <div class="userSearchResults" ng-click="groupsNew.addUser(user)">
+            <img
+              ng-src="{{ user.image_src }}"
+              alt="{{ user.username }}"
+              class="addUserImage user-image"
+              >
+            <span>{{ user.username }}</span>
+          </div>
         </div>
-      </div>
 
-      <div class="chosenUsersLength md-char-counter" ng-show="groupsNew.chosenUsers.length > 0">{{ groupsNew.chosenUsers.length }} Users</div>
+        <div class="chosen-users">
+          <span class="md-title">Chosen Users:</span>
+        </div>
 
-      <div class="col s6 groupsNewButtons">
-        <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="groupsNew.create()" ng-disabled="groupsNew.groupsNewForm.$invalid"><i class="material-icons left"></i>Create</md-button>
-        <!-- <md-button class="md-raised" ng-click="groupsNew.group = {}"><i class="material-icons left"></i>Clear Form</md-button> -->
-      </div>
-    </form>
+        <div
+          class="col s6 chosenGroupUsers"
+          ng-if="!user.group && user.id !== main.currentUser.id"
+          ng-repeat="user in groupsNew.chosenUsers track by $index"
+          >
+          <div>
+            <img
+              ng-src="{{ user.image_src }}"
+              alt="{{ user.username }}"
+              class="chosenuser-image user-image"
+            >
+            <span>{{ user.username }}</span>
+
+            <smart-confirm confirm="groupsNew.removeUser(user)">
+              <md-icon class="material-icons">close</md-icon>
+            </smart-confirm>
+          </div>
+        </div>
+
+        <div class="chosen-usersLength md-char-counter" ng-show="groupsNew.chosenUsers.length > 0">
+          <span>{{ groupsNew.chosenUsers.length }} Users</span>
+        </div>
+
+        <md-card-actions class="col s6 groupsNewButtons">
+          <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="groupsNew.create()" ng-disabled="groupsNew.groupsNewForm.$invalid"><i class="material-icons left"></i>Create</md-button>
+          <!-- <md-button class="md-raised" ng-click="groupsNew.group = {}"><i class="material-icons left"></i>Clear Form</md-button> -->
+        </md-card-actions>
+      </form>
+    </md-card-content>
   </md-card>
 </md-content>

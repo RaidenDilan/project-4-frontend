@@ -1,14 +1,14 @@
-<md-content>
+<md-content class="groupShow">
   <div class="groupsBackground">
-    <md-card-title>
+    <h1>Welcome to {{ groupsShow.group.name }}</h1>
+    <!-- <md-card-title>
       <md-card-title-text>
-        <span class="md-headline">Welcome to {{ groupsShow.group.name }}</span>
       </md-card-title-text>
-    </md-card-title>
+    </md-card-title> -->
   </div>
 
   <md-card class="groupsShowButtons">
-    <div id="usersButtons">
+    <md-card-actions class="usersButtons">
       <!-- <md-button
         ng-show="main.isAuthenticated() && main.currentUser.id !== groupsShow.group.creator.id && !groupsShow.isAttending()"
         ng-click="groupsShow.attend(main.currentUser.id)"
@@ -17,7 +17,7 @@
         Attend Group
       </md-button> -->
       <md-button
-        ng-show="main.isAuthenticated() && main.currentUser.id !== groupsShow.group.creator.id && groupsShow.isAttending()"
+        ng-if="main.isAuthenticated() && main.currentUser.id !== groupsShow.group.creator.id && groupsShow.isAttending()"
         ng-click="groupsShow.unattend(main.currentUser.id)"
         class="md-raised md-warn md-button md-ink-ripple"
         >
@@ -25,49 +25,68 @@
       </md-button>
       <a ui-sref="groupsEdit({ id: groupsShow.group.id })">
         <md-button
-          ng-show="main.isAuthenticated() && main.currentUser.id === groupsShow.group.creator.id"
+          ng-if="main.isAuthenticated() && main.currentUser.id === groupsShow.group.creator.id"
           class="md-raised md-primary md-button md-ink-ripple"
           >
           Edit Group
         </md-button>
       </a>
       <md-button
-        ng-show="main.isAuthenticated() && main.currentUser.id === groupsShow.group.creator.id"
+        ng-if="main.isAuthenticated() && main.currentUser.id === groupsShow.group.creator.id"
         ng-click="groupsShow.delete()"
         class="md-raised md-warn md-button md-ink-ripple"
         >
         Delete Group
       </md-button>
-    </div>
+    </md-card-actions>
   </md-card>
 
   <md-card class="usersGroupShowOwner">
-    <h1>Group Owner</h1>
-    <div>
-      <div style="background-image: url('{{ groupsShow.group.creator.image_src }}')" class="usersImage"></div>
+
+    <md-card-title>
+      <md-card-title-text>
+        <h2>Group Owner</h2>
+      </md-card-title-text>
+    </md-card-title>
+
+    <md-card-content>
+      <div style="background-image: url('{{ groupsShow.group.creator.image_src }}')" class="user-image"></div>
       <span class="username">{{ groupsShow.group.creator.username }}</span>
-    </div>
+    </md-card-content>
+
   </md-card>
 
   <md-card class="groupShowAttendees">
-    <h1>Users</h1>
 
-    <div class="groupAttendees">
-        <div class="row">
-          <div ng-repeat="user in groupsShow.group.users" class="col">
-            <div style="background-image:url('{{ user.image_src }}')" class="usersImage"></div>
-            <div class="groupUsername"><h3>{{ user.username }}</h3></div>
-          </div>
+    <md-card-title>
+      <md-card-title-text>
+        <h2>Users</h2>
+      </md-card-title-text>
+    </md-card-title>
+
+    <md-card-content class="groupAttendees">
+      <div>
+        <div ng-repeat="user in groupsShow.group.users" class="attendees">
+          <div style="background-image:url('{{ user.image_src }}')" class="user-image"></div>
+          <span>{{ user.username }}</span>
         </div>
-    </div>
+      </div>
+    </md-card-content>
+
   </md-card>
 
   <md-card class="groupShowHolidays">
-    <h1>Holidays</h1>
 
-    <div class="holidaysCreated">
-      <div class="row">
-        <div class="col s4 new-holiday">
+    <md-card-title>
+      <md-card-title-text>
+        <h2>Holidays</h2>
+      </md-card-title-text>
+    </md-card-title>
+
+    <md-card-content class="holidaysCreated">
+      <div class="customRow grid">
+
+        <div class="new-holiday">
           <div class="content">
             <a ui-sref="holidaysNew({ id: groupsShow.group.id })">
               <div class="content-overlay"></div>
@@ -79,7 +98,7 @@
           </div>
         </div>
 
-        <div ng-repeat="holiday in groupsShow.group.holidays" class="col s4 groupHolidays">
+        <div class="groupHolidays" ng-repeat="holiday in groupsShow.group.holidays">
           <div class="content">
             <a ui-sref="holidaysShow({ id: groupsShow.group.id, holidayId: holiday.id })">
               <div class="content-overlay"></div>
@@ -90,7 +109,9 @@
             </a>
           </div>
         </div>
+
       </div>
-    </div>
+    </md-card-content>
+
   </md-card>
 </md-content>

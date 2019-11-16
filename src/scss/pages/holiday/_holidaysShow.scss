@@ -1,252 +1,185 @@
-md-content {
-  .holidaysBackground {
-    background-image: url('../images/background.jpg');
-    @extend .background-styles;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+md-content.holidaysShowBackground {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100%;
+
+  div.holidaysBackground {
+    height: 100vh;
+    @include flexbox(flex, column, center, center);
+
+    h1 {
+      @extend .custom-header;
+      background-color: rgba(0, 0, 0, 0.75);
+      border-radius: 5px;
+      padding: 1rem;
+      font-size: 2rem;
+    }
+  }
+
+  // md-card.holidaysShowTitle {
+  //   margin: 0;
+  //   border-radius: 0;
+  //   height: 100vh;
+  //   @include flexbox(flex, column, center, center);
+  //
+  //   // md-card-title {
+  //   //   margin: 0;
+  //   //   padding: 2rem;
+  //   //   background-color: rgba(0, 0, 0, 0.6);
+  //   //
+  //   //   h1 {
+  //   //     @extend .custom-header;
+  //   //   }
+  //   //   // span {
+  //   //   //   background-color: rgba(0, 0, 0, 0.75);
+  //   //   //   padding: 30px;
+  //   //   //   border-radius: 5px;
+  //   //   //   font-size: 2rem;
+  //   //   //   font-weight: 200;
+  //   //   //   text-align: center;
+  //   //   //   text-transform: uppercase;
+  //   //   //   letter-spacing: 4px;
+  //   //   //   color: $white;
+  //   //   // }
+  //   // }
+  // }
+  md-card.holidaysShow {
+    text-align: center;
+
+    div {
+      // padding: 0.75rem 0;
+
+      h3 {
+        padding: 0.5rem 0;
+        @extend .custom-header;
+      }
+      h5 {
+        padding: 0.5rem 0;
+      }
+    }
+  }
+  md-card.holidaysShowButtons {
+    md-card-actions {
+      // padding: 1.5rem;
+      // @include flexbox(flex, column, center, center);
+
+      #getFlights {
+        background-color: $skyscanner;
+        color: $white;
+      }
+      button, .md-button {
+        width: 100%;
+        margin: 0.25rem auto;
+      }
+    }
+  }
+  md-card.createdBy {
 
     md-card-title {
-      span {
-        background-color: rgba(0, 0, 0, 0.75);
-        padding: 30px;
-        border-radius: 5px;
+      border-bottom: 2px solid $white;
+
+      h1 {
+        @extend .custom-header;
         font-size: 2rem;
-        font-weight: 200;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 4px;
+      }
+    }
+    md-card-content {
+      @include flexbox(flex, column, center, center);
+
+      div.user-image {
+        width: 55px;
+        height: 55px;
+      }
+      span {
+        padding-top: 0.5rem;
         color: $white;
       }
     }
   }
-  #holidaysShow {
-    p {
-      padding: 30px 0 30px 0;
-      text-transform: none;
-      font-weight: normal;
-    }
-    h1 {
-      color: $brand-color;
-      text-align: center;
-    }
-    h2 {
-      padding-top: 15px;
-      color: $brand-color;
-      font-size: 25px;
-      text-transform: uppercase;
-      text-align: center;
-    }
-    #description {
-      margin: 25px auto;
-      background-color: $brand-color;
-      border-radius: 10px;
-      padding: 20px;
-    }
-    #description1 {
-      background-color: white;
-      margin: 0 auto;
-      border-radius: 10px;
-      color: black;
-    }
-    #description2 {
-      text-transform: capitalize;
-    }
-  }
+  md-card.holidaysShowReviews {
+    md-card-title {
+      border-bottom: 2px solid $white;
 
-  .info-container {
-    background-color: $brand-color;
-    border-radius: 10px;
-    padding: 1.5rem;
-
-    .info {
-      background-color: $white;
-      margin: 0;
-      border-radius: 5px;
-
-      div {
-        p {
-          color: black;
-          font-weight: bold;
-          text-align: center;
-        }
+      h1 {
+        @extend .custom-header;
+        font-size: 2rem;
       }
     }
-  }
+    md-card-content {
+      .reviews {
+        // @include flexbox(flex, column, center, center);
+        display: flex;
+        flex-direction: column;
 
-  #holidaysShowButtons {
-    background-color: $brand-color;
-    border-radius: 10px;
-    padding: 1.5rem;
-    text-align: center;
-
-    #holidayButtons {
-      background-color: $white;
-      border-radius: 10px;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      // a {
-      //   width: 50%;
-      //
-      //   .md-button {
-      //     width: 100%;
-      //     margin: 6px 0;
-      //   }
-      // }
-      .md-button {
-        width: 25%;
-        margin: 6px auto;
-
-        &:first-child {
-          background-color: #0770e3;
-          color: $white;
-        }
-      }
-    }
-  }
-
-  .createdBy {
-    background-color: $brand-color;
-    text-align: center;
-    padding: 1.5rem;
-
-    h1 {
-      text-transform: uppercase;
-      font-size: 1.75rem;
-      color: $white;
-      border: 0;
-    }
-    .holidayCreatedBy {
-      padding: 1rem;
-      border-radius: 5px;
-      background-color: $white;
-    }
-    span {
-      margin: 0.5rem auto auto auto;
-      display: block;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: $black;
-    }
-    a {
-      img {
-        border: 2px dotted $white;
-        border-radius: 100%;
-      }
-    }
-  }
-
-  #holidaysShowReviews {
-    background-color: $brand-color;
-    padding: 1.5rem;
-
-    h1 {
-      text-transform: uppercase;
-      font-size: 1.75rem;
-      color: $white;
-      border: 0;
-    }
-
-    .reviews {
-      padding: 1rem;
-      background-color: $white;
-      border-radius: 5px;
-      display: flex;
-      flex-direction: column;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 10px 0;
-
-      ul.comment {
-        width: 100%;
-        margin: 5px auto;
-        padding: 5px;
-
-        li {
-          display: flex;
-          flex-flow: row wrap;
-          justify-content: center;
-          align-items: center;
-
-          .comment-container {
-            border: 2px solid $brand-color;
-            border-radius: 5px;
-            padding: 1rem;
-            width: 98%;
-            margin: 0 auto;
+        ul.comment {
+          li {
+            margin: 0.25rem auto;
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            flex-flow: row wrap;
+            justify-content: center;
             align-items: center;
-          }
-          .comment-header {
-            width: 12%;
-            display: flex;
-            flex-flow: column wrap;
 
-            .commentImage {
-              padding: 0.25rem 0;
-              margin: 0;
-            }
-            .commentBy {
-              padding: 0.15rem 0;
-              font-size: 0.9rem;
-            }
-            .commentTimestamp {
-              padding: 0.15rem 0;
-              font-size: 0.9rem;
-            }
-          }
-          .comment-body {
-            width: 80%;
-            padding-top: 1rem;
-
-            .commentBody {
-              padding: 0.25rem 0;
-
-              -ms-word-break: break-all;
-                  word-break: break-all;
-              /* Non standard for WebKit */
-                  word-break: break-word;
-              -webkit-hyphens: auto;
-                 -moz-hyphens: auto;
-                      hyphens: auto;
-            }
-          }
-
-          smart-confirm {
-            width: auto;
-
-            a {
+            .comment-container {
               display: flex;
               flex-direction: row;
-              justify-content: center;
-              align-items: center;
-              margin: 0 0.25rem;
-              width: 30px;
-              height: 30px;
-              min-width: 30px;
-              min-height: 30px;
-              font-size: 20px;
+              justify-content: space-between;
+              // align-items: center;
+              border: 2px solid $white;
+              border-radius: 5px;
+              padding: 1rem;
+              width: 100%;
+              margin: 0 auto;
+            }
+            .comment-header {
+              display: flex;
+              flex-flow: column wrap;
+              color: $white;
 
-              .md-icon {
-                width: 20px;
-                height: 20px;
-                min-width: 20px;
-                min-height: 20px;
-                font-size: 20px;
+              .commentImage {
+                padding: 0.25rem 0;
+                width: 55px;
+                height: 55px;
+                margin: 0;
+              }
+              .commentBy {
+                padding: 0.15rem 0;
+                font-size: 0.7rem;
+              }
+              .commentTimestamp {
+                padding: 0.15rem 0;
+                font-size: 0.7rem;
               }
             }
-            div {
+            .comment-body {
+              display: block;
+              color: $white;
+
+              .commentBody {
+                padding: 0.25rem 0;
+                font-size: 0.7rem;
+
+                -ms-word-break: break-all;
+                    word-break: break-all;
+                /* Non standard for WebKit */
+                    word-break: break-word;
+                -webkit-hyphens: auto;
+                   -moz-hyphens: auto;
+                        hyphens: auto;
+              }
+            }
+            .comment-footer {
               display: flex;
               flex-direction: row;
               justify-content: center;
               align-items: center;
+              width: 10%;
+            }
 
-              button {
+            smart-confirm {
+              a {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
@@ -266,58 +199,67 @@ md-content {
                   font-size: 20px;
                 }
               }
+              div {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                .md-button {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: center;
+                  margin: 0 0.25rem;
+                  width: 30px;
+                  height: 30px;
+                  min-width: 30px;
+                  min-height: 30px;
+                  font-size: 20px;
+                }
+              }
             }
           }
         }
       }
-
-    }
-
-    #AddComment {
-      background-color: $white;
-      border-radius: 5px;
-      padding: 1rem;
-
-      h2 {
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 20px;
-        padding-bottom: 20px;
-        font-weight: bold;
-      }
-      form {
-        // md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused label,
-        // md-input-container.md-input-focused label,
-        // md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused md-icon,
-        // md-input-container:not(.md-input-invalid).md-input-focused md-icon {}
-        md-input-container {
-          label {
-            // padding-bottom: 0.5rem;
-            padding: 0 10px;
+      .postComment {
+        h2 {
+          @extend .custom-header;
+          text-align: center;
+          padding: 1.5rem 0;
+        }
+        form {
+          // md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused label,
+          // md-input-container.md-input-focused label,
+          // md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused md-icon,
+          // md-input-container:not(.md-input-invalid).md-input-focused md-icon {}
+          md-input-container {
+            label {
+              padding: 0 10px;
+            }
           }
-        }
-        md-input-container.md-input-focused label {
-          color: $black;
-        }
-        input[type=date]::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          display: none;
-        }
-        input[type=date]::-webkit-calendar-picker-indicator {
-          -webkit-appearance: none;
-          display: none;
-        }
-        textarea {
-          padding: 10px;
-          outline: none;
-          border: 1px solid $brand-color;
-          border-radius: 5px;
+          md-input-container.md-input-focused label {
+            // color: $black;
+          }
+          // input[type=date]::-webkit-inner-spin-button {
+          //   -webkit-appearance: none;
+          //   display: none;
+          // }
+          // input[type=date]::-webkit-calendar-picker-indicator {
+          //   -webkit-appearance: none;
+          //   display: none;
+          // }
+          textarea {
+            padding: 10px;
+            border: 1px solid $white;
+            border-radius: 5px;
 
-          // &::-webkit-input-placeholder { color: $black; }
-          // &:-moz-placeholder { /* Firefox 18- */ color: $black; }
-          // &::-moz-placeholder {  /* Firefox 19+ */ color: $black; }
-          // &:-ms-input-placeholder { color: $black; }
-          // &::placeholder { color: $black; }
+            // &::-webkit-input-placeholder { color: $black; }
+            // &:-moz-placeholder { /* Firefox 18- */ color: $black; }
+            // &::-moz-placeholder {  /* Firefox 19+ */ color: $black; }
+            // &:-ms-input-placeholder { color: $black; }
+            // &::placeholder { color: $black; }
+          }
         }
       }
     }
