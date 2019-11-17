@@ -1,21 +1,32 @@
 md-content {
   overflow: unset;
   padding: 0 0 1rem 0;
+  // background-color: $md-card-background;
 
-  h1, h1.main-title {
-    margin: 2rem;
-    text-align: center;
-  }
+  // h1, h1.main-title {
+  //   margin: 2rem;
+  //   text-align: center;
+  // }
 
   md-card {
-    background-color: $md-card-background;
+    // background-color: $md-card-background;
+    background: transparent;
     border-radius: 5px;
     margin: 2rem;
+    border: 1px solid $white;
+    // margin: 3rem 0 0 0;
 
-    md-card-title, md-card-content {
-      padding: 1.5rem;
+    .md-button.md-default-theme.md-fab[disabled],
+    .md-button.md-fab[disabled],
+    .md-button.md-default-theme.md-raised[disabled],
+    .md-button.md-raised[disabled] {
+      background-color: rgba(255, 255, 255, 0.12);
+      color: $white;
     }
 
+    md-card-content {
+      padding: 1.5rem;
+    }
     // md-card-header {
     //   md-card-avatar {}
     //   md-user-avatar {}
@@ -30,12 +41,16 @@ md-content {
     // }
     // img {}
     md-card-title {
+      // padding: 0;
       border-bottom: 2px solid $white;
 
-      // md-card-title-text {
-      //   md-title {}
-      //   md-subhead {}
-      // }
+      md-card-title-text {
+        h1 {
+          text-align: center;
+        }
+        // md-title {}
+        // md-subhead {}
+      }
     }
     // md-card-title-media {
     //   md-media-sm {}
@@ -45,33 +60,47 @@ md-content {
     // }
     // md-card-content {}
     md-card-actions {
-      padding: 1.5rem;
+      margin: 0;
+      // padding: 1.5rem;
+
       @include flexbox(flex, column, center, center);
 
       a {
         width: 100%;
         margin: 0.25rem auto;
       }
-      // .md-button, button {
-      //   width: 100%;
-      //   margin: 0.25rem auto;
-      // }
+      .md-button, button, #github, #facebook {
+        padding: 0;
+        width: 100%;
+        margin: 0.25rem auto;
+        // border-radius: 4px;
+        // margin: 0.4rem 0;
+      }
 
       // md-card-icon-actions {}
       // button {
         // margin: 0.25rem auto !important;
       // }
     }
+    .md-button, button {
+      padding: 0;
+      width: 100%;
+      // margin: 0.25rem auto;
+      // border-radius: 4px;
+      // margin: 0.4rem 0;
+    }
+    .md-char-counter {
+      color: $white;
+    }
   }
-}
 
-.md-button {
-  border-radius: 4px;
-  margin: 0.4rem 0;
-}
-
-button:focus {
-  background-color: transparent;
+  // .md-button {
+  //   border-radius: 4px;
+  //   margin: 0.4rem 0;
+  // }
+  button:focus {
+    background-color: transparent;
+  }
 }
 
 md-dialog {
@@ -93,6 +122,35 @@ md-dialog {
   md-dialog-actions {
     padding: 0 16px;
   }
+}
+
+md-toast {
+  position: fixed;
+
+	&.success .md-toast-content {
+    background-color: #4CAF50;
+    color: $white;
+  }
+
+	&.error .md-toast-content {
+    background-color: #FF0000;
+    color: $white;
+  }
+	&.warning .md-toast-content {
+    background-color: #F44336;
+    color: $white;
+  }
+
+  .md-toast-content {
+    md-icon {
+      color: $white;
+    }
+
+    .md-button {
+      border-radius: 2px;
+    }
+  }
+
 }
 
 .md-char-counter {

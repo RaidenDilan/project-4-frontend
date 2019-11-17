@@ -1,5 +1,6 @@
 md-content.loginBackground {
-  background-image: url('../images/background.jpg');
+  // background-image: url('../images/background.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url('../images/background.jpg');
   @extend .background-styles;
   @include flexbox(flex, column, center, center);
 
@@ -10,21 +11,24 @@ md-content.loginBackground {
       margin-bottom: 1rem;
       border-bottom: 2px solid $white;
       color: $white;
+      padding: 0 16px 16px 16px;
 
       h1 {
         @extend .custom-header;
       }
     }
     md-card-actions {
-      margin: 0;
+      // margin: 0;
 
       #github {
         background-color: $github;
         color: $white;
+        margin: 0.25rem auto 0 auto;
       }
       #facebook {
         background-color: $facebook;
         color: $white;
+        margin: 0.25rem auto 0 auto;
       }
     }
     md-card-content {

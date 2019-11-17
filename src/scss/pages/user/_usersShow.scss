@@ -1,12 +1,13 @@
 md-content.usersShowBackground {
-  background-image: url('../images/background.jpg');
+  // background-image: url('../images/background.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url('../images/background.jpg');
   @extend .background-styles;
   @include flexbox(flex, column, center, center);
 
   md-card.usersShowSection {
     margin: 0;
     padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.6);
+    // background-color: $md-card-background;
 
     div.userInfo {
       padding: 0.5rem 0;

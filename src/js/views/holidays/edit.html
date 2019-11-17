@@ -1,4 +1,7 @@
-<md-content class="holidaysEditBackground" style="background-image:url('{{ holidaysEdit.holiday.image_src }}')">
+<md-content
+  class="holidaysEditBackground"
+  style="background: linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url('{{ holidaysEdit.holiday.image_src }}'); background-repeat: no-repeat; background-position: center center; background-size: cover;"
+  >
   <md-card class="holidaysEditForm">
     <back-button></back-button>
 
@@ -115,7 +118,7 @@
           >
       </div>
 
-      <div class="updateHolidayButton">
+      <md-card-actions class="updateHolidayButton">
         <md-button
           class="md-raised md-primary md-button md-ink-ripple"
           ng-click="holidaysEdit.update()"
@@ -123,7 +126,7 @@
           >
           Update
         </md-button>
-      </div>
+      </md-card-actions>
     </form>
   </md-card>
 </md-content>

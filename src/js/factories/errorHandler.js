@@ -6,7 +6,7 @@ ErrorHandler.$inject = ['$rootScope'];
 function ErrorHandler($rootScope) {
   return {
     responseError(err) {
-      // console.log('ErrorHandler', err);
+      console.log('responseError :: err', err);
       $rootScope.$broadcast('error', err);
     }
   };

@@ -2,8 +2,8 @@ angular
   .module('holidayApp')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$rootScope', '$state', '$auth', 'User']; // 'Flash'
-function MainCtrl($rootScope, $state, $auth, User) { // Flash
+MainCtrl.$inject = ['$rootScope', '$state', '$auth', 'User', 'ToastAlertService']; // 'Flash'
+function MainCtrl($rootScope, $state, $auth, User, ToastAlertService) { // Flash
   const vm = this;
 
   const protectedStates = [
@@ -22,6 +22,7 @@ function MainCtrl($rootScope, $state, $auth, User) { // Flash
   if ($auth.getPayload()) vm.loggedInUser = User.get({ id: $auth.getPayload().id });
 
   vm.isAuthenticated = $auth.isAuthenticated;
+  vm.toastDelay      = 4000;
   // vm.flash = Flash;
 
   $rootScope.$on('error', stateErrors);
@@ -31,7 +32,10 @@ function MainCtrl($rootScope, $state, $auth, User) { // Flash
   function stateErrors(e, err) {
     vm.stateHasChanged = false;
     vm.message = err.data.errors;
+
     console.log('err.data', err.data);
+
+    ToastAlertService.customToast(vm.message, 5000, 'error');
     // vm.message = err.data.errors.toString();
     // Flash.setMessage(vm.message);
     // vm.flash.setMessage(vm.message);
@@ -62,12 +66,13 @@ function MainCtrl($rootScope, $state, $auth, User) { // Flash
 
   function secureState(e, toState, toParams, fromState, fromParams) {
     if((!$auth.isAuthenticated() && protectedStates.includes(toState.name))) {
-      console.log('$auth.isAuthenticated()', $auth.isAuthenticated());
+      // console.log('$auth.isAuthenticated()', $auth.isAuthenticated());
 
       // console.log('!$auth.isAuthenticated() && protectedStates.includes(toState.name)', !$auth.isAuthenticated() && protectedStates.includes(toState.name));
       e.preventDefault();
       $state.go('login');
       vm.message = 'You must be logged in to access this page.';
+      ToastAlertService.customToast(vm.message, vm.toastDelay, 'warning');
     }
     vm.pageName = toState.name;
   }

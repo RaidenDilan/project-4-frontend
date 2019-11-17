@@ -1,6 +1,16 @@
 md-content.holidaysEditBackground {
-  background-image: url('../images/background.jpg');
-  @extend .background-styles;
+  // background-image: url('../images/background.jpg');
+  // background: linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url('../images/background.jpg');
+  // @extend .background-styles;
+  background-repeat: no-repeat;
+  // background-position: center;
+  // background-position: center top;
+  background-position: center center;
+  background-size: cover;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  
   @include flexbox(flex, column, center, center);
 
   md-card.holidaysEditForm {

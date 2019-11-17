@@ -1,10 +1,14 @@
 md-content.homeBackground {
-  background-image: url('../images/background.jpg');
+  // background-image: url('../images/background.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url('../images/background.jpg');
   @extend .background-styles;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  @include flexbox(flex, column, center, center);
+
+  // background-color: $md-card-background;
 
   md-card {
     md-card-title {

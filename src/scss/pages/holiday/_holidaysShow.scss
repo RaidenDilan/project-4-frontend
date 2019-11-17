@@ -1,8 +1,8 @@
 md-content.holidaysShowBackground {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // background-size: cover;
+  // background-attachment: fixed;
   width: 100vw;
   height: 100%;
 
@@ -12,7 +12,7 @@ md-content.holidaysShowBackground {
 
     h1 {
       @extend .custom-header;
-      background-color: rgba(0, 0, 0, 0.75);
+      // background-color: $md-card-background;
       border-radius: 5px;
       padding: 1rem;
       font-size: 2rem;
@@ -63,7 +63,7 @@ md-content.holidaysShowBackground {
   }
   md-card.holidaysShowButtons {
     md-card-actions {
-      // padding: 1.5rem;
+      padding: 1.5rem;
       // @include flexbox(flex, column, center, center);
 
       #getFlights {
@@ -90,8 +90,10 @@ md-content.holidaysShowBackground {
       @include flexbox(flex, column, center, center);
 
       div.user-image {
-        width: 55px;
-        height: 55px;
+        width: 45px;
+        height: 45px;
+        // width: 55px;
+        // height: 55px;
       }
       span {
         padding-top: 0.5rem;

@@ -1,4 +1,7 @@
-<md-content class="holidaysShowBackground" style="background-image:url('{{ holidaysShow.holiday.image_src }}')">
+<md-content
+  class="holidaysShowBackground"
+  style="background: linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url('{{ holidaysShow.holiday.image_src }}'); background-repeat: no-repeat; background-position: center center; background-size: cover; background-attachment: fixed;"
+  >
 
   <div class="holidaysBackground">
     <h1>Welcome to {{ holidaysShow.holiday.location }}</h1>
