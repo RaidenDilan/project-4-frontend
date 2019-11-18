@@ -11,7 +11,7 @@
     <md-card-content>
       <form name="groupsNew.groupsNewForm" class="groupsNewForm" ng-submit="groupsNew.create()" novalidate>
 
-        <div class="col s6">
+        <div>
           <md-input-container class="md-block">
             <input
               type="name"
@@ -24,7 +24,7 @@
           </md-input-container>
         </div>
 
-        <div class="col s6 searchUsers">
+        <div class="searchUsers">
 
           <div id="search-bar" ng-show="groupsNew.showPreSearchBar()" class="md-toolbar-tools">
             <md-button ng-click="groupsNew.initiateSearch()">
@@ -59,7 +59,7 @@
         </div>
 
         <div
-          class="col s6 m6 l6 groupUsersToAdd"
+          class="groupUsersToAdd"
           ng-repeat="user in groupsNew.filtered"
           ng-show="(groupsNew.query !== null) && user.id !== main.currentUser.id && !groupsNew.chosenUsers.includes(user)"
           >
@@ -78,7 +78,7 @@
         </div>
 
         <div
-          class="col s6 chosenGroupUsers"
+          class="chosenGroupUsers"
           ng-if="!user.group && user.id !== main.currentUser.id"
           ng-repeat="user in groupsNew.chosenUsers track by $index"
           >
@@ -100,7 +100,7 @@
           <span>{{ groupsNew.chosenUsers.length }} Users</span>
         </div>
 
-        <md-card-actions class="col s6 groupsNewButtons">
+        <md-card-actions class="groupsNewButtons">
           <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="groupsNew.create()" ng-disabled="groupsNew.groupsNewForm.$invalid"><i class="material-icons left"></i>Create</md-button>
           <!-- <md-button class="md-raised" ng-click="groupsNew.group = {}"><i class="material-icons left"></i>Clear Form</md-button> -->
         </md-card-actions>

@@ -1,9 +1,19 @@
+@import 'modules/queries';
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(calc(100% / 4), 1fr));
   grid-gap: 1rem;
 
   > div {
     // background: $white;
+  }
+}
+
+@include breakpoint(iPhoneSE) {
+  .grid {
+    // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   }
 }

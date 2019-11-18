@@ -2,7 +2,8 @@ angular
   .module('holidayApp')
   .controller('HolidaysNewCtrl', HolidaysNewCtrl)
   .controller('HolidaysShowCtrl', HolidaysShowCtrl)
-  .controller('HolidaysEditCtrl', HolidaysEditCtrl);
+  .controller('HolidaysEditCtrl', HolidaysEditCtrl)
+  .controller('HolidaysDeleteCtrl', HolidaysDeleteCtrl);
 
 HolidaysNewCtrl.$inject = ['Group', 'User', 'Holiday', '$state', '$stateParams', '$moment', '$auth', '$log'];
 function HolidaysNewCtrl(Group, User, Holiday, $state, $stateParams, $moment, $auth, $log) {
@@ -47,8 +48,8 @@ function HolidaysNewCtrl(Group, User, Holiday, $state, $stateParams, $moment, $a
   vm.create = holidaysCreate;
 }
 
-HolidaysShowCtrl.$inject = ['Holiday', 'Group', 'User', 'Comment', '$stateParams', '$state', '$auth', '$moment'];
-function HolidaysShowCtrl(Holiday, Group, User, Comment, $stateParams, $state, $auth, $moment) {
+HolidaysShowCtrl.$inject = ['Holiday', 'Group', 'User', 'Comment', '$stateParams', '$state', '$auth', '$moment', '$mdDialog'];
+function HolidaysShowCtrl(Holiday, Group, User, Comment, $stateParams, $state, $auth, $moment, $mdDialog) {
   const vm = this;
 
   vm.user = User.get({ id: $auth.getPayload().id });
@@ -68,12 +69,25 @@ function HolidaysShowCtrl(Holiday, Group, User, Comment, $stateParams, $state, $
       return vm.holiday;
     });
 
-  function holidaysDelete() {
-    vm.holiday
-      .$remove({ id: $stateParams.id, holidayId: vm.holiday.id })
-      .then(() => $state.go('groupsShow', $stateParams));
+  // Opens modal asking for confirmation to delete group
+  function holidayDeleteModal() {
+    $mdDialog.show({
+      controller: HolidaysDeleteCtrl,
+      controllerAs: 'holidaysDelete',
+      templateUrl: 'js/views/modals/holidayDeleteModal.html',
+      parent: angular.element(document.body),
+      targetEvent: vm.holiday,
+      clickOutsideToClose: true,
+      escapeToClose: true,
+      fullscreen: false,
+      resolve: {
+        selectedHoliday: () => {
+          return vm.holiday;
+        }
+      }
+    });
   }
-  vm.delete = holidaysDelete;
+  vm.delete = holidayDeleteModal;
 
   function addComment() {
     vm.newComment.holiday_id = vm.holiday.id; // attaching the comment to the group id.
@@ -131,4 +145,25 @@ function HolidaysEditCtrl(Holiday, Group, $stateParams, $state, $moment) {
     }
   }
   vm.update = holidaysUpdate;
+}
+
+HolidaysDeleteCtrl.$inject = ['selectedHoliday', '$state', '$stateParams', '$mdDialog'];
+function HolidaysDeleteCtrl(selectedHoliday, $state, $stateParams, $mdDialog) {
+  const vm = this;
+  vm.holiday = selectedHoliday;
+
+  function closeModal() {
+    $mdDialog.hide();
+  }
+  vm.close = closeModal;
+
+  function holidaysDelete() {
+    vm.holiday
+      .$remove({ id: $stateParams.id, holidayId: vm.holiday.id })
+      .then(() => {
+        $state.go('groupsShow', $stateParams);
+        $mdDialog.hide();
+      });
+  }
+  vm.delete = holidaysDelete;
 }

@@ -1,0 +1,18 @@
+<md-dialog class="holidaysDeleteModal" aria-label="Delete Group Confirmation">
+  <md-toolbar>
+    <div class="md-toolbar-tools" layout="row" layout-align="center center">
+      <h2>Wait!</h2>
+    </div>
+  </md-toolbar>
+
+  <md-dialog-content>
+    <div class="md-dialog-content" layout="column" layout-align="center center">
+      <p>Are you sure you want to delete this trip to <strong>{{ holidaysDelete.holiday.location }}</strong>?</p>
+    </div>
+  </md-dialog-content>
+
+  <md-dialog-actions>
+    <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="holidaysDelete.close()">Cancel</md-button>
+    <md-button class="md-raised md-warn md-button md-ink-ripple" ng-click="holidaysDelete.delete()">Delete</md-button>
+  </md-dialog-actions>
+</md-dialog>

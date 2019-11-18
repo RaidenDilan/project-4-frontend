@@ -1,39 +1,26 @@
 md-content.loginBackground {
-  // background-image: url('../images/background.jpg');
-  background: linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url('../images/background.jpg');
+  background: linear-gradient($md-card-background 100%, $md-card-background 100%), url('../images/background.jpg');
   @extend .background-styles;
   @include flexbox(flex, column, center, center);
 
   md-card {
     padding: 1rem;
+    min-width: 25%;
 
     md-card-title {
       margin-bottom: 1rem;
       border-bottom: 2px solid $white;
+      // border-bottom: 0;
       color: $white;
-      padding: 0 16px 16px 16px;
+      padding: 1rem 0;
 
       h1 {
         @extend .custom-header;
       }
     }
-    md-card-actions {
-      // margin: 0;
-
-      #github {
-        background-color: $github;
-        color: $white;
-        margin: 0.25rem auto 0 auto;
-      }
-      #facebook {
-        background-color: $facebook;
-        color: $white;
-        margin: 0.25rem auto 0 auto;
-      }
-    }
     md-card-content {
+      padding: 0;
       text-align: center;
-      padding: 0.5rem;
 
       span {
         font-size: 0.7rem;
@@ -43,6 +30,36 @@ md-content.loginBackground {
         font-size: 0.7rem;
         color: $yellow;
       }
+      form {
+        md-card-actions.loginBtn {
+          .md-button, button {
+            margin: 0.25rem auto;
+          }
+        }
+      }
+    }
+    md-card-actions {
+      #github {
+        background-color: $github;
+        color: $white;
+        margin: 0.25rem auto;
+      }
+      #facebook {
+        background-color: $facebook;
+        color: $white;
+        margin: 0.25rem auto;
+      }
+    }
+  }
+}
+
+@include breakpoint(iPhoneSE) {
+  md-content.loginBackground {
+    height: 100%;
+
+    md-card {
+      margin: 6rem 2rem;
+      min-width: 80%;
     }
   }
 }

@@ -15,6 +15,7 @@
 @import 'modules/header';
 @import 'modules/forms';
 @import 'modules/footer';
+@import 'modules/queries';
 
 @import 'pages/home';
 
@@ -34,6 +35,6 @@
 @import 'pages/holiday/holidaysEdit';
 @import 'pages/holiday/searchFlightsForm';
 
-@import 'queries/iphone5';
-@import 'queries/iphone6';
-@import 'queries/recent_ipads';
+// @import 'queries/iphone5';
+// @import 'queries/iphone6';
+// @import 'queries/recent_ipads';

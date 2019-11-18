@@ -8,7 +8,7 @@ function smartConfirm() {
 		restrict: 'EA',
 		scope: { confirm: '&' },
 		transclude: true,
-    templateUrl: 'js/views/modals/smart-confirm.html'
+    templateUrl: 'js/views/modals/smartConfirmModal.html'
 	};
 
   return directive;

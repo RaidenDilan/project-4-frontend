@@ -1,86 +1,45 @@
 md-content.groupsEditBackground {
-  // background-image: url('../images/background.jpg');
-  background: linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url('../images/background.jpg');
+  background: linear-gradient($md-card-background 100%, $md-card-background 100%), url('../images/background.jpg');
   @extend .background-styles;
   @include flexbox(flex, column, center, center);
 
   md-card {
     padding: 1rem;
+    margin: 5rem 2rem 2rem 2rem;
+    min-width: 35%;
+
+    // back-button > button style
+    back-button {
+      padding: 0;
+
+      button {
+        margin: 0;
+      }
+    }
 
     md-card-title {
       border: 0;
-      padding: 1rem;
+      // padding: 0;
 
       h1 {
         @extend .custom-header;
       }
     }
     md-card-content {
-      padding: 1rem;
+      padding: 0;
     }
-    form {
-      md-input-container {
-        width: 100%;
-        margin: 0.5rem 0;
-      }
-      label {
-        width: 100%;
-      }
-    }
-    md-input-container {
-      width: 100%;
-      margin: 0.5rem 0;
-    }
+  }
+}
 
-    .md-toolbar-tools {
+@include breakpoint(iPhoneSE) {
+  md-content.groupsEditBackground {
+    height: 100%;
+
+    md-card {
+      margin: 6rem 2rem 2rem 2rem;
+      max-width: 50%;
+      min-width: 80%;
       // padding: 0;
-
-      .md-icon {
-        color: $white;
-      }
-      .md-button {
-        padding: 0;
-        color: $white;
-
-        &:last-child {
-          margin: 0;
-        }
-        &:first-child {
-          margin: 0;
-        }
-      }
-      .md-char-counter {
-        color: $white;
-      }
-    }
-    // .chosen-users {
-    //   display: flex;
-    //   flex-flow: column nowrap;
-    //   justify-content: center;
-    //   align-items: center;
-    //   margin: 1rem 0;
-    //   color: $white;
-    // }
-    .chosen-usersLength {
-      border-top: 1px solid $white;
-      padding: 1rem 0;
-      text-align: center;
-      text-transform: uppercase;
-    }
-    .md-char-counter {
-      color: $white;
-
-      span {
-        font-size: 0.7rem;
-        color: $white;
-      }
-    }
-    .groupsEditButtons {
-      margin-top: 1rem;
-
-      .md-button {
-        width: 100%;
-      }
     }
   }
 }

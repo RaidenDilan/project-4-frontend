@@ -1,46 +1,41 @@
 md-content.usersShowBackground {
-  // background-image: url('../images/background.jpg');
-  background: linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url('../images/background.jpg');
+  background: linear-gradient($md-card-background 100%, $md-card-background 100%), url('../images/background.jpg');
   @extend .background-styles;
   @include flexbox(flex, column, center, center);
+  // height: 100%;
 
-  md-card.usersShowSection {
-    margin: 0;
-    padding: 2rem;
-    // background-color: $md-card-background;
+  md-card {
+    // margin: 5rem 2rem 2rem 2rem;
+    padding: 1rem;
+    min-width: 25%;
 
-    div.userInfo {
+    md-card-content {
       padding: 0.5rem 0;
       border-top: 1px solid $white; // #9e9e9e
       border-bottom: 1px solid $white;
 
-      // align-self: center;
-      // text-align: center;
-
       p {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
-        // color: $white;
+        @include flexbox(flex, row, space-between, center);
         color: $yellow;
-        font-size: 15px;
-        // font-weight: 400;
         text-transform: uppercase;
 
         strong {
-          padding-right: 1rem;
-          // color: $yellow;
+          // text-transform: uppercase;
           color: $white;
         }
       }
     }
-    .usersShowButtons {
-      padding-top: 20px;
+    md-card-actions {
+      padding-top: 1rem;
 
-      .md-button {
-        margin: 6px 0;
-        width: 100%;
+      // .button-link {
+      //   button {
+      //     margin: 0.25rem auto;
+      //   }
+      // }
+
+      #deleteUser, #logout {
+        margin: 0.25rem auto;
       }
     }
     #userImage {
@@ -48,11 +43,25 @@ md-content.usersShowBackground {
       background-size: cover;
       background-repeat: no-repeat;
       background-color: $white;
-      width: 150px;
-      height: 150px;
+      // width: calc(100% / 3 * 2);
+      // height: calc(100% / 3 * 2);
+      // width: 150px;
+      // height: 150px;
+      min-width: 100px;
+      min-height: 100px;
       margin: 1rem auto;
       border: 3px solid $white;
       border-radius: 100%;
+    }
+  }
+}
+
+@include breakpoint(iPhoneSE) {
+  md-content.usersShowBackground {
+
+    md-card {
+      margin: 5rem 2rem 2rem 2rem;
+      min-width: 75%;
     }
   }
 }

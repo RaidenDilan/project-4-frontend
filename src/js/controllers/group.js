@@ -167,7 +167,7 @@ function GroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth, $mdDi
     $mdDialog.show({
       controller: MembershipCtrl,
       controllerAs: 'membership',
-      templateUrl: 'js/views/partials/groupAttendModal.html',
+      templateUrl: 'js/views/modals/groupAttendModal.html',
       parent: angular.element(document.body),
       targetEvent: vm.currentUser,
       clickOutsideToClose: true,
@@ -187,7 +187,7 @@ function GroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth, $mdDi
     $mdDialog.show({
       controller: MembershipCtrl,
       controllerAs: 'membership',
-      templateUrl: 'js/views/partials/groupUnattendModal.html',
+      templateUrl: 'js/views/modals/groupUnattendModal.html',
       parent: angular.element(document.body),
       targetEvent: vm.currentUser,
       clickOutsideToClose: true,
@@ -207,7 +207,7 @@ function GroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth, $mdDi
     $mdDialog.show({
       controller: GroupsDeleteCtrl,
       controllerAs: 'groupsDelete',
-      templateUrl: 'js/views/partials/groupDeleteModal.html',
+      templateUrl: 'js/views/modals/groupDeleteModal.html',
       parent: angular.element(document.body),
       targetEvent: vm.group,
       clickOutsideToClose: true,
@@ -394,8 +394,8 @@ function GroupsEditCtrl(Group, Membership, User, $stateParams, $state, $auth, $s
   vm.submitSearch = submitSearch;
 }
 
-GroupsDeleteCtrl.$inject = ['$mdDialog', 'selectedGroup', '$state'];
-function GroupsDeleteCtrl($mdDialog, selectedGroup, $state) {
+GroupsDeleteCtrl.$inject = ['selectedGroup', '$state', '$mdDialog'];
+function GroupsDeleteCtrl(selectedGroup, $state, $mdDialog) {
   const vm = this;
   vm.group = selectedGroup;
 

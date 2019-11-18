@@ -1,20 +1,25 @@
 md-content.usersEditBackground {
-  // background-image: url('../images/background.jpg');
-  background: linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url('../images/background.jpg');
+  background: linear-gradient($md-card-background 100%, $md-card-background 100%), url('../images/background.jpg');
   @extend .background-styles;
   @include flexbox(flex, column, center, center);
+  height: 100%;
 
   md-card {
     padding: 1rem;
+    margin: 5rem 2rem 2rem 2rem;
 
     md-card-title {
       margin-bottom: 1rem;
       border-bottom: 2px solid $white;
       color: $white;
+      padding: 1rem 0;
 
       h1 {
         @extend .custom-header;
       }
+    }
+    md-card-actions {
+      padding-top: 0.5rem;
     }
   }
 }

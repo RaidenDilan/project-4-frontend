@@ -1,6 +1,5 @@
 md-content.groupsIndexSection {
-  // background-image: url('../images/background.jpg');
-  background: linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url('../images/background.jpg');
+  background: linear-gradient($md-card-background 100%, $md-card-background 100%), url('../images/background.jpg');
   @extend .background-styles;
   @include flexbox(flex, colmun, center, center);
 
@@ -12,7 +11,6 @@ md-content.groupsIndexSection {
         @extend .custom-header;
       }
     }
-
     md-card-content {
       h3 {
         color: $white;
@@ -21,7 +19,6 @@ md-content.groupsIndexSection {
         color: $yellow;
       }
     }
-
     md-card-content {
       div {
         text-align: center;

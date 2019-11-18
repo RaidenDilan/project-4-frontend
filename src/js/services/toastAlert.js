@@ -21,7 +21,7 @@ angular
           locals: {
             toastMessage: content
           },
-          templateUrl: 'js/views/modals/toast-alert.html',
+          templateUrl: 'js/views/modals/toastAlertModal.html',
           toastClass: toastClass
         });
       }

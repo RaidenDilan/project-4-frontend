@@ -15,7 +15,7 @@
       class="profilePhoto usersEditForm"
       novalidate
       >
-      <div class="col s6">
+      <div>
         <md-input-container class="md-block">
           <input
             type="text"
@@ -28,7 +28,7 @@
         </md-input-container>
       </div>
 
-      <div class="col s6">
+      <div>
         <md-input-container class="md-block">
           <input
             type="email"
@@ -45,7 +45,7 @@
         <p ng-message="email" class="form-validation">A valid email is required</p>
       </div>
 
-      <div class="col s6">
+      <div>
         <md-input-container class="md-block">
           <input
             type="password"
@@ -64,7 +64,7 @@
         <p ng-message="required" class="form-validation">Password is required</p>
       </div>
 
-      <div class="col s6">
+      <div>
         <md-input-container class="md-block">
           <input
             type="password"
@@ -83,7 +83,7 @@
         <p ng-message="required" class="form-validation">Password Confirmation is required</p>
       </div>
 
-      <div class="col s6">
+      <div>
         <md-input-container class="md-block">
           <input
             type="text"
@@ -96,7 +96,7 @@
         </md-input-container>
       </div>
 
-      <div class="col s6">
+      <div>
         <md-input-container class="md-block">
           <textarea
             type="text"
@@ -127,7 +127,7 @@
           >
       </div>
 
-      <div class="usersEditButton">
+      <md-card-actions class="usersEditButton">
         <md-button
           class="md-raised md-primary md-button md-ink-ripple"
           ng-click="usersEdit.update()"
@@ -136,7 +136,7 @@
           >
           Update
         </md-button>
-      </div>
+      </md-card-actions>
 
     </form>
   </md-card>
