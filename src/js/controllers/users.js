@@ -2,7 +2,8 @@ angular
   .module('holidayApp')
   .controller('UsersShowCtrl', UsersShowCtrl)
   .controller('UsersEditCtrl', UsersEditCtrl)
-  .controller('UsersIndexCtrl', UsersIndexCtrl);
+  .controller('UsersIndexCtrl', UsersIndexCtrl)
+  .controller('UsersDeleteCtrl', UsersDeleteCtrl);
 
 UsersIndexCtrl.$inject = ['User', '$auth', '$stateParams'];
 function UsersIndexCtrl(User, $auth, $stateParams) {
@@ -25,21 +26,30 @@ function UsersIndexCtrl(User, $auth, $stateParams) {
   checkUser();
 }
 
-UsersShowCtrl.$inject = ['User', '$stateParams', '$state', '$auth'];
-function UsersShowCtrl(User, $stateParams, $state, $auth) {
+UsersShowCtrl.$inject = ['User', '$stateParams', '$state', '$auth', '$mdDialog'];
+function UsersShowCtrl(User, $stateParams, $state, $auth, $mdDialog) {
   const vm = this;
 
   vm.user = User.get({ id: $auth.getPayload().id });
 
-  console.log('UsersShowCtrl => vm.user', vm.user);
-
-  function usersDelete() {
-    $auth.logout();
-    vm.user
-      .$remove()
-      .then(() => $state.go('login'));
+  function userDeleteModal() {
+    $mdDialog.show({
+      controller: UsersDeleteCtrl,
+      controllerAs: 'usersDelete',
+      templateUrl: 'js/views/modals/userDeleteModal.html',
+      parent: angular.element(document.body),
+      targetEvent: vm.user,
+      clickOutsideToClose: true,
+      escapeToClose: true,
+      fullscreen: false,
+      resolve: {
+        selectedUser: () => {
+          return vm.user;
+        }
+      }
+    });
   }
-  vm.delete = usersDelete;
+  vm.delete = userDeleteModal;
 }
 
 UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];
@@ -57,4 +67,26 @@ function UsersEditCtrl(User, $stateParams, $state) {
     }
   }
   vm.update = usersUpdate;
+}
+
+UsersDeleteCtrl.$inject = ['selectedUser', '$state', '$auth', '$mdDialog'];
+function UsersDeleteCtrl(selectedUser, $state, $auth, $mdDialog) {
+  const vm = this;
+  vm.user = selectedUser;
+
+  function closeModal() {
+    $mdDialog.hide();
+  }
+  vm.close = closeModal;
+
+  function usersDelete() {
+    vm.user
+      .$remove()
+      .then(() => {
+        $auth.logout();
+        $state.go('login');
+        closeModal();
+      });
+  }
+  vm.delete = usersDelete;
 }

@@ -10,7 +10,6 @@ function Skyscanner($http, API_URL) {
     return $http
       .get(`${API_URL}/flights`, { params: { origin, destination, outboundpartialdate, inboundpartialdate } })
       .then((response) => {
-        if (response) console.log('response', response);
         response.data.Quotes.forEach((quote) => {
           const destination = response.data.Places.find((place) => place.PlaceId === quote.OutboundLeg.DestinationId);
 

@@ -7,12 +7,12 @@
       </md-card-title-text>
     </md-card-title>
 
-    <md-card-content ng-if="groupsIndex.groups.$resolved && groupsIndex.groups.length === 0">
-      <h3>You have no groups created/attending.</h3>
-      <a ui-sref="groupsNew">Create One!</a>
+    <md-card-content class="noGroups" ng-if="groupsIndex.groups.length === 0">
+      <p>You have no groups created/attending.</p>
+      <a ui-sref="groupsNew"><span class="dash"> - </span>Create One!<span class="dash"> - </span></a>
     </md-card-content>
 
-    <md-card-content>
+    <md-card-content ng-if="groupsIndex.groups.length !== 0">
       <div ng-repeat="group in groupsIndex.groups track by $index">
         <a ui-sref="groupsShow({ id: group.id })"><span class="dash"> - </span>{{ group.name }}<span class="dash"> - </span></a>
       </div>

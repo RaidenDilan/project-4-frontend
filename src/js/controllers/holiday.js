@@ -13,36 +13,26 @@ function HolidaysNewCtrl(Group, User, Holiday, $state, $stateParams, $moment, $a
   vm.user    = User.get({ id: $auth.getPayload().id });
   vm.group   = Group.get($stateParams);
 
-  // console.log('$stateParams', $stateParams);
-  // console.log('vm.group', vm.group);
-
   vm.holiday.departureDate = new Date();
   vm.holiday.returnDate    = new Date();
 
-  vm.min = $moment().format("YYYY-MM-DD");
-  console.log('vm.min', vm.min);
+  // vm.min = $moment().format("YYYY-MM-DD");
+  // console.log('vm.min', vm.min);
 
   // vm.holiday.departureDate = $moment(vm.holiday.departureDate).add(1, 'month').format("YYYY-MM-DD");
   // vm.holiday.returnDate = $moment(vm.holiday.returnDate).add(1, 'month').add(7, 'days').format("YYYY-MM-DD");
 
-  vm.onDateChanged = () => {
-    $log.log('Updated departureDate: ', vm.departureDate);
-    $log.log('Updated returnDate: ', vm.returnDate);
-  };
+  // vm.onDateChanged = () => {
+  //   $log.log('Updated departureDate: ', vm.departureDate);
+  //   $log.log('Updated returnDate: ', vm.returnDate);
+  // };
 
   function holidaysCreate() {
     if(vm.holidaysNewForm.$valid) {
-      // vm.holiday.group_id = $stateParams.id; // we are passing in the group id here when creating a new holiday
-      // vm.holiday.user_id = vm.user.id; // we are passing in the group id here when creating a new holiday
-
       Holiday
         .save({ id: $stateParams.id, holiday: vm.holiday })
         .$promise
-        // .then((holiday) => $state.go('holidaysShow', { id: holiday.id }));
-        .then((holiday) => {
-          console.log('holiday ==?', holiday);
-          return $state.go('holidaysShow', { id: vm.group.id, holidayId: holiday.id });
-        });
+        .then((holiday) => $state.go('holidaysShow', { id: vm.group.id, holidayId: holiday.id }));
     }
   }
   vm.create = holidaysCreate;
@@ -139,9 +129,6 @@ function HolidaysEditCtrl(Holiday, Group, $stateParams, $state, $moment) {
         .update({ id: vm.group.id, holidayId: vm.holiday.id, holiday: vm.holiday })
         .$promise
         .then(() => $state.go('holidaysShow', $stateParams));
-
-      console.log('vm.holiday', vm.holiday);
-      console.log('vm.group', vm.group);
     }
   }
   vm.update = holidaysUpdate;

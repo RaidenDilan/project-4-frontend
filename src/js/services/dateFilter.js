@@ -7,7 +7,7 @@ angular
   function dateFormatter() {
     return function(date, format) {
       if(!moment) {
-        console.log('Error: momentJS is not loaded as a global');
+        // console.log('Error: momentJS is not loaded as a global');
         return '!momentJS';
       }
       // needed if you want to change the locale globally

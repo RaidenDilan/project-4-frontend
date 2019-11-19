@@ -1,0 +1,18 @@
+<md-dialog class="usersDeleteModal" aria-label="Delete User Confirmation">
+  <md-toolbar>
+    <div class="md-toolbar-tools" layout="row" layout-align="center center">
+      <h2>Wait!</h2>
+    </div>
+  </md-toolbar>
+
+  <md-dialog-content>
+    <div class="md-dialog-content" layout="column" layout-align="center center">
+      <p>Are you sure you want to delete your account</p>
+    </div>
+  </md-dialog-content>
+
+  <md-dialog-actions>
+    <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="usersDelete.close()">Cancel</md-button>
+    <md-button class="md-raised md-warn md-button md-ink-ripple" ng-click="usersDelete.delete()">Delete</md-button>
+  </md-dialog-actions>
+</md-dialog>

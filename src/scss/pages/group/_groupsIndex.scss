@@ -11,6 +11,30 @@ md-content.groupsIndexSection {
         @extend .custom-header;
       }
     }
+
+    md-card-content.noGroups {
+      text-align: center;
+
+      p {
+        color: $white;
+        font-size: 0.75rem;
+      }
+      a {
+        // color: $white;
+        font-size: 0.75rem;
+
+        span.dash {
+          color: $yellow;
+        }
+        &:hover {
+          color: $yellow;
+
+          span.dash {
+            color: $white;
+          }
+        }
+      }
+    }
     md-card-content {
       h3 {
         color: $white;

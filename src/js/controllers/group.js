@@ -114,17 +114,10 @@ function GroupsNewCtrl(Group, User, Membership, $stateParams, $state, $auth, $sc
   vm.create = create;
 
   function createMembership(group, user) {
-    // vm.membership.user_id  = user.id;
-    // vm.membership.group_id = group.id;
-
     Membership
-      // .save({ membership: vm.membership })
       .save({ membership: { user_id: user.id, group_id: group.id } })
       .$promise
-      .then((member) => {
-        console.log('member', member);
-        return member;
-      });
+      .then((member) => member);
   }
   vm.createMembership = createMembership;
 
@@ -230,23 +223,6 @@ function GroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth, $mdDi
   }
   vm.groupsUpdate = groupsUpdate;
 
-  // function toggleAttending() {
-  //   // const index = vm.group.users.indexOf(vm.currentUser.id);
-  //   const index = vm.group.users.map((obj) => obj.id).indexOf(vm.currentUser.id);
-  //   console.log('index', index);
-  //
-  //   if(index > -1) {
-  //     console.log('user exists', index > -1);
-  //     vm.group.users.splice(index, 1);
-  //   } else {
-  //     console.log('user does not exists');
-  //     vm.group.users.push(vm.currentUser);
-  //   }
-  //
-  //   groupsUpdate();
-  // }
-  // vm.toggleAttending = toggleAttending;
-
   // Function for displaying or hiding attendance buttons
   function isAttending() {
     // This map function takes all id values from inside group.users object, puts the values into an array and checks that array to see if it includes the current user id.
@@ -293,7 +269,6 @@ function GroupsEditCtrl(Group, Membership, User, $stateParams, $state, $auth, $s
         vm.availableUsers = [];
         users.forEach((user) => (user.groups.length === 0) && (vm.availableUsers.push(user)));
         if (vm.availableUsers.length > 0) vm.availableUsersLength = vm.availableUsers.length;
-        // console.log('vm.availableUsers', vm.availableUsers);
       });
   }
 
@@ -359,11 +334,8 @@ function GroupsEditCtrl(Group, Membership, User, $stateParams, $state, $auth, $s
 
   vm.update = () => {
     if (vm.groupsEditForm.$valid) {
-      // if (!vm.groupUsers.includes(user.id) && user.id !== authUserId) vm.groupUsers.push(user);
-
       vm.group
         .$update()
-        // .then((group) => $state.go('groupsIndex', { id: group.id }));
         .then((group) => $state.go('groupsShow', $stateParams));
     }
   };
@@ -409,7 +381,7 @@ function GroupsDeleteCtrl(selectedGroup, $state, $mdDialog) {
       .$remove()
       .then(() => {
         $state.go('groupsIndex');
-        $mdDialog.hide();
+        closeModal();
       });
   }
   vm.delete = groupsDelete;

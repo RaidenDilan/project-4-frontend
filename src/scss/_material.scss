@@ -115,6 +115,9 @@ md-dialog {
 
   }
   md-dialog-content {
+    h2 {
+      color: $black;
+    }
     p {
       font-size: 0.65rem;
     }
