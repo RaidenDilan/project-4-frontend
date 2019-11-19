@@ -29,7 +29,10 @@ function LoginCtrl($auth, $state) {
   function authenticate(provider) {
     $auth
       .authenticate(provider)
-      .then(user => console.log('USER', user));
+      .then((res) => {
+        console.log('LoginCtrl => authenticate :: res', res);
+        $state.go('usersShow');
+      });
   }
   vm.authenticate = authenticate;
 

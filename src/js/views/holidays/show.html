@@ -4,7 +4,7 @@
   >
 
   <div class="holidaysBackground">
-    <h1>Welcome to {{ holidaysShow.holiday.location }}</h1>
+    <h1 ng-if="holidaysShow.holiday.$resolved">Welcome to {{ holidaysShow.holiday.location }}</h1>
   </div>
 
   <md-card class="holidaysShow">

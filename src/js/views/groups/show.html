@@ -1,6 +1,6 @@
 <md-content class="groupShow">
   <div class="groupsBackground">
-    <h1>Welcome to {{ groupsShow.group.name }}</h1>
+    <h1 ng-if="groupShow.group.$resolved">Welcome to {{ groupsShow.group.name }}</h1>
     <!-- <md-card-title>
       <md-card-title-text>
       </md-card-title-text>

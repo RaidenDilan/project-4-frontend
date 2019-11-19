@@ -33,7 +33,7 @@ function MainCtrl($rootScope, $state, $auth, User, ToastAlertService) { // Flash
     vm.stateHasChanged = false;
     vm.message = err.data.errors;
 
-    console.log('err.data', err.data);
+    console.log('err.data.errors', err.data.errors);
 
     ToastAlertService.customToast(vm.message, 5000, 'error');
     // vm.message = err.data.errors.toString();
@@ -55,6 +55,8 @@ function MainCtrl($rootScope, $state, $auth, User, ToastAlertService) { // Flash
         .$promise
         .then((user) => {
           vm.user = user;
+          console.log('authenticateState:: vm.user', vm.user);
+
           if ((toState.name === 'propertiesIndex' && vm.user.group === null) && protectedStates.includes(toState.name)) {
             event.preventDefault();
             $state.go('groupsNew');

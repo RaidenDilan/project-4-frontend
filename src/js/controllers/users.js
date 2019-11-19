@@ -31,6 +31,8 @@ function UsersShowCtrl(User, $stateParams, $state, $auth) {
 
   vm.user = User.get({ id: $auth.getPayload().id });
 
+  console.log('UsersShowCtrl => vm.user', vm.user);
+
   function usersDelete() {
     $auth.logout();
     vm.user
