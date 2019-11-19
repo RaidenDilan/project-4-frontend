@@ -13,7 +13,7 @@ function Auth($authProvider, API_URL) {
   });
 
   $authProvider.github({
-    clientId: '049927cec793a2798e65',
+    clientId: 'b10515521c112c0a77e0',
     url: `${API_URL}/oauth/github`
   });
 }
