@@ -32,6 +32,8 @@ function UsersShowCtrl(User, $stateParams, $state, $auth, $mdDialog) {
 
   vm.user = User.get({ id: $auth.getPayload().id });
 
+  console.log(vm.user);
+
   function userDeleteModal() {
     $mdDialog.show({
       controller: UsersDeleteCtrl,
