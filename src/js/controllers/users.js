@@ -57,12 +57,12 @@ function UsersShowCtrl(User, $stateParams, $state, $auth, $mdDialog) {
 //   resolvedUser: ($stateParams, User) => User.get($stateParams)
 // };
 
-UsersEditCtrl.$inject = ['User', '$stateParams', '$state', 'resolvedUser'];
-function UsersEditCtrl(User, $stateParams, $state, resolvedUser) {
+UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];
+function UsersEditCtrl(User, $stateParams, $state) {
   const vm = this;
 
-  // vm.user = User.get($stateParams);
-  vm.user = resolvedUser;
+  vm.user = User.get($stateParams);
+  // vm.user = resolvedUser;
 
   function usersUpdate() {
     if(vm.usersEditForm.$valid) {
@@ -75,9 +75,9 @@ function UsersEditCtrl(User, $stateParams, $state, resolvedUser) {
   vm.update = usersUpdate;
 }
 
-UsersEditCtrl.resolve = {
-  resolvedUser: ($stateParams, User) => User.get($stateParams)
-};
+// UsersEditCtrl.resolve = {
+//   resolvedUser: ($stateParams, User) => User.get($stateParams)
+// };
 
 UsersDeleteCtrl.$inject = ['selectedUser', '$state', '$auth', '$mdDialog'];
 function UsersDeleteCtrl(selectedUser, $state, $auth, $mdDialog) {
