@@ -12,7 +12,7 @@
       <a
         class="button-link"
         ui-sref="usersEdit({ id: usersShow.user.id })"
-        ng-if="main.currentUser.id === usersShow.user.id"
+        ng-if="main.isAuthenticated && main.currentUser.id === usersShow.user.id"
         >
         <md-button
           class="md-raised md-primary md-button md-ink-ripple"
@@ -22,7 +22,7 @@
         </md-button>
       </a>
       <md-button
-        ng-if="main.currentUser.id === usersShow.user.id"
+        ng-if="main.isAuthenticated && main.currentUser.id === usersShow.user.id"
         ng-click="usersShow.delete()"
         class="md-raised md-warn md-button md-ink-ripple"
         id="deleteUser"
@@ -30,7 +30,7 @@
         Delete Account
       </md-button>
       <md-button
-        ng-if="main.currentUser.id === usersShow.user.id"
+        ng-if="main.isAuthenticated"
         ng-click="main.logout()"
         class="md-raised md-primary md-button md-ink-ripple"
         id="logout"

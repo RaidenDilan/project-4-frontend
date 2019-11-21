@@ -46,7 +46,7 @@ function FlightsShowCtrl(Holiday, Group, $stateParams, $location, Skyscanner, $m
   vm.gotoElement = gotoElement;
 
   function searchFlights() {
-    if (vm.flightsShowForm.$valid) {
+    if (vm.holiday.$resolved && vm.flightsShowForm.$valid) {
       vm.isLoading = true;
       queryFlights();
     }
@@ -63,7 +63,14 @@ function FlightsShowCtrl(Holiday, Group, $stateParams, $location, Skyscanner, $m
         gotoElement('flightsResults');
 
         return quotes;
+        // return Skyscanner.validateData(quotes);
       });
+      // .then((data) => {
+      //   return Skyscanner.updateOffilineStorage(data);
+      // })
+      // .catch((err) => {
+      //   return $q.reject(err);
+      // });
   }
 }
 

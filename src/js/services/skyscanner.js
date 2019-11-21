@@ -29,7 +29,15 @@ function Skyscanner($http, API_URL) {
         });
 
         return response.data.Quotes;
+        // return DataService.validateData(response.data.Quotes);
       });
+      // .then((data) => {
+      //   return DataService.updateOffilineStorage(data);
+      // })
+      // .catch((err) => {
+      //   console.log('err', err);
+      //   // return $q.reject(err);
+      // });
   }
   vm.getFlights = getFlights;
 }
