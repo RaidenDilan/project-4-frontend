@@ -1,13 +1,6 @@
 md-content.searchFlightsBackground {
-  // @extend .background-styles;
   @include flexbox(flex, column, center, center);
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  width: 100vw;
-  // height: 100%;
+  @include background(no-repeat, center, cover, fixed)
 
   back-button {
     padding: 0;

@@ -1,26 +1,26 @@
-md-content.loginBackground {
+md-content.registerBackground {
   background: linear-gradient($md-card-background 100%, $md-card-background 100%), url('../images/background.jpg');
-  @extend .background-styles;
   @include flexbox(flex, column, center, center);
+  @include background(no-repeat, center, cover)
+  min-height: 100%;
 
   md-card {
     padding: 1rem;
-    min-width: 25%;
+    min-width: 35%;
 
     md-card-title {
       margin-bottom: 1rem;
       border-bottom: 2px solid $white;
-      // border-bottom: 0;
       color: $white;
-      padding: 1rem 0;
+      padding: 0 16px 16px 16px;
 
       h1 {
         @extend .custom-header;
       }
     }
     md-card-content {
-      padding: 0;
       text-align: center;
+      padding: 0.5rem;
 
       span {
         font-size: 0.7rem;
@@ -30,35 +30,20 @@ md-content.loginBackground {
         font-size: 0.7rem;
         color: $yellow;
       }
-      form {
-        md-card-actions.loginBtn {
-          .md-button, button {
-            margin: 0.25rem auto;
-          }
-        }
-      }
     }
     md-card-actions {
-      #github {
-        background-color: $github;
-        color: $white;
-        margin: 0.25rem auto;
-      }
-      #facebook {
-        background-color: $facebook;
-        color: $white;
-        margin: 0.25rem auto;
-      }
+      // margin: 0;
     }
   }
 }
 
+
 @include breakpoint(iPhoneSE) {
-  md-content.loginBackground {
-    height: 100%;
+  md-content.registerBackground {
+    // height: 100%;
 
     md-card {
-      margin: 6rem 2rem;
+      margin: 5rem 2rem 2rem 2rem;
       min-width: 80%;
     }
   }

@@ -1,14 +1,8 @@
 md-content.homeBackground {
-  // background-image: url('../images/background.jpg');
   background: linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url('../images/background.jpg');
-  @extend .background-styles;
-
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   @include flexbox(flex, column, center, center);
-
-  // background-color: $md-card-background;
+  @include background(no-repeat, center, cover)
+  min-height: 100%;
 
   md-card {
     md-card-title {
@@ -34,79 +28,5 @@ md-content.homeBackground {
         user-select: none;
       }
     }
-  }
-}
-
-#login {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  padding: 21px;
-  border-radius: 25%;
-  border: 3px solid white;
-  margin-top: 2px;
-
-  &:hover {
-    background-color: $white;
-  }
-}
-
-#register {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  padding: 21px;
-  border-radius: 25%;
-  border: 3px solid white;
-  margin-top: 2px;
-
-  &:hover {
-    background-color: $white;
-  }
-}
-
-
-#usersAvatar {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  padding: 22px;
-  border-radius: 100%;
-  border: 3px solid white;
-  &:hover {
-    background-color: $white;
-  }
-}
-
-#showGroups {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  padding: 23px;
-  border-radius: 100%;
-  margin-top: 1px;
-  border: 1px solid white;
-
-  &:hover {
-    background-color: black;
-  }
-}
-
-#newGroup {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  padding: 21px;
-  border-radius: 100%;
-  border: 3px solid white;
-  margin-top: 2px;
-
-  &:hover {
-    background-color: black;
   }
 }

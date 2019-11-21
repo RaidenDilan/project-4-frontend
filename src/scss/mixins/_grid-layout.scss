@@ -3,7 +3,8 @@
 .grid {
   display: grid;
   // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-columns: repeat(auto-fill, minmax(calc(100% / 4), 1fr));
+  // grid-template-columns: repeat(auto-fill, minmax(calc(100% / 4), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 1rem;
 
   > div {
@@ -11,9 +12,30 @@
   }
 }
 
-@include breakpoint(iPhoneSE) {
-  .grid {
-    // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-  }
-}
+// @supports(display: grid) {
+//   md-card-content.holidaysCreated {
+//     grid-gap: 10px;
+//     margin-right: 0;
+//     margin-bottom: 0;
+//   }
+// }
+
+// @include breakpoint(iPhoneSE) {
+//   .grid {
+//     // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+//     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+//   }
+// }
+// @include breakpoint(iPhoneXIProMax) {
+//   .grid {
+//     // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+//     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+//   }
+// }
+// // @include breakpoint(iPhoneXIProMaxL) {
+// //   .grid {
+// //     // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+// //     // grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+// //     grid-template-columns: repeat(auto-fill, minmax(calc(100% / 3), 1fr));
+// //   }
+// // }

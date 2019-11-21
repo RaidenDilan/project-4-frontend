@@ -1,11 +1,11 @@
 md-content.usersShowBackground {
   background: linear-gradient($md-card-background 100%, $md-card-background 100%), url('../images/background.jpg');
-  @extend .background-styles;
   @include flexbox(flex, column, center, center);
-  // height: 100%;
+  @include background(no-repeat, center, cover)
+  height: 100vh;
 
   md-card {
-    // margin: 5rem 2rem 2rem 2rem;
+    // margin: 6rem 2rem 2rem 2rem;
     padding: 1rem;
     min-width: 25%;
 
@@ -33,6 +33,10 @@ md-content.usersShowBackground {
       //     margin: 0.25rem auto;
       //   }
       // }
+
+      button {
+        padding: 0 0.5rem;
+      }
 
       #deleteUser, #logout {
         margin: 0.25rem auto;

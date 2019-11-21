@@ -1,7 +1,8 @@
 md-content.groupsNewBackground {
   background: linear-gradient($md-card-background 100%, $md-card-background 100%), url('../images/background.jpg');
-  @extend .background-styles;
   @include flexbox(flex, column, center, center);
+  @include background(no-repeat, center, cover)
+  min-height: 100%;
 
   md-card {
     padding: 1rem;
@@ -33,7 +34,7 @@ md-content.groupsNewBackground {
 
 @include breakpoint(iPhoneSE) {
   md-content.groupsNewBackground {
-    height: 100%;
+    // height: 100%;
 
     md-card {
       margin: 8rem 2rem;

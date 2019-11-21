@@ -15,6 +15,13 @@
 // 		@if $letter-spacing { letter-spacing: $letter-spacing; }
 // }
 
+@mixin background($repeat: false, $position: false, $size: false, $attachment: false) {
+  @if $repeat { background-repeat: $repeat; }
+  @if $position { background-position: $position; }
+  @if $size { background-size: $size; }
+  @if $attachment { background-attachment: $attachment; }
+}
+
 @mixin font($family: false, $weight: false, $size: false, $line-height: false, $color: false) {
 	@if $family { font-family: $family; }
 	@if $weight { font-weight: $weight; }
@@ -23,9 +30,9 @@
 	@if $color { color: $color; }
 }
 
-@mixin flexbox($display: false, $direction: false, $justify: false, $items: false, $content: false) {
+@mixin flexbox($display: false, $flow: false, $justify: false, $items: false, $content: false) {
   @if $display { display: $display; }
-  @if $direction { flex-direction: $direction; }
+  @if $flow { flex-flow: $flow; }
   @if $justify { justify-content: $justify; }
   @if $items { align-items: $items; }
   @if $content { align-content: $content; }

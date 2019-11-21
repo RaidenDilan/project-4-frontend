@@ -1,11 +1,10 @@
 md-content.groupShow {
   background: linear-gradient($md-card-background 100%, $md-card-background 100%), url('../images/background.jpg');
-  @extend .background-styles;
-  background-attachment: fixed;
-  height: 100%;
+  @include background(no-repeat, center, cover, fixed)
+  min-height: 100%;
 
   div.groupsBackground {
-    height: 100vh;
+    min-height: 100vh;
     @include flexbox(flex, column, center, center);
 
     h1 {
@@ -68,11 +67,22 @@ md-content.groupShow {
     }
   }
   md-card.groupShowAttendees {
+    md-card-content {
+      // padding: 1.5rem 0;
+    }
     div {
-      @include flexbox(flex, row, center, center);
+      // @include flexbox(flex, row wrap, flex-start, center);
+      display: grid;
+      // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+      // grid-template-columns: repeat(auto-fit, minmax(calc(100% / 8), 1fr));
+      grid-gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
 
       .attendees {
-        padding: 0 0.5rem;
+        // margin: 0 auto;
+        // padding: 0.5rem;
         @include flexbox(flex, column, center, center);
       }
     }
@@ -85,7 +95,7 @@ md-content.groupShow {
     }
 
     .user-image {
-      margin: 0 auto;
+      // margin: 0 auto;
     }
   }
   md-card.groupShowHolidays {

@@ -31,9 +31,9 @@
           </md-input-container>
         </div>
 
-        <div class="ng-message-error" ng-messages="flightsShow.flightsShowForm.departureAirport.$error" ng-show="(flightsShow.flightsShowForm.$submitted || flightsShow.flightsShowForm.departureAirport.$touched)">
+        <!-- <div class="ng-message-error" ng-messages="flightsShow.flightsShowForm.departureAirport.$error" ng-show="(flightsShow.flightsShowForm.$submitted || flightsShow.flightsShowForm.departureAirport.$touched)">
           <p ng-message="required" class="form-validation">Departure Location is required.</p>
-        </div>
+        </div> -->
 
         <div>
           <md-input-container class="md-block">
@@ -69,10 +69,10 @@
           </md-input-container>
         </div>
 
-        <div class="ng-message-error" ng-messages="flightsShow.flightsShowForm.departureDate.$error" ng-show="(flightsShow.flightsShowForm.$submitted || flightsShow.flightsShowForm.departureDate.$touched)">
+        <!-- <div class="ng-message-error" ng-messages="flightsShow.flightsShowForm.departureDate.$error" ng-show="(flightsShow.flightsShowForm.$submitted || flightsShow.flightsShowForm.departureDate.$touched)">
           <p ng-message="required" class="form-validation">Departure Date is required</p>
           <p ng-message="pattern" class="form-validation">Departure Date pattern must be YYYY/MM/DD</p>
-        </div>
+        </div> -->
 
         <div>
           <md-input-container class="md-block">
@@ -89,10 +89,10 @@
           </md-input-container>
         </div>
 
-        <div class="ng-message-error" ng-messages="flightsShow.flightsShowForm.returnDate.$error" ng-show="(flightsShow.flightsShowForm.$submitted || flightsShow.flightsShowForm.returnDate.$touched)">
+        <!-- <div class="ng-message-error" ng-messages="flightsShow.flightsShowForm.returnDate.$error" ng-show="(flightsShow.flightsShowForm.$submitted || flightsShow.flightsShowForm.returnDate.$touched)">
           <p ng-message="required" class="form-validation">Return Date is required</p>
           <p ng-message="pattern" class="form-validation">Return Date pattern must be YYYY/MM/DD</p>
-        </div>
+        </div> -->
 
         <md-card-actions>
           <md-button
@@ -105,10 +105,9 @@
         </md-card-actions>
       </form>
     </md-card-content>
-
   </md-card>
 
-  <md-card class="flightsBoard" ng-show="flightsShow.flights.length !== 0">
+  <md-card class="flightsBoard" id="flightsBoard" ng-show="flightsShow.flights.length !== 0">
 
     <md-card-title class="flights-header">
       <md-card-title-text>

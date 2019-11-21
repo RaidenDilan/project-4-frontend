@@ -60,6 +60,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/groups/:id/holidays/:holidayId/flights',
       templateUrl: 'js/views/flights/flight.html',
       controller: 'FlightsShowCtrl as flightsShow'
+      // resolve: FlightsShowCtrl.resolve
     })
     .state('login', {
       url: '/login',

@@ -63,6 +63,9 @@ form {
       color: $yellow;
       border: 1px solid $yellow;
     }
+    input[type='email'] {
+      text-transform: lowercase;
+    }
     input[type='password'] {
       font-size: 16px;
     }
@@ -91,6 +94,17 @@ form {
     }
   }
 }
+
+input[type='email'] {
+  text-transform: lowercase;
+}
+// input:focus {
+//   outline-width: 0;
+// }
+//
+// input:focus, select:focus, textarea:focus, button:focus {
+//   outline: none;
+// }
 
 // /* Change Autocomplete styles in Chrome*/
 // input   :-webkit-autofill,

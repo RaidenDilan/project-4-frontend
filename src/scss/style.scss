@@ -1,11 +1,8 @@
 @import 'reset';
 @import 'variables';
-// @import 'mixins/grid';
-// @import 'mixins/grid-1';
 @import 'mixins/grid-layout';
-// @import 'mixins/fluid-typography';
-@import 'mixins/fluidVerticalRhythem';
-@import 'mixins/simple-mixins';
+@import 'mixins/fluid-vertical-rhythem';
+@import 'mixins/mixins';
 @import 'typography';
 @import 'structure';
 @import 'material';
@@ -19,8 +16,8 @@
 
 @import 'pages/home';
 
-@import 'pages/auth/loginForm';
-@import 'pages/auth/registerForm';
+@import 'pages/auth/login';
+@import 'pages/auth/register';
 
 @import 'pages/user/usersShow';
 @import 'pages/user/usersEdit';

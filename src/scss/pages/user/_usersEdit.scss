@@ -1,12 +1,12 @@
 md-content.usersEditBackground {
   background: linear-gradient($md-card-background 100%, $md-card-background 100%), url('../images/background.jpg');
-  @extend .background-styles;
-  @include flexbox(flex, column, center, center);
-  height: 100%;
+  @include flexbox(flex, column, flex-start, center);
+  @include background(no-repeat, center, cover)
+  min-height: 100%;
 
   md-card {
     padding: 1rem;
-    margin: 5rem 2rem 2rem 2rem;
+    margin: 6rem 2rem 2rem 2rem;
 
     md-card-title {
       margin-bottom: 1rem;

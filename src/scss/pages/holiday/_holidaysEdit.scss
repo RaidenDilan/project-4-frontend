@@ -1,10 +1,11 @@
 md-content.holidaysEditBackground {
-  @extend .background-styles;
-  @include flexbox(flex, column, center, center);
+  @include flexbox(flex, column, flex-start, center);
+  @include background(no-repeat, center, cover)
+  min-height: 100%;
 
   md-card.holidaysEditForm {
     padding: 1rem;
-    margin: 5rem 2rem 2rem 2rem;
+    margin: 6rem 2rem 2rem 2rem;
 
     // back-button > button style
     back-button {
@@ -29,7 +30,7 @@ md-content.holidaysEditBackground {
 
 @include breakpoint(iPhoneSE) {
   md-content.holidaysEditBackground {
-    height: 100%;
+    // height: 100%;
 
     md-card {
       margin: 5rem 2rem 2rem 2rem;

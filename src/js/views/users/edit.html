@@ -11,6 +11,7 @@
 
     <form
       name="usersEdit.usersEditForm"
+      ng-enter="usersEdit.update()"
       ng-submit="usersEdit.update()"
       class="profilePhoto usersEditForm"
       novalidate
@@ -40,10 +41,10 @@
             >
         </md-input-container>
       </div>
-      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.email.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.email.$touched)">
+      <!-- <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.email.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.email.$touched)">
         <p ng-message="required" class="form-validation">Email is required</p>
         <p ng-message="email" class="form-validation">A valid email is required</p>
-      </div>
+      </div> -->
 
       <div>
         <md-input-container class="md-block">
@@ -60,9 +61,9 @@
         </md-input-container>
       </div>
 
-      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.password.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.password.$touched)">
+      <!-- <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.password.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.password.$touched)">
         <p ng-message="required" class="form-validation">Password is required</p>
-      </div>
+      </div> -->
 
       <div>
         <md-input-container class="md-block">
@@ -79,9 +80,9 @@
         </md-input-container>
       </div>
 
-      <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.password_confirmation.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.password_confirmation.$touched)">
+      <!-- <div class="ng-message-error" ng-messages="usersEdit.usersEditForm.password_confirmation.$error" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.password_confirmation.$touched)">
         <p ng-message="required" class="form-validation">Password Confirmation is required</p>
-      </div>
+      </div> -->
 
       <div>
         <md-input-container class="md-block">

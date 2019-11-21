@@ -28,8 +28,8 @@ function MainCtrl($rootScope, $state, $auth, User, ToastAlertService) {
   function authenticateState(event, toState, toParams, fromState, fromParams) {
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
-    window.scrollTo(0, 0); // workaround to scroll back to top of page on page change
-    // if (vm.stateHasChanged) document.body.scrollTop = document.documentElement.scrollTop = 0; // BUG????
+    // window.scrollTo(0, 0); // workaround to scroll back to top of page on page change
+    if (vm.stateHasChanged) document.body.scrollTop = document.documentElement.scrollTop = 0; // BUG????
 
     if ($auth.getPayload()) {
       vm.currentUser = $auth.getPayload();
