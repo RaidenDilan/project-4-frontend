@@ -97,16 +97,25 @@
         <md-card-actions>
           <md-button
             class="md-raised md-primary md-button md-ink-ripple"
-            ng-click="flightsShow.searchFlights()"
+            ng-click="flightsShow.searchFlights(); flightsShow.toggleLoading();"
             ng-disabled="flightsShow.flightsShowForm.$invalid"
             >
-            Find Flights
+            <http-loader></http-loader>
+
+            <md-icon
+              class="material-icons"
+              ng-show="!flightsShow.isLoading"
+              aria-label="Search for flights"
+              >
+              search
+            </md-icon>
           </md-button>
         </md-card-actions>
       </form>
     </md-card-content>
   </md-card>
 
+  <div id="flightsResults"></div>
   <md-card class="flightsBoard" id="flightsBoard" ng-show="flightsShow.flights.length !== 0">
 
     <md-card-title class="flights-header">

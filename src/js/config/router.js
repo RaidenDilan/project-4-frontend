@@ -19,12 +19,14 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('holidaysShow', {
       url: '/groups/:id/holidays/:holidayId',
       templateUrl: 'js/views/holidays/show.html',
-      controller: 'HolidaysShowCtrl as holidaysShow'
+      controller: 'HolidaysShowCtrl as holidaysShow',
+      resolve: HolidaysShowCtrl.resolve
     })
     .state('holidaysEdit', {
       url: '/groups/:id/holidays/:holidayId/edit',
       templateUrl: 'js/views/holidays/edit.html',
-      controller: 'HolidaysEditCtrl as holidaysEdit'
+      controller: 'HolidaysEditCtrl as holidaysEdit',
+      resolve: HolidaysEditCtrl.resolve
     })
     .state('groupsIndex', {
       url: '/groups',
@@ -39,28 +41,32 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('groupsShow', {
       url: '/groups/:id',
       templateUrl: '/js/views/groups/show.html',
-      controller: 'GroupsShowCtrl as groupsShow'
+      controller: 'GroupsShowCtrl as groupsShow',
+      resolve: GroupsShowCtrl.resolve
     })
     .state('groupsEdit', {
       url: '/groups/:id/edit',
       templateUrl: 'js/views/groups/edit.html',
-      controller: 'GroupsEditCtrl as groupsEdit'
+      controller: 'GroupsEditCtrl as groupsEdit',
+      resolve: GroupsEditCtrl.resolve
     })
     .state('usersShow', {
       url: '/users/:id',
       templateUrl: 'js/views/users/show.html',
-      controller: 'UsersShowCtrl as usersShow'
+      controller: 'UsersShowCtrl as usersShow',
+      resolve: UsersShowCtrl.resolve
     })
     .state('usersEdit',{
       url: '/users/:id/edit',
       templateUrl: 'js/views/users/edit.html',
-      controller: 'UsersEditCtrl as usersEdit'
+      controller: 'UsersEditCtrl as usersEdit',
+      resolve: UsersEditCtrl.resolve
     })
     .state('flightsShow', {
       url: '/groups/:id/holidays/:holidayId/flights',
       templateUrl: 'js/views/flights/flight.html',
-      controller: 'FlightsShowCtrl as flightsShow'
-      // resolve: FlightsShowCtrl.resolve
+      controller: 'FlightsShowCtrl as flightsShow',
+      resolve: FlightsShowCtrl.resolve
     })
     .state('login', {
       url: '/login',

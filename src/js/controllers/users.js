@@ -26,11 +26,11 @@ function UsersIndexCtrl(User, $auth, $stateParams) {
   checkUser();
 }
 
-UsersShowCtrl.$inject = ['User', '$stateParams', '$state', '$auth', '$mdDialog'];
-function UsersShowCtrl(User, $stateParams, $state, $auth, $mdDialog) {
+UsersShowCtrl.$inject = ['User', 'resolvedUser', '$stateParams', '$state', '$auth', '$mdDialog'];
+function UsersShowCtrl(User, resolvedUser, $stateParams, $state, $auth, $mdDialog) {
   const vm = this;
 
-  vm.user = User.get({ id: $auth.getPayload().id });
+  vm.user = resolvedUser;
 
   function userDeleteModal() {
     $mdDialog.show({
@@ -52,11 +52,16 @@ function UsersShowCtrl(User, $stateParams, $state, $auth, $mdDialog) {
   vm.delete = userDeleteModal;
 }
 
-UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];
-function UsersEditCtrl(User, $stateParams, $state) {
+UsersShowCtrl.resolve = {
+  resolvedUser: ($stateParams, User) => User.get($stateParams)
+};
+
+UsersEditCtrl.$inject = ['User', '$stateParams', '$state', 'resolvedUser'];
+function UsersEditCtrl(User, $stateParams, $state, resolvedUser) {
   const vm = this;
 
   vm.user = User.get($stateParams);
+  vm.user = resolvedUser;
 
   function usersUpdate() {
     if(vm.usersEditForm.$valid) {
@@ -68,6 +73,10 @@ function UsersEditCtrl(User, $stateParams, $state) {
   }
   vm.update = usersUpdate;
 }
+
+UsersEditCtrl.resolve = {
+  resolvedUser: ($stateParams, User) => User.get($stateParams)
+};
 
 UsersDeleteCtrl.$inject = ['selectedUser', '$state', '$auth', '$mdDialog'];
 function UsersDeleteCtrl(selectedUser, $state, $auth, $mdDialog) {

@@ -38,16 +38,13 @@ function HolidaysNewCtrl(Group, User, Holiday, $state, $stateParams, $moment, $a
   vm.create = holidaysCreate;
 }
 
-HolidaysShowCtrl.$inject = ['Holiday', 'Group', 'User', 'Comment', '$stateParams', '$state', '$auth', '$moment', '$mdDialog'];
-function HolidaysShowCtrl(Holiday, Group, User, Comment, $stateParams, $state, $auth, $moment, $mdDialog) {
+HolidaysShowCtrl.$inject = ['Holiday', 'resolvedGroup', 'resolvedUser', 'Group', 'User', 'Comment', '$stateParams', '$state', '$auth', '$moment', '$mdDialog'];
+function HolidaysShowCtrl(Holiday, resolvedGroup, resolvedUser, Group, User, Comment, $stateParams, $state, $auth, $moment, $mdDialog) {
   const vm = this;
 
-  vm.user = User.get({ id: $auth.getPayload().id });
-
-  Group
-    .get($stateParams)
-    .$promise
-    .then((group) => vm.group = group);
+  vm.user    = resolvedUser;
+  vm.group   = resolvedGroup;
+  // vm.holiday = resolvedHoliday;
 
   Holiday
     .get($stateParams)
@@ -105,11 +102,17 @@ function HolidaysShowCtrl(Holiday, Group, User, Comment, $stateParams, $state, $
   vm.deleteComment = deleteComment;
 }
 
-HolidaysEditCtrl.$inject = ['Holiday', 'Group', '$stateParams', '$state', '$moment'];
-function HolidaysEditCtrl(Holiday, Group, $stateParams, $state, $moment) {
+HolidaysShowCtrl.resolve = {
+  resolvedUser: ($auth, User) => User.get({ id: $auth.getPayload().id }),
+  resolvedGroup: ($stateParams, Group) => Group.get($stateParams)
+  // resolvedHoliday: ($stateParams, Holiday) => Holiday.get($stateParams)
+};
+
+HolidaysEditCtrl.$inject = ['Holiday', 'resolvedGroup', 'Group', '$stateParams', '$state', '$moment'];
+function HolidaysEditCtrl(Holiday, resolvedGroup, Group, $stateParams, $state, $moment) {
   const vm = this;
 
-  vm.group = Group.get($stateParams);
+  vm.group   = resolvedGroup;
 
   Holiday
     .get($stateParams)
@@ -133,6 +136,10 @@ function HolidaysEditCtrl(Holiday, Group, $stateParams, $state, $moment) {
   }
   vm.update = holidaysUpdate;
 }
+
+HolidaysEditCtrl.resolve = {
+  resolvedGroup: ($stateParams, Group) => Group.get($stateParams)
+};
 
 HolidaysDeleteCtrl.$inject = ['selectedHoliday', '$state', '$stateParams', '$mdDialog'];
 function HolidaysDeleteCtrl(selectedHoliday, $state, $stateParams, $mdDialog) {

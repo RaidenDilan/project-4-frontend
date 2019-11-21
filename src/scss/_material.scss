@@ -187,3 +187,20 @@ md-toast {
     height: 2rem;
   }
 }
+
+.loading-spiner-holder {
+  // @include flexbox(flex, column, center, center);
+  .loading-spiner {
+    @include flexbox(flex, column, space-between, center);
+    padding: 0.25rem 0;
+
+    md-progress-circular {
+      margin: auto;
+    }
+    md-progress-circular.md-default-theme path,
+    md-progress-circular path {
+      stroke: $black;
+      // margin: auto;
+    }
+  }
+}

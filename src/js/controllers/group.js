@@ -147,11 +147,12 @@ function GroupsNewCtrl(Group, User, Membership, $stateParams, $state, $auth, $sc
   vm.submitSearch = submitSearch;
 }
 
-GroupsShowCtrl.$inject = ['User', 'Group', 'Holiday', '$stateParams', '$state', '$auth', '$mdDialog'];
-function GroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth, $mdDialog) {
+GroupsShowCtrl.$inject = ['User', 'resolvedGroup', 'Group', 'Holiday', '$stateParams', '$state', '$auth', '$mdDialog'];
+function GroupsShowCtrl(User, resolvedGroup, Group, Holiday, $stateParams, $state, $auth, $mdDialog) {
   const vm = this;
 
-  vm.group = Group.get($stateParams);
+  // vm.group = Group.get($stateParams);
+  vm.group = resolvedGroup;
 
   if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
 
@@ -231,12 +232,17 @@ function GroupsShowCtrl(User, Group, Holiday, $stateParams, $state, $auth, $mdDi
   vm.isAttending = isAttending;
 }
 
-GroupsEditCtrl.$inject = ['Group', 'Membership', 'User', '$stateParams', '$state', '$auth', '$scope', '$filter', 'searchFilter'];
-function GroupsEditCtrl(Group, Membership, User, $stateParams, $state, $auth, $scope, $filter, searchFilter) {
+GroupsShowCtrl.resolve = {
+  resolvedGroup: ($stateParams, Group) => Group.get($stateParams)
+};
+
+GroupsEditCtrl.$inject = ['Group', 'Membership', 'resolvedGroup', 'User', '$stateParams', '$state', '$auth', '$scope', '$filter', 'searchFilter'];
+function GroupsEditCtrl(Group, Membership, resolvedGroup, User, $stateParams, $state, $auth, $scope, $filter, searchFilter) {
   const vm         = this;
   const authUserId = $auth.getPayload();
 
-  vm.group                = Group.get($stateParams);
+  // vm.group                = Group.get($stateParams);
+  vm.group                = resolvedGroup;
   vm.groupUsers           = [];
   vm.query                = null;
   vm.filteredLength       = 0;
@@ -365,6 +371,10 @@ function GroupsEditCtrl(Group, Membership, User, $stateParams, $state, $auth, $s
   }
   vm.submitSearch = submitSearch;
 }
+
+GroupsEditCtrl.resolve = {
+  resolvedGroup: ($stateParams, Group) => Group.get($stateParams)
+};
 
 GroupsDeleteCtrl.$inject = ['selectedGroup', '$state', '$mdDialog'];
 function GroupsDeleteCtrl(selectedGroup, $state, $mdDialog) {
