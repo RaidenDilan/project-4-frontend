@@ -38,8 +38,8 @@ function HolidaysNewCtrl(Group, User, Holiday, $state, $stateParams, $moment, $a
   vm.create = holidaysCreate;
 }
 
-HolidaysShowCtrl.$inject = ['Holiday', 'resolvedUser', 'Group', 'User', 'Comment', '$stateParams', '$state', '$auth', '$moment', '$mdDialog'];
-function HolidaysShowCtrl(Holiday, resolvedUser, Group, User, Comment, $stateParams, $state, $auth, $moment, $mdDialog) {
+HolidaysShowCtrl.$inject = ['Holiday', 'Group', 'User', 'Comment', '$stateParams', '$state', '$auth', '$moment', '$mdDialog'];
+function HolidaysShowCtrl(Holiday, Group, User, Comment, $stateParams, $state, $auth, $moment, $mdDialog) {
   const vm = this;
 
   vm.user = User.get({ id: $auth.getPayload().id });
