@@ -2,7 +2,7 @@ md-content.usersShowBackground {
   background: linear-gradient($md-card-background 100%, $md-card-background 100%), url('../images/background.jpg');
   @include flexbox(flex, column, center, center);
   @include background(no-repeat, center, cover)
-  height: 100vh;
+  min-height: 100%;
 
   md-card {
     // margin: 6rem 2rem 2rem 2rem;
@@ -64,7 +64,7 @@ md-content.usersShowBackground {
   md-content.usersShowBackground {
 
     md-card {
-      margin: 5rem 2rem 2rem 2rem;
+      // margin: 5rem 2rem 2rem 2rem;
       min-width: 75%;
     }
   }

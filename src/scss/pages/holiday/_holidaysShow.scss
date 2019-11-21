@@ -264,6 +264,9 @@ md-content.holidaysShowBackground {
             // &:-ms-input-placeholder { color: $black; }
             // &::placeholder { color: $black; }
           }
+          button {
+            margin: 0;
+          }
         }
       }
     }
