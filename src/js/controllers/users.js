@@ -26,11 +26,12 @@ function UsersIndexCtrl(User, $auth, $stateParams) {
   checkUser();
 }
 
-UsersShowCtrl.$inject = ['User', 'resolvedUser', '$stateParams', '$state', '$auth', '$mdDialog'];
-function UsersShowCtrl(User, resolvedUser, $stateParams, $state, $auth, $mdDialog) {
+UsersShowCtrl.$inject = ['User', '$stateParams', '$state', '$auth', '$mdDialog'];
+function UsersShowCtrl(User, $stateParams, $state, $auth, $mdDialog) {
   const vm = this;
 
-  vm.user = resolvedUser;
+  vm.user = User.get({ id: $auth.getPayload().id });
+  // vm.user = resolvedUser;
 
   function userDeleteModal() {
     $mdDialog.show({
@@ -52,9 +53,9 @@ function UsersShowCtrl(User, resolvedUser, $stateParams, $state, $auth, $mdDialo
   vm.delete = userDeleteModal;
 }
 
-UsersShowCtrl.resolve = {
-  resolvedUser: ($stateParams, User) => User.get($stateParams)
-};
+// UsersShowCtrl.resolve = {
+//   resolvedUser: ($stateParams, User) => User.get($stateParams)
+// };
 
 UsersEditCtrl.$inject = ['User', '$stateParams', '$state', 'resolvedUser'];
 function UsersEditCtrl(User, $stateParams, $state, resolvedUser) {

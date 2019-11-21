@@ -53,8 +53,8 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('usersShow', {
       url: '/users/:id',
       templateUrl: 'js/views/users/show.html',
-      controller: 'UsersShowCtrl as usersShow',
-      resolve: UsersShowCtrl.resolve
+      controller: 'UsersShowCtrl as usersShow'
+      // resolve: UsersShowCtrl.resolve
     })
     .state('usersEdit',{
       url: '/users/:id/edit',
