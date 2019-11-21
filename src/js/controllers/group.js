@@ -233,7 +233,9 @@ function GroupsShowCtrl(User, resolvedGroup, Group, Holiday, $stateParams, $stat
 }
 
 GroupsShowCtrl.resolve = {
-  resolvedGroup: ($stateParams, Group) => Group.get($stateParams)
+  resolvedGroup: ($stateParams, Group) => {
+    return Group.get($stateParams);
+  }
 };
 
 GroupsEditCtrl.$inject = ['Group', 'Membership', 'resolvedGroup', 'User', '$stateParams', '$state', '$auth', '$scope', '$filter', 'searchFilter'];
