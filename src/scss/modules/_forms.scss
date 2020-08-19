@@ -15,6 +15,9 @@ md-input-container {
     font-size: 0.6rem;
     color: $white;
   }
+  input[type='email'] {
+    text-transform: lowercase;
+  }
   .md-input, input {
     border-color: $white;
     color: $white;
